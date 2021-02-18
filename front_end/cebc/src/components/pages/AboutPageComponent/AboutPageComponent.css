@@ -1,0 +1,96 @@
+.vision_mission_div{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border-color: #ffa600;
+    border-width: 10px;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.vision_mission_col
+{
+/* height:150px ; */
+}
+.vision_mission_title{
+    min-height:120px ;
+    margin-top: 20px;
+}
+
+.section_head_title{
+    min-height: 100px;
+    margin-top: 10px;
+}
+
+#sdg_container{
+    margin-top: 110px;
+}
+#sdgbg{
+    background: url(dot2.png);
+    background-size: 8px;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 500px;
+    position: absolute;
+    left: 0px;
+}
+
+.SDGs_div{
+
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;
+    /* border-style: solid;
+    border-color: #ffa600;
+    border-width: 5px; */
+    
+
+}
+
+
+.working_area_icon{
+    height: 150px ;
+    width: 150px;
+    border-radius: 50%;
+    border-style: solid;
+    overflow: hidden;
+    border-color: #ffa600;
+    border-width: 10px;
+    border-style: solid;
+}
+.working_area_icob_title{
+    min-height: 10px;
+}
+
+#working_area_col_2{
+    /* border-style: solid; */
+}
+
+.partition_separator{
+    min-height: 100px;
+    /* background: rgb(11, 95, 11); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.board_div{
+    min-height: 400px;
+    width: 200px;
+    border-radius: 10px;
+    border-style: solid;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.board_separator{
+    margin-top: 70px;
+}
