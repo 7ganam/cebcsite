@@ -1,3 +1,6 @@
+require('dotenv').config()
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -19,16 +22,31 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+console.log(process.env.NODE_ENV)
+if (process.env.NODE_ENV === "production") {
+  console.log("in")
+  app.use(express.static(path.join(__dirname, './front_end/cebc/build')));
+  app.get('*', (req, res) => {
+    var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    console.log("fullUrl")
+    console.log({ fullUrl })
+    res.sendFile('./front_end/cebc/build/index.html', { root: __dirname });
+    // res.sendFile(path.resolve(__dirname, 'front_end', 'build', 'index.html'))
+  }
+  )
+}
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
+
+
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
