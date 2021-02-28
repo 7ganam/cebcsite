@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Route, } from "react-router-dom";
 import NavbarComponent from './components/shared/NavbarComponent/NavbarComponent'
-import FooterComponent from './components/shared/FooterComponent/FooterComponent'
+// import FooterComponent from './components/shared/FooterComponent/FooterComponent'
 import HomePageComponent from './components/pages/HomePageComponent/HomePageComponent'
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
 import KnowledgeCenterComponent from "./components/pages/KnowledgeCenterComponent/KnowledgeCenterComponent"
@@ -38,7 +38,7 @@ export default function MainComponent() {
                     </Route>
                 </Router>
             </div>
-            <FooterComponent />
+            {/* <FooterComponent /> */}
 
         </div >
 

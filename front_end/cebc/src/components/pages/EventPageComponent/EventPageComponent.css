@@ -7,7 +7,7 @@
     padding: 6em 0 12em 0;
     background-attachment: scroll, scroll, fixed;
     background-image: url(images/top-3200.svg), url(images/overlay2.png), url(images/header.jpg);
-    background-position: bottom center, top left, center center;
+    background-position: bottom -1px center, top left, center center;
     background-repeat: repeat-x, repeat, no-repeat;
     background-size: 3200px 460px, auto, cover;
     color: rgba(255, 255, 255, 0.8);
@@ -82,4 +82,6 @@ header_:before {
    
 
 }
+
+
 
