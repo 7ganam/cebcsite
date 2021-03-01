@@ -22,7 +22,11 @@ function ExtendedNavItemComponent(props) {
         (<div className={props.location.pathname !== `${main_nav.path}${sub_item.path}` ? 'sub-nav-item' : 'sub-nav-item-selected'} style={{ height: "100%" }}  >
             <Link className={props.location.pathname !== `${main_nav.path}${sub_item.path}` ? 'sub_nav_link' : 'sub-nav-link-selected'} to={`${main_nav.path}${sub_item.path}`}>
                 {sub_item.text}
+                {/* <i class="icon solid major fas fa-lightbulb"></i> */}
+
+
             </Link>
+
         </div>)
         )
         return sub_items;
@@ -32,12 +36,18 @@ function ExtendedNavItemComponent(props) {
     return (
 
 
-        <NavItem NavItem className={props.location.pathname.startsWith(main_nav.path) ? 'nav-link-selected' : ''} >
+        <NavItem NavItem className={props.location.pathname.startsWith(main_nav.path) ? 'nav-link-selected' : ''}
+            style={{ display: 'relative' }}
+        >
             <Link className="nav_link" to={main_nav.path}>
                 {main_nav.text}
+                <i class="fas ml-2 fa-chevron-circle-down"></i>
             </Link>
             <div
-                style={{ display: props.location.pathname.startsWith(main_nav.path) ? 'flex' : '' }}
+                style={{
+
+                    height: props.location.pathname.startsWith(main_nav.path) ? '70px' : '',
+                }}
                 light
                 expand={`md`}
                 fixed="top"
@@ -48,7 +58,9 @@ function ExtendedNavItemComponent(props) {
                 {!!sub_navs &&
                     render_sub_items()
                 }
+
             </div>
+            {/* <span class="nav__sub-toggle js-sub-toggle">test</span> */}
         </NavItem >
     )
 }

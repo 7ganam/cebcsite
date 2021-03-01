@@ -31,18 +31,9 @@ const NavbarComponent = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
-    const [isOpen2, setIsOpen2] = useState(false);
 
     let [Scrolled, setScrolled] = useState(false)
 
-    const onMouseIn = event => {
-        setIsOpen2(true)
-    };
-
-    const onMouseOut = event => {
-
-        setIsOpen2(false)
-    };
 
     useEffect(() => { //add scrolled class to elements that should behave diffrently when window is scrolled
         $(function () {
