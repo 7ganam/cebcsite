@@ -27,7 +27,6 @@ const $ = require("jquery");
 
 
 const NavbarComponent = (props) => {
-    console.dir(props.location.pathname !== "/")
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -76,7 +75,8 @@ const NavbarComponent = (props) => {
                         className={`
                         justify-content-between light  py-lg-0
                         ${Scrolled ? "scrolled" : ""} 
-                        ${!Scrolled && props.location.pathname !== "/" ? "dark_bg" : ""}
+                        
+                        ${!Scrolled && !(props.location.pathname === "/" || props.location.pathname === "/ABOUTUS") ? "dark_bg" : ""}
                         `}
                         id="my_nav"
                     >
@@ -98,14 +98,20 @@ const NavbarComponent = (props) => {
                                     </Link>
                                 </NavItem>
 
-                                <ExtendedNavItemComponent
+                                <NavItem className={props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'}>
+                                    <Link className="nav_link" to="/ABOUTUS">
+                                        about
+                                    </Link>
+                                </NavItem>
+
+                                {/* <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/ABOUTUS", text: "about" }}
                                     sub_navs={[{ path: "/ab1", text: "ab1" }, { path: "/ab2", text: "ab2" }, { path: "/ab3", text: "ab3" }]}
-                                />
+                                /> */}
 
                                 <ExtendedNavItemComponent
-                                    location={props.location} main_nav={{ path: "/Events", text: "Events" }}
-                                    sub_navs={[{ path: "/Events1", text: "Events1" }, { path: "/Events2", text: "Events2" }, { path: "/Events3", text: "Events3" }]}
+                                    location={props.location} main_nav={{ path: "/EVENTS", text: "Events" }}
+                                    sub_navs={[{ path: "/", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }]}
                                 />
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGECENTER" }}

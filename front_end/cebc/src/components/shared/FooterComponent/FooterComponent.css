@@ -50,23 +50,6 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-    color: #111111;
-}
-h3 {
-    font-size: 18px;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-}
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 0.5em;
-    line-height: 1.2;
-}
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
 
 
 .footer-cebc {

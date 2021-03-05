@@ -7,14 +7,26 @@
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front_end/cebc && npm run build --prefix front_end/cebc"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^25.0.0",
+    "@ckeditor/ckeditor5-react": "^3.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
+    "hero-slider": "^2.0.3",
     "http-errors": "^1.6.3",
     "jade": "~1.11.0",
+    "moment": "^2.29.1",
     "morgan": "~1.9.1",
+    "prop-types": "^15.7.2",
+    "react-alice-carousel": "^2.4.0",
+    "react-hero-carousel": "^1.0.3",
+    "react-image-gallery": "^1.0.9",
+    "react-loading": "^2.0.3",
+    "react-render-html": "^0.6.0",
+    "react-responsive-carousel": "^3.2.13",
     "react-router-dom": "^5.2.0",
-    "react-twitter-embed": "^3.0.3"
+    "react-twitter-embed": "^3.0.3",
+    "styled-components": "^5.2.1"
   }
 }

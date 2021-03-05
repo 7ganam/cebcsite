@@ -5,18 +5,25 @@ import "./NewsComponent.css"
 
 function NewsComponent() {
     return (
-        <div style={{ marginTop: '30px' }}>
+        <div style={{ marginTop: '40px' }}>
             <Container>
                 <Row className=" justify-content-center">
-
-                    <h2 class="panel__title">
-                        News
-                    </h2>
+                    <Col >
+                        <div class="section_header">
+                            <span class="section_header_inner">
+                                News
+                            </span>
+                            <div className="section_header_under"></div>
+                        </div>
+                    </Col>
                 </Row>
-                <Row>
+
+
+
+                <Row style={{ marginTop: "60px" }}>
                     <Col id="main_news_col" className="news_col" xs="12" md="6" style={{}}>
-                        <div id="main_news_div">
-                            <div id="main_news_img_div">
+                        <div id="main_news_div" className="p-2">
+                            <div id="main_news_img_div" style={{ width: "100%" }}>
                                 <img id="main_news_img" src={main_image} alt="oval" />
                             </div>
                             <div id="main_news_title_div">
@@ -34,14 +41,16 @@ function NewsComponent() {
                     </Col>
                     <Col id="sec_news_col " xs="12" md="6" style={{ paddingTop: "0" }}>
                         <div className="" >
+
+
                             <div className="sec_news_div mb-3">
                                 <Row style={{ height: "100%" }} className="p-2">
-                                    <Col xs="5" md="5" style={{ height: "100%" }} >
+                                    <Col xs="5" md="5" style={{ height: "" }} >
                                         {/* <div className="sec_news_img_div"> */}
                                         <img className="sec_news_img" src={main_image} alt="oval" />
                                         {/* </div> */}
                                     </Col>
-                                    <Col xs="7" md="7" style={{ height: "100%", overflow: "hidden" }} className="pl-0">
+                                    <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                         <div className="sec_news_title_div">
                                             EPC Contract with Shanghai Electric to develop 700 MW DEWA CSP project Signed in China
                                     </div>
@@ -54,14 +63,15 @@ function NewsComponent() {
                                     </Col>
                                 </Row>
                             </div>
+
                             <div className="sec_news_div mb-3">
                                 <Row style={{ height: "100%" }} className="p-2">
-                                    <Col xs="5" md="5" style={{ height: "100%" }} >
+                                    <Col xs="5" md="5" style={{ height: "" }} >
                                         {/* <div className="sec_news_img_div"> */}
                                         <img className="sec_news_img" src={main_image} alt="oval" />
                                         {/* </div> */}
                                     </Col>
-                                    <Col xs="7" md="7" style={{ height: "100%", overflow: "hidden" }} className="pl-0">
+                                    <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                         <div className="sec_news_title_div">
                                             EPC Contract with Shanghai Electric to develop 700 MW DEWA CSP project Signed in China
                                     </div>
@@ -74,14 +84,15 @@ function NewsComponent() {
                                     </Col>
                                 </Row>
                             </div>
+
                             <div className="sec_news_div mb-3">
                                 <Row style={{ height: "100%" }} className="p-2">
-                                    <Col xs="5" md="5" style={{ height: "100%" }} >
+                                    <Col xs="5" md="5" style={{ height: "" }} >
                                         {/* <div className="sec_news_img_div"> */}
                                         <img className="sec_news_img" src={main_image} alt="oval" />
                                         {/* </div> */}
                                     </Col>
-                                    <Col xs="7" md="7" style={{ height: "100%", overflow: "hidden" }} className="pl-0">
+                                    <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                         <div className="sec_news_title_div">
                                             EPC Contract with Shanghai Electric to develop 700 MW DEWA CSP project Signed in China
                                     </div>
@@ -94,10 +105,12 @@ function NewsComponent() {
                                     </Col>
                                 </Row>
                             </div>
+
                         </div>
 
                     </Col>
                 </Row>
+
                 <Row className=" justify-content-center">
                     <div className="end_div">
                         <h4 href="https://energy.mit.edu/news" className="end_text">
@@ -108,7 +121,7 @@ function NewsComponent() {
 
 
             </Container>
-        </div>
+        </div >
     )
 }
 

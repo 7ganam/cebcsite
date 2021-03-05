@@ -64,36 +64,36 @@ function FooterComponent() {
                                             <ul id="services">
                                                 <li>
                                                     <div className="facebook">
-                                                        <a href="https://facebook.com/colorlib/">
-                                                            <i className="fa fa-facebook  i_link" aria-hidden="true"></i>
+                                                        <a href="https://facebook.com/">
+                                                            <i className="fab fa-facebook  i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="twitter">
-                                                        <a href="https://twitter.com/colorlib/">
-                                                            <i className="fa fa-twitter i_link" aria-hidden="true"></i>
+                                                        <a href="https://twitter.com/">
+                                                            <i className="fab fa-twitter i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="youtube">
-                                                        <a href="https://www.youtube.com/c/Colorlib">
-                                                            <i className="fa fa-youtube i_link" aria-hidden="true"></i>
+                                                        <a href="https://www.youtube.com/">
+                                                            <i className="fab fa-youtube i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="linkedin">
-                                                        <a href="https://www.linkedin.com/company/colorlib">
-                                                            <i className="fa fa-linkedin i_link" aria-hidden="true"></i>
+                                                        <a href="https://www.linkedin.com/">
+                                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="instagram">
-                                                        <a href="https://www.linkedin.com/company/colorlib">
-                                                            <i className="fa fa-instagram i_link" aria-hidden="true"></i>
+                                                        <a href="https://www.linkedin.com/">
+                                                            <i className="fab fa-instagram i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
@@ -110,7 +110,7 @@ function FooterComponent() {
                 <div className="copyright">
                     <div className="container">
                         Copyright 2017 Clean Energy Business Council MENA. Contact the
-                        <a href="mailto:belinda@cleanenergybusinesscouncil.com">webmaster</a>
+                        <a href="">webmaster</a>
                         for more details.
                     </div>
                 </div>

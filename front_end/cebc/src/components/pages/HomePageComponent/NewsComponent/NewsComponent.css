@@ -8,16 +8,50 @@
     text-transform: uppercase;
 }
 
+
+
+
+
+
+
 .news_col{
-   height: 200px;
+   /* height: 500px; */
    padding: 5px;
 }
+
 #main_news_div{
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
     max-height: 100%;
     overflow: hidden;
     height: auto;
+    
+    display: flex;
+    flex-direction: column;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.419);
 }
+
+
+#main_news_title_div{
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+#main_news_body_div{
+    color: grey;
+    font-size: 12px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-height: 20px;
+    max-height: 80px;
+}
+
 
 .sec_news_div{
 
@@ -87,6 +121,10 @@
 
 .sec_news_div{
     overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.419);
+    height: 100%;
 }
 
 .sec_news_title_div{
@@ -115,6 +153,34 @@
     max-height: 80px;       /* fallback */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#main_news_img_div{
+    height:100%;
+    width: 50%;
+}
+
+#main_news_img{
+    height:100%;
+    width:100%;
+ object-fit: cover;
+}
+
+
+
+
+
 /* 
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */
@@ -139,7 +205,6 @@
 @media (min-width: 768px) { 
 
    #main_news_col{
-    height:600px;
    }
 
    #main_news_img_div{
@@ -163,6 +228,7 @@
     max-height: 20%;
     text-overflow: ellipsis;
     overflow: hidden;
+
 }
 
 
@@ -173,9 +239,9 @@
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7; /* number of lines to show */
-    line-height: 20px;        /* fallback */
-    max-height: 140px;       /* fallback */
+    -webkit-line-clamp: 11;
+    line-height: 20px;
+    max-height: 220px;
 
 }
     
@@ -191,6 +257,8 @@
     line-height: 20px;        /* fallback */
     max-height: 140px;       /* fallback */
     font-weight: 600;
+
+    
 
 }
 .sec_news_body_div{

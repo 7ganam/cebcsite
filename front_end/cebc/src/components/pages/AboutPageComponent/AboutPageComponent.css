@@ -1,3 +1,15 @@
+.back_image {
+    position:absolute;
+    left:50%;
+    background-image: url('images/sha1.jpg');
+    width:774px;
+    height:759px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    background-size: contain;
+}
+
+
 .vision_mission_div{
     height: 150px;
     width: 150px;
@@ -8,6 +20,7 @@
     overflow: hidden;
 }
 
+
 .vision_mission_col
 {
 /* height:150px ; */
@@ -17,39 +30,49 @@
     margin-top: 20px;
 }
 
+
+.media_element{
+    margin-bottom: 22px;
+}
+
+.vision_icon{
+    text-align: center;
+    cursor: default;
+    background-color: #FFB600;
+    color: #fff;
+    display: inline-block;
+    margin:auto;
+    border-radius: 10%;
+    width:80px ; 
+    height:80px;
+    font-size:36px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 0px;
+    min-width: 80px;
+}
+
+.media_header{
+    font-size: 26px;
+    /* font-family: 'Abril Fatface', cursive; */
+    /* font-family: 'Tinos', serif; */
+    font-family: 'Black Ops One', cursive;
+    border-bottom-style: solid;
+    border-bottom-width: 4px;
+    border-bottom-color: #FFB600;
+    padding: 3px;
+}
+.vision_ico::before{
+    font-size: 36px;
+}
+
 .section_head_title{
     min-height: 100px;
     margin-top: 10px;
 }
 
-#sdg_container{
-    margin-top: 110px;
-}
-#sdgbg{
-    background: url(dot2.png);
-    background-size: 8px;
-    overflow-x: hidden;
-    width: 100vw;
-    height: 500px;
-    position: absolute;
-    left: 0px;
-}
-
-.SDGs_div{
-
-
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    height: 100px;
-    width: 100px;
-    border-radius: 10%;
-    /* border-style: solid;
-    border-color: #ffa600;
-    border-width: 5px; */
-    
-
-}
 
 
 .working_area_icon{
@@ -83,8 +106,8 @@
 
 
 .board_div{
-    min-height: 400px;
-    width: 200px;
+    min-height:400px;
+    width: 100%;
     border-radius: 10px;
     border-style: solid;
     display: flex;
@@ -94,3 +117,5 @@
 .board_separator{
     margin-top: 70px;
 }
+
+

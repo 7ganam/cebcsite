@@ -46,7 +46,7 @@ function ExtendedNavItemComponent(props) {
             <div
                 style={{
 
-                    height: props.location.pathname.startsWith(main_nav.path) ? '70px' : '',
+                    height: props.location.pathname.startsWith(main_nav.path) ? 'auto' : '',
                 }}
                 light
                 expand={`md`}

@@ -1,43 +1,79 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap'
-import ev from "./header.jpg"
 import './EventCardComponent.css'
-function EventCardComponent() {
+import { Link } from "react-router-dom";
+
+function EventCardComponent(props) {
+    // console.log('props.event', props.event)
     return (
+
+
+
         <div style={{ marginTop: "15px", marginBottom: "15px" }}>
-            <Row style={{ minHeight: "250px ", width: "100%", marginTop: "15px" }}>
-                <Col className="event_box" md={3} style={{}}>
-                    <img src={ev} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
+            <Row style={{ minHeight: "250px ", width: "100%", marginTop: "15px", margin: 'auto' }}>
+                <Col className="event_box" md={3} style={{ padding: "0px", backgroundColor: "#ececec" }}>
+                    {props.event.event_thumbnail_image.length > 0 ?
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
+                            <img src={`${process.env.REACT_APP_BACKEND_URL}${props.event.event_thumbnail_image[0].url}`}
+                                style={{ width: "100%", height: "auto", }} alt="" />
+                        </div>
+                        :
+                        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
+                            <img src={"/logo_black.png"}
+                                style={{ width: "100%", height: "auto", }} alt="" />
+                        </div>
+
+                    }
                 </Col>
-                <Col className="event_box" md={6} style={{}}>
+                <Col className="event_box" md={6} style={{ padding: "0px" }}>
                     <div id="event_body">
                         <div id="event_title">
-                            Annual General Meeting 2021
+                            {props.event.title}
                         </div>
                         <div id="event_text">
                             You are invited to attend NBC´s Annual General Meeting 2021 Date You are invited to attend NBC´s Annual General Meeting 2021 Date: ... You are invited to attend NBC´s Annual General Meeting 2021 Date: ...You are invited to attend NBC´s Annual General Meeting 2021 Date: ...You are invited to attend NBC´s Annual General Meeting 2021 Date: ...
-                        </div>
+                            </div>
                     </div>
                 </Col>
-                <Col className="event_box d-flex justify-align-content-start align-items-center" md={3}>
-                    <div class="mec-event-meta mec-color-before p-3">
-                        <div class="mec-date-details text-left my-2">
-                            <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                            <span class="mec-event-d"><span class="mec-start-date-label" itemprop="startDate">23 Feb</span></span>
+                <Col className="event_box d-flex justify-align-content-start align-items-center p-0" md={3}>
+                    <div className="" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%", flexDirection: "column" }}>
+
+                        <div className="my-2"
+                            style={{ borderStyle: "solid", borderWidth: "1px", minHeight: "50px", display: "flex", justifyContent: "center", alignItems: "center", width: "75%" }}>
+                            <div>
+                                <i className="fa fa-calendar mr-2" aria-hidden="true"></i>
+                                <span className="mec-event-d"><span className="mec-start-date-label" itemprop="startDate">{props.event.event_date}</span></span>
+                            </div>
                         </div>
 
-                        <div class="mec-time-details">
-                            <i class="fas fa-clock mr-2 my-2"></i>
-                            <span class="mec-start-time">6:00 PM</span> - <span class="mec-end-time">8:00 PM</span>
+                        <div className="mb-2"
+                            style={{ borderStyle: "solid", borderWidth: "1px", minHeight: "50px", display: "flex", justifyContent: "center", alignItems: "center", width: "75%" }}
+                        >
+                            <div>
+                                <i className="fa fa-calendar mr-2" aria-hidden="true"></i>
+                                <span className="mec-start-time">{props.event.event_end_date}</span>  <span className="mec-end-time"></span>
+                            </div>
                         </div>
                     </div>
                 </Col>
             </Row>
-            <Row style={{ minHeight: "57px ", width: "100%", marginTop: "0px" }}>
-                <Col className="event_box" md={12} style={{ backgroundColor: "#FFA600" }}>
+            <Row style={{ minHeight: "57px ", width: "100%", marginTop: "0px", margin: 'auto' }}>
+                <Col className="event_box" md={12} style={{ backgroundColor: "gainsboro", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", }}>
+                    <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px" }}>
+                        share event
+                        </div>
+                    <div style={{ flexGrow: "1" }}>
+
+                    </div>
+                    <Link to={`/EVENTS/UPCOMMMING/${props.event.id}`}>
+                        <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px" }}>
+                            <div style={{}}>know more</div>
+                        </div>
+                    </Link >
                 </Col>
             </Row>
         </div>
+
     )
 }
 

@@ -51,6 +51,7 @@
     transition: all .5s ease-in-out;
     height: 110px;
     overflow: hidden;
+    height: auto;
     
 }
 
@@ -109,7 +110,7 @@
         flex-direction: row;
         position:absolute;
         top: 98%;
-        height: 50px;
+        /* height: 50px; */
         left: 0px;
         background-color: #FFA600;
         color: white !important;
@@ -138,7 +139,8 @@
         z-index: 100;
         border-color: grey;
         opacity:1;
-        height: 70px;
+        height: auto;
+        /* height: 50px; */
     }
     
     .sub-nav-link-selected{

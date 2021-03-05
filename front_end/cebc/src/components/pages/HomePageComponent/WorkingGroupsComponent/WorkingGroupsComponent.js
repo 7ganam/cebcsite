@@ -1,50 +1,46 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-
 import "./WorkingGroupsComponent.css"
 import WorkingGroupCardComponent from "./WorkingGroupCardComponent/WorkingGroupCardComponent"
-function WorkingGroupsComponent() {
+
+
+
+
+
+function WorkingGroupsComponent(props) {
+
+
+    console.log('props', props)
+
+    const render_groups = (groups) => {
+        const groups_view = groups.map((group, index) => {
+            return (
+                <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+                    <div className="working_group_col_div">
+                        <WorkingGroupCardComponent image={group.thumb_nail_image} title={group.name} />
+                    </div>
+                </Col>
+            )
+        })
+        return (groups_view)
+    }
+
+
     return (
         <div style={{ marginTop: '30px' }}>
             <Container>
                 <Row className=" justify-content-center">
-                    <h2 class="panel__title">
-                        Working groups
-                    </h2>
+                    <div class="section_header">
+                        <span class="section_header_inner">
+                            Working groups
+                            </span>
+                        <div className="section_header_under"></div>
+                    </div>
                 </Row>
-                <Row className=" justify-content-center">
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <WorkingGroupCardComponent image="CEBCSchools.jpg" title="CEBC Schools" />
-                        </div>
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <WorkingGroupCardComponent image="WomeninCleanEnergy.jpg" title="women in clean energy" />
-                        </div>
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <WorkingGroupCardComponent image="sukuk.jpg" title="energy efficeny working group" />
-                        </div>
-
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <WorkingGroupCardComponent image="NEVC.jpg" title="future mobility club" />
-                        </div>
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <WorkingGroupCardComponent image="AboutCEBC-1.jpg" title="clean energy pliciy working group" />
-                        </div>
-
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <WorkingGroupCardComponent image="Efficiency.jpg" title="climate finance working group" />
-                        </div>
-                    </Col>
+                <Row className=" justify-content-center" style={{ marginTop: "40px" }}>
+                    {props.programmes_state.LoadedProgrammes.length > 0 &&
+                        render_groups(props.programmes_state.LoadedProgrammes)
+                    }
                 </Row>
                 <Row className=" justify-content-center">
                     <div className="end_div">
