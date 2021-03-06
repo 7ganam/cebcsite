@@ -30,6 +30,7 @@
 }
 
 .nav_link{
+    min-width: 100px;
     color: rgba(0,0,0,.5);
     display: flex;
     height: 100%;

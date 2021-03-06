@@ -115,7 +115,7 @@ const NavbarComponent = (props) => {
                                 />
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGECENTER" }}
-                                    sub_navs={[{ path: "/KNOWLEDGECENTER1", text: "KNOWLEDGECENTER1" }, { path: "/KNOWLEDGECENTER2", text: "KNOWLEDGECENTER2" }, { path: "/KNOWLEDGECENTER3", text: "KNOWLEDGECENTER3" }]}
+                                    sub_navs={[{ path: "#", text: "webinars" }, { path: "/#", text: "blog" }, { path: "#", text: "blog" }, { path: "#", text: "white paper" }, { path: "#", text: "magazine" }]}
                                 />
 
 

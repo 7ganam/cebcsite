@@ -6,7 +6,7 @@ function KnowledgeCardComponent(props) {
     return (
         <div className={classes.card__group}>
             <a href="#">
-                <span className={classes.card__image} style={{ backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/Knowledge_center/images/${props.image})` }}>
+                <span className={classes.card__image} style={{ backgroundImage: `url(${props.image})` }}>
                     <img src={place_holder_img} alt="working_group_image" />
                 </span>
                 <span className={classes.card__content}>

@@ -12,9 +12,9 @@ function EventCardComponent(props) {
         <div style={{ marginTop: "15px", marginBottom: "15px" }}>
             <Row style={{ minHeight: "250px ", width: "100%", marginTop: "15px", margin: 'auto' }}>
                 <Col className="event_box" md={3} style={{ padding: "0px", backgroundColor: "#ececec" }}>
-                    {props.event.event_thumbnail_image.length > 0 ?
+                    {props.event && props.event.Event_thumbnail_image ?
                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
-                            <img src={`${process.env.REACT_APP_BACKEND_URL}${props.event.event_thumbnail_image[0].url}`}
+                            <img src={`${props.event.Event_thumbnail_image.url}`}
                                 style={{ width: "100%", height: "auto", }} alt="" />
                         </div>
                         :
@@ -28,10 +28,10 @@ function EventCardComponent(props) {
                 <Col className="event_box" md={6} style={{ padding: "0px" }}>
                     <div id="event_body">
                         <div id="event_title">
-                            {props.event.title}
+                            {props.event.Title}
                         </div>
                         <div id="event_text">
-                            You are invited to attend NBC´s Annual General Meeting 2021 Date You are invited to attend NBC´s Annual General Meeting 2021 Date: ... You are invited to attend NBC´s Annual General Meeting 2021 Date: ...You are invited to attend NBC´s Annual General Meeting 2021 Date: ...You are invited to attend NBC´s Annual General Meeting 2021 Date: ...
+                            ....
                             </div>
                     </div>
                 </Col>
@@ -42,7 +42,7 @@ function EventCardComponent(props) {
                             style={{ borderStyle: "solid", borderWidth: "1px", minHeight: "50px", display: "flex", justifyContent: "center", alignItems: "center", width: "75%" }}>
                             <div>
                                 <i className="fa fa-calendar mr-2" aria-hidden="true"></i>
-                                <span className="mec-event-d"><span className="mec-start-date-label" itemprop="startDate">{props.event.event_date}</span></span>
+                                <span className="mec-event-d"><span className="mec-start-date-label" itemprop="startDate">{props.event.Event_date}</span></span>
                             </div>
                         </div>
 
@@ -51,7 +51,7 @@ function EventCardComponent(props) {
                         >
                             <div>
                                 <i className="fa fa-calendar mr-2" aria-hidden="true"></i>
-                                <span className="mec-start-time">{props.event.event_end_date}</span>  <span className="mec-end-time"></span>
+                                <span className="mec-start-time">{props.event.Event_end_date}</span>  <span className="mec-end-time"></span>
                             </div>
                         </div>
                     </div>

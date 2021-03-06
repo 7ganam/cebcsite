@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    Col, Container, Row, Card, CardText, CardBody, CardLink,
+    Col, Container, Row, Card, CardText, CardBody, CardLink, CardFooter,
     CardTitle, CardSubtitle
 } from 'reactstrap'
 import "./AboutPageComponent.css"
@@ -175,8 +175,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -190,8 +194,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -205,8 +213,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -220,8 +232,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -235,8 +251,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -250,8 +270,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -265,8 +289,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -280,8 +308,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -309,8 +341,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -324,8 +360,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -339,8 +379,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -354,8 +398,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -383,8 +431,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>
@@ -398,8 +450,12 @@ function AboutPageComponent() {
                                 <img src={aa} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
                                 <CardBody>
                                     <CardText>Partner, Dentons Dubai and Vice-Chair of the Clean Energy Business Council.</CardText>
-                                    <CardLink href="#"> Link</CardLink>
-                                </CardBody>
+                                </CardBody>                                   <CardFooter>
+                                    <div className="linkedin" style={{ fontSize: "30px" }}>
+                                        <a href="https://www.linkedin.com/">
+                                            <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
+                                        </a>
+                                    </div></CardFooter>
                             </Card>
                         </div>
                     </Col>

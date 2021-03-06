@@ -27,7 +27,7 @@ export default function MainComponent() {
             try {
 
                 const responseData = await sendProgrammesRequest(
-                    `http://localhost:1337/programmes-and-groups`
+                    `${process.env.REACT_APP_BACKEND_URL}/programmes-and-groups`
                 );
 
                 setLoadedProgrammes(responseData);

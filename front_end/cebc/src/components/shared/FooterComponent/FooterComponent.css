@@ -78,10 +78,7 @@ body, input, select, textarea, p {
 body, input, select, textarea, p {
     font-family: Open Sans;
 }
-a {
-    text-decoration: none;
-    color: #BABFC5 !important ;
-}
+
 .scheme .footer a {
     color: #BABFC5 !important ;
 }

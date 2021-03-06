@@ -17,21 +17,19 @@ function EventViewPageComponent(props) {
 
     const { isLoading: EventIsLoading, error: EventError, sendRequest: sendEventRequest, clearError } = useHttpClient();
     const [LoadedEvent, setLoadedEvent] = useState(null);
-
     const fetchEvent = useCallback(
         async () => {
 
             try {
                 const responseData = await sendEventRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/evnets/${Event_id}`
+                    `${process.env.REACT_APP_BACKEND_URL}/events/${Event_id}`
                 );
 
 
 
-                const event_post = responseData.event_post;
+                const event_post = responseData.Event_post;
                 const modified_event_post = event_post.replace('/uploads', `${process.env.REACT_APP_BACKEND_URL}/uploads`);
                 let modified_event = { ...responseData, event_post: modified_event_post }
-                console.log('evente', modified_event)
 
                 setLoadedEvent(modified_event);
 
@@ -64,9 +62,9 @@ function EventViewPageComponent(props) {
 
 
                             <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px" }}>
-                                {LoadedEvent.event_thumbnail_image.length > 0 ?
+                                {LoadedEvent.Event_thumbnail_image ?
                                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
-                                        <img src={`${process.env.REACT_APP_BACKEND_URL}${LoadedEvent.event_thumbnail_image[0].url}`}
+                                        <img src={`${LoadedEvent.Event_thumbnail_image.url}`}
                                             style={{ width: "300px", height: "auto", }} alt="" />
                                     </div>
                                     :
@@ -78,11 +76,11 @@ function EventViewPageComponent(props) {
                             <div id="header_text"
                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "210px", justifyContent: "center" }}>
                                 <div id="event_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
-                                    <h1> {LoadedEvent.title}</h1>
+                                    <h1> {LoadedEvent.Title}</h1>
                                 </div>
                                 <div id="event_box_date" style={{ textAlign: "start", fontSize: '30px', color: "#56c7ec" }}>
                                     <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                                    <span>{moment(LoadedEvent.event_date).format('DD-MMMM-YYYY')}</span>
+                                    <span>{moment(LoadedEvent.Event_date).format('DD-MMMM-YYYY')}</span>
 
 
                                 </div>

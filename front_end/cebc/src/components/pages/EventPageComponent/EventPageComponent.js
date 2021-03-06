@@ -21,8 +21,7 @@ function EventPageComponent(props) {
 
 
     const evetns_per_page = 10;
-    console.log('props.match.params', props.match.params)
-    console.log('!props.match.params', !props.match.params)
+
 
 
 
@@ -42,9 +41,10 @@ function EventPageComponent(props) {
                 var current_date = localTime + "T00:00:00.000Z";
                 var current_date = localTime;
                 const responseData = await sendUpcommingEventsRequest(
-                    `http://localhost:1337/evnets?event_date_gte=${current_date}`
-                    // `http://localhost:1337/evnets?event_date_gte=2019-01-01T00:00:00Z`
+                    `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_gte=${current_date}`
                 );
+
+                console.log('comming evs', responseData)
 
                 setLoadedUpcommingEvents(responseData);
             } catch (err) {
@@ -65,7 +65,7 @@ function EventPageComponent(props) {
 
 
                 const responseData = await sendPastEventsRequest(
-                    `http://localhost:1337/evnets?event_date_lt=${current_date}&_limit=10`
+                    `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_lt=${current_date}&_limit=10`
                 );
 
                 setLoadedPastEvents(responseData);
@@ -96,7 +96,7 @@ function EventPageComponent(props) {
 
         const events_object = {}
         for (const event of upcomming_events) {
-            let momentDate = moment(event.event_date)
+            let momentDate = moment(event.Event_date)
             let year = momentDate.year();
             let month = momentDate.month();
 
@@ -121,6 +121,7 @@ function EventPageComponent(props) {
                 )
 
                 for (const event of events_object[year][month]) {
+
                     // console.log('props.event', event)
                     render_event.push(
                         <Container className="mt-5">
@@ -148,7 +149,7 @@ function EventPageComponent(props) {
 
         const events_object = {}
         for (const event of past_events) {
-            let momentDate = moment(event.event_date)
+            let momentDate = moment(event.Event_date)
             let year = momentDate.year();
             let month = momentDate.month();
 
@@ -166,16 +167,16 @@ function EventPageComponent(props) {
 
                         <Col md={4} lg={3}>
                             <Card>
-                                {event.event_thumbnail_image.length > 0 ?
+                                {event.Event_thumbnail_image ?
 
-                                    <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${process.env.REACT_APP_BACKEND_URL}${event.event_thumbnail_image[0].url}`} alt="Card image cap" />
+                                    <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${event.Event_thumbnail_image.url}`} alt="Card image cap" />
                                     :
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                                 }
                                 <CardBody>
-                                    <CardTitle tag="h5"> {event.title}</CardTitle>
+                                    <CardTitle tag="h5"> {event.Title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted"> <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                                        <span class="mec-event-d"><span class="mec-start-date-label" itemprop="startDate">{event.event_date}</span></span>
+                                        <span class="mec-event-d"><span class="mec-start-date-label" itemprop="startDate">{event.Event_date}</span></span>
                                     </CardSubtitle>
                                     <CardText></CardText>
                                 </CardBody>

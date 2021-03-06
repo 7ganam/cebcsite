@@ -10,14 +10,14 @@ import WorkingGroupCardComponent from "./WorkingGroupCardComponent/WorkingGroupC
 function WorkingGroupsComponent(props) {
 
 
-    console.log('props', props)
+    console.log('WorkingGroupsComponent', props)
 
     const render_groups = (groups) => {
         const groups_view = groups.map((group, index) => {
             return (
                 <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                     <div className="working_group_col_div">
-                        <WorkingGroupCardComponent image={group.thumb_nail_image} title={group.name} />
+                        <WorkingGroupCardComponent image={group.Thumb_nail_image} title={group.Name} />
                     </div>
                 </Col>
             )

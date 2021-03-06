@@ -22,34 +22,34 @@ function KnowledgeCenterComponent() {
                 <Row className=" justify-content-center">
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="reports.png" title="REPORTS" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/reports_bf47b2be7f.png" title="REPORTS" />
                         </div>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="web.jpg" title="WEBINARS" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/web_43fb26057b.jpg" title="WEBINARS" />
                         </div>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="case.jpg" title="RESEARCH PAPER & CASE STUDY" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/case_effb64a5fd.jpg" title="RESEARCH PAPER & CASE STUDY" />
                         </div>
 
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="blog.jpg" title="BLOG" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/blog_567132f143.jpg" title="BLOG" />
                         </div>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="news.jfif" title="NEWSLETTER" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/news_09e2a5edc5.jfif" title="NEWSLETTER" />
                         </div>
 
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="mags.jpg" title="MAGAZINES" />
+                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/mags_887a530fbb.jpg" title="MAGAZINES" />
                         </div>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
