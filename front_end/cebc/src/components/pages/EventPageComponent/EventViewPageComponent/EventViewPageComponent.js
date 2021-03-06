@@ -97,8 +97,9 @@ function EventViewPageComponent(props) {
                             </div>
                         </div>
                     </div>
+
                     :
-                    <div id="loading_spinner" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "400px" }} >
+                    <div id="loading_spinner" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "150px" }} >
                         <div style={{ marginTop: "100px" }}>
                             <ReactLoading type={"spin"} color={"#00D2F9"} width={"20vw"} />
                         </div>
