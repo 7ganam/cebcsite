@@ -33,25 +33,41 @@ function ExtendedNavItemComponent(props) {
     }
 
 
+    var win = window,
+        doc = document,
+        docElem = doc.documentElement,
+        body = doc.getElementsByTagName('body')[0],
+        x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+        y = win.innerHeight || docElem.clientHeight || body.clientHeight;
+
+    const sub_nav_ref = React.createRef();
+    const show_sub_nav = () => {
+        if (x < 768) {
+            sub_nav_ref.current.classList.toggle("drop")
+        }
+    }
+
     return (
 
 
         <NavItem NavItem className={props.location.pathname.startsWith(main_nav.path) ? 'nav-link-selected' : ''}
             style={{ display: 'relative' }}
+
         >
-            <Link className="nav_link" to={main_nav.path}>
+            <Link onClick={show_sub_nav} className="nav_link" to={main_nav.path}>
                 {main_nav.text}
                 <i class="fas ml-2 fa-chevron-circle-down"></i>
             </Link>
             <div
                 style={{
 
-                    height: props.location.pathname.startsWith(main_nav.path) ? 'auto' : '',
+                    transform: props.location.pathname.startsWith(main_nav.path) && x >= 768 ? 'scaleY(1)' : '',
                 }}
                 light
                 expand={`md`}
                 fixed="top"
                 className="my-sub-nav"
+                ref={sub_nav_ref}
             >
 
 

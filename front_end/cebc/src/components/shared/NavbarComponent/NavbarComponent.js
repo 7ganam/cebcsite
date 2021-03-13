@@ -35,6 +35,10 @@ const NavbarComponent = (props) => {
 
 
     useEffect(() => { //add scrolled class to elements that should behave diffrently when window is scrolled
+        var $navitem = $(".nav-item"); // add the scrolled class with jquery to all the nave links when scrolled
+        var $navlink = $(".nav_link"); // add the scrolled class with jquery to all the nave links when scrolled
+        $navlink.toggleClass('scrolled', $(document).scrollTop() > $navlink.height());
+        $navitem.toggleClass('not_scrolled', $(document).scrollTop() < $navlink.height());
         $(function () {
             $(document).scroll(function () {
                 var $nav = $("#my_nav"); // change the Scrolled state when we scroll more than the navbar height
@@ -46,8 +50,9 @@ const NavbarComponent = (props) => {
                 }
 
 
-                var $navlink = $(".nav_link"); // add the scrolled class with jquery to all the nave links when scrolled
+
                 $navlink.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
+                $navitem.toggleClass('not_scrolled', $(this).scrollTop() < $navlink.height());
 
             });
         });
@@ -71,34 +76,34 @@ const NavbarComponent = (props) => {
                         light
                         expand={`md`}
                         fixed="top"
-                        //  style={{ top: "23px" }}
+                        style={{ alignItems: "stretch" }}
                         className={`
-                        justify-content-between light  py-lg-0
+                         light  py-lg-0
                         ${Scrolled ? "scrolled" : ""} 
-                        
                         ${!Scrolled && !(props.location.pathname === "/" || props.location.pathname === "/ABOUTUS") ? "dark_bg" : ""}
                         `}
                         id="my_nav"
                     >
 
-                        <NavbarBrand href="/">
-                            <img style={{ width: "auto", height: "70px" }} src={!Scrolled && $(window).width() > 768 ? logo_white : logo_black} id="c" alt="oval" />
+                        <NavbarBrand id="nav_brand" href="/" className="p-0">
+                            <img id="nav_img" style={{ height: "100%", width: "auto" }} src={!Scrolled && $(window).width() > 768 ? logo_white : logo_black} alt="oval" />
                         </NavbarBrand>
 
                         <NavbarToggler onClick={toggle} className="ml-auto" />
 
                         <Collapse isOpen={isOpen} navbar className="justify-content-end" >
-                            <Nav className="ml-auto d-flex nav_list" navbar style={{ minHeight: "80px" }}>
+                            <Nav className="ml-auto d-flex nav_list" navbar style={{}}>
 
 
 
-                                <NavItem className={props.location.pathname !== "/" ? '' : 'nav-link-selected'}>
+                                <NavItem className={`${props.location.pathname !== "/" ? '' : 'nav-link-selected'} `}>
                                     <Link className="nav_link" to="/">
                                         Home
                                     </Link>
                                 </NavItem>
 
-                                <NavItem className={props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'}>
+                                <NavItem className={`${props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'} `}>
+
                                     <Link className="nav_link" to="/ABOUTUS">
                                         about
                                     </Link>

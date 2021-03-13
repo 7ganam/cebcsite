@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import NewsComponent from "./NewsComponent/NewsComponent"
 import WorkingGroupsComponent from "./WorkingGroupsComponent/WorkingGroupsComponent"
@@ -11,13 +11,28 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 export default function HomePageComponent(props) {
 
 
+    useEffect(() => {
+        window.$("#rcbrand-demo").rcbrand({
+            visibleItems: 4
+        });
 
+    }, [])
 
 
     return (
         <div>
 
             <VideoComponent />
+            <div>
+
+                <ul id="rcbrand-demo">
+                    <li><img src="/members/m2.jpg" /></li>
+                    <li><img src="/members/m2.jpg" /></li>
+                    <li><img src="/members/m2.jpg" /></li>
+                    <li><img src="/members/m2.jpg" /></li>
+                    <li><img src="/members/m2.jpg" /></li>
+                </ul>
+            </div>
 
             <div id="news_section">
                 <NewsComponent />
