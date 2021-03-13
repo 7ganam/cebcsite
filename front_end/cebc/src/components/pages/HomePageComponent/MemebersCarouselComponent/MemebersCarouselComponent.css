@@ -1,0 +1,32 @@
+.mem_carousel_elem{
+    height: 170px;
+    /* border: black 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mem_carousel_sub_elem{
+    width: 250px;
+    height: 130px;
+    /* border: red 1px solid; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: -2px 2px 3px 0px #00000030;
+
+}
+
+.mem_carousel_img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0px !important;
+}
+
+.rc-rcbrand-inner{
+    border: 0px;
+}
+.rc-rcbrand-nav-left , .rc-rcbrand-nav-right {
+    display: none;
+}

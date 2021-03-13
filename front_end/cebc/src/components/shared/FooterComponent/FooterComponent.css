@@ -1,7 +1,8 @@
 .footer {
-    background-color: #1B273D;
+    background-color: #171717;
     color: #babfc5;
     text-align: left;
+    margin-top: 50px;
 }
 .footer {
     padding: 60px 0 40px;
@@ -45,7 +46,7 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
     left: 0;
     bottom: 10px;
     position: absolute;
-    background-color: #ffb600;
+    background-color: #202020;
 
 }
 
@@ -158,8 +159,8 @@ body, input, select, textarea, p {
 
 
 .copyright {
-    background-color: #ffb600;
-    color: #353535;
+    background-color: #000000;
+    color: #ffb6009c;
 }
 .copyright {
     padding: 25px 0;

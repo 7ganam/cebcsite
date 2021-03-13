@@ -49,7 +49,7 @@ function AboutPageComponent() {
                 </Col>
                 <Row style={{ position: "relative", top: "" }}>
 
-                    <Col md={{ size: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i className="solid  fas fa-hands-helping"></i>
@@ -62,7 +62,7 @@ function AboutPageComponent() {
                         </div>
 
                     </Col>
-                    <Col md={{ size: 6, order: 2, offset: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6, order: 2, offset: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i class="solid fas fa-charging-station"></i>
@@ -80,7 +80,7 @@ function AboutPageComponent() {
                 </Row>
                 <Row style={{ position: "relative", top: "" }}>
 
-                    <Col md={{ size: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i class="fas fa-file-contract"></i>
@@ -93,7 +93,7 @@ function AboutPageComponent() {
                         </div>
 
                     </Col>
-                    <Col md={{ size: 6, order: 2, offset: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6, order: 2, offset: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i class="fas fa-chess"></i>
@@ -110,7 +110,7 @@ function AboutPageComponent() {
                 </Row>
                 <Row style={{ position: "relative", top: "" }}>
 
-                    <Col md={{ size: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i class="solid  fas fa-lightbulb"></i>
@@ -123,7 +123,7 @@ function AboutPageComponent() {
                         </div>
 
                     </Col>
-                    <Col md={{ size: 6, order: 2, offset: 6 }}>
+                    <Col className="p-md-2" md={{ size: 6, order: 2, offset: 6 }}>
                         <div className="media  media_element">
                             <div className="vision_icon" style={{}}>
                                 <i class="  fas  fa-university"></i>
@@ -141,13 +141,9 @@ function AboutPageComponent() {
 
             </Container>
 
-
             <SDGComponenet />
 
             <WorkingAreaComponent />
-
-
-
 
 
 

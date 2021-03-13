@@ -5,39 +5,26 @@ import WorkingGroupsComponent from "./WorkingGroupsComponent/WorkingGroupsCompon
 import "./HomePageComponent.css"
 import VideoComponent from './VideoComponent/VideoComponent'
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
+import MemebersCarouselComponent from "./MemebersCarouselComponent/MemebersCarouselComponent"
 
 
 export default function HomePageComponent(props) {
 
 
-    useEffect(() => {
-        window.$("#rcbrand-demo").rcbrand({
-            visibleItems: 4
-        });
 
-    }, [])
 
 
     return (
         <div>
 
             <VideoComponent />
-            <div>
 
-                <ul id="rcbrand-demo">
-                    <li><img src="/members/m2.jpg" /></li>
-                    <li><img src="/members/m2.jpg" /></li>
-                    <li><img src="/members/m2.jpg" /></li>
-                    <li><img src="/members/m2.jpg" /></li>
-                    <li><img src="/members/m2.jpg" /></li>
-                </ul>
-            </div>
+            <MemebersCarouselComponent />
 
-            <div id="news_section">
+            <div id="news_section" style={{ marginTop: "270px" }}>
                 <NewsComponent />
             </div>
-            <div id="working_groups_section" style={{ marginTop: "100px" }}>
+            <div id="working_groups_section" style={{ marginTop: "100px", backgroundColor: "#f7f7f7", paddingBottom: "100px " }}>
                 <WorkingGroupsComponent programmes_state={props.programmes_state} />
             </div>
 
@@ -49,7 +36,7 @@ export default function HomePageComponent(props) {
             </div>
 
 
-            <div style={{ marginTop: "100px" }}>
+            <div id="twtr_container" style={{ marginTop: "70px" }}>
                 <TwitterTimelineEmbed
                     sourceType="profile"
                     screenName="CEBC2"

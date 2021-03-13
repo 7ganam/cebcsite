@@ -37,7 +37,6 @@
 
 
 @media (min-width: 768px) {
-    
 
     .fixed-top {
         background-color: transparent !important;
@@ -57,6 +56,11 @@
         border-style: solid;
         
      }
+     .nav-item.not_scrolled.nav-link-selected{
+        background: #ffffff70;
+        /* height: 50px; */
+
+     }
 
     
 }  
@@ -69,6 +73,7 @@
     font-size: 15px;
     text-transform: uppercase;
     height: 100%;
+    justify-content: center;
 }
 
 

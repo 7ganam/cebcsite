@@ -125,7 +125,7 @@ const NavbarComponent = (props) => {
 
 
 
-                                <NavItem className={props.location.pathname !== "/" ? '' : 'nav-link-selected'}>
+                                <NavItem className={props.location.pathname !== "/khu" ? '' : 'nav-link-selected'}>
                                     <Link className="nav_link" to="/">
                                         contact us
                                     </Link>

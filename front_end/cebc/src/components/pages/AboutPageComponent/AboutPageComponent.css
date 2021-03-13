@@ -119,3 +119,14 @@
 }
 
 
+.media-body{
+    padding: 15px;
+    border: 1px solid #8080804f;
+    border-radius: 7px;
+    background: white;
+    box-shadow: -3px 2px 3px 0px #00000012
+}
+
+.vision_icon{
+    box-shadow: inset -2px 2px 2px rgb(0 0 0 / 18%);
+}
