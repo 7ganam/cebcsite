@@ -35,12 +35,12 @@ function AboutPageComponent() {
             </div>
 
             <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
-                <img src="/assets/images/sha1.jpg" alt="" style={{ width: "100%", height: "auto", position: "absolute", top: "-200px", right: "-45vw" }} />
+                <img src="/assets/images/sha1.jpg" alt="" style={{ width: "100%", height: "auto", position: "absolute", top: "-200px", right: "-45vw", opacity: ".5" }} />
             </div>
 
             <Container style={{ marginTop: "150px", marginBottom: "150px", }}>
                 <Col sm="12">
-                    <div class="section_header" style={{ marginBottom: "100px" }}>
+                    <div class="section_header" style={{ marginBottom: "120px" }}>
                         <span class="section_header_inner">
                             Our Vision and Mission
                             </span>
@@ -141,10 +141,14 @@ function AboutPageComponent() {
 
             </Container>
 
-            <SDGComponenet />
 
-            <WorkingAreaComponent />
+            <div style={{ marginTop: "", backgroundColor: "#f7f7f7", height: "500px", paddingTop: "1px" }}>
+                <SDGComponenet />
+            </div>
 
+            <div style={{ marginTop: "", backgroundColor: "#f7f7f7", paddingTop: "1px" }}>
+                <WorkingAreaComponent />
+            </div>
 
 
 

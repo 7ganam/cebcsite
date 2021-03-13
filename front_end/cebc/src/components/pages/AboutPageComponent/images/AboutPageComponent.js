@@ -156,13 +156,13 @@ function AboutPageComponent() {
 
 
                     <div id="sdg_container">
-                        <div id="sdgbg"></div>
+                        {/* <div id="sdgbg"></div> */}
                         <Row id="SDGs_row" className="justify-content-center">
                             <Col sm="12">
                                 <div className="section_head_title" >
                                     <div className="panel__title">
-                                        We work with an aim to achieve the
-                                        Sustainable Development Goals (SDGs)
+                                        We work with an aim to achieve thee
+                                        Sustainable Development Goals (SDddGs)
                                     </div>
                                 </div>
                             </Col>

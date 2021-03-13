@@ -13,13 +13,13 @@ function SDGComponenet() {
 
 
         <Container>
-            <div id="sdgbg"></div>
+            {/* <div id="sdgbg"></div> */}
             <div id="sdg_container">
 
                 <Row id="SDGs_row" className="justify-content-center">
                     <Col sm="12">
                         <div className="section_head_title" >
-                            <div className="panel__title">
+                            <div className="sdg_title">
                                 We work with an aim to achieve the
                                 Sustainable Development Goals (SDGs)
                       </div>
