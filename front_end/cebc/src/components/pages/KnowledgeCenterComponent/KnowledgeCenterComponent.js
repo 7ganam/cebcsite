@@ -12,10 +12,10 @@ function KnowledgeCenterComponent() {
         <div >
 
             <div id="header_knowledge">
-                <i class="icon solid major fas fa-lightbulb"></i>
                 <h1>Knowledge Center.</h1>
                 <p>The archives of our 10 years experience in the industry.</p>
             </div>
+
             <Container style={{ marginTop: "130px ", marginBottom: "130px " }}>
 
 

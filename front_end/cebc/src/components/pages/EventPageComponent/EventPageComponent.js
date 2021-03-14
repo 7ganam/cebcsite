@@ -166,7 +166,7 @@ function EventPageComponent(props) {
                     sub_objects.push(
 
                         <Col md={4} lg={3}>
-                            <Card>
+                            <Card className="past_event_card">
                                 {event.Event_thumbnail_image ?
 
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${event.Event_thumbnail_image.url}`} alt="Card image cap" />
@@ -182,7 +182,7 @@ function EventPageComponent(props) {
                                 </CardBody>
                                 <CardFooter className="text-muted">
                                     <Link to={`/EVENTS/PAST/${event.id}`}>
-                                        <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px" }}>
+                                        <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                                             <div style={{}}>know more</div>
                                         </div>
                                     </Link >
@@ -197,13 +197,19 @@ function EventPageComponent(props) {
 
         let render_event = []
         render_event.push(
-            <Container fluid className="p-0">
-                <div style={{ marginTop: "150px ", height: "250px", backgroundColor: "#1B273D", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <div style={{ color: "white", fontSize: "60px" }}>
-                        Past events
-                    </div>
-                </div>
-            </Container>
+            // <Container fluid className="p-0">
+            //     <div style={{ marginTop: "150px ", height: "250px", backgroundColor: "#1B273D", display: "flex", justifyContent: "center", alignItems: "center" }}>
+            //         <div style={{ color: "white", fontSize: "60px" }}>
+            //             Past events
+            //         </div>
+            //     </div>
+            // </Container>
+            <div class="section_header" style={{ marginTop: "100px" }}>
+                <span class="section_header_inner">
+                    Past events
+            </span>
+                <div className="section_header_under"></div>
+            </div>
         )
 
         for (const year in events_object) {
@@ -238,9 +244,9 @@ function EventPageComponent(props) {
 
             {!props.match.params.Event_type ?
                 <>
-                    <div id="header_">
-                        <span class="logo icon fa-paper-plane"></span>
-                        <h1>Our events.</h1>
+                    <div id="header_event">
+                        {/* <span class="logo icon fa-paper-plane"></span> */}
+                        <h1>CEBC EVETNS.</h1>
                         <p>CEBC members and strategic partners events.</p>
                     </div>
                     <div></div>
@@ -250,7 +256,7 @@ function EventPageComponent(props) {
                     }
                     {
                         LoadedPastEvents.length > 0 &&
-                        <div style={{ backgroundColor: "" }}>
+                        <div style={{ backgroundColor: "rgb(247, 247, 247)", padding: "10px", paddingBottom: "80px", marginTop: "30px", position: " relative", top: "50px" }} >
                             {render_past_events(LoadedPastEvents)}
                         </div>
                     }
@@ -261,7 +267,7 @@ function EventPageComponent(props) {
 
                     {props.match.params.Event_type === "Past" && LoadedPastEvents.length > 0 &&
                         <>
-                            <div id="header_">
+                            <div id="header_event">
                                 <span class="logo icon fa-paper-plane"></span>
                                 <h1>Past events.</h1>
                                 <p>CEBC members and strategic partners events.</p>
@@ -273,7 +279,7 @@ function EventPageComponent(props) {
                     }
                     {props.match.params.Event_type === "Upcoming" && LoadedUpcommingEvents.length > 0 &&
                         <>
-                            <div id="header_">
+                            <div id="header_event">
                                 <span class="logo icon fa-paper-plane"></span>
                                 <h1>Upcomming events.</h1>
                                 <p>CEBC members and strategic partners events.</p>

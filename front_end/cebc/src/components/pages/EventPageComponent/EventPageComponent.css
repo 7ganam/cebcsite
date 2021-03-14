@@ -1,29 +1,42 @@
-#header_ {
-    margin-top: 10px;
+#header_event {
+    margin-top: 40px;
     height: 600px;
     background-attachment: scroll, scroll, scroll;
-    background-image: url(images/top-1600.svg), url(images/overlay2.png), url(images/header.jpg);
-    background-size: 1600px 230px, auto, cover;
+
     padding: 6em 0 12em 0;
     background-attachment: scroll, scroll, fixed;
-    background-image: url(images/top-3200.svg), url(images/overlay2.png), url(images/header.jpg);
-    background-position: bottom -1px center, top left, center center;
+    background-image: url(images/top-3200.svg), url(images/overlay6.png), url(images/Clean-Air-Forum-Photo-23.jpg);
+    background-position: bottom -1px center, top 100px left, center center;
     background-repeat: repeat-x, repeat, no-repeat;
     background-size: 3200px 460px, auto, cover;
     color: rgba(255, 255, 255, 0.8);
     padding: 10em 0 20em 0;
     position: relative;
     text-align: center;
+    
+    
 }
 
 
+#header_event h1{
+    font-size: 60px;
+    line-height: 45px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Stardos Stencil', cursive;
+    margin-bottom: 20px;
+    color: #ffffff;
+    margin-top: 100px;
 
-header_:before {
+}
+
+header_event:before {
     height: calc(100% - 50px);
     opacity: 0.15;
     top: 0;
 }
-#header_:before, #header_:after {
+#header_event:before, #header_event:after {
     background: rgba(224, 224, 224, 0.75);
     content: '';
     left: 50%;
@@ -32,7 +45,7 @@ header_:before {
     z-index: 0;
 }
 
-#header_ .logo {
+#header_event .logo {
     background: #4eb98000;
     border-radius: 100%;
     color: #ffffff;
@@ -46,18 +59,12 @@ header_:before {
     width: 2.35em;
 }
 
-#header_ h1 {
-    font-size: 3em;
-    color: #ffffff;
-
-}
-
 .mec-month-divider{
     margin-top: 100px;
 }
 
 .mec-month-divider span:before {
-    border-bottom: 4px solid #40d9f1;
+    border-bottom: 4px solid #FFB600;
     font-size: 6px;
     content: "";
     text-align: center;

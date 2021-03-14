@@ -11,10 +11,7 @@ import hakone from "../Policy-Working-Group-Photo-62.jpg";
 import byodoInTemple from "../DSCF5480-1024x6832.jpg";
 // Images
 
-const kyoto2 = "https://i.imgur.com/xw5Abku.jpg";
-const tenryuJiTemple2 = "https://i.imgur.com/g5JNdYL.jpg";
-const hakone2 = "https://i.imgur.com/Iq6XtFR.jpg";
-const byodoInTemple2 = "https://i.imgur.com/le9OeEC.jpg";
+
 
 // const kyoto = "https://i.imgur.com/xw5Abku.jpg";
 // const tenryuJiTemple = "../Clean-Air-Forum-Photo-2.jpg";

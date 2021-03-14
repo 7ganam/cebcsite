@@ -18,6 +18,8 @@ import f from "./images/6.png"
 import wice from "./images//WomeninCleanEnergy.jpg"
 import Member from "./images//Member.jpg"
 import NEVC from "./images/NEVC.jpg"
+import mena from "./images/mena1.png"
+
 import WorkingAreaComponent from "./WorkingAreaComponent/WorkingAreaComponent"
 import aa from "./images/board/aa.png"
 
@@ -36,6 +38,12 @@ function AboutPageComponent() {
 
             <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
                 <img src="/assets/images/sha1.jpg" alt="" style={{ width: "100%", height: "auto", position: "absolute", top: "-200px", right: "-45vw", opacity: ".5" }} />
+            </div>
+
+            <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
+                <img src={mena} alt="" style={{
+                    width: "100%", height: "auto", position: "absolute", right: ' 0', top: '500px', filter: 'gray', filter: ' grayscale(1)', opacity: ' .1',
+                }} />
             </div>
 
             <Container style={{ marginTop: "150px", marginBottom: "150px", }}>
@@ -157,10 +165,11 @@ function AboutPageComponent() {
             </div>
 
             <Container className="partition_separator board_separator" fluid>
-                <div>
-                    <div className="panel__title">
-                        THE CEBC BOARD
-                        </div>
+                <div class="section_header" style={{ margin: "0px 0 100px 0px", zIndex: "333" }}>
+                    <span class="section_header_inner">
+                        Our Board
+                            </span>
+                    <div className="section_header_under"></div>
                 </div>
             </Container>
 
@@ -322,12 +331,12 @@ function AboutPageComponent() {
                 </Row>
             </Container>
 
-            <Container className="partition_separator board_separator" fluid>
-
-                <div className="panel__title">
-                    BOARD ADVISORY COMMITTEE
-                    </div>
-            </Container>
+            <div class="section_header" style={{ margin: "100px 0 100px 0px", zIndex: "333" }}>
+                <span class="section_header_inner">
+                    Board Advisory Committee
+                            </span>
+                <div className="section_header_under"></div>
+            </div>
 
             <Container id="board_content_2" >
                 <Row className=" justify-content-center align-items-center" >
@@ -413,11 +422,12 @@ function AboutPageComponent() {
                 </Row>
             </Container>
 
-            <Container className="partition_separator board_separator" fluid>
-                <div className="panel__title">
-                    CEBC TEAM
-                    </div>
-            </Container>
+            <div class="section_header" style={{ margin: "100px 0 100px 0px", zIndex: "333" }}>
+                <span class="section_header_inner">
+                    CEBC Team
+                            </span>
+                <div className="section_header_under"></div>
+            </div>
 
             <Container id="board_content_3" >
                 <Row className=" justify-content-center align-items-center" >

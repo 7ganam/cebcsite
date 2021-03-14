@@ -9,8 +9,8 @@ function EventCardComponent(props) {
 
 
 
-        <div style={{ marginTop: "15px", marginBottom: "15px" }}>
-            <Row style={{ minHeight: "250px ", width: "100%", marginTop: "15px", margin: 'auto' }}>
+        <div className="event_card" style={{ marginTop: "15px", marginBottom: "15px" }}>
+            <Row style={{ minHeight: "200px ", width: "100%", marginTop: "15px", margin: 'auto' }}>
                 <Col className="event_box" md={3} style={{ padding: "0px", backgroundColor: "#ececec" }}>
                     {props.event && props.event.Event_thumbnail_image ?
                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
@@ -58,15 +58,15 @@ function EventCardComponent(props) {
                 </Col>
             </Row>
             <Row style={{ minHeight: "57px ", width: "100%", marginTop: "0px", margin: 'auto' }}>
-                <Col className="event_box" md={12} style={{ backgroundColor: "gainsboro", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", }}>
-                    <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px" }}>
+                <Col className="event_box" md={12} style={{ backgroundColor: "black", display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", }}>
+                    <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                         share event
                         </div>
                     <div style={{ flexGrow: "1" }}>
 
                     </div>
                     <Link to={`/EVENTS/UPCOMMMING/${props.event.id}`}>
-                        <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px" }}>
+                        <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                             <div style={{}}>know more</div>
                         </div>
                     </Link >

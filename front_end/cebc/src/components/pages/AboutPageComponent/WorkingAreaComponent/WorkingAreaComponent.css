@@ -98,6 +98,7 @@ element.style {
     }
     .carousel * {
         background: transparent;
+        background: white !important;
         
     }
     .slide{
@@ -113,19 +114,31 @@ element.style {
     .carousel .control-next.control-arrow:before {
         border-left: 8px solid #212529 !important;
     }
+    .legend{
+        display: none;
+    }
     
     .control-dots , .thumbs-wrapper  {
-        background-color: transparent;
+        background-color: transparent !important;
     }
     .thumbs-wrapper .control-arrow.control-next ,.thumbs-wrapper .control-arrow.control-prev{
         background-color: transparent !important;
         opacity: 0;
         /* display: none; */
+
         
     }
     .thumbs-wrapper{
         margin-top: 30px !important; 
     }
+    .thumbs{
+        background: transparent !important;
+    }
+li.thumb{
+    box-shadow: 0 0 3px 1px rgb(0 0 0 / 24%);
+
+}
+
     .carousel_wrapper{
         box-shadow: 0 0 3px 1px rgb(0 0 0 / 24%);
         background: white ;

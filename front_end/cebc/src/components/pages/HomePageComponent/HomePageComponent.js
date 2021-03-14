@@ -30,7 +30,7 @@ export default function HomePageComponent(props) {
 
             <div class="section_header" style={{ marginTop: "100px" }}>
                 <span class="section_header_inner">
-                    our socials
+                    Socials
                             </span>
                 <div className="section_header_under"></div>
             </div>
