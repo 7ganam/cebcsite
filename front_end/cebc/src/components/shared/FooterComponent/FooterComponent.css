@@ -70,15 +70,11 @@ article, aside, details, figcaption, figure, footer, header, main, nav, section 
 .footer .textwidget p {
     margin-bottom: 0.7em;
 }
-body, input, select, textarea, p {
-    font-family: Open Sans;
-}
+
 .footer .textwidget p {
     margin-bottom: 0.7em;
 }
-body, input, select, textarea, p {
-    font-family: Open Sans;
-}
+
 
 .scheme .footer a {
     color: #BABFC5 !important ;

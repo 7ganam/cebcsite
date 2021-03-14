@@ -28,7 +28,7 @@ export default function HomePageComponent(props) {
                 <WorkingGroupsComponent programmes_state={props.programmes_state} />
             </div>
 
-            <div class="section_header" style={{ marginTop: "100px" }}>
+            <div class="section_header" style={{ marginTop: "60px" }}>
                 <span class="section_header_inner">
                     Socials
                             </span>

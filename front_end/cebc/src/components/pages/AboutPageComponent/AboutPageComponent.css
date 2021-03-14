@@ -63,6 +63,7 @@
     border-bottom-width: 4px;
     border-bottom-color: #FFB600;
     padding: 3px;
+    margin-bottom: 5px;
 }
 .vision_ico::before{
     font-size: 36px;

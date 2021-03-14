@@ -30,7 +30,7 @@ function WorkingGroupsComponent(props) {
         <div style={{ marginTop: '30px' }}>
             <Container>
                 <Row className=" justify-content-center">
-                    <div class="section_header">
+                    <div class="section_header" style={{ marginTop: "30px" }}>
                         <span class="section_header_inner">
                             Working groups
                             </span>
