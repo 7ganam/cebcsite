@@ -1,37 +1,37 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-loading';
-import { useHttpClient } from "../../../../hooks/http-hook"
+import { useHttpClient } from "../../../../../hooks/http-hook"
 
 import renderHTML from 'react-render-html';
-import "./EventViewPageComponent.css"
+import "./NewsViewPageComponent.css"
 import Editor from './Editor/Editor'
 import { Col, Container, Row } from 'reactstrap';
 
 import moment from 'moment';
 
-function EventViewPageComponent(props) {
+function NewsViewPageComponent(props) {
 
-    // console.log(props.match.params.Event_id)
+    // console.log(props.match.params.News_id)
 
-    const Event_id = props.match.params.Event_id;
+    const News_id = props.match.params.News_id;
 
-    const { isLoading: EventIsLoading, error: EventError, sendRequest: sendEventRequest, clearError } = useHttpClient();
-    const [LoadedEvent, setLoadedEvent] = useState(null);
-    const fetchEvent = useCallback(
+    const { isLoading: NewsIsLoading, error: NewsError, sendRequest: sendNewsRequest, clearError } = useHttpClient();
+    const [LoadedNews, setLoadedNews] = useState(null);
+    const fetchNews = useCallback(
         async () => {
 
             try {
-                const responseData = await sendEventRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/events/${Event_id}`
+                const responseData = await sendNewsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/news/${News_id}`
                 );
 
 
 
-                const event_post = responseData.Event_post;
-                const modified_event_post = event_post.replace('/uploads', `${process.env.REACT_APP_BACKEND_URL}/uploads`);
-                let modified_event = { ...responseData, event_post: modified_event_post }
+                const news_post = responseData.page;
+                const modified_news_post = news_post.replace('/uploads', `${process.env.REACT_APP_BACKEND_URL}/uploads`);
+                let modified_news = { ...responseData, news_post: modified_news_post }
 
-                setLoadedEvent(modified_event);
+                setLoadedNews(modified_news);
 
 
             } catch (err) {
@@ -40,31 +40,31 @@ function EventViewPageComponent(props) {
 
 
         },
-        [sendEventRequest, Event_id],
+        [sendNewsRequest, News_id],
     );
 
     useEffect(() => {
-        fetchEvent()
-    }, [Event_id])
+        fetchNews()
+    }, [News_id])
 
 
     return (
 
-        <div id="event_background">
-            <div id="event_box">
+        <div id="news_background">
+            <div id="news_box">
 
 
 
-                {!!LoadedEvent ?
+                {!!LoadedNews ?
                     <div>
-                        <div id="event_header" >
+                        <div id="news_header" >
 
 
 
                             <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px" }}>
-                                {LoadedEvent.Event_thumbnail_image ?
+                                {LoadedNews.thumbnail_image ?
                                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
-                                        <img src={`${LoadedEvent.Event_thumbnail_image.url}`}
+                                        <img src={`${LoadedNews.thumbnail_image.url}`}
                                             style={{ width: "300px", height: "auto", }} alt="" />
                                     </div>
                                     :
@@ -75,12 +75,12 @@ function EventViewPageComponent(props) {
 
                             <div id="header_text"
                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "210px", justifyContent: "center" }}>
-                                <div id="event_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
-                                    <h1> {LoadedEvent.Title}</h1>
+                                <div id="news_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
+                                    <h1> {LoadedNews.title}</h1>
                                 </div>
-                                <div id="event_box_date" style={{ textAlign: "start", fontSize: '30px', color: "#56c7ec" }}>
+                                <div id="news_box_date" style={{ textAlign: "start", fontSize: '30px', color: "#56c7ec" }}>
                                     <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                                    <span>{moment(LoadedEvent.Event_date).format('DD-MMMM-YYYY')}</span>
+                                    <span>{moment(LoadedNews.date).format('DD-MMMM-YYYY')}</span>
 
 
                                 </div>
@@ -88,12 +88,12 @@ function EventViewPageComponent(props) {
 
 
                         </div>
-                        <div id="event_header_2">
+                        <div id="news_header_2">
 
                         </div>
-                        <div id="event_body">
+                        <div id="news_body">
                             <div style={{}}>
-                                <div style={{ width: '100%', margin: "auto" }}><Editor value={LoadedEvent.event_post} onChange={(input) => { }} /></div>
+                                <div style={{ width: '100%', margin: "auto" }}><Editor value={LoadedNews.page} onChange={(input) => { }} /></div>
                             </div>
                         </div>
                     </div>
@@ -116,4 +116,4 @@ function EventViewPageComponent(props) {
     )
 }
 
-export default EventViewPageComponent
+export default NewsViewPageComponent

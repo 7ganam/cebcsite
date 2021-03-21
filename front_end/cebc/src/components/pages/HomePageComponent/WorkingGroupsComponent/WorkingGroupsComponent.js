@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import "./WorkingGroupsComponent.css"
 import WorkingGroupCardComponent from "./WorkingGroupCardComponent/WorkingGroupCardComponent"
 
+import { Link } from "react-router-dom";
 
 
 
@@ -16,9 +17,11 @@ function WorkingGroupsComponent(props) {
         const groups_view = groups.map((group, index) => {
             return (
                 <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                    <div className="working_group_col_div">
-                        <WorkingGroupCardComponent image={group.Thumb_nail_image} title={group.Name} />
-                    </div>
+                    <Link className="" to={`/groups_programs/${group.id}`}>
+                        <div className="working_group_col_div">
+                            <WorkingGroupCardComponent image={group.Thumb_nail_image} title={group.Name} />
+                        </div>
+                    </Link>
                 </Col>
             )
         })

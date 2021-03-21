@@ -1,10 +1,21 @@
 #top_bar{
-    background-color: #ffa600;
+    background-color: rgb(255, 255, 255);
+    color : black;
      position: fixed; 
      width: 100%;
      display: flex;
      justify-content: flex-end ;
      z-index: 9999;
+
+     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    box-shadow: inset 0px -1px 1px 0px #8080801f;
+    height: 24px;
+    line-height: 24px;
+    
+
 }
 
 
@@ -40,13 +51,14 @@
 
     .fixed-top {
         background-color: transparent !important;
+        top: 18px !important;
     }
     .dark_bg{
         background-color: black !important;
     }
 
     .dark_bg .nav-item.not_scrolled.nav-link-selected{
-       border-bottom-width: 7px;
+       border-width:  0 0 7px 0;
        border-color: white;
        border-style: solid;
     }

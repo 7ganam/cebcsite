@@ -10,8 +10,7 @@ import MemebersCarouselComponent from "./MemebersCarouselComponent/MemebersCarou
 
 export default function HomePageComponent(props) {
 
-
-
+    console.log(`homeprops.members`, props.members)
 
 
     return (
@@ -19,11 +18,13 @@ export default function HomePageComponent(props) {
 
             <VideoComponent />
 
-            <MemebersCarouselComponent />
-
-            <div id="news_section" style={{ marginTop: "270px" }}>
+            <div id="news_section" style={{ marginTop: "60px" }}>
                 <NewsComponent />
             </div>
+            {props.members.length > 0 &&
+
+                <MemebersCarouselComponent members={props.members} />
+            }
             <div id="working_groups_section" style={{ marginTop: "100px", backgroundColor: "#f7f7f7", paddingBottom: "100px " }}>
                 <WorkingGroupsComponent programmes_state={props.programmes_state} />
             </div>
@@ -31,12 +32,12 @@ export default function HomePageComponent(props) {
             <div class="section_header" style={{ marginTop: "60px" }}>
                 <span class="section_header_inner">
                     Socials
-                            </span>
+                </span>
                 <div className="section_header_under"></div>
             </div>
 
 
-            <div id="twtr_container" style={{ marginTop: "70px" }}>
+            <div id="twtr_container" style={{ marginTop: "70px", marginBottom: '70px' }}>
                 <TwitterTimelineEmbed
                     sourceType="profile"
                     screenName="CEBC2"
@@ -44,7 +45,6 @@ export default function HomePageComponent(props) {
                     style={{ height: "600px", width: "400px" }}
                 />
             </div>
-
 
 
 

@@ -2,37 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, Container } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 
+
 import { Link } from "react-router-dom";
 import "./NavbarComponent.css"
+
 
 import logo_white from './logo_white.png'
 import logo_black from './logo_black.png'
 import ExtendedNavItemComponent from "./ExtendedNavItemComponent/ExtendedNavItemComponent"
+
 
 import "./NavbarComponent.css"
 import "hover.css";
 const $ = require("jquery");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const NavbarComponent = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
-
     let [Scrolled, setScrolled] = useState(false)
-
 
     useEffect(() => { //add scrolled class to elements that should behave diffrently when window is scrolled
         var $navitem = $(".nav-item"); // add the scrolled class with jquery to all the nave links when scrolled
@@ -48,12 +37,8 @@ const NavbarComponent = (props) => {
                 else {
                     if (Scrolled) { setScrolled(false) }
                 }
-
-
-
                 $navlink.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
                 $navitem.toggleClass('not_scrolled', $(this).scrollTop() < $navlink.height());
-
             });
         });
     })
@@ -62,13 +47,20 @@ const NavbarComponent = (props) => {
 
     return (
         <React.Fragment>
-            {/* <div className="d-flex justify-content-end ml-0 mr-0" style={{ height: "26px" }}>
+            <div className="d-flex justify-content-end ml-0 mr-0" style={{ height: "26px" }}>
                 <div id="top_bar" className="header_font" >
+
+                    <Link className="" to="/groups_programs">
+                        <div style={{ paddingRight: "16px" }} >
+                            cebc working groups
+                        </div>
+                    </Link>
+
                     <div style={{ paddingRight: "6px" }} >
                         log in
                     </div>
                 </div>
-            </div> */}
+            </div>
             <Container fluid id="nav_bar_container" >
                 <div>
                     {/* // adding classes to navbar based on scrolled and path  */}
@@ -109,15 +101,30 @@ const NavbarComponent = (props) => {
                                     </Link>
                                 </NavItem>
 
+
+                                <NavItem className={`${props.location.pathname !== "/MEMBERS" ? '' : 'nav-link-selected'} `}>
+
+                                    <Link className="nav_link" to="/MEMBERS">
+                                        Members
+                                    </Link>
+                                </NavItem>
+
                                 {/* <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/ABOUTUS", text: "about" }}
                                     sub_navs={[{ path: "/ab1", text: "ab1" }, { path: "/ab2", text: "ab2" }, { path: "/ab3", text: "ab3" }]}
                                 /> */}
-
+                                {/* 
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/EVENTS", text: "Events" }}
                                     sub_navs={[{ path: "/", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }]}
+                                /> */}
+
+                                <ExtendedNavItemComponent
+                                    location={props.location} main_nav={{ path: "/EVENTS_NEWS", text: "EVENTS & NEWS" }}
+                                    sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }, { path: "/News", text: "News" }
+                                    ]}
                                 />
+
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGECENTER" }}
                                     sub_navs={[{ path: "#", text: "webinars" }, { path: "/#", text: "blog" }, { path: "#", text: "blog" }, { path: "#", text: "white paper" }, { path: "#", text: "magazine" }]}
