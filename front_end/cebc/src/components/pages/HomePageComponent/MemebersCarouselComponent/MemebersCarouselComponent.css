@@ -1,3 +1,14 @@
+
+.slick-next:before ,.slick-prev:before  {
+    color: black !important;
+
+}
+
+.main_slider .slick-next:before ,.main_slider  .slick-prev:before
+{
+    position: relative;
+    top: -10px;
+}
 .mem_carousel_elem{
     height: 170px;
     /* border: black 1px solid; */

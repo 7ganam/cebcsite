@@ -65,7 +65,7 @@ function EventCardComponent(props) {
                     <div style={{ flexGrow: "1" }}>
 
                     </div>
-                    <Link to={`/EVENTS/UPCOMMMING/${props.event.id}`}>
+                    <Link to={`/EVENTS_NEWS/UPCOMMMING/${props.event.id}`}>
                         <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                             <div style={{}}>know more</div>
                         </div>

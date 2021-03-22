@@ -8,10 +8,11 @@ function EventNewsPageComponent() {
                 events
             </div>
             <div>
-                news
+                newsw
             </div>
         </div>
     )
+
 }
 
 export default EventNewsPageComponent

@@ -14,7 +14,11 @@ function SingleMemberPageComponent(props) {
     const member = props.members.filter((member) => {
         return member.id.toString() === member_id;
     })[0]
+
+
     console.log(`member`, member)
+
+
     return (
 
         <div id="event_background">

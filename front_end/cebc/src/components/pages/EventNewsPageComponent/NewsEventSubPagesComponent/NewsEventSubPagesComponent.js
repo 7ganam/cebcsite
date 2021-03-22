@@ -201,7 +201,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardText></CardText>
                                 </CardBody>
                                 <CardFooter className="text-muted">
-                                    <Link to={`/EVENTS/PAST/${event.id}`}>
+                                    <Link to={`/EVENTS_NEWS/PAST/${event.id}`}>
                                         <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                                             <div style={{}}>know more</div>
                                         </div>
@@ -303,7 +303,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardText></CardText>
                                 </CardBody>
                                 <CardFooter className="text-muted">
-                                    <Link to={`/NEWS/${news.id}`}>
+                                    <Link to={`/EVENTS_NEWS/News/${news.id}`}>
                                         <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                                             <div style={{}}>know more</div>
                                         </div>

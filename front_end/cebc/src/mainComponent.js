@@ -10,6 +10,8 @@ import SingleMemberPageComponent from './components/pages/MembersPageComponent/S
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
 import KnowledgeCenterComponent from "./components/pages/KnowledgeCenterComponent/KnowledgeCenterComponent"
 
+
+
 import EventNewsPageComponent from './components/pages/EventNewsPageComponent/EventNewsPageComponent'
 import NewsEventSubPagesComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsEventSubPagesComponent'
 import EventViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/EventViewPageComponent/EventViewPageComponent'
@@ -75,15 +77,11 @@ export default function MainComponent() {
 
 
     useEffect(() => {
-
+        console.log(`rerenderd`)
         fetch_Programmes();
         fetch_Members();
 
-    }, [fetch_Programmes, fetch_Members]);
-
-
-
-
+    }, []);
 
 
 
@@ -116,8 +114,8 @@ export default function MainComponent() {
 
 
                         <Route path="/MEMBERS/:member_id"
-                            component={(props) =>
-                                <   SingleMemberPageComponent {...props} members={LoadedMembers} />
+                            component={
+                                (props) => <   SingleMemberPageComponent {...props} members={LoadedMembers} />
                             }
                         />
 
@@ -140,32 +138,11 @@ export default function MainComponent() {
 
 
 
-                        <Route path="/EVENTS/:Event_type/:Event_id"
-                            component={(props) =>
-                                <   EventViewPageComponent {...props} />
-                            }
-                        />
-                        <Route path="/EVENTS/:Event_type">
-                            {(props) =>
-                                <   NewsEventSubPagesComponent {...props} />
-                            }
-                        </Route>
-
-                        <Route path="/EVENTS">
-                            {(props) =>
-                                <   NewsEventSubPagesComponent {...props} />
-                            }
-                        </Route>
-
-
-
-
-                        <Route path="/NEWS/:News_id"
+                        <Route path="/EVENTS_NEWS/News/:News_id"
                             component={(props) =>
                                 <   NewsViewPageComponent {...props} />
                             }
                         />
-
 
 
                         <Route path="/EVENTS_NEWS/:sub_parameter/:Event_id"
