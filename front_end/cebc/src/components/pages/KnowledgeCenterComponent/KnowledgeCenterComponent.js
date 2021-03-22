@@ -2,6 +2,7 @@ import React from 'react'
 import "./KnowledgeCenterComponent.css"
 import KnowledgeCardComponent from "./KnowledgeCardComponent/KnowledgeCardComponent"
 import { Container, Row, Col } from 'reactstrap'
+import { Link } from 'react-router-dom'
 // import casestudy from "./images/case.jpg"
 // import blog from "./images/blog.jpg"
 // import reports from "./images/reports.png"
@@ -41,12 +42,25 @@ function KnowledgeCenterComponent() {
                             <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/blog_567132f143.jpg" title="BLOG" />
                         </div>
                     </Col>
+
+
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/news_09e2a5edc5.jfif" title="NEWSLETTER" />
-                        </div>
+
+                        <Link to="/KNOWLEDGECENTER/PROJECTS">
+                            <div className="working_group_col_div">
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/news_09e2a5edc5.jfif" title="PROJECTS" />
+                            </div>
+                        </Link>
+
+
+
 
                     </Col>
+
+
+
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
                             <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/mags_887a530fbb.jpg" title="MAGAZINES" />

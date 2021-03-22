@@ -12,7 +12,8 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: -2px 2px 3px 0px #00000030
+    box-shadow: -2px 2px 3px 0px #00000030;
+    background-color: white;
     
 }
 

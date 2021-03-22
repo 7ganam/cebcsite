@@ -8,8 +8,12 @@ import MembersPageComponent from './components/pages/MembersPageComponent/Member
 import SingleMemberPageComponent from './components/pages/MembersPageComponent/SingleMemberPageComponent/SingleMemberPageComponent'
 
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
-import KnowledgeCenterComponent from "./components/pages/KnowledgeCenterComponent/KnowledgeCenterComponent"
 
+
+
+import KnowledgeCenterComponent from "./components/pages/KnowledgeCenterComponent/KnowledgeCenterComponent"
+import ProjectsPageComponent from "./components/pages/KnowledgeCenterComponent/ProjectsPageComponent/ProjectsPageComponent"
+import SingleProjectPageComponent from "./components/pages/KnowledgeCenterComponent/ProjectsPageComponent/SingleProjectPageComponent/SingleProjectPageComponent"
 
 
 import EventNewsPageComponent from './components/pages/EventNewsPageComponent/EventNewsPageComponent'
@@ -45,7 +49,7 @@ export default function MainComponent() {
                 );
 
                 setLoadedProgrammes(responseData);
-                // console.log({ responseData })
+                // console.log('loaded programs-groups', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -75,17 +79,39 @@ export default function MainComponent() {
     );
 
 
+    const { isLoading: ProjectsIsLoading, error: ProjectsError, sendRequest: sendProjectsRequest, clearError: clearProjectsError } = useHttpClient();
+    const [LoadedProjects, setLoadedProjects] = useState([]);
+    const fetch_Projects = useCallback(
+        async () => {
+            try {
+                const responseData = await sendProjectsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/projects`
+                );
+                setLoadedProjects(responseData);
+                // console.log('projects ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendProjectsRequest],
+    );
+
 
     const { isLoading: NewsIsLoading, error: NewsError, sendRequest: sendNewsRequest, clearError: clearNewsError } = useHttpClient();
+    const { sendRequest: sendNewsCountRequest } = useHttpClient();
     const [LoadedNews, setLoadedNews] = useState([]);
+    const [LoadedNewsCount, setLoadedNewsCount] = useState([]);
     const fetch_News = useCallback(
         async () => {
             try {
-                const responseData = await sendNewsRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date`
-                );
+
+                const news_number_in_database = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news/count`);
+                setLoadedNewsCount(news_number_in_database);
+                // console.log({ news_number_in_database })
+
+                const responseData = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date&_start=${news_number_in_database - 4}`);
                 setLoadedNews(responseData);
-                console.log({ responseData })
+                // console.log({ responseData })
                 function extractContent(s) {
                     var span = document.createElement('span');
                     span.innerHTML = s;
@@ -103,6 +129,7 @@ export default function MainComponent() {
         fetch_Programmes();
         fetch_Members();
         fetch_News();
+        fetch_Projects();
 
     }, []);
 
@@ -111,7 +138,7 @@ export default function MainComponent() {
 
 
     return (
-        <div id="main_component" style={{ backgroundColor: "white", overflow: "hidden" }}>
+        <div id="main_component" style={{ backgroundColor: "white", overflow: "" }}>
             <div id="content_wrap">
                 <Router >
                     <ScrollToTopComponent />
@@ -131,9 +158,38 @@ export default function MainComponent() {
 
 
 
+
+
+
+
+
+
+
+
+                        <Route exact path="/KNOWLEDGECENTER/PROJECTS/:project_id"
+                            component={(props) => <   SingleProjectPageComponent {...props} projects={LoadedProjects} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/PROJECTS">
+                            <ProjectsPageComponent projects={LoadedProjects} />
+                        </Route>
+
+
                         <Route exact path="/KNOWLEDGECENTER">
                             <KnowledgeCenterComponent />
                         </Route>
+
+
+
+
+
+
+
+
+
+
+
 
 
                         <Route path="/MEMBERS/:member_id"

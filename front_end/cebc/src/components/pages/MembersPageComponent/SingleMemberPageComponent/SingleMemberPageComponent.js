@@ -16,7 +16,7 @@ function SingleMemberPageComponent(props) {
     })[0]
 
 
-    console.log(`member`, member)
+    // console.log(`member`, member)
 
 
     return (

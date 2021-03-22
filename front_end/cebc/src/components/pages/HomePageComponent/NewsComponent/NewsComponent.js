@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-l
 import { Link } from "react-router-dom";
 
 function NewsComponent(props) {
-    console.log(`props.latest_news`, props.latest_news)
     return (
         <div style={{ marginTop: '40px' }}>
             <Container className='news_container'>
@@ -104,6 +103,7 @@ function NewsComponent(props) {
                                             </Row>
                                         </div>
                                     </Link>
+
                                 </div>
 
                             </Col>
