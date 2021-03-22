@@ -1,17 +1,14 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import "./WorkingGroupsComponent.css"
-import WorkingGroupCardComponent from "./WorkingGroupCardComponent/WorkingGroupCardComponent"
+import WorkingGroupCardComponent from "./MITCardComponent/WorkingGroupCardComponent"
 
 import { Link } from "react-router-dom";
-
-
-
 
 function WorkingGroupsComponent(props) {
 
 
-    // console.log('WorkingGroupsComponent', props)
+    console.log('WorkingGroupsComponent', props)
 
     const render_groups = (groups) => {
         const groups_view = groups.map((group, index) => {

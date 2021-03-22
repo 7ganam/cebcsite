@@ -10,7 +10,7 @@ import MemebersCarouselComponent from "./MemebersCarouselComponent/MemebersCarou
 
 export default function HomePageComponent(props) {
 
-    console.log(`homeprops.members`, props.members)
+    // console.log(`homeprops.members`, props.members)
 
 
     return (
@@ -19,7 +19,7 @@ export default function HomePageComponent(props) {
             <VideoComponent />
 
             <div id="news_section" style={{ marginTop: "60px" }}>
-                <NewsComponent />
+                <NewsComponent latest_news={props.latest_news} />
             </div>
             {props.members.length > 0 &&
 

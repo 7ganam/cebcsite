@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactLoading from 'react-loading';
 import { useHttpClient } from "../../../../../hooks/http-hook"
 
 import renderHTML from 'react-render-html';

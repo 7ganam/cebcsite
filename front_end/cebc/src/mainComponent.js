@@ -45,7 +45,7 @@ export default function MainComponent() {
                 );
 
                 setLoadedProgrammes(responseData);
-                console.log({ responseData })
+                // console.log({ responseData })
             } catch (err) {
                 console.log({ err })
             }
@@ -66,7 +66,7 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/members`
                 );
                 setLoadedMembers(responseData);
-                console.log({ responseData })
+                // console.log({ responseData })
             } catch (err) {
                 console.log({ err })
             }
@@ -76,10 +76,33 @@ export default function MainComponent() {
 
 
 
+    const { isLoading: NewsIsLoading, error: NewsError, sendRequest: sendNewsRequest, clearError: clearNewsError } = useHttpClient();
+    const [LoadedNews, setLoadedNews] = useState([]);
+    const fetch_News = useCallback(
+        async () => {
+            try {
+                const responseData = await sendNewsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date`
+                );
+                setLoadedNews(responseData);
+                console.log({ responseData })
+                function extractContent(s) {
+                    var span = document.createElement('span');
+                    span.innerHTML = s;
+                    return span.textContent || span.innerText;
+                };
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendNewsRequest],
+    );
+
+
     useEffect(() => {
-        console.log(`rerenderd`)
         fetch_Programmes();
         fetch_Members();
+        fetch_News();
 
     }, []);
 
@@ -96,7 +119,7 @@ export default function MainComponent() {
                     {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}
                     <Switch>
                         <Route exact path="/">
-                            <HomePageComponent programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} members={LoadedMembers} />
+                            <HomePageComponent programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} members={LoadedMembers} latest_news={LoadedNews} />
                         </Route>
 
 

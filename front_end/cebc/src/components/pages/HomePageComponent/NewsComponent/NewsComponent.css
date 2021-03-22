@@ -54,11 +54,13 @@
 
 
 .sec_news_div{
-
     box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
     height: 200px;
     width:  100%;
     margin-top: 5px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
 }
 
 .panel__title{
@@ -218,7 +220,7 @@
 
 }
 
-#main_news_title_div{
+#main_news_title_div  {
     font-size: 20px;
     line-height: 1.4;
     width: 80%;
@@ -228,9 +230,13 @@
     max-height: 20%;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: #000;
+    text-decoration: none;
 
 }
-
+.news_container a:hover{
+    text-decoration: none;
+}
 
 #main_news_body_div{
     color: grey;
@@ -259,7 +265,8 @@
     line-height: 20px;        /* fallback */
     max-height: 140px;       /* fallback */
     font-weight: 600;
-
+    color: #000;
+    text-decoration: none;
     
 
 }
