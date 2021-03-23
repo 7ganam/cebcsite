@@ -14,14 +14,15 @@ import { Col, Container, Row } from 'reactstrap';
 
 import moment from 'moment';
 
+
+
+
 function SingleWorkingGroupPageComponent(props) {
 
     // console.log(props.match.params.group_program_id)
 
     const group_program_id = props.match.params.group_id;
-    const the_group = props.programmes_state.LoadedProgrammes.filter((group) => {
-        return group.id == group_program_id
-    })[0]
+    const the_group = props.programmes_state.LoadedProgrammes.filter((group) => { return group.id == group_program_id })[0]
     console.log(`the_group`, the_group)
 
     function generate_members_view() {
@@ -45,17 +46,38 @@ function SingleWorkingGroupPageComponent(props) {
         return members;
     }
 
-    function generate_members_views() {
+    function generate_partners_views() {
 
         console.log(`props.members`, props.members)
         const members_views = the_group.member_companies.map((member, index) => {
             return (
                 <Link className="" to={`/MEMBERS/${member.id}`}>
-                    <div class="member_card">
-                        <div class="member_card_sub_div" style={{ background: 'white' }}>
-                            <img class="mem_carousel_img" src={member.member_image.url} />
+                    <div class="group_member_card">
+                        <div class="group_member_card_sub_div" style={{ background: 'white' }}>
+                            <img class="group_mem_carousel_img" src={member.member_image.url} />
                         </div>
                     </div>
+                </Link>
+            )
+
+        })
+        return members_views
+
+    }
+
+    function generate_reports_views() {
+
+        console.log(`props.members`, props.members)
+        const members_views = the_group.report_puplications.map((report, index) => {
+            return (
+                <Link className="report_link" to={`/KNOWLEDGECENTER/REPORTS/${report.id}`}>
+
+                    <div className='report_container'       >
+                        <i class="fas fa-external-link-alt mr-2 ml-1"></i>
+                        {` ${report.title}`}
+
+                    </div>
+
                 </Link>
             )
 
@@ -124,40 +146,60 @@ function SingleWorkingGroupPageComponent(props) {
 
 
                 <div id="members_container">
+                    {!!the_group &&
+                        <>
+                            {the_group.member_companies.length > 0 &&
+                                <div>
+                                    <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
+                                        <span class="section_header_inner" style={{ marginTop: "20px", fontSize: '34px', }}>Partners</span>
+                                        <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
+                                    </div>
+                                    <Row className=" justify-content-center ml-5">
+                                        <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
+                                            {generate_partners_views()}
+                                        </div>
+                                    </Row>
+                                </div>
+                            }
+                            {the_group.member.length > 0 &&
+                                <div>
+                                    <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Members</span>
+                                        <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
+                                    </div>
+                                    <Row className=" justify-content-center ml-5">
+                                        <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
+                                            {generate_members_view()}
 
-                    <div class="section_header" style={{ marginTop: "10px" }}>
-                        <span class="section_header_inner" style={{ fontSize: '34px', }}>members </span>
-                        <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
-                    </div>
-                    <div
-                        id="group_program_member_box">
-                        {!!the_group &&
-                            <>
+                                        </div>
+                                    </Row>
+                                </div>
+                            }
 
-                                {generate_members_view()}
+                            {the_group.report_puplications.length > 0 &&
+                                <div>
+                                    <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Reports & Publications</span>
+                                        <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
+                                    </div>
+                                    <Row className=" justify-content-center ml-5">
+                                        <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px", flexDirection: 'column' }}>
+                                            {generate_reports_views()}
 
-                            </>
-                        }
-                    </div>
+
+                                        </div>
+                                    </Row>
+                                </div>
+                            }
+                        </>
+
+                    }
+
+
                 </div>
 
-                <div id="members_container">
 
-                    <div class="section_header" style={{ marginTop: "10px" }}>
-                        <span class="section_header_inner" style={{ fontSize: '34px', }}>member entities </span>
-                        <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
-                    </div>
-                    <div
-                        id="group_program_member_box">
-                        {!!the_group &&
-                            <>
 
-                                {generate_members_views()}
-
-                            </>
-                        }
-                    </div>
-                </div>
             </div>
 
 

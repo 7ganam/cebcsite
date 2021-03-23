@@ -1,12 +1,12 @@
 
-#project_background{
+#report_background{
     background-color: #F1F1F1;
     min-height: 100vh;
     margin-top: 0;
     /* overflow: hidden; */
 }
 
-.project_box{
+.report_box{
     max-width: 80%;
     width: 100%;
     max-width: 1000px;
@@ -18,7 +18,7 @@
 
 }
 
-.project_image_box{
+.report_image_box{
     position: -webkit-sticky;
     position: sticky;
     top: 200px;
@@ -31,7 +31,7 @@
 }
 
 
-.project_details_box{
+.report_details_box{
     background: #ffffff;
     border: 1px solid #d7d7d7;
     padding: 10px;
@@ -39,7 +39,7 @@
 }
 
 
-#project_header{
+#report_header{
     width: 100%;
    
     min-height: 250px;
@@ -50,7 +50,7 @@
 }
 
 
-#project_header_2{
+#report_header_2{
     width: 100%;
    
     min-height: 60px;
@@ -60,7 +60,7 @@
     border: 1px solid #d7d7d7;
 }
 
-#project_body{
+#report_body{
     padding: 25px;
 }
 
@@ -84,11 +84,82 @@
 }
 
 
-#project_header{
+#report_header{
     display: flex;
      flex-direction: column;
     }
 
+
+
+
+
+
+
+
+
+
+    .open_report_button a{
+        /* height: 100%; */
+        text-decoration: none;	
+
+    }
+
+    .animate
+    {
+        transition: all 0.1s;
+        -webkit-transition: all 0.1s;
+    }
+    
+    .action-button
+    {
+        position: relative;
+        padding: 10px 40px;
+      margin: 0px 10px 10px 0px;
+      /* float: left; */
+        border-radius: 10px;
+        /* font-family: 'Pacifico', cursive; */
+        font-size: 40px;
+        font-weight: bold;
+        color: #FFF;
+        text-decoration: none;	
+        height: 100%;
+        cursor: pointer;
+    }
+    
+    .blue
+    {
+        background-color: #FCC744;
+        border-bottom: 5px solid #b18e35;
+        text-shadow: 0px -2px #99782496;
+        text-decoration: none;	
+
+    }
+    .blue a{
+        color:white;
+    }
+
+    
+    .action-button:active 
+
+    {
+        transform: translate(0px,5px);
+      -webkit-transform: translate(0px,5px);
+        border-bottom: 1px solid;
+        text-decoration: none;	
+
+    }
+
+
+    .action-button:hover
+    {
+
+        text-decoration: none;	
+
+    }
+
+
+
+    
 
 
 
@@ -100,7 +171,7 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
-   #project_header{
+   #report_header{
     display: flex;
      flex-direction: row;
     }
@@ -117,3 +188,6 @@
 @media (min-width: 1200px) {
 
   }
+
+
+

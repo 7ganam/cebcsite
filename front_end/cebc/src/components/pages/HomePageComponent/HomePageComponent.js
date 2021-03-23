@@ -14,7 +14,7 @@ export default function HomePageComponent(props) {
 
 
     return (
-        <div>
+        <div style={{ overflow: 'hidden' }}>
 
             <VideoComponent />
 

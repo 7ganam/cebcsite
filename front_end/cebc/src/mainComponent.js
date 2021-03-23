@@ -14,7 +14,8 @@ import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageC
 import KnowledgeCenterComponent from "./components/pages/KnowledgeCenterComponent/KnowledgeCenterComponent"
 import ProjectsPageComponent from "./components/pages/KnowledgeCenterComponent/ProjectsPageComponent/ProjectsPageComponent"
 import SingleProjectPageComponent from "./components/pages/KnowledgeCenterComponent/ProjectsPageComponent/SingleProjectPageComponent/SingleProjectPageComponent"
-
+import ReportsPageComponent from "./components/pages/KnowledgeCenterComponent/ReportsPageComponent/ReportsPageComponent"
+import SingleReportPageComponent from "./components/pages/KnowledgeCenterComponent/ReportsPageComponent/SingleReportPageComponent/SingleReportPageComponent"
 
 import EventNewsPageComponent from './components/pages/EventNewsPageComponent/EventNewsPageComponent'
 import NewsEventSubPagesComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsEventSubPagesComponent'
@@ -125,11 +126,32 @@ export default function MainComponent() {
     );
 
 
+
+
+    const { isLoading: ReportsIsLoading, error: ReportsError, sendRequest: sendReportsRequest, clearError: clearReportsError } = useHttpClient();
+    const [LoadedReports, setLoadedReports] = useState([]);
+    const fetch_Reports = useCallback(
+        async () => {
+            try {
+                const responseData = await sendReportsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/reports-publications`
+                );
+                setLoadedReports(responseData);
+                console.log('Reports', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendReportsRequest],
+    );
+
+
     useEffect(() => {
         fetch_Programmes();
         fetch_Members();
         fetch_News();
         fetch_Projects();
+        fetch_Reports();
 
     }, []);
 
@@ -150,20 +172,9 @@ export default function MainComponent() {
                         </Route>
 
 
-
                         <Route exact path="/ABOUTUS">
                             <AboutPageComponent />
                         </Route>
-
-
-
-
-
-
-
-
-
-
 
 
                         <Route exact path="/KNOWLEDGECENTER/PROJECTS/:project_id"
@@ -176,16 +187,33 @@ export default function MainComponent() {
                         </Route>
 
 
-                        <Route exact path="/KNOWLEDGECENTER">
-                            <KnowledgeCenterComponent />
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+
+
+                        <Route exact path="/KNOWLEDGECENTER/REPORTS/:report_id"
+                            component={(props) => <   SingleReportPageComponent {...props} reports={LoadedReports} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/REPORTS">
+                            <ReportsPageComponent reports={LoadedReports} />
                         </Route>
 
 
 
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
 
 
+
+                        <Route exact path="/KNOWLEDGECENTER">
+                            <KnowledgeCenterComponent />
+                        </Route>
 
 
 
@@ -198,7 +226,6 @@ export default function MainComponent() {
                             }
                         />
 
-
                         <Route exact path="/MEMBERS">
                             <MembersPageComponent members={LoadedMembers} />
                         </Route>
@@ -206,8 +233,7 @@ export default function MainComponent() {
 
 
                         <Route path="/groups_programs/:group_id"
-                            component={(props) =>
-                                <SingleWorkingGroupPageComponent  {...props} programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} />
+                            component={(props) => <SingleWorkingGroupPageComponent  {...props} programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} />
                             }
                         />
 

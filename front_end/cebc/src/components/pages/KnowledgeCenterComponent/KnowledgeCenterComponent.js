@@ -22,9 +22,11 @@ function KnowledgeCenterComponent() {
 
                 <Row className=" justify-content-center">
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/reports_bf47b2be7f.png" title="REPORTS" />
-                        </div>
+                        <Link to="/KNOWLEDGECENTER/REPORTS">
+                            <div className="working_group_col_div">
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/reports_bf47b2be7f.png" title="REPORTS" />
+                            </div>
+                        </Link>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
