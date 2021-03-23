@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 function SingleProjectPageComponent(props) {
 
     // console.log(props.match.params.Event_id)
-    console.log(`singeprops.projects`, props.projects)
+    // console.log(`singeprops.projects`, props.projects)
     const project_id = props.match.params.project_id;
 
     const the_project = props.projects.filter((project) => project.id == project_id)[0] //leave this as two ==
