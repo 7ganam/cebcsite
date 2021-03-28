@@ -16,6 +16,13 @@ import ProjectsPageComponent from "./components/pages/KnowledgeCenterComponent/P
 import SingleProjectPageComponent from "./components/pages/KnowledgeCenterComponent/ProjectsPageComponent/SingleProjectPageComponent/SingleProjectPageComponent"
 import ReportsPageComponent from "./components/pages/KnowledgeCenterComponent/ReportsPageComponent/ReportsPageComponent"
 import SingleReportPageComponent from "./components/pages/KnowledgeCenterComponent/ReportsPageComponent/SingleReportPageComponent/SingleReportPageComponent"
+import CaseStudiesPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/CaseStudiesPageComponent"
+import SingleCaseStudyPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/SingleCaseStudyPageComponent/SingleCaseStudyPageComponent"
+import PresintationsPageComponent from "./components/pages/KnowledgeCenterComponent/PresintationsPageComponent/PresintationsPageComponent"
+
+
+
+
 
 import EventNewsPageComponent from './components/pages/EventNewsPageComponent/EventNewsPageComponent'
 import NewsEventSubPagesComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsEventSubPagesComponent'
@@ -137,12 +144,31 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/reports-publications`
                 );
                 setLoadedReports(responseData);
-                console.log('Reports', responseData)
+                // console.log('Reports', responseData)
             } catch (err) {
                 console.log({ err })
             }
         },
         [sendReportsRequest],
+    );
+
+
+
+    const { isLoading: Case_studiesIsLoading, error: Case_studiesError, sendRequest: sendCase_studiesRequest, clearError: clearCase_studiesError } = useHttpClient();
+    const [LoadedCase_studies, setLoadedCase_studies] = useState([]);
+    const fetch_Case_studies = useCallback(
+        async () => {
+            try {
+                const responseData = await sendCase_studiesRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/case-studies`
+                );
+                setLoadedCase_studies(responseData);
+                // console.log('Case_studies', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendCase_studiesRequest],
     );
 
 
@@ -152,6 +178,7 @@ export default function MainComponent() {
         fetch_News();
         fetch_Projects();
         fetch_Reports();
+        fetch_Case_studies();
 
     }, []);
 
@@ -187,11 +214,6 @@ export default function MainComponent() {
                         </Route>
 
 
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
-
-
                         <Route exact path="/KNOWLEDGECENTER/REPORTS/:report_id"
                             component={(props) => <   SingleReportPageComponent {...props} reports={LoadedReports} />}
                         />
@@ -203,9 +225,30 @@ export default function MainComponent() {
 
 
 
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ---------------------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES/:case_study_id"
+                            component={(props) => <   SingleCaseStudyPageComponent {...props} case_studies={LoadedCase_studies} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES">
+                            <CaseStudiesPageComponent case_studies={LoadedCase_studies} />
+                        </Route>
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+                        <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">
+                            <PresintationsPageComponent />
+                        </Route>
 
 
 

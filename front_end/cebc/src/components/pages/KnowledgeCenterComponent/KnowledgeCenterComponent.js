@@ -28,16 +28,21 @@ function KnowledgeCenterComponent() {
                             </div>
                         </Link>
                     </Col>
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+
                         <div className="working_group_col_div" >
                             <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/web_43fb26057b.jpg" title="WEBINARS" />
                         </div>
-                    </Col>
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div">
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/case_effb64a5fd.jpg" title="RESEARCH PAPER & CASE STUDY" />
-                        </div>
 
+                    </Col>
+
+                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+                        <Link to="/KNOWLEDGECENTER/CASE_STUDIES">
+                            <div className="working_group_col_div">
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/case_effb64a5fd.jpg" title="RESEARCH PAPER & CASE STUDY" />
+                            </div>
+                        </Link>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div" >
@@ -64,9 +69,11 @@ function KnowledgeCenterComponent() {
 
 
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/mags_887a530fbb.jpg" title="MAGAZINES" />
-                        </div>
+                        <Link to="/KNOWLEDGECENTER/PRESENTATIONS">
+                            <div className="working_group_col_div" >
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/mags_887a530fbb.jpg" title="PRESENTATIONS" />
+                            </div>
+                        </Link>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div">

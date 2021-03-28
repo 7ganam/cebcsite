@@ -1,9 +1,9 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useCallbackz, useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
 
 import renderHTML from 'react-render-html';
-import "./SingleReportPageComponent.css"
+import "./SingleCaseStudyPageComponent.css"
 import Editor from './Editor/Editor'
 import { Col, Container, Row } from 'reactstrap';
 
@@ -16,20 +16,20 @@ import { Link } from 'react-router-dom';
 
 
 
-function SingleProjectPageComponent(props) {
+function SingleCaseStudyPageComponent(props) {
 
     // console.log(props.match.params.Event_id)
-    // console.log(`singeprops.reports`, props.reports)
-    const report_id = props.match.params.report_id;
+    // console.log(`singeprops.case_studies`, props.case_studies)
+    const case_study_id = props.match.params.case_study_id;
 
-    const the_report = props.reports.filter((report) => report.id == report_id)[0] //leave this as two ==
+    const the_case_study = props.case_studies.filter((case_study) => case_study.id == case_study_id)[0] //leave this as two ==
 
-    console.log(`the_report`, the_report)
+    console.log(`the_case_study`, the_case_study)
 
     function generate_members_views(type) {
 
         console.log(`props.members`, props.members)
-        const members_views = the_report.members.map((member, index) => {
+        const members_views = the_case_study.members.map((member, index) => {
             if (member.membership_type) {
                 return (
 
@@ -46,8 +46,6 @@ function SingleProjectPageComponent(props) {
         return members_views
 
     }
-
-
 
     function generate_groups_cards(groups_list) {
         const groups = groups_list.map((groups, index) => {
@@ -80,39 +78,39 @@ function SingleProjectPageComponent(props) {
 
             <div className="back_ground_div">    </div>
 
-            <div id="report_background">
+            <div id="case_study_background">
 
 
                 <Container style={{ maxWidth: '90%', marginTop: '200px', display: '' }}>
                     <Row className='justify-content-start align-items-stretch'>
                         <Col className='p-0' md={4} style={{ background: '', }}>
-                            {!!props.reports.length > 0 &&
-                                <div className="report_image_box">
-                                    <img src={`${the_report.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                            {!!props.case_studies.length > 0 &&
+                                <div className="case_study_image_box">
+                                    <img src={`${the_case_study.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                 </div>
                             }
 
                         </Col>
                         <Col className='p-0' md={7}>
-                            <div className="report_box">
-                                {!!props.reports.length > 0 ?
+                            <div className="case_study_box">
+                                {!!props.case_studies.length > 0 ?
                                     <div>
-                                        <div id="report_header" >
+                                        <div id="case_study_header" >
 
                                             <div id="header_text"
                                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "210px", justifyContent: "center" }}
                                             >
-                                                <div id="report_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
-                                                    <h1> {the_report.title}</h1>
+                                                <div id="case_study_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
+                                                    <h1> {the_case_study.title}</h1>
                                                 </div>
 
                                             </div>
-                                            <div class="open_report_button">
-                                                <a target="_blank" href={the_report.file.url} >
+                                            <div class="open_case_study_button">
+                                                <a target="_blank" href={the_case_study.file.url} >
                                                     <div class="action-button shadow animate blue">
 
-                                                        open
-                                                        {` ${the_report.type}`}
+                                                        open case
+                                                        
                                                         <i class="fas fa-external-link-alt"></i>
 
                                                     </div>
@@ -120,12 +118,12 @@ function SingleProjectPageComponent(props) {
                                             </div>
 
                                         </div>
-                                        <div id="report_header_2">
+                                        <div id="case_study_header_2">
 
                                         </div>
-                                        <div id="report_body">
+                                        <div id="case_study_body">
                                             <div style={{}}>
-                                                <div style={{ width: '100%', margin: "auto" }}><Editor value={the_report.description} onChange={(input) => { }} /></div>
+                                                <div style={{ width: '100%', margin: "auto" }}><Editor value={the_case_study.description} onChange={(input) => { }} /></div>
                                             </div>
                                         </div>
 
@@ -142,19 +140,19 @@ function SingleProjectPageComponent(props) {
 
                             </div>
 
-                            {!!props.reports.length > 0 &&
+                            {!!props.case_studies.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
-                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>report details </span>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>case_study details </span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
                                     </div>
-                                    <div className="report_details_box">
+                                    <div className="case_study_details_box">
                                         <Row style={{ minHeight: "30px" }}>
                                             <Col className="details_title" md={3} >
                                                 Category :
                                             </Col>
                                             <Col md={8} className="details_value">
-                                                {the_report.type}
+                                                {the_case_study.type}
                                             </Col>
                                         </Row>
 
@@ -163,7 +161,7 @@ function SingleProjectPageComponent(props) {
                                                 date :
                                             </Col>
                                             <Col md={8} className="details_value">
-                                                {the_report.date}
+                                                {the_case_study.date}
                                             </Col>
                                         </Row>
 
@@ -172,7 +170,7 @@ function SingleProjectPageComponent(props) {
                                 </div>
                             }
 
-                            {!!props.reports.length > 0 &&
+                            {!!props.case_studies.length && the_case_study.members.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Member</span>
@@ -185,7 +183,7 @@ function SingleProjectPageComponent(props) {
                                     </Row>
                                 </div>
                             }
-                            {!!the_report && the_report.programmes_and_groups.length > 0 &&
+                            {!!the_case_study && the_case_study.programmes_and_groups.length > 0 &&
                                 <>
 
                                     <div id="groups_projects_box" style={{ backgroundColor: 'transparent', border: '0' }}>
@@ -196,7 +194,7 @@ function SingleProjectPageComponent(props) {
 
                                     </div>
                                     <Row style={{ marginBottom: '20px', }}>
-                                        {generate_groups_cards(the_report.programmes_and_groups)}
+                                        {generate_groups_cards(the_case_study.programmes_and_groups)}
                                     </Row>
 
                                 </>
@@ -215,4 +213,4 @@ function SingleProjectPageComponent(props) {
     )
 }
 
-export default SingleProjectPageComponent
+export default SingleCaseStudyPageComponent
