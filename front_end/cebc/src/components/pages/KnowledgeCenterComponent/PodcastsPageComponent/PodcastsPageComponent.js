@@ -43,9 +43,12 @@ function PodcastsPageComponent(props) {
     return (
         <div style={{ marginTop: '', marginBottom: '' }}>
             <div id="title_header" style={{ marginTop: "150px ", marginBottom: "100px " }} >
-                CEBC PODCAST
+                <div class="section_header" style={{ marginTop: "100px" }}>
+                    <span class="section_header_inner"> podcasts </span>
+                    <div className="section_header_under"></div>
+                </div>
                 <div>
-                    <i class="fas fa-headphones"></i></div>
+                    <i class="fas fa-headphones" style={{ fontSize: "60px", marginTop: '20px' }}></i></div>
 
             </div>
             <Container style={{ marginTop: "100px ", marginBottom: "100px " }} >
