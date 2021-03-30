@@ -19,10 +19,12 @@ import SingleReportPageComponent from "./components/pages/KnowledgeCenterCompone
 import CaseStudiesPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/CaseStudiesPageComponent"
 import SingleCaseStudyPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/SingleCaseStudyPageComponent/SingleCaseStudyPageComponent"
 import PresintationsPageComponent from "./components/pages/KnowledgeCenterComponent/PresintationsPageComponent/PresintationsPageComponent"
+
 import PodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/PodcastsPageComponent"
 import SinglePodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/SinglePodcastsPageComponent/SinglePodcastsPageComponent"
 
-
+import WebinarsPageComponent from "./components/pages/KnowledgeCenterComponent/WebinarsPageComponent/WebinarsPageComponent"
+import SingleWebinarPageComponent from "./components/pages/KnowledgeCenterComponent/WebinarsPageComponent/SingleWebinarPageComponent/SingleWebinarPageComponent"
 
 
 
@@ -156,10 +158,6 @@ export default function MainComponent() {
 
 
 
-
-
-
-
     const { isLoading: Case_studiesIsLoading, error: Case_studiesError, sendRequest: sendCase_studiesRequest, clearError: clearCase_studiesError } = useHttpClient();
     const [LoadedCase_studies, setLoadedCase_studies] = useState([]);
     const fetch_Case_studies = useCallback(
@@ -188,12 +186,34 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/podcasts`
                 );
                 setLoadedPodcasts(responseData);
-                console.log('Podcasts', responseData)
+                // console.log('Podcasts', responseData)
             } catch (err) {
                 console.log({ err })
             }
         },
         [sendPodcastsRequest],
+    );
+
+
+
+
+
+
+    const { isLoading: WebinarsIsLoading, error: WebinarsError, sendRequest: sendWebinarsRequest, clearError: clearWebinarsError } = useHttpClient();
+    const [LoadedWebinars, setLoadedWebinars] = useState([]);
+    const fetch_Webinars = useCallback(
+        async () => {
+            try {
+                const responseData = await sendWebinarsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/webinars`
+                );
+                setLoadedWebinars(responseData);
+                console.log('Webinars ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendWebinarsRequest],
     );
 
     useEffect(() => {
@@ -204,6 +224,7 @@ export default function MainComponent() {
         fetch_Projects();
         fetch_Reports();
         fetch_Case_studies();
+        fetch_Webinars();
 
     }, []);
 
@@ -262,9 +283,6 @@ export default function MainComponent() {
                         </Route>
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         <Route exact path="/KNOWLEDGECENTER/PODCASTS/:podcast_id"
                             component={(props) => <   SinglePodcastsPageComponent {...props} podcasts={LoadedPodcasts} />}
                         />
@@ -274,6 +292,19 @@ export default function MainComponent() {
                             <PodcastsPageComponent podcasts={LoadedPodcasts} />
                         </Route>
 
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+                        <Route exact path="/KNOWLEDGECENTER/WEBINARS/:webinar_id"
+                            component={(props) => <   SingleWebinarPageComponent {...props} webinars={LoadedWebinars} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/WEBINARS">
+                            <WebinarsPageComponent webinars={LoadedWebinars} />
+                        </Route>
 
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}

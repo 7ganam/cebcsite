@@ -1,23 +1,12 @@
 
-.sound_cloud_plugin{
-    
-    margin: 200px auto auto;
-    width: 70%;
-    min-height: 200px;
-    border-radius: 22px;
-    overflow: hidden;
-    border: 1px solid #80808075;
-    box-shadow: -1px 2px 9px 1px grey;
-}
-
-#podcast_background{
+#webinar_background{
     background-color: #F1F1F1;
     min-height: 100vh;
     margin-top: 0;
     /* overflow: hidden; */
 }
 
-.podcast_box{
+.webinar_box{
     max-width: 80%;
     width: 100%;
     max-width: 1000px;
@@ -29,7 +18,7 @@
 
 }
 
-.podcast_image_box{
+.webinar_image_box{
     position: -webkit-sticky;
     position: sticky;
     top: 200px;
@@ -42,7 +31,7 @@
 }
 
 
-.podcast_details_box{
+.webinar_details_box{
     background: #ffffff;
     border: 1px solid #d7d7d7;
     padding: 10px;
@@ -50,7 +39,7 @@
 }
 
 
-#podcast_header{
+#webinar_header{
     width: 100%;
    
     min-height: 250px;
@@ -61,7 +50,7 @@
 }
 
 
-#podcast_header_2{
+#webinar_header_2{
     width: 100%;
    
     min-height: 60px;
@@ -71,7 +60,7 @@
     border: 1px solid #d7d7d7;
 }
 
-#podcast_body{
+#webinar_body{
     padding: 25px;
 }
 
@@ -95,7 +84,7 @@
 }
 
 
-#podcast_header{
+#webinar_header{
     display: flex;
      flex-direction: column;
     }
@@ -111,7 +100,7 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
-   #podcast_header{
+   #webinar_header{
     display: flex;
      flex-direction: row;
     }
