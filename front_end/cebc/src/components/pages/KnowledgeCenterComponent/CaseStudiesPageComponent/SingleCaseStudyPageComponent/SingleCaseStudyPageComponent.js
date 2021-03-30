@@ -143,7 +143,7 @@ function SingleCaseStudyPageComponent(props) {
                             {!!props.case_studies.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
-                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>case_study details </span>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>case study details </span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
                                     </div>
                                     <div className="case_study_details_box">

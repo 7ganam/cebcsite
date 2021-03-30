@@ -19,6 +19,8 @@ import SingleReportPageComponent from "./components/pages/KnowledgeCenterCompone
 import CaseStudiesPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/CaseStudiesPageComponent"
 import SingleCaseStudyPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/SingleCaseStudyPageComponent/SingleCaseStudyPageComponent"
 import PresintationsPageComponent from "./components/pages/KnowledgeCenterComponent/PresintationsPageComponent/PresintationsPageComponent"
+import PodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/PodcastsPageComponent"
+import SinglePodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/SinglePodcastsPageComponent/SinglePodcastsPageComponent"
 
 
 
@@ -154,6 +156,10 @@ export default function MainComponent() {
 
 
 
+
+
+
+
     const { isLoading: Case_studiesIsLoading, error: Case_studiesError, sendRequest: sendCase_studiesRequest, clearError: clearCase_studiesError } = useHttpClient();
     const [LoadedCase_studies, setLoadedCase_studies] = useState([]);
     const fetch_Case_studies = useCallback(
@@ -172,7 +178,26 @@ export default function MainComponent() {
     );
 
 
+
+    const { isLoading: PodcastsIsLoading, error: PodcastsError, sendRequest: sendPodcastsRequest, clearError: clearPodcastsError } = useHttpClient();
+    const [LoadedPodcasts, setLoadedPodcasts] = useState([]);
+    const fetch_Podcasts = useCallback(
+        async () => {
+            try {
+                const responseData = await sendPodcastsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/podcasts`
+                );
+                setLoadedPodcasts(responseData);
+                console.log('Podcasts', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendPodcastsRequest],
+    );
+
     useEffect(() => {
+        fetch_Podcasts();
         fetch_Programmes();
         fetch_Members();
         fetch_News();
@@ -225,9 +250,7 @@ export default function MainComponent() {
 
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
 
                         <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES/:case_study_id"
                             component={(props) => <   SingleCaseStudyPageComponent {...props} case_studies={LoadedCase_studies} />}
@@ -242,8 +265,19 @@ export default function MainComponent() {
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        <Route exact path="/KNOWLEDGECENTER/PODCASTS/:podcast_id"
+                            component={(props) => <   SinglePodcastsPageComponent {...props} podcasts={LoadedPodcasts} />}
+                        />
 
 
+                        <Route exact path="/KNOWLEDGECENTER/PODCASTS">
+                            <PodcastsPageComponent podcasts={LoadedPodcasts} />
+                        </Route>
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
 
                         <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">

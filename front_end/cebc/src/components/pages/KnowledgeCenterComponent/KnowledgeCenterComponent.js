@@ -52,6 +52,18 @@ function KnowledgeCenterComponent() {
 
 
 
+
+                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+
+                        <Link to="/KNOWLEDGECENTER/PODCASTS">
+                            <div className="working_group_col_div">
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/podcasting_pic_e077e0a2ce.jpg" title="PODCAST" />
+                            </div>
+                        </Link>
+
+                    </Col>
+
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
 
                         <Link to="/KNOWLEDGECENTER/PROJECTS">
@@ -59,9 +71,6 @@ function KnowledgeCenterComponent() {
                                 <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/news_09e2a5edc5.jfif" title="PROJECTS" />
                             </div>
                         </Link>
-
-
-
 
                     </Col>
 
@@ -71,10 +80,11 @@ function KnowledgeCenterComponent() {
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/PRESENTATIONS">
                             <div className="working_group_col_div" >
-                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/mags_887a530fbb.jpg" title="PRESENTATIONS" />
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/presentaiotn_59ac70dfef.png" title="PRESENTATIONS" />
                             </div>
                         </Link>
                     </Col>
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <div className="working_group_col_div">
                             <KnowledgeCardComponent image="AboutCEBC-1.jpg" title="USEFUL LINKS" />
