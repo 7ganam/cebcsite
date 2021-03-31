@@ -19,24 +19,24 @@ import { Link } from 'react-router-dom';
 function SinglePaperPageComponent(props) {
 
     // console.log(props.match.params.Event_id)
-    // console.log(`singeprops.papers`, props.papers)
+    console.log(`singeprops.papers`, props.papers)
     const paper_id = props.match.params.paper_id;
 
     const the_paper = props.papers.filter((paper) => paper.id == paper_id)[0] //leave this as two ==
 
     console.log(`the_paper`, the_paper)
 
-    function generate_members_views(type) {
+    function generate_entity_views(type) {
 
         console.log(`props.members`, props.members)
-        const members_views = the_paper.members.map((member, index) => {
+        const members_views = the_paper.entities.map((member, index) => {
             if (member.membership_type) {
                 return (
 
                     <Link className="" to={`/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.member_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -140,7 +140,7 @@ function SinglePaperPageComponent(props) {
 
                             </div>
 
-                            {!!props.papers.length > 0 &&
+                            {!!the_paper  &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}> details </span>
@@ -170,15 +170,15 @@ function SinglePaperPageComponent(props) {
                                 </div>
                             }
 
-                            {!!props.papers.length && the_paper.members.length > 0 &&
+                            {!!the_paper && the_paper.entities.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
-                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Member</span>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Member Entities</span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
                                     </div>
                                     <Row className=" justify-content-center">
                                         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
-                                            {generate_members_views()}
+                                            {generate_entity_views()}
                                         </div>
                                     </Row>
                                 </div>

@@ -26,26 +26,26 @@ function SingleCaseStudyPageComponent(props) {
 
     console.log(`the_case_study`, the_case_study)
 
-    function generate_members_views(type) {
+    function generate_entity_views(type) {
 
         console.log(`props.members`, props.members)
-        const members_views = the_case_study.members.map((member, index) => {
+        const members_views = the_case_study.entities.map((member, index) => {
             if (member.membership_type) {
                 return (
 
                     <Link className="" to={`/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.member_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
                 )
             }
         })
-        return members_views
-
+        return members_views  
     }
+
 
     function generate_groups_cards(groups_list) {
         const groups = groups_list.map((groups, index) => {
@@ -140,7 +140,7 @@ function SingleCaseStudyPageComponent(props) {
 
                             </div>
 
-                            {!!props.case_studies.length > 0 &&
+                            {!!the_case_study &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>case study details </span>
@@ -170,7 +170,7 @@ function SingleCaseStudyPageComponent(props) {
                                 </div>
                             }
 
-                            {!!props.case_studies.length && the_case_study.members.length > 0 &&
+                            {!!the_case_study && the_case_study.entities.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Member</span>
@@ -178,7 +178,7 @@ function SingleCaseStudyPageComponent(props) {
                                     </div>
                                     <Row className=" justify-content-center">
                                         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
-                                            {generate_members_views()}
+                                            {generate_entity_views()}
                                         </div>
                                     </Row>
                                 </div>

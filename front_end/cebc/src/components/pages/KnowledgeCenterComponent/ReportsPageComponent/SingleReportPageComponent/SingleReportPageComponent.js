@@ -24,19 +24,19 @@ function SingleProjectPageComponent(props) {
 
     const the_report = props.reports.filter((report) => report.id == report_id)[0] //leave this as two ==
 
-    console.log(`the_report`, the_report)
+    // console.log(`the_report`, the_report)
 
-    function generate_members_views(type) {
+    function generate_entity_views(type) {
 
-        console.log(`props.members`, props.members)
-        const members_views = the_report.members.map((member, index) => {
+        // console.log(`props.members`, props.members)
+        const members_views = the_report.entities.map((member, index) => {
             if (member.membership_type) {
                 return (
 
                     <Link className="" to={`/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.member_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -180,7 +180,7 @@ function SingleProjectPageComponent(props) {
                                     </div>
                                     <Row className=" justify-content-center">
                                         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
-                                            {generate_members_views()}
+                                            {generate_entity_views()}
                                         </div>
                                     </Row>
                                 </div>

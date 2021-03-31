@@ -79,22 +79,7 @@ export default function MainComponent() {
 
 
 
-    const { isLoading: MembersIsLoading, error: MembersError, sendRequest: sendMembersRequest, clearError: clearMembersError } = useHttpClient();
-    const [LoadedMembers, setLoadedMembers] = useState([]);
-    const fetch_Members = useCallback(
-        async () => {
-            try {
-                const responseData = await sendMembersRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/members`
-                );
-                setLoadedMembers(responseData);
-                // console.log({ responseData })
-            } catch (err) {
-                console.log({ err })
-            }
-        },
-        [sendMembersRequest],
-    );
+
 
 
     const { isLoading: ProjectsIsLoading, error: ProjectsError, sendRequest: sendProjectsRequest, clearError: clearProjectsError } = useHttpClient();
@@ -269,7 +254,7 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/white-papers`
                 );
                 setLoadedPapers(responseData);
-                console.log('Papers ', responseData)
+                // console.log('Papers ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -278,11 +263,29 @@ export default function MainComponent() {
     );
 
 
+    const { isLoading: Entity_sIsLoading, error: Entity_sError, sendRequest: sendEntity_sRequest, clearError: clearEntity_sError } = useHttpClient();
+    const [LoadedEntity_s, setLoadedEntity_s] = useState([]);
+    const fetch_Entity_s = useCallback(
+        async () => {
+            try {
+                const responseData = await sendEntity_sRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/entities`
+                );
+                setLoadedEntity_s(responseData);
+                console.log('fetched_Entity_s ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendEntity_sRequest],
+    );
+
+
 
     useEffect(() => {
         fetch_Podcasts();
         fetch_Programmes();
-        fetch_Members();
+        fetch_Entity_s();
         fetch_News();
         fetch_Projects();
         fetch_Reports();
@@ -307,7 +310,7 @@ export default function MainComponent() {
                     {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}
                     <Switch>
                         <Route exact path="/">
-                            <HomePageComponent programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} members={LoadedMembers} latest_news={LoadedNews} />
+                            <HomePageComponent programmes_state={{ ProgrammesIsLoading, ProgrammesError, LoadedProgrammes }} members={LoadedEntity_s} latest_news={LoadedNews} />
                         </Route>
 
 
@@ -334,8 +337,6 @@ export default function MainComponent() {
                         <Route exact path="/KNOWLEDGECENTER/REPORTS">
                             <ReportsPageComponent reports={LoadedReports} />
                         </Route>
-
-
 
 
 
@@ -441,12 +442,12 @@ export default function MainComponent() {
 
                         <Route path="/MEMBERS/:member_id"
                             component={
-                                (props) => <   SingleMemberPageComponent {...props} members={LoadedMembers} />
+                                (props) => <   SingleMemberPageComponent {...props} members={LoadedEntity_s} />
                             }
                         />
 
                         <Route exact path="/MEMBERS">
-                            <MembersPageComponent members={LoadedMembers} />
+                            <MembersPageComponent members={LoadedEntity_s} />
                         </Route>
 
 

@@ -8,7 +8,7 @@ function MembersPageComponent(props) {
 
     function generate_assoicate_members_views(type) {
 
-        // console.log(`props.members`, props.members)
+        console.log(`props.members`, props.members)
         const members_views = props.members.map((member, index) => {
             if (member.membership_type === type) {
                 return (
@@ -16,7 +16,7 @@ function MembersPageComponent(props) {
                     <Link className="" to={`/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.member_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -43,7 +43,7 @@ function MembersPageComponent(props) {
 
                 <Row className=" justify-content-center">
                     <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
-                        {generate_assoicate_members_views("Associate")}
+                        {generate_assoicate_members_views("assoicate_member_entity")}
                     </div>
                 </Row>
 
@@ -60,7 +60,7 @@ function MembersPageComponent(props) {
                 </Row>
                 <Row className=" justify-content-center">
                     <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
-                        {generate_assoicate_members_views("Corporate")}
+                        {generate_assoicate_members_views("corporate_member_entity")}
                     </div>
                 </Row>
 
@@ -76,7 +76,7 @@ function MembersPageComponent(props) {
                 </Row>
                 <Row className=" justify-content-center">
                     <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
-                        {generate_assoicate_members_views("Partner")}
+                        {generate_assoicate_members_views("partner_member_entity")}
                     </div>
                 </Row>
             </Container>

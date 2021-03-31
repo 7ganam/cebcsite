@@ -31,8 +31,8 @@ function SingleWorkingGroupPageComponent(props) {
                 <div className='member_container'
                     style={{ display: 'flex', flexDirection: 'column' }}
                 >
-                    <div className='member_image_container'>
-                        <img className='member_image' src={member.image.url} />
+                    <div className='entity_image_container'>
+                        <img className='entity_image' src={member.image.url} />
                     </div>
                     <div className='member_text'>
                         <div className="member_name"> {member.name}</div>
@@ -46,15 +46,15 @@ function SingleWorkingGroupPageComponent(props) {
         return members;
     }
 
-    function generate_partners_views() {
+    function generate_entity_views() {
 
         console.log(`props.members`, props.members)
-        const members_views = the_group.member_companies.map((member, index) => {
+        const members_views = the_group.entities.map((member, index) => {
             return (
                 <Link className="" to={`/MEMBERS/${member.id}`}>
                     <div class="group_member_card">
                         <div class="group_member_card_sub_div" style={{ background: 'white' }}>
-                            <img class="group_mem_carousel_img" src={member.member_image.url} />
+                            <img class="group_mem_carousel_img" src={member.entity_image.url} />
                         </div>
                     </div>
                 </Link>
@@ -148,7 +148,7 @@ function SingleWorkingGroupPageComponent(props) {
                 <div id="members_container">
                     {!!the_group &&
                         <>
-                            {the_group.member_companies.length > 0 &&
+                            {the_group.entities.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
                                         <span class="section_header_inner" style={{ marginTop: "20px", fontSize: '34px', }}>Partners</span>
@@ -156,7 +156,7 @@ function SingleWorkingGroupPageComponent(props) {
                                     </div>
                                     <Row className=" justify-content-center ml-5">
                                         <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px" }}>
-                                            {generate_partners_views()}
+                                            {generate_entity_views()}
                                         </div>
                                     </Row>
                                 </div>

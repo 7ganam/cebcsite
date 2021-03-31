@@ -72,7 +72,7 @@ function MemebersCarouselComponent(props) {
                 <Link className="" to={`/MEMBERS/${member.id}`}>
                     <div class="mem_carousel_elem">
                         <div class="mem_carousel_sub_elem">
-                            <img class="mem_carousel_img" src={member.member_image.url} />
+                            <img class="mem_carousel_img" src={member.entity_image.url} />
                         </div>
                         <div style={{ marginTop: "12px" }}>
                             {member.membership_type}
@@ -95,7 +95,7 @@ function MemebersCarouselComponent(props) {
                 <Link key={member.id} className="" to={`/MEMBERS/${member.id}`}>
                     <div class="mem_sub_carousel_elem">
                         <div class="mem_sub_carousel_sub_elem">
-                            <img class="mem_sub_carousel_img" src={member.member_image.url} />
+                            <img class="mem_sub_carousel_img" src={member.entity_image.url} />
                         </div>
                     </div>
                 </Link>
