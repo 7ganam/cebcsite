@@ -95,9 +95,11 @@ function KnowledgeCenterComponent() {
                         </Link>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="Efficiency.jpg" title="WHITE PAPER" />
-                        </div>
+                        <Link to="/KNOWLEDGECENTER/PAPERS">
+                            <div className="working_group_col_div" >
+                                <KnowledgeCardComponent image="Efficiency.jpg" title="WHITE PAPER" />
+                            </div>
+                        </Link>
                     </Col>
                 </Row>
             </Container>

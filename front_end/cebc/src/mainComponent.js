@@ -41,7 +41,6 @@ import EventViewPageComponent from './components/pages/EventNewsPageComponent/Ne
 import NewsViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsViewPageComponent/NewsViewPageComponent'
 
 
-
 import WorkingGroupsPageComponent from './components/pages/WorkingGroupsPageComponent/WorkingGroupsPageComponent'
 
 
@@ -250,7 +249,7 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/useful-links`
                 );
                 setLoadedLinks(responseData);
-                console.log('Links ', responseData)
+                // console.log('Links ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -258,6 +257,25 @@ export default function MainComponent() {
         [sendLinksRequest],
     );
 
+
+
+
+    const { isLoading: PapersIsLoading, error: PapersError, sendRequest: sendPapersRequest, clearError: clearPapersError } = useHttpClient();
+    const [LoadedPapers, setLoadedPapers] = useState([]);
+    const fetch_Papers = useCallback(
+        async () => {
+            try {
+                const responseData = await sendPapersRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/white-papers`
+                );
+                setLoadedPapers(responseData);
+                console.log('Papers ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendPapersRequest],
+    );
 
 
 
@@ -272,6 +290,7 @@ export default function MainComponent() {
         fetch_Webinars();
         fetch_Blogs();
         fetch_Links();
+        fetch_Papers();
 
     }, []);
 
@@ -337,13 +356,13 @@ export default function MainComponent() {
 
 
 
-                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES/:case_study_id"
-                            component={(props) => <   SingleCaseStudyPageComponent {...props} case_studies={LoadedCase_studies} />}
+                        <Route exact path="/KNOWLEDGECENTER/PAPERS/:paper_id"
+                            component={(props) => <   SinglePaperPageComponent {...props} papers={LoadedPapers} />}
                         />
 
 
-                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES">
-                            <CaseStudiesPageComponent case_studies={LoadedCase_studies} />
+                        <Route exact path="/KNOWLEDGECENTER/PAPERS">
+                            <PapersPageComponent papers={LoadedPapers} />
                         </Route>
 
 
