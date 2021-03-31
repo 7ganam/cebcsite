@@ -1,23 +1,15 @@
 import React from 'react'
 import {
-    Col, Container, Row, Card, CardText, CardBody, CardLink, CardFooter,
-    CardTitle, CardSubtitle
+    Col, Container, Row, Card, CardText, CardBody, CardFooter,
+    CardTitle,
 } from 'reactstrap'
 import "./AboutPageComponent.css"
 
 
-import intro_img from "./images//CEBCWebHeader.jpg"
-import event from "./images//Clean-Air-Forum-Photo-1-385x250.jpg"
 
 
 import a from "./images/1.png"
-import b from "./images/2.png"
-import c from "./images/3.png"
-import d from "./images/4.png"
-import f from "./images/6.png"
-import wice from "./images//WomeninCleanEnergy.jpg"
-import Member from "./images//Member.jpg"
-import NEVC from "./images/NEVC.jpg"
+
 import mena from "./images/mena1.png"
 
 import WorkingAreaComponent from "./WorkingAreaComponent/WorkingAreaComponent"
