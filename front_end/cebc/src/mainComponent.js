@@ -19,6 +19,7 @@ import SingleReportPageComponent from "./components/pages/KnowledgeCenterCompone
 import CaseStudiesPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/CaseStudiesPageComponent"
 import SingleCaseStudyPageComponent from "./components/pages/KnowledgeCenterComponent/CaseStudiesPageComponent/SingleCaseStudyPageComponent/SingleCaseStudyPageComponent"
 import PresintationsPageComponent from "./components/pages/KnowledgeCenterComponent/PresintationsPageComponent/PresintationsPageComponent"
+import LinksPageComponent from "./components/pages/KnowledgeCenterComponent/LinksPageComponent/LinksPageComponent"
 
 import PodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/PodcastsPageComponent"
 import SinglePodcastsPageComponent from "./components/pages/KnowledgeCenterComponent/PodcastsPageComponent/SinglePodcastsPageComponent/SinglePodcastsPageComponent"
@@ -28,6 +29,9 @@ import SingleWebinarPageComponent from "./components/pages/KnowledgeCenterCompon
 
 import BlogsPageComponent from "./components/pages/KnowledgeCenterComponent/BlogsPageComponent/BlogsPageComponent"
 import SingleBlogPageComponent from "./components/pages/KnowledgeCenterComponent/BlogsPageComponent/SingleBlogPageComponent/SingleBlogPageComponent"
+
+import PapersPageComponent from "./components/pages/KnowledgeCenterComponent/PapersPageComponent/PapersPageComponent"
+import SinglePaperPageComponent from "./components/pages/KnowledgeCenterComponent/PapersPageComponent/SinglePaperPageComponent/SinglePaperPageComponent"
 
 
 
@@ -199,9 +203,6 @@ export default function MainComponent() {
 
 
 
-
-
-
     const { isLoading: WebinarsIsLoading, error: WebinarsError, sendRequest: sendWebinarsRequest, clearError: clearWebinarsError } = useHttpClient();
     const [LoadedWebinars, setLoadedWebinars] = useState([]);
     const fetch_Webinars = useCallback(
@@ -221,8 +222,6 @@ export default function MainComponent() {
 
 
 
-
-
     const { isLoading: BlogsIsLoading, error: BlogsError, sendRequest: sendBlogsRequest, clearError: clearBlogsError } = useHttpClient();
     const [LoadedBlogs, setLoadedBlogs] = useState([]);
     const fetch_Blogs = useCallback(
@@ -232,12 +231,31 @@ export default function MainComponent() {
                     `${process.env.REACT_APP_BACKEND_URL}/blogs`
                 );
                 setLoadedBlogs(responseData);
-                console.log('Blogs ', responseData)
+                // console.log('Blogs ', responseData)
             } catch (err) {
                 console.log({ err })
             }
         },
         [sendBlogsRequest],
+    );
+
+
+
+    const { isLoading: LinksIsLoading, error: LinksError, sendRequest: sendLinksRequest, clearError: clearLinksError } = useHttpClient();
+    const [LoadedLinks, setLoadedLinks] = useState([]);
+    const fetch_Links = useCallback(
+        async () => {
+            try {
+                const responseData = await sendLinksRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/useful-links`
+                );
+                setLoadedLinks(responseData);
+                console.log('Links ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendLinksRequest],
     );
 
 
@@ -253,6 +271,7 @@ export default function MainComponent() {
         fetch_Case_studies();
         fetch_Webinars();
         fetch_Blogs();
+        fetch_Links();
 
     }, []);
 
@@ -311,6 +330,33 @@ export default function MainComponent() {
                         </Route>
 
 
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES/:case_study_id"
+                            component={(props) => <   SingleCaseStudyPageComponent {...props} case_studies={LoadedCase_studies} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES">
+                            <CaseStudiesPageComponent case_studies={LoadedCase_studies} />
+                        </Route>
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+
+
+
+
                         <Route exact path="/KNOWLEDGECENTER/PODCASTS/:podcast_id"
                             component={(props) => <   SinglePodcastsPageComponent {...props} podcasts={LoadedPodcasts} />}
                         />
@@ -331,9 +377,6 @@ export default function MainComponent() {
                             <WebinarsPageComponent webinars={LoadedWebinars} />
                         </Route>
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
 
 
@@ -351,14 +394,19 @@ export default function MainComponent() {
 
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+                        <Route exact path="/KNOWLEDGECENTER/LINKS">
+                            <LinksPageComponent links={LoadedLinks} />
+                        </Route>
+
+
+
 
                         <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">
                             <PresintationsPageComponent />
                         </Route>
-
 
 
 
