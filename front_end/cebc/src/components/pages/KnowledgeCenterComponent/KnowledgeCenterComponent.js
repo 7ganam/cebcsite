@@ -45,9 +45,11 @@ function KnowledgeCenterComponent() {
                         </Link>
                     </Col>
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                        <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/blog_567132f143.jpg" title="BLOG" />
-                        </div>
+                        <Link to="/KNOWLEDGECENTER/BLOGS">
+                            <div className="working_group_col_div" >
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/blog_567132f143.jpg" title="BLOG" />
+                            </div>
+                        </Link>
                     </Col>
 
 

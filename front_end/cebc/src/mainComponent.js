@@ -26,6 +26,9 @@ import SinglePodcastsPageComponent from "./components/pages/KnowledgeCenterCompo
 import WebinarsPageComponent from "./components/pages/KnowledgeCenterComponent/WebinarsPageComponent/WebinarsPageComponent"
 import SingleWebinarPageComponent from "./components/pages/KnowledgeCenterComponent/WebinarsPageComponent/SingleWebinarPageComponent/SingleWebinarPageComponent"
 
+import BlogsPageComponent from "./components/pages/KnowledgeCenterComponent/BlogsPageComponent/BlogsPageComponent"
+import SingleBlogPageComponent from "./components/pages/KnowledgeCenterComponent/BlogsPageComponent/SingleBlogPageComponent/SingleBlogPageComponent"
+
 
 
 import EventNewsPageComponent from './components/pages/EventNewsPageComponent/EventNewsPageComponent'
@@ -216,6 +219,30 @@ export default function MainComponent() {
         [sendWebinarsRequest],
     );
 
+
+
+
+
+    const { isLoading: BlogsIsLoading, error: BlogsError, sendRequest: sendBlogsRequest, clearError: clearBlogsError } = useHttpClient();
+    const [LoadedBlogs, setLoadedBlogs] = useState([]);
+    const fetch_Blogs = useCallback(
+        async () => {
+            try {
+                const responseData = await sendBlogsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/blogs`
+                );
+                setLoadedBlogs(responseData);
+                console.log('Blogs ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendBlogsRequest],
+    );
+
+
+
+
     useEffect(() => {
         fetch_Podcasts();
         fetch_Programmes();
@@ -225,6 +252,7 @@ export default function MainComponent() {
         fetch_Reports();
         fetch_Case_studies();
         fetch_Webinars();
+        fetch_Blogs();
 
     }, []);
 
@@ -293,9 +321,6 @@ export default function MainComponent() {
                         </Route>
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
                         <Route exact path="/KNOWLEDGECENTER/WEBINARS/:webinar_id"
                             component={(props) => <   SingleWebinarPageComponent {...props} webinars={LoadedWebinars} />}
@@ -310,6 +335,25 @@ export default function MainComponent() {
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
+
+
+                        <Route exact path="/KNOWLEDGECENTER/BLOGS/:blog_id"
+                            component={(props) => <   SingleBlogPageComponent {...props} blogs={LoadedBlogs} />}
+                        />
+
+
+                        <Route exact path="/KNOWLEDGECENTER/BLOGS">
+                            <BlogsPageComponent blogs={LoadedBlogs} />
+                        </Route>
+
+
+
+
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
                         <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">
                             <PresintationsPageComponent />
