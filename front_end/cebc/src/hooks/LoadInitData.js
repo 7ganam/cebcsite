@@ -226,6 +226,23 @@ function useInitLoadedData() {
         [sendEntity_sRequest],
     );
 
+    const { isLoading: Staff_membersIsLoading, error: Staff_membersError, sendRequest: sendStaff_membersRequest, clearError: clearStaff_membersError } = useHttpClient();
+    const [LoadedStaff_members, setLoadedStaff_members] = useState([]);
+    const fetch_Staff_members = useCallback(
+        async () => {
+            try {
+                const responseData = await sendStaff_membersRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/staff-members`
+                );
+                setLoadedStaff_members(responseData);
+                console.log('fetched_Staff_members ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendStaff_membersRequest],
+    );
+
 
 
     useEffect(() => {
@@ -240,13 +257,14 @@ function useInitLoadedData() {
         fetch_Blogs();
         fetch_Links();
         fetch_Papers();
+        fetch_Staff_members();
 
     }, []);
 
 
 
 
-    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports };
+    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members };
 }
 
 export default useInitLoadedData

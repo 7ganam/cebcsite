@@ -11,7 +11,9 @@ import SingleMemberPageComponent from './components/pages/MembersPageComponent/S
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
 import WhatWeDoPageComponent from './components/pages/AboutPageComponent/WhatWeDoPageComponent/WhatWeDoPageComponent'
 import FaqPageComponent from './components/pages/AboutPageComponent/FaqPageComponent/FaqPageComponent'
-import BoardPageComponent from './components/pages/AboutPageComponent/BoardPageComponent/BoardPageComponent'
+import StaffPageComponent from './components/pages/AboutPageComponent/StaffPageComponent/StaffPageComponent'
+import StaffMemberSingleViewPageComponent from './components/pages/AboutPageComponent/StaffPageComponent/StaffMemberSingleViewPageComponent/StaffMemberSingleViewPageComponent'
+
 
 
 
@@ -56,7 +58,7 @@ import { useEffect } from 'react';
 
 export default function MainComponent() {
 
-    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports } = useInitLoadedData();
+    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members } = useInitLoadedData();
 
 
 
@@ -84,9 +86,41 @@ export default function MainComponent() {
                         </Route>
 
 
+
+
+
+                        <Route exact path="/ABOUTUS/WHATWEDO">
+                            <WhatWeDoPageComponent />
+                        </Route>
+                        <Route exact path="/ABOUTUS/STAFF">
+                            <StaffPageComponent staff={LoadedStaff_members} />
+                        </Route>
+                        <Route exact path="/ABOUTUS/FAQ">
+                            <FaqPageComponent />
+                        </Route>
+
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+
+                        <Route exact path="/ABOUTUS/STAFF/:member_id"
+                            component={(props) => <   StaffMemberSingleViewPageComponent {...props} staff={LoadedStaff_members} />}
+                        />
+
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         <Route exact path="/ABOUTUS">
                             <AboutPageComponent />
                         </Route>
+
+
 
 
                         <Route exact path="/KNOWLEDGECENTER/PROJECTS/:project_id"
@@ -121,9 +155,6 @@ export default function MainComponent() {
 
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
 
 
@@ -135,14 +166,6 @@ export default function MainComponent() {
                         <Route exact path="/KNOWLEDGECENTER/PAPERS">
                             <PapersPageComponent papers={LoadedPapers} />
                         </Route>
-
-
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-
-
-
 
 
 

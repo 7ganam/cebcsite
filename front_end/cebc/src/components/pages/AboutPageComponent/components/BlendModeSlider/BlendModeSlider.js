@@ -22,14 +22,14 @@ const app = () => {
       slidingAnimation="fade"
       orientation="horizontal"
       initialSlide={1}
-      onBeforeChange={(previousSlide, nextSlide) =>
-        console.log("onBeforeChange", previousSlide, nextSlide)
-      }
-      onChange={nextSlide => console.log("onChange", nextSlide)}
-      onAfterChange={nextSlide => console.log("onAfterChange", nextSlide)}
-      style={{
-        backgroundColor: "#000"
-      }}
+      // onBeforeChange={(previousSlide, nextSlide) =>
+      //   console.log("onBeforeChange", previousSlide, nextSlide)
+      // }
+      // onChange={nextSlide => console.log("onChange", nextSlide)}
+      // onAfterChange={nextSlide => console.log("onAfterChange", nextSlide)}
+      // style={{
+      //   backgroundColor: "#000"
+      // }}
       settings={{
         slidingDuration: 400,
         slidingDelay: 100,

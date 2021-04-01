@@ -9,7 +9,7 @@ import "./NavbarComponent.css"
 
 import logo_white from './logo_white.png'
 import logo_black from './logo_black.png'
-import ExtendedNavItemComponent from "./ExtendedNavItemComponent/ExtendedNavItemComponent"
+import ExtendedNavItemComponent, { ExtendedNavItemComponent2 } from "./ExtendedNavItemComponent/ExtendedNavItemComponent"
 
 
 import "./NavbarComponent.css"
@@ -72,7 +72,7 @@ const NavbarComponent = (props) => {
                         className={`
                          light  py-lg-0
                         ${Scrolled ? "scrolled" : ""} 
-                        ${!Scrolled && !(props.location.pathname === "/" || props.location.pathname === "/ABOUTUS") ? "dark_bg" : ""}
+                        ${!Scrolled && !(props.location.pathname === "/") ? "dark_bg" : ""}
                         `}
                         id="my_nav"
                     >
@@ -94,12 +94,19 @@ const NavbarComponent = (props) => {
                                     </Link>
                                 </NavItem>
 
-                                <NavItem className={`${props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'} `}>
+                                {/* <NavItem className={`${props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'} `}>
 
                                     <Link className="nav_link" to="/ABOUTUS">
                                         about
                                     </Link>
-                                </NavItem>
+                                </NavItem> */}
+
+                                <ExtendedNavItemComponent2
+                                    location={props.location} main_nav={{ base_path: "/ABOUTUS", path: "/ABOUTUS/WHATWEDO", text: "ABOUT" }}
+                                    sub_navs={[{ path: "/ABOUTUS/WHATWEDO", text: "what we do" }, { path: "/ABOUTUS/STAFF", text: "leadership" }, { path: "/ABOUTUS/FAQ", text: "FAQ" }]}
+                                />
+
+
 
 
                                 <NavItem className={`${props.location.pathname !== "/MEMBERS" ? '' : 'nav-link-selected'} `}>
@@ -126,7 +133,7 @@ const NavbarComponent = (props) => {
                                 />
 
                                 <ExtendedNavItemComponent
-                                    location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGECENTER" }}
+                                    location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGE CENTER" }}
                                     sub_navs={[{ path: "/WEBINARS", text: "webinars" }, { path: "/PROJECTS", text: "projects" }, { path: "/REPORTS", text: "reports" }, { path: "/PRESENTATIONS", text: "presentations" }, { path: "/CASE_STUDIES", text: "case studies" }, { path: "/BLOGS", text: "blog" }, { path: "/PAPERS", text: "white paper" }, { path: "/PODCASTS", text: "podcasts" }, { path: "/LINKS", text: "useful links" }]}
                                 />
 

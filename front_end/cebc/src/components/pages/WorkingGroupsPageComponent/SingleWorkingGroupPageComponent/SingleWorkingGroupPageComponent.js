@@ -26,21 +26,27 @@ function SingleWorkingGroupPageComponent(props) {
     console.log(`the_group`, the_group)
 
     function generate_members_view() {
-        const members = the_group.member.map((member) => {
+        const members = the_group.staff_members.map((member) => {
             return (
+
                 <div className='member_container'
                     style={{ display: 'flex', flexDirection: 'column' }}
                 >
-                    <div className='entity_image_container'>
-                        <img className='entity_image' src={member.image.url} />
-                    </div>
-                    <div className='member_text'>
-                        <div className="member_name"> {member.name}</div>
-                        <div className="member_position"> {member.position}</div>
-                        <div className="member_Entity"> {member.Entity}</div>
 
-                    </div>
+                    <Link to={`/ABOUTUS/STAFF/${member.id}`} style={{ textDecoration: 'none' }} >
+                        <div className='entity_image_container' style={{ width: '100%', height: '170px' }}>
+                            <img className='entity_image' src={member.image.url} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
+                        </div>
+                        <div className='member_text'>
+                            <div className="member_name"> {member.name}</div>
+                            <div className="member_position"> {member.title}</div>
+                            {/* <div className="member_Entity"> {member.Entity}</div> */}
+
+                        </div>
+
+                    </Link>
                 </div>
+
             )
         })
         return members;
@@ -67,7 +73,6 @@ function SingleWorkingGroupPageComponent(props) {
 
     function generate_reports_views() {
 
-        console.log(`props.members`, props.members)
         const members_views = the_group.report_puplications.map((report, index) => {
             return (
                 <Link className="report_link" to={`/KNOWLEDGECENTER/REPORTS/${report.id}`}>
