@@ -2,11 +2,14 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavbarComponent from './components/shared/NavbarComponent/NavbarComponent'
 import FooterComponent from './components/shared/FooterComponent/FooterComponent'
+
 import HomePageComponent from './components/pages/HomePageComponent/HomePageComponent'
 
 import MembersPageComponent from './components/pages/MembersPageComponent/MembersPageComponent'
 import SingleMemberPageComponent from './components/pages/MembersPageComponent/SingleMemberPageComponent/SingleMemberPageComponent'
 import BenifitsPageComponent from './components/pages/MembersPageComponent/BenifitsPageComponent/BenifitsPageComponent'
+import LevelsPageComponent from './components/pages/MembersPageComponent/LevelsPageComponent/LevelsPageComponent'
+
 
 
 
@@ -223,6 +226,9 @@ export default function MainComponent() {
 
                         <Route exact path="/MEMBERSHIP/BENIFITS">
                             <BenifitsPageComponent />
+                        </Route>
+                        <Route exact path="/MEMBERSHIP/LEVELS">
+                            <LevelsPageComponent />
                         </Route>
 
 
