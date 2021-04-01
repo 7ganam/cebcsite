@@ -57,7 +57,7 @@ function SingleWorkingGroupPageComponent(props) {
         console.log(`props.members`, props.members)
         const members_views = the_group.entities.map((member, index) => {
             return (
-                <Link className="" to={`/MEMBERS/${member.id}`}>
+                <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                     <div class="group_member_card">
                         <div class="group_member_card_sub_div" style={{ background: 'white' }}>
                             <img class="group_mem_carousel_img" src={member.entity_image.url} />

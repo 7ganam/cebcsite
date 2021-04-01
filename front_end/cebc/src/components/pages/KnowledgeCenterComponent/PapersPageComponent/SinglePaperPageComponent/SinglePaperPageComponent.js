@@ -33,7 +33,7 @@ function SinglePaperPageComponent(props) {
             if (member.membership_type) {
                 return (
 
-                    <Link className="" to={`/MEMBERS/${member.id}`}>
+                    <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
                                 <img class="mem_carousel_img" src={member.entity_image.url} />

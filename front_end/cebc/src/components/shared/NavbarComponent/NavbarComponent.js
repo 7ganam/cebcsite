@@ -106,31 +106,25 @@ const NavbarComponent = (props) => {
                                     sub_navs={[{ path: "/ABOUTUS/WHATWEDO", text: "what we do" }, { path: "/ABOUTUS/STAFF", text: "leadership" }, { path: "/ABOUTUS/FAQ", text: "FAQ" }]}
                                 />
 
+                                <ExtendedNavItemComponent2
+                                    location={props.location} main_nav={{ base_path: "/MEMBERSHIP", path: "/MEMBERSHIP/WHATWEDO", text: "MEMBERSHIP" }}
+                                    sub_navs={[
+                                        { path: "/MEMBERSHIP/BENIFITS", text: "benifits" },
+                                        { path: "/MEMBERSHIP/LEVELS", text: "levels" },
+                                        { path: "/MEMBERSHIP/MEMBERS", text: "members" },
+                                        { path: "/MEMBERSHIP/PARTNERS", text: "partners" },
+                                    ]}
+                                />
 
 
-
-                                <NavItem className={`${props.location.pathname !== "/MEMBERS" ? '' : 'nav-link-selected'} `}>
-
-                                    <Link className="nav_link" to="/MEMBERS">
-                                        Members
-                                    </Link>
-                                </NavItem>
-
-                                {/* <ExtendedNavItemComponent
-                                    location={props.location} main_nav={{ path: "/ABOUTUS", text: "about" }}
-                                    sub_navs={[{ path: "/ab1", text: "ab1" }, { path: "/ab2", text: "ab2" }, { path: "/ab3", text: "ab3" }]}
-                                /> */}
-                                {/* 
-                                <ExtendedNavItemComponent
-                                    location={props.location} main_nav={{ path: "/EVENTS", text: "Events" }}
-                                    sub_navs={[{ path: "/", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }]}
-                                /> */}
 
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/EVENTS_NEWS", text: "EVENTS & NEWS" }}
                                     sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }, { path: "/News", text: "News" }
                                     ]}
                                 />
+
+
 
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGE CENTER" }}

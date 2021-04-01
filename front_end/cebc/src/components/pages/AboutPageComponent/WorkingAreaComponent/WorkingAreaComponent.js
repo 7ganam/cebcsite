@@ -22,8 +22,6 @@ function WorkingAreaComponent() {
             </div>
 
             <Container id="main_working_container" fluid>
-
-
                 <Container id="sub_working_container" >
                     <Row>
                         <Col md={4} className="d-flex justify-content-center align-items-center">

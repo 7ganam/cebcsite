@@ -1,15 +1,12 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
 
-import renderHTML from 'react-render-html';
 import "./SingleWebinarPageComponent.css"
 import Editor from './Editor/Editor'
 import { Col, Container, Row } from 'reactstrap';
 
-import moment from 'moment';
-import { Link } from 'react-router-dom';
-import YouTube from 'react-youtube';
+
 function SingleWebinarPageComponent(props) {
 
     // console.log(props.match.params.Event_id)

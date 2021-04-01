@@ -6,6 +6,8 @@ import HomePageComponent from './components/pages/HomePageComponent/HomePageComp
 
 import MembersPageComponent from './components/pages/MembersPageComponent/MembersPageComponent'
 import SingleMemberPageComponent from './components/pages/MembersPageComponent/SingleMemberPageComponent/SingleMemberPageComponent'
+import BenifitsPageComponent from './components/pages/MembersPageComponent/BenifitsPageComponent/BenifitsPageComponent'
+
 
 
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
@@ -95,31 +97,18 @@ export default function MainComponent() {
                         <Route exact path="/ABOUTUS/STAFF">
                             <StaffPageComponent staff={LoadedStaff_members} />
                         </Route>
+
                         <Route exact path="/ABOUTUS/FAQ">
                             <FaqPageComponent />
                         </Route>
-
-
-
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-
-
 
                         <Route exact path="/ABOUTUS/STAFF/:member_id"
                             component={(props) => <   StaffMemberSingleViewPageComponent {...props} staff={LoadedStaff_members} />}
                         />
 
-
-
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
                         <Route exact path="/ABOUTUS">
                             <AboutPageComponent />
                         </Route>
-
 
 
 
@@ -152,9 +141,6 @@ export default function MainComponent() {
                         <Route exact path="/KNOWLEDGECENTER/CASE_STUDIES">
                             <CaseStudiesPageComponent case_studies={LoadedCase_studies} />
                         </Route>
-
-
-
 
 
 
@@ -203,25 +189,14 @@ export default function MainComponent() {
                         </Route>
 
 
-
-
-
-
-
-
-
                         <Route exact path="/KNOWLEDGECENTER/LINKS">
                             <LinksPageComponent links={LoadedLinks} />
                         </Route>
 
 
-
-
                         <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">
                             <PresintationsPageComponent />
                         </Route>
-
-
 
 
                         <Route exact path="/KNOWLEDGECENTER">
@@ -233,15 +208,36 @@ export default function MainComponent() {
 
 
 
-                        <Route path="/MEMBERS/:member_id"
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+
+
+                        <Route path="/MEMBERSHIP/MEMBERS/:member_id"
                             component={
                                 (props) => <   SingleMemberPageComponent {...props} members={LoadedEntity_s} />
                             }
                         />
 
-                        <Route exact path="/MEMBERS">
+                        <Route exact path="/MEMBERSHIP/BENIFITS">
+                            <BenifitsPageComponent />
+                        </Route>
+
+
+                        <Route exact path="/MEMBERSHIP/MEMBERS">
                             <MembersPageComponent members={LoadedEntity_s} />
                         </Route>
+                        <Route exact path="/MEMBERSHIP">
+                            <MembersPageComponent members={LoadedEntity_s} />
+                        </Route>
+
+
+
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
+                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
 
 
 

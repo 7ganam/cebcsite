@@ -69,7 +69,7 @@ function MemebersCarouselComponent(props) {
         const elements_view = props.members.map((member, index) => {
             return (
 
-                <Link className="" to={`/MEMBERS/${member.id}`}>
+                <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                     <div class="mem_carousel_elem">
                         <div class="mem_carousel_sub_elem">
                             <img class="mem_carousel_img" src={member.entity_image.url} />
@@ -92,7 +92,7 @@ function MemebersCarouselComponent(props) {
     function generate_sub_carousel_elements_view() {
         const elements_view = props.members.map((member, index) => {
             return (
-                <Link key={member.id} className="" to={`/MEMBERS/${member.id}`}>
+                <Link key={member.id} className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                     <div class="mem_sub_carousel_elem">
                         <div class="mem_sub_carousel_sub_elem">
                             <img class="mem_sub_carousel_img" src={member.entity_image.url} />
