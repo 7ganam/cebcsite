@@ -6,6 +6,7 @@ import FooterComponent from './components/shared/FooterComponent/FooterComponent
 import HomePageComponent from './components/pages/HomePageComponent/HomePageComponent'
 
 import MembersPageComponent from './components/pages/MembersPageComponent/MembersPageComponent'
+import PartnersPageComponent from './components/pages/MembersPageComponent/PartnersPageComponent'
 import SingleMemberPageComponent from './components/pages/MembersPageComponent/SingleMemberPageComponent/SingleMemberPageComponent'
 import BenifitsPageComponent from './components/pages/MembersPageComponent/BenifitsPageComponent/BenifitsPageComponent'
 import LevelsPageComponent from './components/pages/MembersPageComponent/LevelsPageComponent/LevelsPageComponent'
@@ -234,6 +235,10 @@ export default function MainComponent() {
 
                         <Route exact path="/MEMBERSHIP/MEMBERS">
                             <MembersPageComponent members={LoadedEntity_s} />
+                        </Route>
+
+                        <Route exact path="/MEMBERSHIP/PARTNERS">
+                            <PartnersPageComponent members={LoadedEntity_s} />
                         </Route>
                         <Route exact path="/MEMBERSHIP">
                             <MembersPageComponent members={LoadedEntity_s} />

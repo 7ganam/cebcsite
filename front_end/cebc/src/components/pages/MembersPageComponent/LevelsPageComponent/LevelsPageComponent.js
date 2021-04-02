@@ -134,7 +134,7 @@ function LevelsPageComponent() {
 
 
 
-            <Container style={{ margin: "40px", fontFamily: "'Raleway', sans-serif" }}>
+            <Container style={{ margin: 'auto', paddingTop: "40px", paddingBottom: '40px', fontFamily: "'Raleway', sans-serif", }}>
 
                 <Row style={{ backgroundColor: '#eaeaea', minHeight: '50px', padding: '8px' }}>
                     <Col md={3} className=" " style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>

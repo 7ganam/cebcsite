@@ -57,9 +57,9 @@ function SingleMemberPageComponent(props) {
 
                                 <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px" }}>
 
-                                    {member.member_image ?
+                                    {member.entity_image ?
                                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
-                                            <img src={`${member.member_image.url}`}
+                                            <img src={`${member.entity_image.url}`}
                                                 style={{ width: "300px", height: "auto", }} alt="" />
                                         </div>
                                         :

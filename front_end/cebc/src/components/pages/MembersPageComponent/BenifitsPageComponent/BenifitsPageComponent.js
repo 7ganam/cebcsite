@@ -76,7 +76,7 @@ function BenifitsPageComponent() {
                 </Row>
 
             </Container>
-            <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "200px" }}>
+            <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "200px", }}>
                 <Container>
                     <Row className="title_row">
                         <div class="section_header" style={{ marginTop: "50px", alignItems: 'start', textAlign: 'left' }}>
