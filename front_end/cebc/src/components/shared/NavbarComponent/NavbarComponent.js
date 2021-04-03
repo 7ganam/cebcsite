@@ -103,7 +103,13 @@ const NavbarComponent = (props) => {
 
                                 <ExtendedNavItemComponent2
                                     location={props.location} main_nav={{ base_path: "/ABOUTUS", path: "/ABOUTUS/WHATWEDO", text: "ABOUT" }}
-                                    sub_navs={[{ path: "/ABOUTUS/WHATWEDO", text: "what we do" }, { path: "/ABOUTUS/STAFF", text: "leadership" }, { path: "/ABOUTUS/FAQ", text: "FAQ" }]}
+                                    sub_navs={[
+                                        { path: "/ABOUTUS/WHATWEDO", text: "what we do" },
+                                        { path: "/ABOUTUS/STAFF/BOARD", text: "board" },
+                                        { path: "/ABOUTUS/STAFF/ADVISORY", text: "board advisory comittee" },
+                                        { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
+
+                                        { path: "/ABOUTUS/FAQ", text: "FAQ" }]}
                                 />
 
                                 <ExtendedNavItemComponent2
@@ -128,7 +134,17 @@ const NavbarComponent = (props) => {
 
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGE CENTER" }}
-                                    sub_navs={[{ path: "/WEBINARS", text: "webinars" }, { path: "/PROJECTS", text: "projects" }, { path: "/REPORTS", text: "reports" }, { path: "/PRESENTATIONS", text: "presentations" }, { path: "/CASE_STUDIES", text: "case studies" }, { path: "/BLOGS", text: "blog" }, { path: "/PAPERS", text: "white paper" }, { path: "/PODCASTS", text: "podcasts" }, { path: "/LINKS", text: "useful links" }]}
+                                    sub_navs={[
+                                        { path: "/PROJECTS", text: "projects" },
+                                        { path: "/REPORTS", text: "publications" },
+                                        { path: "/PRESENTATIONS", text: "presentations" },
+                                        { path: "/CASE_STUDIES", text: "case studies" },
+                                        { path: "/BLOGS", text: "blogs" },
+                                        { path: "/PAPERS", text: "NEWSLETTERs" },
+                                        { path: "/WEBINARS", text: "webinars" },
+                                        { path: "/PODCASTS", text: "podcasts" },
+                                        { path: "/LINKS", text: "useful links" }
+                                    ]}
                                 />
 
 

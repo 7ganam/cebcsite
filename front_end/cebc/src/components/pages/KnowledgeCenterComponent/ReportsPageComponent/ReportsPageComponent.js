@@ -68,7 +68,7 @@ function ReportsPageComponent(props) {
         render_report.push(
             <div class="section_header" style={{ marginTop: "100px" }}>
                 <span class="section_header_inner">
-                    reports
+                    PUBLICATIONS
             </span>
                 <div className="section_header_under"></div>
             </div>

@@ -53,7 +53,7 @@ function MembersPageComponent(props) {
                     <Col >
                         <div class="section_header">
                             <span class="section_header_inner">
-                                Corporate
+                                Corporate MEMBERS
                             </span>
                             <div className="section_header_under"></div>
                         </div>

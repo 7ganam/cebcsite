@@ -8,7 +8,7 @@ import events from './image/events.jpg'
 
 function EventNewsPageComponent() {
     return (
-        <div style={{ marginTop: '200px' }}>
+        <div style={{ marginTop: '140px' }}>
             <Container>
                 <Row className=" justify-content-center">
                     <div class="section_header" style={{ marginTop: "30px" }}>

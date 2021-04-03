@@ -17,8 +17,12 @@ import LevelsPageComponent from './components/pages/MembersPageComponent/LevelsP
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
 import WhatWeDoPageComponent from './components/pages/AboutPageComponent/WhatWeDoPageComponent/WhatWeDoPageComponent'
 import FaqPageComponent from './components/pages/AboutPageComponent/FaqPageComponent/FaqPageComponent'
-import StaffPageComponent from './components/pages/AboutPageComponent/StaffPageComponent/StaffPageComponent'
-import StaffMemberSingleViewPageComponent from './components/pages/AboutPageComponent/StaffPageComponent/StaffMemberSingleViewPageComponent/StaffMemberSingleViewPageComponent'
+import BoardPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/BoardPageComponent/BoardPageComponent'
+import TeamPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/TeamPageComponent/TeamPageComponent'
+
+import AdvisoryBoardPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/AdvisoryBoardPageComponent/AdvisoryBoardPageComponent'
+
+import StaffMemberSingleViewPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/StaffMemberSingleViewPageComponent/StaffMemberSingleViewPageComponent'
 
 
 
@@ -99,7 +103,16 @@ export default function MainComponent() {
                             <WhatWeDoPageComponent />
                         </Route>
                         <Route exact path="/ABOUTUS/STAFF">
-                            <StaffPageComponent staff={LoadedStaff_members} />
+                            <BoardPageComponent staff={LoadedStaff_members} />
+                        </Route>
+                        <Route exact path="/ABOUTUS/STAFF/Board">
+                            <BoardPageComponent staff={LoadedStaff_members} />
+                        </Route>
+                        <Route exact path="/ABOUTUS/STAFF/ADVISORY">
+                            <AdvisoryBoardPageComponent staff={LoadedStaff_members} />
+                        </Route>
+                        <Route exact path="/ABOUTUS/STAFF/TEAM">
+                            <TeamPageComponent staff={LoadedStaff_members} />
                         </Route>
 
                         <Route exact path="/ABOUTUS/FAQ">

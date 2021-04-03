@@ -1,16 +1,15 @@
 import React from 'react'
-import './StaffPageComponent.css'
+import './TeamPageComponent.css'
 import {
     Col, Container, Row, Card, CardText, CardBody, CardFooter,
     CardTitle,
 } from 'reactstrap'
 import ReactLoading from 'react-loading';
 
-import aa from "./../images/board/aa.png"
 import { Link } from 'react-router-dom';
 
 
-function StaffPageComponent(props) {
+function TeamPageComponent(props) {
     // console.log(`props.staff`, props.staff)
 
     function create_staff_view(staff, role) {
@@ -82,34 +81,6 @@ function StaffPageComponent(props) {
                 <Container id="board_content" >
                     <div class="section_header" style={{ margin: "140px 0 30px 0px", zIndex: "333" }}>
                         <span class="section_header_inner" style={{ zIndex: "333" }}>
-                            Board
-                            </span>
-                        <div className="section_header_under" style={{ width: "100%", marginTop: "10px" }}></div>
-                    </div>
-                    <Row className=" justify-content-center align-items-stretch">
-                        {create_staff_view(props.staff, "board_member")}
-                    </Row>
-                </Container>
-
-
-
-                <Container id="board_content_2" >
-                    <div class="section_header" style={{ margin: "100px 0 30px 0px", zIndex: "333" }}>
-                        <span class="section_header_inner">
-                            Board Advisory Committee
-                            </span>
-                        <div className="section_header_under" style={{ width: "100%", marginTop: "10px" }}></div>
-                    </div>
-                    <Row className=" justify-content-center align-items-stretch">
-                        {create_staff_view(props.staff, "advisory_board_member")}
-                    </Row>
-
-                </Container>
-
-
-                <Container id="board_content_3" >
-                    <div class="section_header" style={{ margin: "100px 0 30px 0px", zIndex: "333" }}>
-                        <span class="section_header_inner">
                             Team
                             </span>
                         <div className="section_header_under" style={{ width: "100%", marginTop: "10px" }}></div>
@@ -119,6 +90,9 @@ function StaffPageComponent(props) {
                     </Row>
                 </Container>
 
+
+
+
             </div>
         )
     }
@@ -126,4 +100,4 @@ function StaffPageComponent(props) {
 
 }
 
-export default StaffPageComponent
+export default TeamPageComponent
