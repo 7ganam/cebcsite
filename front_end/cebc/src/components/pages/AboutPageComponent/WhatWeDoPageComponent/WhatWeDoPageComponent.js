@@ -36,17 +36,17 @@ function WhatWeDoPageComponent() {
 
             <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
                 <img src={mena} alt="" style={{
-                    width: "100%", height: "auto", position: "absolute", right: ' 0', top: '500px', filter: 'gray', filter: ' grayscale(1)', opacity: ' .1',
+                    width: "100%", height: "auto", position: "absolute", right: ' 0', top: '200px', filter: 'gray', filter: ' grayscale(1)', opacity: ' .1',
                 }} />
             </div>
 
-            <Container style={{ marginTop: "150px", marginBottom: "150px", }}>
+            <Container style={{ marginTop: "50px", marginBottom: "50px", }}>
                 <Col sm="12">
                     <div class="section_header" style={{ marginBottom: "120px" }}>
-                        <span class="section_header_inner">
+                        <span class="section_header_inner" style={{ fontWeight: "bold" }}>
                             Our Vision and Mission
                             </span>
-                        <div className="section_header_under"></div>
+                        <div className="section_header_under" style={{ width: "80%", marginTop: '20px' }}></div>
                     </div>
                 </Col>
                 <Row style={{ position: "relative", top: "" }}>

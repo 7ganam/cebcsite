@@ -51,15 +51,7 @@ const app = () => {
         </Wrapper>
       </OverlayContainer>
 
-      <Slide
-        shouldRenderMask
-        navDescription="What we do"
-        background={{
-          backgroundColor: "#8A8A8A",
-          maskBackgroundBlendMode: 'luminosity',
-          backgroundImage: kyoto
-        }}
-      />
+
 
       <Slide
         shouldRenderMask
@@ -81,7 +73,15 @@ const app = () => {
           backgroundImage: hakone
         }}
       />
-
+      <Slide
+        shouldRenderMask
+        navDescription="What we do"
+        background={{
+          backgroundColor: "#8A8A8A",
+          maskBackgroundBlendMode: 'luminosity',
+          backgroundImage: kyoto
+        }}
+      />
       <Slide
         shouldRenderMask
         navDescription="Our vision"

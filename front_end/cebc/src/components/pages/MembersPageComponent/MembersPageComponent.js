@@ -30,6 +30,46 @@ function MembersPageComponent(props) {
     return (
         <div>
             <Container style={{ marginTop: "200px" }}>
+
+                <Row className=" justify-content-center">
+                    <Col >
+                        <div class="section_header">
+                            <span class="section_header_inner">
+                                Partner members
+                            </span>
+                            <div className="section_header_under"></div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className=" justify-content-center">
+                    <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
+                        {generate_assoicate_members_views("partner_member_entity")}
+                    </div>
+                </Row>
+            </Container>
+            <Container fluid style={{ backgroundColor: '#F7F7F7', paddingTop: "100px", paddingBottom: "100px", marginTop: "50px", marginBottom: "50px" }}>
+
+                <Row className=" justify-content-center">
+                    <Col >
+                        <div class="section_header">
+                            <span class="section_header_inner">
+                                Corporate
+                            </span>
+                            <div className="section_header_under"></div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className=" justify-content-center">
+                    <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
+                        {generate_assoicate_members_views("corporate_member_entity")}
+                    </div>
+                </Row>
+            </Container>
+
+
+            <Container style={{ marginTop: "" }}>
+
+
                 <Row className=" justify-content-center">
                     <Col >
                         <div class="section_header">
@@ -47,38 +87,6 @@ function MembersPageComponent(props) {
                     </div>
                 </Row>
 
-
-                <Row className=" justify-content-center">
-                    <Col >
-                        <div class="section_header">
-                            <span class="section_header_inner">
-                                Corporate
-                            </span>
-                            <div className="section_header_under"></div>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className=" justify-content-center">
-                    <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
-                        {generate_assoicate_members_views("corporate_member_entity")}
-                    </div>
-                </Row>
-
-                <Row className=" justify-content-center">
-                    <Col >
-                        <div class="section_header">
-                            <span class="section_header_inner">
-                                Partner
-                            </span>
-                            <div className="section_header_under"></div>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className=" justify-content-center">
-                    <div style={{ display: "flex", maxWidth: "80%", flexWrap: "wrap", justifyContent: "center", marginTop: "20px", marginBottom: "40px" }}>
-                        {generate_assoicate_members_views("partner_member_entity")}
-                    </div>
-                </Row>
             </Container>
         </div>
     )

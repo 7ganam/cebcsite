@@ -40,9 +40,11 @@
 
 .section_header{
 
-  font-family: 'Stardos Stencil', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 60px;
   /* background-color: red; */
+  font-weight: lighter;
+    text-transform: uppercase;
 display: flex;
 flex-direction: column;
 justify-content: center;

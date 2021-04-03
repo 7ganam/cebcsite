@@ -6,7 +6,11 @@ function BenifitsPageComponent() {
         <div style={{ minHeight: "300px", paddingTop: '200px', paddingBottom: '', backgroundColor: "" }}>
             <Container>
                 <Row className="title_row">
-                    <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
+                    <div class="section_header" style={{
+                        marginTop: "10px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400'
+                    }}>
+
+
                         <span class="section_header_inner" style={{ fontSize: '34px', }}>MEMBERSHIP</span>
                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                     </div>
@@ -79,7 +83,7 @@ function BenifitsPageComponent() {
             <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "200px", }}>
                 <Container>
                     <Row className="title_row">
-                        <div class="section_header" style={{ marginTop: "50px", alignItems: 'start', textAlign: 'left' }}>
+                        <div class="section_header" style={{ marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
                             <span class="section_header_inner" style={{ fontSize: '34px', }}>WHY JOIN THE CEBC?</span>
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                         </div>
