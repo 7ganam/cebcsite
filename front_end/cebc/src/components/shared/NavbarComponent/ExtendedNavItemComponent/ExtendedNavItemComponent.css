@@ -18,6 +18,8 @@
 
 
 
+
+
 .nav-item{
     display: flex;
     align-items: center;
@@ -50,14 +52,14 @@
     flex-direction: column;
     margin-left: 60px;
 
-    transition: all .5s ease-in-out;
+    /* transition: all .5s ease-in-out; */
     /* height: 0px; */
     /* overflow: hidden; */
     position: relative;
     top:10px
 }
 .my-sub-nav{
-    transition: all .5s ease-in-out;
+    /* transition: all .5s ease-in-out; */
     transform: scaleY(0);  
     height: 0px;
     transform-origin: top;
@@ -65,7 +67,7 @@
 }
 
 .my-sub-nav.drop{
-    transition: all .5s ease-in-out;
+    transition: all .5s ;
     height: auto;
     transform: scaleY(1);    
     transform-origin: top;
@@ -74,11 +76,26 @@
 
 
 
+
+
+
 .nav_list{
     margin-top: 10px;
 }
 
 
+.nav-item{
+    transition: all .5s ease-in-out;
+
+}
+.nav-link{
+    transition: all .5s ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+
+}
 
 
 

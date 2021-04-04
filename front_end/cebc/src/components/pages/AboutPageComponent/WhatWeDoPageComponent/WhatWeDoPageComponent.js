@@ -46,7 +46,7 @@ function WhatWeDoPageComponent() {
                         <span class="section_header_inner" style={{ fontWeight: "bold" }}>
                             Our Vision and Mission
                             </span>
-                        <div className="section_header_under" style={{ width: "80%", marginTop: '20px' }}></div>
+                        {/* <div className="section_header_under" style={{ width: "80%", marginTop: '20px' }}></div> */}
                     </div>
                 </Col>
                 <Row style={{ position: "relative", top: "" }}>

@@ -88,11 +88,10 @@ export default function MainComponent() {
             <div id="content_wrap">
                 <Router >
                     <ScrollToTopComponent />
-                    <NavbarComponent />
-                    {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}
-                    <Switch>
+                    <NavbarComponent /> {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}
+                    <Switch id="react_router_switch">
                         <Route exact path="/">
-                            <HomePageComponent programmes_state={{ LoadedProgrammes }} members={LoadedEntity_s} latest_news={LoadedNews} />
+                            <HomePageComponent className="home" programmes_state={{ LoadedProgrammes }} members={LoadedEntity_s} latest_news={LoadedNews} />
                         </Route>
 
 

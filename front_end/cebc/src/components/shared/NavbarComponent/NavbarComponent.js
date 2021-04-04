@@ -23,25 +23,41 @@ const NavbarComponent = (props) => {
 
     let [Scrolled, setScrolled] = useState(false)
 
-    useEffect(() => { //add scrolled class to elements that should behave diffrently when window is scrolled
-        var $navitem = $(".nav-item"); // add the scrolled class with jquery to all the nave links when scrolled
-        var $navlink = $(".nav_link"); // add the scrolled class with jquery to all the nave links when scrolled
-        $navlink.toggleClass('scrolled', $(document).scrollTop() > $navlink.height());
-        $navitem.toggleClass('not_scrolled', $(document).scrollTop() < $navlink.height());
-        $(function () {
-            $(document).scroll(function () {
-                var $nav = $("#my_nav"); // change the Scrolled state when we scroll more than the navbar height
-                if ($(this).scrollTop() > $nav.height()) {
-                    if (!Scrolled) { setScrolled(true) }
-                }
-                else {
-                    if (Scrolled) { setScrolled(false) }
-                }
-                $navlink.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
-                $navitem.toggleClass('not_scrolled', $(this).scrollTop() < $navlink.height());
+    useEffect(
+        () => { //add scrolled class to elements that should behave diffrently when window is scrolled
+            var $navitem = $(".nav-item"); // add the scrolled class with jquery to all the nave links when scrolled
+            var $navlink = $(".nav_link"); // add the scrolled class with jquery to all the nave links when scrolled
+            $navlink.toggleClass('scrolled', $(document).scrollTop() > $navlink.height());
+            $navitem.toggleClass('not_scrolled', $(document).scrollTop() < $navlink.height());
+            $(function () {
+                $(document).scroll(function () {
+                    var $nav = $("#my_nav"); // change the Scrolled state when we scroll more than the navbar height
+                    if ($(this).scrollTop() > $nav.height()) {
+                        if (!Scrolled) { setScrolled(true) }
+                    }
+                    else {
+                        if (Scrolled) { setScrolled(false) }
+                    }
+                    $navlink.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
+                    $navitem.toggleClass('not_scrolled', $(this).scrollTop() < $navlink.height());
+                });
             });
-        });
-    })
+
+
+            // Close Navbar when clicked outside
+            $(window).on('click', function (event) {
+                // element over which click was made
+
+                var clickOver = $(event.target)
+                console.log(`clickOver`, $('.navbar .navbar-toggler').attr('aria-expanded'))
+                if ($('.navbar-collapse').hasClass("show") && clickOver.closest('.navbar').length === 0) {
+                    // Click on navbar toggler button
+                    $('.navbar-toggler').click();
+                }
+            });
+
+
+        })
 
 
 
@@ -51,8 +67,8 @@ const NavbarComponent = (props) => {
                 <div id="top_bar" className="header_font" >
 
                     <Link className="" to="/groups_programs">
-                        <div style={{ paddingRight: "16px" }} >
-                            cebc working groups
+                        <div style={{ paddingRight: "16px", color: "black" }} >
+                            working groups
                         </div>
                     </Link>
 
