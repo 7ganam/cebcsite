@@ -43,7 +43,7 @@ function SingleCaseStudyPageComponent(props) {
                 )
             }
         })
-        return members_views  
+        return members_views
     }
 
 
@@ -109,8 +109,8 @@ function SingleCaseStudyPageComponent(props) {
                                                 <a target="_blank" href={the_case_study.file.url} >
                                                     <div class="action-button shadow animate blue">
 
-                                                        open case
-                                                        
+                                                        <div>open case</div>
+
                                                         <i class="fas fa-external-link-alt"></i>
 
                                                     </div>

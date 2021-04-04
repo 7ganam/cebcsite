@@ -111,8 +111,8 @@ function SingleProjectPageComponent(props) {
                                                 <a target="_blank" href={the_report.file.url} >
                                                     <div class="action-button shadow animate blue">
 
-                                                        open publication
-                                                    
+                                                        <div>open publication</div>
+
                                                         <i class="fas fa-external-link-alt"></i>
 
                                                     </div>

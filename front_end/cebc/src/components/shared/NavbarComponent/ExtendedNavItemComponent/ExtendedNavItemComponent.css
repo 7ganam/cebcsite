@@ -93,12 +93,19 @@
 }
 
 
-@media (max-width: 768px) {
 
+
+.working_areas_header{
+    margin-top: 900px;
+    margin-bottom: 50px;
 }
 
-
-
+@media (min-width: 768px) {
+    .working_areas_header{
+        margin-top: 300px;
+        margin-bottom: 50px;
+    }
+}
 
 /* // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap */

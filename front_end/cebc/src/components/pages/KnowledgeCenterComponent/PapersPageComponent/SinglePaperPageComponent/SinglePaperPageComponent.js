@@ -109,8 +109,8 @@ function SinglePaperPageComponent(props) {
                                                 <a target="_blank" href={the_paper.file.url} >
                                                     <div class="action-button shadow animate blue">
 
-                                                        open paper
-                                                        
+                                                        <div> open paper</div>
+
                                                         <i class="fas fa-external-link-alt"></i>
 
                                                     </div>
@@ -140,7 +140,7 @@ function SinglePaperPageComponent(props) {
 
                             </div>
 
-                            {!!the_paper  &&
+                            {!!the_paper &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}> details </span>

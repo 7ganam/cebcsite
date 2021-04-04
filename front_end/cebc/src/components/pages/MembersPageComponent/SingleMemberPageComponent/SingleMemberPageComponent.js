@@ -55,7 +55,7 @@ function SingleMemberPageComponent(props) {
                         <div style={{ zIndex: '1000' }}>
                             <div id="member_header" style={{ zIndex: '100' }} >
 
-                                <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px" }}>
+                                <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px", maxWidth: '100%' }}>
 
                                     {member.entity_image ?
                                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>

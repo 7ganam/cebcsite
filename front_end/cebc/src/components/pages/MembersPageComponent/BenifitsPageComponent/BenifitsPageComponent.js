@@ -7,7 +7,7 @@ function BenifitsPageComponent() {
             <Container>
                 <Row className="title_row">
                     <div class="section_header" style={{
-                        marginTop: "10px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400'
+                        marginLeft: '15px', marginTop: "10px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400'
                     }}>
 
 
@@ -27,7 +27,7 @@ function BenifitsPageComponent() {
 
 
                 <Row style={{ margin: '30px 0 30px 0' }}>
-                    <Col md={4} className="d-flex justify-content-center align-items-center " style={{ flexDirection: "column" }}>
+                    <Col md={4} className="d-flex justify-content-center align-items-center mb-4 " style={{ flexDirection: "column" }}>
                         <div className="working_card2">
                             <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                 <img src={"https://cebc.s3.eu-central-1.amazonaws.com/Image_For_Article_1094_15905836938893485_059eb826f3.webp"} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -43,7 +43,7 @@ function BenifitsPageComponent() {
                             the MENA clean energy sector.
                         </div>
                     </Col>
-                    <Col md={4} className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
+                    <Col md={4} className="d-flex justify-content-center align-items-center mb-4" style={{ flexDirection: "column" }}>
                         <div className="working_card2">
                             <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                 <img src={"https://cebc.s3.eu-central-1.amazonaws.com/Networking_1_635x500_1b7742e5b7.jpg"} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -61,7 +61,7 @@ function BenifitsPageComponent() {
                             the MENA clean energy sector.
                         </div>
                     </Col>
-                    <Col md={4} className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
+                    <Col md={4} className="d-flex justify-content-center align-items-center mb-4" style={{ flexDirection: "column" }}>
                         <div className="working_card2">
                             <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                 <img src={"https://cebc.s3.eu-central-1.amazonaws.com/renewablejobs_c900724e75.jpg"} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -83,7 +83,7 @@ function BenifitsPageComponent() {
             <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "200px", }}>
                 <Container>
                     <Row className="title_row">
-                        <div class="section_header" style={{ marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
+                        <div class="section_header" style={{ marginLeft: '15px', marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
                             <span class="section_header_inner" style={{ fontSize: '34px', }}>WHY JOIN THE CEBC?</span>
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                         </div>

@@ -13,9 +13,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 function WorkingAreaComponent() {
     return (
-        <div>
-            <div class="section_header" style={{ margin: "400px 0 100px 0px" }}>
-                <span class="section_header_inner">
+        <div style={{ paddingBottom: '30px' }}>
+            <div className="section_header working_areas_header" >
+                <span className="section_header_inner ">
                     Our Working Areas
                             </span>
                 <div className="section_header_under"></div>
@@ -25,7 +25,7 @@ function WorkingAreaComponent() {
                 <Container id="sub_working_container" >
                     <Row>
                         <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2">
+                            <div className="working_card2" style={{ marginBottom: '30px' }}>
                                 <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                     <img src={Member} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 </div>
@@ -36,7 +36,7 @@ function WorkingAreaComponent() {
                             </div>
                         </Col>
                         <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2">
+                            <div className="working_card2" style={{ marginBottom: '30px' }}>
                                 <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                     <img src={wice} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 </div>
@@ -49,7 +49,7 @@ function WorkingAreaComponent() {
 
                         </Col>
                         <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2">
+                            <div className="working_card2" style={{ marginBottom: '30px' }}>
                                 <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                     <img src={NEVC} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                 </div>

@@ -61,7 +61,7 @@ function NewsViewPageComponent(props) {
 
 
 
-                            <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px" }}>
+                            <div id="header_img" style={{ backgroundColor: "", padding: "0px", height: "210px", width: "300px", maxWidth: '100%' }}>
                                 {LoadedNews.thumbnail_image ?
                                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
                                         <img src={`${LoadedNews.thumbnail_image.url}`}

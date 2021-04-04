@@ -46,7 +46,7 @@ function PapersPageComponent(props) {
     return (
         <div style={{ marginTop: '200px', marginBottom: '50px' }}>
             <div class="section_header" style={{ marginTop: "100px", marginBottom: "100px" }}>
-                <span class="section_header_inner">   White papers     </span>
+                <span class="section_header_inner">  NEWSLETTERS    </span>
                 <div className="section_header_under"></div>
             </div>
             {props.papers.length > 0 &&

@@ -186,7 +186,7 @@ function NewsEventSubPagesComponent(props) {
                     sub_objects.push(
 
                         <Col md={4} lg={3}>
-                            <Card className="past_event_card">
+                            <Card className="past_event_card mb-4">
                                 {event.Event_thumbnail_image ?
 
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${event.Event_thumbnail_image.url}`} alt="Card image cap" />
@@ -288,7 +288,7 @@ function NewsEventSubPagesComponent(props) {
                     sub_objects.push(
 
                         <Col md={4} lg={3}>
-                            <Card className="past_news_card">
+                            <Card className="past_news_card mb-4">
                                 {news.thumbnail_image ?
 
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${news.thumbnail_image.url}`} alt="Card image cap" />
@@ -319,7 +319,7 @@ function NewsEventSubPagesComponent(props) {
 
         let render_news = []
         render_news.push(
-            <div class="section_header" style={{ marginTop: "100px" }}>
+            <div class="section_header" style={{ marginTop: "200px" }}>
                 <span class="section_header_inner">
                     latest news
                 </span>
@@ -459,10 +459,10 @@ function NewsEventSubPagesComponent(props) {
 
 
                 <>
-                    <div id="header_news">
+                    <div id="header_news" >
                         {/* <span class="logo icon fa-paper-plane"></span> */}
-                        <h1>CEBC NEWS.</h1>
-                        <p>CEBC members and strategic partners news.</p>
+                        {/* <h1>CEBC NEWS.</h1>
+                        <p>CEBC members and strategic partners news.</p> */}
                     </div>
                     { news.length > 0 ?
                         <>

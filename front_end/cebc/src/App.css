@@ -41,15 +41,26 @@
 .section_header{
 
   font-family: 'Raleway', sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   /* background-color: red; */
-  font-weight: lighter;
+  font-weight: 200;
     text-transform: uppercase;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 }
+
+@media (min-width: 576px) { 
+
+  .section_header{
+    font-weight: lighter;
+
+    font-size: 60px;
+
+  }
+ }
+
 
 .section_header_inner{
   /* border-bottom-style: solid;
