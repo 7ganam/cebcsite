@@ -100,7 +100,7 @@ function ExtendedNavItemComponent2(props) {
             // console.log(`props.location.pathnam`, props.location.pathname)
             // console.log(`-----------------------------`)
 
-            console.log(`props.location.pathnam`, props.location.pathname)
+            // console.log(`props.location.pathnam`, props.location.pathname)
 
 
             return (

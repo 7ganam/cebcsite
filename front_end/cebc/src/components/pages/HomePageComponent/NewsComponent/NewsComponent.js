@@ -2,7 +2,8 @@ import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import main_image from "./Afra2.jpg"
 import "./NewsComponent.css"
-import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactLoading from 'react-loading';
 import { Link } from "react-router-dom";
 
 function NewsComponent(props) {

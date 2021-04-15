@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavbarBrand, Collapse, Navbar, NavbarToggler, Nav, NavItem, Container } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
+import { LoginContext } from "../../../contexts/LoginContext"
+import { useContext } from "react";
 
 
 import { Link } from "react-router-dom";
@@ -18,6 +20,9 @@ const $ = require("jquery");
 
 
 const NavbarComponent = (props) => {
+
+    const { login, IsLoggedIn, Token, ToggleLoginModal, logout, IsSignUpModalShown, ToggleSignUpModal, User } = useContext(LoginContext);
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
@@ -72,9 +77,22 @@ const NavbarComponent = (props) => {
                         </div>
                     </Link>
 
-                    <div style={{ paddingRight: "6px" }} >
-                        log in
-                    </div>
+
+                    {!IsLoggedIn ?
+                        <>
+                            <div onClick={ToggleLoginModal} style={{ paddingRight: "16px", cursor: 'pointer' }}>
+                                Login
+                            </div>
+                            <div onClick={ToggleSignUpModal} style={{ paddingRight: "6px", cursor: 'pointer' }}>
+                                < >  signup </>
+                            </div>
+                        </>
+                        :
+                        <div onClick={logout} style={{ paddingRight: "6px", cursor: 'pointer' }}>
+                            < >  logout </>
+                        </div>
+
+                    }
                 </div>
             </div>
             <Container fluid id="nav_bar_container" >
@@ -164,12 +182,24 @@ const NavbarComponent = (props) => {
                                 />
 
 
+                                {IsLoggedIn &&
+                                    <>
 
-                                <NavItem className={props.location.pathname !== "/khu" ? '' : 'nav-link-selected'}>
-                                    <Link className="nav_link" to="/">
-                                        contact us
-                                    </Link>
-                                </NavItem>
+                                        <NavItem >
+                                            <div style={{
+                                                width: "70px", height: "100%", borderRadius: "100%",
+                                                display: 'flex', justifyContent: 'center', alignItems: 'center'
+                                            }} >
+                                                <img style={{ width: "50px", height: "50px", borderRadius: "100%", }}
+                                                    src={User.image.url || '/user.png'} alt="profile"
+                                                />
+                                            </div>
+                                        </NavItem>
+
+
+
+                                    </>
+                                }
                             </Nav>
 
                         </Collapse>

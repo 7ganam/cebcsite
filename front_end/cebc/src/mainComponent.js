@@ -21,7 +21,6 @@ import BoardPageComponent from './components/pages/AboutPageComponent/StaffPages
 import TeamPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/TeamPageComponent/TeamPageComponent'
 
 import AdvisoryBoardPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/AdvisoryBoardPageComponent/AdvisoryBoardPageComponent'
-
 import StaffMemberSingleViewPageComponent from './components/pages/AboutPageComponent/StaffPagesComponents/StaffMemberSingleViewPageComponent/StaffMemberSingleViewPageComponent'
 
 
@@ -62,20 +61,40 @@ import ScrollToTopComponent from "./ScrollToTopComponent"
 
 // import { useHttpClient } from "./hooks/http-hook"
 import useInitLoadedData from "./hooks/LoadInitData"
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+
+
+import LoginModalComponenet from "./components/shared/LoginModalComponenet/LoginModalComponenet"
+import SignUpModalComponenet from "./components/shared/SignUpModalComponenet/SignUpModalComponenet"
+import SignInModalComponenet from "./components/shared/SignInModalComponenet/SignInModalComponenet"
+
+import { LoginContext } from "./contexts/LoginContext"
+
+
+
 
 
 
 export default function MainComponent() {
 
+
     const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members } = useInitLoadedData();
 
 
+    const { login, IsLoggedIn, Token, ToggleLoginModal, IsLogInModalShown, IsSignUpModalShown, ToggleSignUpModal } = useContext(LoginContext);
+    const check_if_logged_in = () => {
+        const storedData = JSON.parse(localStorage.getItem('userData'));
+        if (storedData && storedData.token) {
+            login(storedData.token, storedData.user);
+            console.log(`storedData.user`, storedData.user)
+        }
+
+    }
 
 
 
     useEffect(() => {
-
+        check_if_logged_in();
 
     }, []);
 
@@ -86,6 +105,10 @@ export default function MainComponent() {
     return (
         <div id="main_component" style={{ backgroundColor: "white", overflow: "" }}>
             <div id="content_wrap">
+                {/* <LoginModalComponenet /> */}
+                <SignUpModalComponenet />
+                <SignInModalComponenet />
+
                 <Router >
                     <ScrollToTopComponent />
                     <NavbarComponent /> {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}

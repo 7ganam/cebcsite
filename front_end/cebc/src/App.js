@@ -1,10 +1,14 @@
 import './App.css';
 import MainComponent from "./mainComponent"
+import { LoginContextProvider, LoginContext } from "./contexts/LoginContext"
+import { useContext } from "react";
 
 function App() {
   return (
     <div className="App">
-      <MainComponent />
+      <LoginContextProvider>
+        <MainComponent />
+      </LoginContextProvider>
     </div>
   );
 }
