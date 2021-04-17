@@ -10,8 +10,10 @@ import PartnersPageComponent from './components/pages/MembersPageComponent/Partn
 import SingleMemberPageComponent from './components/pages/MembersPageComponent/SingleMemberPageComponent/SingleMemberPageComponent'
 import BenifitsPageComponent from './components/pages/MembersPageComponent/BenifitsPageComponent/BenifitsPageComponent'
 import LevelsPageComponent from './components/pages/MembersPageComponent/LevelsPageComponent/LevelsPageComponent'
+import JoinPageComponent from './components/pages/MembersPageComponent/JoinPageComponent/JoinPageComponent'
+import MembersOnlyPageComponent from './components/pages/MembersPageComponent/MembersOnlyPageComponent/MembersOnlyPageComponent'
 
-
+import PastJobPageComponent from './components/pages/MembersPageComponent/MembersOnlyPageComponent/PastJobPageComponent/PastJobPageComponent'
 
 
 import AboutPageComponent from './components/pages/AboutPageComponent/AboutPageComponent'
@@ -52,6 +54,8 @@ import NewsEventSubPagesComponent from './components/pages/EventNewsPageComponen
 import EventViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/EventViewPageComponent/EventViewPageComponent'
 import NewsViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsViewPageComponent/NewsViewPageComponent'
 
+import JobPageCompoenent from './components/pages/EventNewsPageComponent/JobPageCompoenent/JobPageCompoenent'
+
 
 import WorkingGroupsPageComponent from './components/pages/WorkingGroupsPageComponent/WorkingGroupsPageComponent'
 import SingleWorkingGroupPageComponent from './components/pages/WorkingGroupsPageComponent/SingleWorkingGroupPageComponent/SingleWorkingGroupPageComponent'
@@ -64,7 +68,6 @@ import useInitLoadedData from "./hooks/LoadInitData"
 import { useEffect, useContext } from 'react';
 
 
-import LoginModalComponenet from "./components/shared/LoginModalComponenet/LoginModalComponenet"
 import SignUpModalComponenet from "./components/shared/SignUpModalComponenet/SignUpModalComponenet"
 import SignInModalComponenet from "./components/shared/SignInModalComponenet/SignInModalComponenet"
 
@@ -78,7 +81,7 @@ import { LoginContext } from "./contexts/LoginContext"
 export default function MainComponent() {
 
 
-    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members } = useInitLoadedData();
+    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs } = useInitLoadedData();
 
 
     const { login, IsLoggedIn, Token, ToggleLoginModal, IsLogInModalShown, IsSignUpModalShown, ToggleSignUpModal } = useContext(LoginContext);
@@ -242,29 +245,38 @@ export default function MainComponent() {
                             <KnowledgeCenterComponent />
                         </Route>
 
-
-
-
-
-
-
-
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-
-
                         <Route path="/MEMBERSHIP/MEMBERS/:member_id"
                             component={
                                 (props) => <   SingleMemberPageComponent {...props} members={LoadedEntity_s} />
                             }
                         />
 
+
+                        <Route path="/MEMBERSHIP/MEMBERSONLY/POSTJOB"
+                            component={
+                                (props) => <   PastJobPageComponent {...props} />
+                            }
+                        />
+
+
+                        <Route path="/MEMBERSHIP/MEMBERSONLY"
+                            component={
+                                (props) => <   MembersOnlyPageComponent {...props} latest_news={LoadedNews} />
+                            }
+                        />
+
+
+
+
+
                         <Route exact path="/MEMBERSHIP/BENIFITS">
                             <BenifitsPageComponent />
                         </Route>
                         <Route exact path="/MEMBERSHIP/LEVELS">
                             <LevelsPageComponent />
+                        </Route>
+                        <Route exact path="/MEMBERSHIP/JOIN">
+                            <JoinPageComponent />
                         </Route>
 
 
@@ -281,10 +293,6 @@ export default function MainComponent() {
 
 
 
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-                        {/* ----------------------------------------------------------------------------------------------------------------------------- */}
-
 
 
                         <Route path="/groups_programs/:group_id"
@@ -295,6 +303,21 @@ export default function MainComponent() {
                         <Route exact path="/groups_programs">
                             <WorkingGroupsPageComponent programmes_state={{ LoadedProgrammes }} />
                         </Route>
+
+
+
+
+
+
+
+
+
+                        <Route path="/EVENTS_NEWS/JOBS">
+                            {(props) => <JobPageCompoenent {...props} jobs={LoadedJobs} />}
+                        </Route>
+
+
+
 
 
 
@@ -315,6 +338,10 @@ export default function MainComponent() {
                                 <   NewsEventSubPagesComponent {...props} />
                             }
                         </Route>
+
+
+
+
                         <Route path="/EVENTS_NEWS">
                             {(props) => <EventNewsPageComponent {...props} />}
                         </Route>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import "./LevelsPageComponent.css"
+import CallToAction from '../../../shared/CallToAction/CallToAction'
+
 function LevelsPageComponent() {
 
 
@@ -191,6 +193,12 @@ function LevelsPageComponent() {
                 </Row>
                 {generate_table_view(data)}
             </Container>
+
+            <div style={{ marginLeft: "auto", marginRight: "auto", marginBottom: "100px", marginTop: "40px", width: "600px" }}>
+
+                <CallToAction />
+
+            </div>
 
         </div>
     )

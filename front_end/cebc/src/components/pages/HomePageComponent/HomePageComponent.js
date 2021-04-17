@@ -6,7 +6,7 @@ import "./HomePageComponent.css"
 import VideoComponent from './VideoComponent/VideoComponent'
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import MemebersCarouselComponent from "./MemebersCarouselComponent/MemebersCarouselComponent"
-
+import CallToAction from '../../shared/CallToAction/CallToAction'
 
 export default function HomePageComponent(props) {
 
@@ -25,6 +25,8 @@ export default function HomePageComponent(props) {
 
                 <MemebersCarouselComponent members={props.members} />
             }
+
+
             <div id="working_groups_section" style={{ marginTop: "100px", backgroundColor: "#f7f7f7", paddingBottom: "100px " }}>
                 <WorkingGroupsComponent programmes_state={props.programmes_state} />
             </div>

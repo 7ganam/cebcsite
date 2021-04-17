@@ -54,7 +54,7 @@ const NavbarComponent = (props) => {
                 // element over which click was made
 
                 var clickOver = $(event.target)
-                console.log(`clickOver`, $('.navbar .navbar-toggler').attr('aria-expanded'))
+                // console.log(`clickOver`, $('.navbar .navbar-toggler').attr('aria-expanded'))
                 if ($('.navbar-collapse').hasClass("show") && clickOver.closest('.navbar').length === 0) {
                     // Click on navbar toggler button
                     $('.navbar-toggler').click();
@@ -153,6 +153,8 @@ const NavbarComponent = (props) => {
                                         { path: "/MEMBERSHIP/LEVELS", text: "levels" },
                                         { path: "/MEMBERSHIP/MEMBERS", text: "members" },
                                         { path: "/MEMBERSHIP/PARTNERS", text: "partners" },
+                                        { path: "/MEMBERSHIP/JOIN", text: "join the cebc" },
+                                        { path: "/MEMBERSHIP/MEMBERSONLY", text: "Members only section" },
                                     ]}
                                 />
 
@@ -160,7 +162,9 @@ const NavbarComponent = (props) => {
 
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/EVENTS_NEWS", text: "EVENTS & NEWS" }}
-                                    sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" }, { path: "/News", text: "News" }
+                                    sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" },
+                                    { path: "/News", text: "News" },
+                                    { path: "/JOBS", text: "jobs" }
                                     ]}
                                 />
 

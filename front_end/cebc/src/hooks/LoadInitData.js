@@ -244,6 +244,24 @@ function useInitLoadedData() {
     );
 
 
+    const { isLoading: JobsIsLoading, error: JobsError, sendRequest: sendJobsRequest, clearError: clearJobsError } = useHttpClient();
+    const [LoadedJobs, setLoadedJobs] = useState([]);
+    const fetch_Jobs = useCallback(
+        async () => {
+            try {
+                const responseData = await sendJobsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/jobs`
+                );
+                setLoadedJobs(responseData);
+                console.log('fetched_Jobs ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendJobsRequest],
+    );
+
+
 
     useEffect(() => {
         fetch_Podcasts();
@@ -258,13 +276,14 @@ function useInitLoadedData() {
         fetch_Links();
         fetch_Papers();
         fetch_Staff_members();
+        fetch_Jobs();
 
     }, []);
 
 
 
 
-    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members };
+    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs };
 }
 
 export default useInitLoadedData

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import "./BenifitsPageComponent.css"
+import CallToAction from '../../../shared/CallToAction/CallToAction'
+
 function BenifitsPageComponent() {
     return (
         <div style={{ minHeight: "300px", paddingTop: '200px', paddingBottom: '', backgroundColor: "" }}>
@@ -80,7 +82,7 @@ function BenifitsPageComponent() {
                 </Row>
 
             </Container>
-            <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "200px", }}>
+            <div style={{ width: "100%", backgroundColor: "#F7F7F7", paddingBottom: "100px", }}>
                 <Container>
                     <Row className="title_row">
                         <div class="section_header" style={{ marginLeft: '15px', marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
@@ -122,7 +124,11 @@ function BenifitsPageComponent() {
                         </Col>
                     </Row>
                 </Container>
+                <div style={{ marginLeft: "auto", marginRight: "auto", marginTop: "100px", marginBottom: '0px', width: "600px" }}>
 
+                    <CallToAction />
+
+                </div>
             </div>
 
 

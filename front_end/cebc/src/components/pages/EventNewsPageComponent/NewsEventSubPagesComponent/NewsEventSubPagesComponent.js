@@ -4,7 +4,8 @@ import EventCardComponent from "./EventCardComponent/EventCardComponent"
 import { Col, Container, Row } from 'reactstrap'
 import { Link } from "react-router-dom";
 import moment from 'moment';
-import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactLoading from 'react-loading';
 
 
 import { useHttpClient } from "./../../../../hooks/http-hook"
