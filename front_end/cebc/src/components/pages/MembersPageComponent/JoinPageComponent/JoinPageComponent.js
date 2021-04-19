@@ -168,7 +168,9 @@ function JoinPageComponent() {
                                     </div>
                                 </div>
                             </Col>
+
                             <Col md={8}>
+
                                 <Formik
                                     initialValues={formValues || initialValues}
                                     validationSchema={validationSchema}
@@ -250,6 +252,8 @@ function JoinPageComponent() {
                                         )
                                     }}
                                 </Formik>
+
+
                             </Col>
                         </Row>
                     </div>

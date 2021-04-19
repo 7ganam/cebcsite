@@ -142,7 +142,7 @@ function useInitLoadedData() {
                     `${process.env.REACT_APP_BACKEND_URL}/webinars`
                 );
                 setLoadedWebinars(responseData);
-                console.log('Webinars ', responseData)
+                // console.log('Webinars ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -218,7 +218,7 @@ function useInitLoadedData() {
                     `${process.env.REACT_APP_BACKEND_URL}/entities`
                 );
                 setLoadedEntity_s(responseData);
-                console.log('fetched_Entity_s ', responseData)
+                // console.log('fetched_Entity_s ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -235,7 +235,7 @@ function useInitLoadedData() {
                     `${process.env.REACT_APP_BACKEND_URL}/staff-members`
                 );
                 setLoadedStaff_members(responseData);
-                console.log('fetched_Staff_members ', responseData)
+                // console.log('fetched_Staff_members ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -253,7 +253,7 @@ function useInitLoadedData() {
                     `${process.env.REACT_APP_BACKEND_URL}/jobs`
                 );
                 setLoadedJobs(responseData);
-                console.log('fetched_Jobs ', responseData)
+                // console.log('fetched_Jobs ', responseData)
             } catch (err) {
                 console.log({ err })
             }
@@ -261,6 +261,23 @@ function useInitLoadedData() {
         [sendJobsRequest],
     );
 
+
+    const { isLoading: CoursesIsLoading, error: CoursesError, sendRequest: sendCoursesRequest, clearError: clearCoursesError } = useHttpClient();
+    const [LoadedCourses, setLoadedCourses] = useState([]);
+    const fetch_Courses = useCallback(
+        async () => {
+            try {
+                const responseData = await sendCoursesRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/courses`
+                );
+                setLoadedCourses(responseData);
+                // console.log('fetched_Courses ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendCoursesRequest],
+    );
 
 
     useEffect(() => {
@@ -277,13 +294,14 @@ function useInitLoadedData() {
         fetch_Papers();
         fetch_Staff_members();
         fetch_Jobs();
+        fetch_Courses();
 
     }, []);
 
 
 
 
-    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs };
+    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses };
 }
 
 export default useInitLoadedData

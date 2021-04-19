@@ -55,8 +55,13 @@ function WebinarsPageComponent(props) {
 
     return (
         <div style={{ marginTop: '200px', marginBottom: '100px' }}>
+
             <Container>
-                <div className="back_ground_div">         </div>
+                <div class="section_header" style={{ marginTop: "100px", marginBottom: "100px", zIndex: '444' }}>
+                    <span class="section_header_inner">  WEBINARS    </span>
+                    <div className="section_header_under"></div>
+                </div>
+                {/* <div className="back_ground_div" style={{zIndex}}>         </div> */}
                 <Row>
 
                     {generate_webinars_cards()}

@@ -72,7 +72,7 @@ function BoardPageComponent(props) {
         return (
             <div style={{ marginBottom: "30px" }}>
 
-                <div style={{ width: "100%", height: "2000px", position: "absolute", top: "0", right: "", overflow: "hidden" }}  >
+                <div style={{ width: "100%", height: "800px", position: "absolute", top: "0", right: "", overflow: "hidden" }}  >
                     <img src="/assets/images/hero.png" alt="" style={{ width: "100%", height: "auto", position: "", }} />
                 </div>
 

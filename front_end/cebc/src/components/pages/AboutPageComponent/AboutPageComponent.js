@@ -152,7 +152,7 @@ function AboutPageComponent() {
 
 
 
-            <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
+            <div style={{ width: "100%", height: "900px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
                 <img src="/assets/images/hero.png" alt="" style={{ width: "100%", height: "auto", position: "", }} />
             </div>
 

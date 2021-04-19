@@ -167,6 +167,18 @@ const NavbarComponent = (props) => {
                                     { path: "/JOBS", text: "jobs" }
                                     ]}
                                 />
+                                <NavItem className={`${props.location.pathname !== "/ACADEMY" ? '' : 'nav-link-selected'} `}>
+                                    <Link className="nav_link" to="/ACADEMY">
+                                        ACADEMY
+                                    </Link>
+                                </NavItem>
+
+                                <NavItem className={`${props.location.pathname !== "/CONSULTANCY" ? '' : 'nav-link-selected'} `}>
+                                    <Link className="nav_link" to="/CONSULTANCY">
+                                        CONSULTANCY
+                                    </Link>
+                                </NavItem>
+
 
 
 

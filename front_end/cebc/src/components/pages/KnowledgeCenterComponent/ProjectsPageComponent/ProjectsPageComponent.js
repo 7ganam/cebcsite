@@ -35,6 +35,10 @@ function ProjectsPageComponent(props) {
 
     return (
         <div style={{ marginTop: '200px', marginBottom: '100px' }}>
+            <div class="section_header" style={{ marginTop: "100px", marginBottom: "100px", zIndex: '99' }}>
+                <span class="section_header_inner" style={{ zIndex: '99' }}>  PROJECTS    </span>
+                <div className="section_header_under" style={{ zIndex: '99' }}></div>
+            </div>
             <Container>
                 <div className="back_ground_div">         </div>
                 <Row>

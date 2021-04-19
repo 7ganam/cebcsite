@@ -61,6 +61,15 @@ import WorkingGroupsPageComponent from './components/pages/WorkingGroupsPageComp
 import SingleWorkingGroupPageComponent from './components/pages/WorkingGroupsPageComponent/SingleWorkingGroupPageComponent/SingleWorkingGroupPageComponent'
 
 
+
+import AcademyPageComponent from './components/pages/AcademyPageComponent/AcademyPageComponent'
+import ConsultancyPageComponent from './components/pages/ConsultancyPageComponent/ConsultancyPageComponent'
+
+import CoursePageComponent from './components/pages/AcademyPageComponent/CoursePageComponent/CoursePageComponent'
+
+
+
+
 import ScrollToTopComponent from "./ScrollToTopComponent"
 
 // import { useHttpClient } from "./hooks/http-hook"
@@ -81,7 +90,7 @@ import { LoginContext } from "./contexts/LoginContext"
 export default function MainComponent() {
 
 
-    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs } = useInitLoadedData();
+    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses } = useInitLoadedData();
 
 
     const { login, IsLoggedIn, Token, ToggleLoginModal, IsLogInModalShown, IsSignUpModalShown, ToggleSignUpModal } = useContext(LoginContext);
@@ -89,7 +98,7 @@ export default function MainComponent() {
         const storedData = JSON.parse(localStorage.getItem('userData'));
         if (storedData && storedData.token) {
             login(storedData.token, storedData.user);
-            console.log(`storedData.user`, storedData.user)
+            // console.log(`storedData.user`, storedData.user)
         }
 
     }
@@ -121,6 +130,22 @@ export default function MainComponent() {
                         </Route>
 
 
+
+
+
+
+
+                        <Route exact path="/ACADEMY/:course_id"
+                            component={(props) => <   CoursePageComponent {...props} courses={LoadedCourses} />}
+                        />
+                        <Route exact path="/ACADEMY">
+                            <AcademyPageComponent className="academyPage" courses={LoadedCourses} />
+                        </Route>
+
+
+                        <Route exact path="/CONSULTANCY">
+                            <ConsultancyPageComponent className="academyPage" />
+                        </Route>
 
 
 
@@ -305,20 +330,9 @@ export default function MainComponent() {
                         </Route>
 
 
-
-
-
-
-
-
-
                         <Route path="/EVENTS_NEWS/JOBS">
                             {(props) => <JobPageCompoenent {...props} jobs={LoadedJobs} />}
                         </Route>
-
-
-
-
 
 
                         <Route path="/EVENTS_NEWS/News/:News_id"
