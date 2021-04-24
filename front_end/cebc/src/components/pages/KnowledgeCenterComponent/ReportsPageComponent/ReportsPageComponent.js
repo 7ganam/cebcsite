@@ -43,7 +43,7 @@ function ReportsPageComponent(props) {
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                                 }
                                 <CardBody>
-                                    <CardTitle tag="h5"> {report.title}</CardTitle>
+                                    <CardTitle className='card_title_' tag="h5"> {report.title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted"> <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                                         <span class="mec-report-d"><span class="mec-start-date-label" itemprop="startDate">{report.date}</span></span>
                                     </CardSubtitle>

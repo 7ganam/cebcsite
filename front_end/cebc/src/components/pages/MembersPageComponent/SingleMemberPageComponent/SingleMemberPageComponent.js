@@ -17,6 +17,7 @@ function SingleMemberPageComponent(props) {
     })[0]
 
 
+
     console.log(`member`, member)
 
     function generate_projects_cards(projects_list) {
@@ -90,9 +91,8 @@ function SingleMemberPageComponent(props) {
                             <div id="member_header_2">
                                 <i class="fas fa-award  mr-2"></i>
                                 <span>
-                                    {member.membership_type}
+                                    {member.membership_type.replaceAll("_", " ")}
                                 </span>
-                                {` member`}
                             </div>
                             <div id="member_body">
                                 <div style={{}}>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import main_image from "./Afra2.jpg"
 import "./NewsComponent.css"
@@ -7,6 +7,12 @@ import ReactLoading from 'react-loading';
 import { Link } from "react-router-dom";
 
 function NewsComponent(props) {
+
+
+
+
+
+
     return (
         <div style={{ marginTop: '40px' }}>
             <Container className='news_container'>

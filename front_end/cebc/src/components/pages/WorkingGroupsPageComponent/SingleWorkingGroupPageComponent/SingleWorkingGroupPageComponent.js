@@ -27,7 +27,8 @@ function SingleWorkingGroupPageComponent(props) {
     console.log(`the_group`, the_group)
 
     function generate_members_view() {
-        const members = the_group.staff_members.map((member) => {
+        console.log(`the_group.users`, the_group.users)
+        const members = the_group.users.map((member) => {
             return (
 
                 <div className='member_container'
@@ -39,7 +40,7 @@ function SingleWorkingGroupPageComponent(props) {
                             <img className='entity_image' src={member.image.url} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
                         </div>
                         <div className='member_text'>
-                            <div className="member_name"> {member.name}</div>
+                            <div className="member_name"> {member.username}</div>
                             <div className="member_position"> {member.title}</div>
                             {/* <div className="member_Entity"> {member.Entity}</div> */}
 
@@ -167,7 +168,7 @@ function SingleWorkingGroupPageComponent(props) {
                                     </Row>
                                 </div>
                             }
-                            {the_group.member.length > 0 &&
+                            {the_group.users.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Members</span>

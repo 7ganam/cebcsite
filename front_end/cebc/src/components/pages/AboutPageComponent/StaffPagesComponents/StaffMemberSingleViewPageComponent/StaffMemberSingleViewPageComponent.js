@@ -98,7 +98,7 @@ function StaffMemberSingleViewPageComponent(props) {
                                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "100px", justifyContent: "center", alignItems: "center" }}
                                             >
                                                 <div id="member_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
-                                                    <h1 style={{ margin: "10px" }}> {the_member.name}</h1>
+                                                    <h1 style={{ margin: "10px" }}> {the_member.username}</h1>
                                                 </div>
                                                 <div id="member_box_sub_title" style={{ textAlign: "start", fontSize: '15px' }}>
                                                     <div> {the_member.title}</div>

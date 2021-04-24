@@ -232,10 +232,12 @@ function useInitLoadedData() {
         async () => {
             try {
                 const responseData = await sendStaff_membersRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/staff-members`
+                    // `${process.env.REACT_APP_BACKEND_URL}/staff-members`
+                    `${process.env.REACT_APP_BACKEND_URL}/users`
+
                 );
                 setLoadedStaff_members(responseData);
-                // console.log('fetched_Staff_members ', responseData)
+                console.log('fetched_Staff_members ', responseData)
             } catch (err) {
                 console.log({ err })
             }

@@ -106,6 +106,7 @@ export default function MainComponent() {
 
 
     useEffect(() => {
+
         check_if_logged_in();
 
     }, []);

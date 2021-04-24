@@ -58,9 +58,9 @@ function BenifitsPageComponent() {
 
                         </div>
                         <div style={{ fontFamily: "'Raleway', sans-serif", textAlign: '', marginTop: "20px" }}>
-                            We work to ensure that
-                            members have a voice in
-                            the MENA clean energy sector.
+                            We provide opportunities
+                            to meet, greet and learn
+                            from the best in the business.
                         </div>
                     </Col>
                     <Col md={4} className="d-flex justify-content-center align-items-center mb-4" style={{ flexDirection: "column" }}>
@@ -74,9 +74,9 @@ function BenifitsPageComponent() {
                             </div>
                         </div>
                         <div style={{ fontFamily: "'Raleway', sans-serif", textAlign: '', marginTop: "20px" }}>
-                            We work to ensure that
-                            members have a voice in
-                            the MENA clean energy sector.
+                            We support our members,
+                            helping them to grow and
+                            seize new opportunities.
                         </div>
                     </Col>
                 </Row>

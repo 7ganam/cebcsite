@@ -11,7 +11,21 @@ import Member from "../images//Member.jpg"
 import NEVC from "../images/NEVC.jpg"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
-function WorkingAreaComponent() {
+function WorkingAreaComponent(props) {
+
+    function generate_carousel_images() {
+        let images = props.gallery.map((image, index) =>
+        (
+            <div>
+                <img style={{ height: "300px", width: "auto" }} src={image.url} alt="wice" className="yours-custom-class" />
+                <p className="legend">Legend 2</p>
+            </div>
+        )
+        )
+        return images;
+    }
+
+
     return (
         <div style={{ paddingBottom: '30px' }}>
             <div className="section_header working_areas_header" >
@@ -62,79 +76,11 @@ function WorkingAreaComponent() {
                         </Col>
                     </Row>
                     <div className="carousel_wrapper">
+
                         <Carousel autoPlay infiniteLoop >
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 1</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={NEVC} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 2</p>
-                            </div>
-                            <div>
-                                <img style={{ height: "300px", width: "auto" }} src={wice} alt="wice" className="yours-custom-class" />
-                                <p className="legend">Legend 3</p>
-                            </div>
+                            {props.gallery &&
+                                generate_carousel_images()
+                            }
                         </Carousel>
                     </div>
                 </Container>

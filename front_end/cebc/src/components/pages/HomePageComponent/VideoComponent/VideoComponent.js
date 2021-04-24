@@ -19,9 +19,7 @@ function VideoComponent() {
                             Linking science, innovation, and policy to transform the world's energy systems.
                         </div>
                         <div className="ml-2 ml-md-0">
-                            CEBC established with a purpose on creating dialogue between public and private sectors in the UAE
-                            and MENA Region to support an appropriate and much needed regulation and policy to support the
-                            development of clean energy transition in the future
+                            Established with a purpose on creating dialogue between public and private sectors in the UAE and MENA Region to support much needed regulation and policy to support the development of clean energy transition
                         </div>
 
                     </Col>
@@ -29,9 +27,13 @@ function VideoComponent() {
 
 
             </div>
-            <video autoplay="" muted="" loop plays-inline="" data-vscid="sbql8lfln" >
-                <source src="//energy.mit.edu/wp-content/uploads/2018/12/homepage-video.mp4" type="video/mp4" />
-                <source src="//energy.mit.edu/wp-content/uploads/2018/12/homepage-video.ogv" type="video/ogg" />
+            <video id='home_video' autoplay="" muted loop plays-inline="" data-vscid="sbql8lfln" >
+                {/* <source src="//energy.mit.edu/wp-content/uploads/2018/12/homepage-video.mp4" type="video/mp4" />
+                <source src="//energy.mit.edu/wp-content/uploads/2018/12/homepage-video.ogv" type="video/ogg" /> */}
+                <source src="//cebc.s3.eu-central-1.amazonaws.com/c9_da5fc7ea05.mp4" type="video/mp4" />
+                <source src="//cebc.s3.eu-central-1.amazonaws.com/c9_da5fc7ea05.mp4" type="video/mp4" />
+
+                {/* <source src="//energy.mit.edu/wp-content/uploads/2018/12/homepage-video.ogv" type="video/ogg" /> */}
             </video>
         </div>
     )

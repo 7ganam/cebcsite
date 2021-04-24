@@ -185,14 +185,14 @@ const NavbarComponent = (props) => {
                                 <ExtendedNavItemComponent
                                     location={props.location} main_nav={{ path: "/KNOWLEDGECENTER", text: "KNOWLEDGE CENTER" }}
                                     sub_navs={[
-                                        { path: "/PROJECTS", text: "projects" },
                                         { path: "/REPORTS", text: "publications" },
+                                        { path: "/WEBINARS", text: "webinars" },
+                                        { path: "/PODCASTS", text: "podcasts" },
                                         { path: "/PRESENTATIONS", text: "presentations" },
+                                        { path: "/PROJECTS", text: "projects" },
                                         { path: "/CASE_STUDIES", text: "case studies" },
                                         { path: "/BLOGS", text: "blogs" },
                                         { path: "/PAPERS", text: "NEWSLETTERs" },
-                                        { path: "/WEBINARS", text: "webinars" },
-                                        { path: "/PODCASTS", text: "podcasts" },
                                         { path: "/LINKS", text: "useful links" }
                                     ]}
                                 />

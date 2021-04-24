@@ -88,7 +88,11 @@ function SingleProjectPageComponent(props) {
                         <Col className='p-0' md={4} style={{ background: '', }}>
                             {!!props.reports.length > 0 &&
                                 <div className="report_image_box">
-                                    <img src={`${the_report.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                    {the_report.image ?
+                                        <img src={`${the_report.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                        :
+                                        <img src={"/logo_black.png"} style={{ width: "100%", height: "auto", }} alt="" />
+                                    }
                                 </div>
                             }
 
@@ -97,29 +101,29 @@ function SingleProjectPageComponent(props) {
                             <div className="report_box">
                                 {!!props.reports.length > 0 ?
                                     <div>
-                                        <div id="report_header" >
+                                        <Row id="report_header" >
 
-                                            <div id="header_text"
+                                            <Col id="header_text"
                                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "210px", justifyContent: "center" }}
                                             >
                                                 <div id="report_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
                                                     <h1> {the_report.title}</h1>
                                                 </div>
 
-                                            </div>
-                                            <div class="open_report_button">
-                                                <a target="_blank" href={the_report.file.url} >
-                                                    <div class="action-button shadow animate blue">
+                                            </Col>
+                                            <Col xs={4} class="open_report_button">
+                                                <a target="_blank" href={the_report.file.url} style={{ textDecoration: 'none' }}>
+                                                    <div class="report_button action-button shadow animate blue">
 
-                                                        <div>open publication</div>
+                                                        <div>open </div>
 
-                                                        <i class="fas fa-external-link-alt"></i>
+                                                        <i class="fas fa-external-link-alt mt-3"></i>
 
                                                     </div>
                                                 </a>
-                                            </div>
+                                            </Col>
 
-                                        </div>
+                                        </Row>
                                         <div id="report_header_2">
 
                                         </div>
@@ -172,7 +176,7 @@ function SingleProjectPageComponent(props) {
                                 </div>
                             }
 
-                            {!!props.reports.length > 0 &&
+                            {!!props.reports.length > 0 && the_report && the_report.entities.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Member</span>

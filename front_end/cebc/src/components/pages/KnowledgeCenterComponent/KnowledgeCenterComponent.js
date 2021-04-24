@@ -30,10 +30,11 @@ function KnowledgeCenterComponent() {
                     </Col>
 
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-
-                        <div className="working_group_col_div" >
-                            <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/web_43fb26057b.jpg" title="WEBINARS" />
-                        </div>
+                        <Link to="/KNOWLEDGECENTER/WEBINARS">
+                            <div className="working_group_col_div" >
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/web_43fb26057b.jpg" title="WEBINARS" />
+                            </div>
+                        </Link>
 
                     </Col>
 
@@ -44,6 +45,7 @@ function KnowledgeCenterComponent() {
                             </div>
                         </Link>
                     </Col>
+
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/BLOGS">
                             <div className="working_group_col_div" >

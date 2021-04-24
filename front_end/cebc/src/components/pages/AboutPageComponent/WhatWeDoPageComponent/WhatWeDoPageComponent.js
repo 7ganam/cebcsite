@@ -1,28 +1,48 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import './WhatWeDoPageComponent.css'
 
-import {
-    Col, Container, Row, Card, CardText, CardBody, CardFooter,
-    CardTitle,
-} from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 
 
 
-
-import a from "./../images/1.png"
 
 import mena from "./../images/mena1.png"
 
 import WorkingAreaComponent from "./../WorkingAreaComponent/WorkingAreaComponent"
-import aa from "./../images/board/aa.png"
 
 import SDGComponenet from './../SDGComponenet/SDGComponenet'
 
 import NavbarSlider from "./../components/NavbarSlider/NavbarSlider";
 
+import { useHttpClient } from "../../../../hooks/http-hook"
+
 
 
 function WhatWeDoPageComponent() {
+
+
+
+    const { sendRequest: sendcontentRequest } = useHttpClient();
+    const [Loadedcontent, setLoadedcontent] = useState([]);
+    const fetch_content = useCallback(
+        async () => {
+            try {
+                const responseData = await sendcontentRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/about-page`
+                );
+                setLoadedcontent(responseData);
+                // console.log('content ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendcontentRequest],
+    );
+
+    useEffect(() => {
+        fetch_content();
+    }, [])
+
     return (
 
         <div>
@@ -30,9 +50,9 @@ function WhatWeDoPageComponent() {
                 <NavbarSlider />
             </div>
 
-            <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
+            {/* <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
                 <img src="/assets/images/sha1.jpg" alt="" style={{ width: "100%", height: "auto", position: "absolute", top: "-200px", right: "-45vw", opacity: ".5" }} />
-            </div>
+            </div> */}
 
             <div style={{ width: "100%", height: "2000px", position: "absolute", top: "", right: "", overflow: "hidden" }}  >
                 <img src={mena} alt="" style={{
@@ -149,7 +169,7 @@ function WhatWeDoPageComponent() {
             </div>
 
             <div style={{ marginTop: "", backgroundColor: "#f7f7f7", paddingTop: "1px" }}>
-                <WorkingAreaComponent />
+                <WorkingAreaComponent gallery={Loadedcontent.gallery} />
             </div>
 
 

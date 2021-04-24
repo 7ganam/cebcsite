@@ -1,3 +1,10 @@
+.report_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 #case_study_background{
     background-color: #F1F1F1;

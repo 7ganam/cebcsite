@@ -1,6 +1,11 @@
 
 
-
+.cBHahU .ck-editor__main > div {
+  min-height: 0px !important;
+}
+.cBHahU .ck-editor__main {
+  min-height:  0px !important;
+}
 
 body {
   margin: 0;
