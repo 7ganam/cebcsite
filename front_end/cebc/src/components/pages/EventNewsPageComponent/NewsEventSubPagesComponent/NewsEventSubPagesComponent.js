@@ -1,3 +1,4 @@
+//TODO:: this page needs serious redesign
 import React from 'react'
 import "./NewsEventSubPagesComponent.css"
 import EventCardComponent from "./EventCardComponent/EventCardComponent"
@@ -7,11 +8,10 @@ import moment from 'moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
 
-
 import { useHttpClient } from "./../../../../hooks/http-hook"
 
-import { useState, useEffect, useCallback } from 'react';
-
+import { useState, useEffect, useCallback, useMemo } from 'react';
+import PaginationComponent from './PaginationComponent/PaginationComponent'
 
 
 import {
@@ -22,7 +22,27 @@ import {
 function NewsEventSubPagesComponent(props) {
 
 
-    const evetns_per_page = 10;
+    const events_per_page = 30;
+    const news_per_page = 30;
+
+
+    const [LoadedNewsCount, setLoadedNewsCount] = useState([]);
+    const { isLoading: NewsIsLoading, error: NewsError, sendRequest: sendNewsRequest, clearError: clearNewsError } = useHttpClient();
+    const fetch_News_count = useCallback(
+        async () => {
+            try {
+                const responseData = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news/count`);
+                setLoadedNewsCount(responseData);
+                return responseData
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendNewsRequest],
+    );
+    useEffect(() => {
+        fetch_News_count()
+    }, [fetch_News_count])
 
 
 
@@ -31,15 +51,11 @@ function NewsEventSubPagesComponent(props) {
     const [LoadedUpcommingEvents, setLoadedUpcommingEvents] = useState([]);
 
 
-    const { isLoading: PastEventsIsLoading, error: PastEventsError, sendRequest: sendPastEventsRequest, clearError: clearPastError } = useHttpClient();
-    const [LoadedPastEvents, setLoadedPastEvents] = useState([]);
-
-
-    const { isLoading: PastNewssIsLoading, error: PastNewssError, sendRequest: sendPastNewssRequest, clearError: clearNewsError } = useHttpClient();
-    const [LoadedPastNewss, setLoadedPastNewss] = useState([]);
 
 
 
+    const [LoadedEventsCount, setLoadedEventsCount] = useState([]);
+    const [PastEventsCount, setPastEventsCount] = useState([]);
     const fetch_upcomming_Events = useCallback(
         async () => {
             try {
@@ -49,10 +65,12 @@ function NewsEventSubPagesComponent(props) {
                 const responseData = await sendUpcommingEventsRequest(
                     `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_gte=${current_date}`
                 );
-
-                console.log('comming evs', responseData)
-
                 setLoadedUpcommingEvents(responseData);
+                const countresponseData = await sendUpcommingEventsRequest(
+                    `${process.env.REACT_APP_BACKEND_URL}/events/count`);
+                setLoadedEventsCount(countresponseData);
+                setPastEventsCount(countresponseData - responseData.length);
+
             } catch (err) {
                 console.log({ err })
             }
@@ -62,16 +80,17 @@ function NewsEventSubPagesComponent(props) {
         [sendUpcommingEventsRequest],
     );
 
-
+    const { isLoading: PastEventsIsLoading, error: PastEventsError, sendRequest: sendPastEventsRequest, clearError: clearPastError } = useHttpClient();
+    const [LoadedPastEvents, setLoadedPastEvents] = useState([]);
     const fetch_past_Events = useCallback(
-        async () => {
+        async (EntryPerPage, page_number) => {
             try {
                 var localTime = moment().format('YYYY-MM-DD'); // store localTime
                 var current_date = localTime + "T00:00:00.000Z";
 
 
                 const responseData = await sendPastEventsRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_lt=${current_date}&_limit=10`
+                    `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_lt=${current_date}&_limit=${EntryPerPage}&_start=${EntryPerPage * (page_number - 1)}`
                 );
 
                 setLoadedPastEvents(responseData);
@@ -86,35 +105,32 @@ function NewsEventSubPagesComponent(props) {
         [sendPastEventsRequest],
     );
 
-
-    const fetch_past_Newss = useCallback(
-        async () => {
+    const [LoadedNews, setLoadedNews] = useState([]);
+    const fetch_News = useCallback(
+        async (EntryPerPage, page_number) => {
             try {
-
-                const responseData = await sendPastNewssRequest(`${process.env.REACT_APP_BACKEND_URL}/news`);
-                setLoadedPastNewss(responseData);
-
+                const responseData =
+                    await sendNewsRequest(
+                        `${process.env.REACT_APP_BACKEND_URL}/news?_sort=date:DESC&_limit=${EntryPerPage}&_start=${EntryPerPage * (page_number - 1)}`
+                    );
+                setLoadedNews(responseData);
+                console.log('loadednews ', responseData)
             } catch (err) {
                 console.log({ err })
             }
-
         },
-        [sendPastNewssRequest],
+        [],
     );
 
-
-
     useEffect(() => {
-
         fetch_upcomming_Events();
         fetch_past_Events();
-        fetch_past_Newss();
+    }, [fetch_upcomming_Events, fetch_past_Events, fetch_News]);
 
-
-
-    }, [fetch_upcomming_Events, fetch_past_Events, fetch_past_Newss]);
-
-
+    useEffect(() => {
+        fetch_News(news_per_page, 1)
+        fetch_past_Events(events_per_page, 1);
+    }, []);
 
     const render_upcomming_events = (upcomming_events) => {
 
@@ -126,13 +142,11 @@ function NewsEventSubPagesComponent(props) {
 
             if (!events_object[year]) { events_object[year] = {} }
             if (!events_object[year][month]) { events_object[year][month] = [] }
-            events_object[year][month].push(event)
+            events_object[year][month].unshift(event)
         }
-        // console.log('event_object', events_object)
 
         let render_event = []
         for (const year in events_object) {
-            // render_event.push(<div>{year}</div>)
             for (const month in events_object[year]) {
 
                 render_event.push(
@@ -146,7 +160,6 @@ function NewsEventSubPagesComponent(props) {
 
                 for (const event of events_object[year][month]) {
 
-                    // console.log('props.event', event)
                     render_event.push(
                         <Container className="mt-5">
                             <div style={{ marginTop: "50px " }}>
@@ -163,8 +176,6 @@ function NewsEventSubPagesComponent(props) {
 
         return render_event
     }
-
-
     const render_past_events = (past_events) => {
 
 
@@ -178,13 +189,14 @@ function NewsEventSubPagesComponent(props) {
             if (!events_object[year][month]) { events_object[year][month] = [] }
 
             events_object[year][month].push(event)
+            events_object[year][month].sort((a, b) => (moment(a.Event_date) > moment(b.Event_date)) ? 1 : -1)
         }
 
         const reander_sub_elements = (events_object, year) => {
             const sub_objects = []
             for (const month in events_object[year]) {
                 for (const event of events_object[year][month]) {
-                    sub_objects.push(
+                    sub_objects.unshift(
 
                         <Col md={4} lg={3}>
                             <Card className="past_event_card mb-4">
@@ -217,14 +229,8 @@ function NewsEventSubPagesComponent(props) {
         }
 
         let render_event = []
+
         render_event.push(
-            // <Container fluid className="p-0">
-            //     <div style={{ marginTop: "150px ", height: "250px", backgroundColor: "#1B273D", display: "flex", justifyContent: "center", alignItems: "center" }}>
-            //         <div style={{ color: "white", fontSize: "60px" }}>
-            //             Past events
-            //         </div>
-            //     </div>
-            // </Container>
             <div class="section_header" style={{ marginTop: "100px" }}>
                 <span class="section_header_inner">
                     Past events
@@ -233,7 +239,6 @@ function NewsEventSubPagesComponent(props) {
             </div>
         )
 
-
         const ordered_years = Object.keys(events_object).sort().reverse(
             (obj, key) => {
                 obj[key] = events_object[key];
@@ -241,7 +246,6 @@ function NewsEventSubPagesComponent(props) {
             },
             {}
         );
-        console.log(`ordered_years`, ordered_years)
 
         for (const year of ordered_years) {
             render_event.push(
@@ -264,10 +268,8 @@ function NewsEventSubPagesComponent(props) {
 
         return render_event
     }
-
-
-    const render_past_newss = (past_newss) => {
-
+    const render_news = (past_newss) => {
+        console.log(`past_newss`, past_newss)
 
         const newss_object = {}
         for (const news of past_newss) {
@@ -278,15 +280,19 @@ function NewsEventSubPagesComponent(props) {
             if (!newss_object[year]) { newss_object[year] = {} }
             if (!newss_object[year][month]) { newss_object[year][month] = [] }
 
-            newss_object[year][month].push(news)
+            newss_object[year][month].unshift(news)
+            newss_object[year][month].sort((a, b) => (moment(a.date) > moment(b.date)) ? 1 : -1)
+
         }
+        console.log(`newss_object`, newss_object)
+
 
 
         const reander_sub_elements = (newss_object, year) => {
             const sub_objects = []
             for (const month in newss_object[year]) {
                 for (const news of newss_object[year][month]) {
-                    sub_objects.push(
+                    sub_objects.unshift(
 
                         <Col md={4} lg={3}>
                             <Card className="past_news_card mb-4">
@@ -351,6 +357,7 @@ function NewsEventSubPagesComponent(props) {
                             {reander_sub_elements(newss_object, year)}
                         </Row>
                     </Container>
+
                 </>
             )
 
@@ -358,19 +365,11 @@ function NewsEventSubPagesComponent(props) {
 
         return render_news
     }
-
-
-
-    function generate_page_view(sub_par, upcomming, past, news) {
-
-
-
+    function generate_page_view(sub_par, upcomming, past) {
         if (sub_par === "All") {
-
             return (
                 <>
                     <div id="header_event">
-                        {/* <span class="logo icon fa-paper-plane"></span> */}
                         <h1>CEBC EVETNS.</h1>
                         <p>CEBC members and strategic partners events.</p>
                     </div>
@@ -381,10 +380,14 @@ function NewsEventSubPagesComponent(props) {
                                     upcomming.length > 0 &&
                                     render_upcomming_events(upcomming)
                                 }
-                                {
+                                {!PastEventsIsLoading ?
                                     past.length > 0 &&
                                     <div style={{ backgroundColor: "rgb(247, 247, 247)", padding: "10px", paddingBottom: "80px", marginTop: "30px", position: " relative", top: "50px" }} >
                                         {render_past_events(past)}
+                                    </div>
+                                    :
+                                    <div style={{ width: '80%', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto' }}>
+                                        <ReactLoading type={"spin"} color={"#00D2F9"} width={"10vw"} />
                                     </div>
                                 }
                             </>
@@ -394,6 +397,7 @@ function NewsEventSubPagesComponent(props) {
 
                             </div>
                     }
+                    <PaginationComponent fetch_items={fetch_past_Events} items_per_page={events_per_page} LoadedItemsCount={PastEventsCount} />
 
                 </>
             )
@@ -406,12 +410,12 @@ function NewsEventSubPagesComponent(props) {
                         <h1>Past events.</h1>
                         <p>CEBC members and strategic partners events.</p>
                     </div>
-                    { past.length > 0 ?
+                    { !PastEventsIsLoading ?
                         <>
-
                             <div style={{ backgroundColor: "" }}>
                                 {render_past_events(past)}
                             </div>
+
                         </>
                         :
                         <div style={{ width: '80%', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto' }}>
@@ -421,6 +425,8 @@ function NewsEventSubPagesComponent(props) {
                         </div>
 
                     }
+                    <PaginationComponent fetch_items={fetch_past_Events} items_per_page={events_per_page} LoadedItemsCount={PastEventsCount} />
+
                 </>
             )
         }
@@ -453,57 +459,30 @@ function NewsEventSubPagesComponent(props) {
             )
         }
         else if (sub_par === "News") {
-
-
             return (
-
-
-
                 <>
                     <div id="header_news" >
-                        {/* <span class="logo icon fa-paper-plane"></span> */}
-                        {/* <h1>CEBC NEWS.</h1>
-                        <p>CEBC members and strategic partners news.</p> */}
                     </div>
-                    { news.length > 0 ?
+                    { !NewsIsLoading ?
                         <>
-
                             <div style={{ backgroundColor: "" }}>
-                                {render_past_newss(news)}
+                                {render_news(LoadedNews)}
                             </div>
                         </>
                         :
                         <div style={{ width: '80%', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto' }}>
-
                             <ReactLoading type={"spin"} color={"#00D2F9"} width={"10vw"} />
-
                         </div>
-
                     }
+                    <PaginationComponent fetch_items={fetch_News} items_per_page={news_per_page} LoadedItemsCount={LoadedNewsCount} />
                 </>
-
             )
-
         }
-
-
-
     }
-
-
-
     return (
-
         <div style={{ marginBottom: "20px" }}>
-
-
-            { generate_page_view(props.match.params.sub_parameter, LoadedUpcommingEvents, LoadedPastEvents, LoadedPastNewss)}
-
-
-
+            { generate_page_view(props.match.params.sub_parameter, LoadedUpcommingEvents, LoadedPastEvents)}
         </div>
-
     )
 }
-
 export default NewsEventSubPagesComponent

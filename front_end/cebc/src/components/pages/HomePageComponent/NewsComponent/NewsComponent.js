@@ -8,10 +8,7 @@ import { Link } from "react-router-dom";
 
 function NewsComponent(props) {
 
-
-
-
-
+    // console.log(`props.latest_news`, props.latest_news)
 
     return (
         <div style={{ marginTop: '40px' }}>
@@ -32,17 +29,17 @@ function NewsComponent(props) {
                     <>
                         <Row style={{ marginTop: "60px" }}>
                             <Col id="main_news_col" className="news_col" xs="12" md="6" style={{}}>
-                                <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[3].id}`} >
+                                <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[0].id}`} >
 
                                     <div id="main_news_div" className="p-2">
                                         <div id="main_news_img_div" style={{ width: "100%" }}>
-                                            <img id="main_news_img" src={props.latest_news[3].thumbnail_image.url} alt="oval" />
+                                            <img id="main_news_img" src={props.latest_news[0].thumbnail_image.url} alt="oval" />
                                         </div>
                                         <div id="main_news_title_div">
-                                            {props.latest_news[3].title}
+                                            {props.latest_news[0].title}
                                         </div>
                                         <div id="main_news_body_div" className="mx-4 mt-2 mb-5">
-                                            {props.latest_news[3].thumb_nail_text}
+                                            {props.latest_news[0].thumb_nail_text}
                                         </div>
                                     </div>
 
@@ -53,31 +50,11 @@ function NewsComponent(props) {
                             <Col id="sec_news_col " xs="12" md="6" style={{ paddingTop: "0" }}>
                                 <div className="" >
 
-                                    <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[2].id}`} >
-                                        <div className="sec_news_div mb-3">
-                                            <Row style={{ height: "100%" }} className="p-2">
-                                                <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={props.latest_news[2].thumbnail_image.url} alt="oval" />
-                                                </Col>
-                                                <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
-                                                    <div className="sec_news_title_div">
-                                                        {props.latest_news[2].title}
-                                                    </div>
-                                                    <div className="sec_news_body_div mx-1 mt-2 mb-5">
-                                                        {props.latest_news[2].thumb_nail_text}
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                        </div>
-                                    </Link>
-
                                     <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[1].id}`} >
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    {/* <div className="sec_news_img_div"> */}
                                                     <img className="sec_news_img" src={props.latest_news[1].thumbnail_image.url} alt="oval" />
-                                                    {/* </div> */}
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div">
@@ -91,20 +68,40 @@ function NewsComponent(props) {
                                         </div>
                                     </Link>
 
-                                    <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[0].id}`} >
+                                    <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[2].id}`} >
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
                                                     {/* <div className="sec_news_img_div"> */}
-                                                    <img className="sec_news_img" src={props.latest_news[0].thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={props.latest_news[2].thumbnail_image.url} alt="oval" />
                                                     {/* </div> */}
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div">
-                                                        {props.latest_news[0].title}
+                                                        {props.latest_news[2].title}
                                                     </div>
                                                     <div className="sec_news_body_div mx-1 mt-2 mb-5">
-                                                        {props.latest_news[0].thumb_nail_text}
+                                                        {props.latest_news[2].thumb_nail_text}
+                                                    </div>
+                                                </Col>
+                                            </Row>
+                                        </div>
+                                    </Link>
+
+                                    <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[3].id}`} >
+                                        <div className="sec_news_div mb-3">
+                                            <Row style={{ height: "100%" }} className="p-2">
+                                                <Col xs="5" md="5" style={{ height: "" }} >
+                                                    {/* <div className="sec_news_img_div"> */}
+                                                    <img className="sec_news_img" src={props.latest_news[3].thumbnail_image.url} alt="oval" />
+                                                    {/* </div> */}
+                                                </Col>
+                                                <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
+                                                    <div className="sec_news_title_div">
+                                                        {props.latest_news[3].title}
+                                                    </div>
+                                                    <div className="sec_news_body_div mx-1 mt-2 mb-5">
+                                                        {props.latest_news[3].thumb_nail_text}
                                                     </div>
                                                 </Col>
                                             </Row>

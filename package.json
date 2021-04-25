@@ -34,7 +34,9 @@
     "react-youtube": "^7.13.1",
     "react-youtube-lite": "^1.0.1",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "use-state-promise": "^0.1.1",
+    "use-state-with-callback": "^2.0.3"
   },
   "devDependencies": {
     "eslint": "^7.22.0",

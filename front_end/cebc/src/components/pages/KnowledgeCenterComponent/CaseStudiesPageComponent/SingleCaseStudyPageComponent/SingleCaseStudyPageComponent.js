@@ -86,7 +86,11 @@ function SingleCaseStudyPageComponent(props) {
                         <Col className='p-0' md={4} style={{ background: '', }}>
                             {!!props.case_studies.length > 0 &&
                                 <div className="case_study_image_box">
-                                    <img src={`${the_case_study.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                    {the_case_study.image ?
+                                        <img src={`${the_case_study.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                        :
+                                        <img src={"/logo_black.png"} style={{ width: "100%", height: "auto", }} alt="" />
+                                    }
                                 </div>
                             }
 

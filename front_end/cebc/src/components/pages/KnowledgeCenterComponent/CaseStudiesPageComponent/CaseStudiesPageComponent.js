@@ -14,8 +14,9 @@ function CaseStudiesPageComponent(props) {
         const sub_objects = []
         for (const case_study of props.case_studies) {
             sub_objects.push(
+
                 <Col md={4} lg={3}>
-                    <Card className="past_case_study_card">
+                    <Card className="past_report_card">
                         {case_study.image ?
 
                             <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${case_study.image.url}`} alt="Card image cap" />
@@ -23,7 +24,7 @@ function CaseStudiesPageComponent(props) {
                             <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                         }
                         <CardBody>
-                            <CardTitle tag="h5"> {case_study.title}</CardTitle>
+                            <CardTitle className='card_title_' tag="h5"> {case_study.title}</CardTitle>
                             <CardSubtitle tag="h6" className="mb-2 text-muted">
                                 {/* <i class="fa fa-calendar mr-2" aria-hidden="true"></i> */}
                                 {/* <span class="mec-case_study-d"><span class="mec-start-date-label" itemprop="startDate">{case_study.date}</span></span> */}

@@ -2,7 +2,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useHttpClient } from "./http-hook"
 
-import React from 'react'
 
 function useInitLoadedData() {
 
@@ -48,25 +47,16 @@ function useInitLoadedData() {
 
 
     const { isLoading: NewsIsLoading, error: NewsError, sendRequest: sendNewsRequest, clearError: clearNewsError } = useHttpClient();
-    const { sendRequest: sendNewsCountRequest } = useHttpClient();
     const [LoadedNews, setLoadedNews] = useState([]);
     const [LoadedNewsCount, setLoadedNewsCount] = useState([]);
     const fetch_News = useCallback(
         async () => {
             try {
 
-                const news_number_in_database = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news/count`);
-                setLoadedNewsCount(news_number_in_database);
-                // console.log({ news_number_in_database })
 
-                const responseData = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date&_start=${news_number_in_database - 4}`);
+                const responseData = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date:DESC`);
                 setLoadedNews(responseData);
-                // console.log({ responseData })
-                function extractContent(s) {
-                    var span = document.createElement('span');
-                    span.innerHTML = s;
-                    return span.textContent || span.innerText;
-                };
+                console.log({ responseData })
             } catch (err) {
                 console.log({ err })
             }
@@ -237,7 +227,7 @@ function useInitLoadedData() {
 
                 );
                 setLoadedStaff_members(responseData);
-                console.log('fetched_Staff_members ', responseData)
+                // console.log('fetched_Staff_members ', responseData)
             } catch (err) {
                 console.log({ err })
             }
