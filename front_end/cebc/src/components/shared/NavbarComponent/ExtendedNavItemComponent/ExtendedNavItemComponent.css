@@ -33,6 +33,13 @@
     border-bottom: 1px solid #f2f2f2;
     padding: 20px;
 }
+@media (min-width: 768px) {
+
+    .nav-item{
+
+        padding: 20px;
+    }
+}
 
 .nav_link{
     color: rgba(0,0,0,.5);
