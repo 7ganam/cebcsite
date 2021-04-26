@@ -25,7 +25,7 @@ function FooterComponent() {
                                     <div className="textwidget custom-html-widget">
                                         <br /><br /><br />
                                         <center>
-                                            <img id='footer_image' src="https://cebcmena.com/wp-content/uploads/2017/12/smaller.png" alt="CEBC logo" width="250" height="150" />
+                                            <img id='footer_image' src="https://cebcmena.com/wp-content/uploads/2017/12/smaller.png" alt="CEBC logo" width="220" height="150" />
                                         </center>
                                         <br /><br />
                                     </div>
@@ -41,14 +41,14 @@ function FooterComponent() {
                                         </p>
                                         <p>
                                             <i className="fas fa-envelope"></i>
-                                            <span className="footer-contact"><a href="mailto:webmaster@cebcmena.com">webmaster@cebcmena.com</a></span>
+                                            <span className="footer-contact"><a style={{ color: ' #babfc5' }} href="mailto:webmaster@cebcmena.com">webmaster@cebcmena.com</a></span>
                                         </p>
 
                                         <p>
                                             <i className="fas fa-angle-double-right"></i>
 
                                             <span className="footer-contact">
-                                                <a href="http://www.cebcmena.com/contactus/">You may also contact us using this form</a>
+                                                <a href="http://www.cebcmena.com/contactus/" style={{ color: ' #babfc5' }}>You may also contact us using this form</a>
                                             </span>
                                         </p></div>
                                 </aside>

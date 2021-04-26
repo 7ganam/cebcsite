@@ -22,10 +22,10 @@ function MemebersCarouselComponent(props) {
         infinite: true,
         // speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         autoplay: true,
         speed: 1000,
-        autoplaySpeed: 10000,
+        autoplaySpeed: 3000,
         cssEase: "linear",
         responsive: [
             {
@@ -69,8 +69,9 @@ function MemebersCarouselComponent(props) {
 
     function generate_carousel_elements_view() {
 
-        const filtersed_elements_view = props.members.filter((member) => { return (member.membership_type === "partner_entity") }
-        )
+        // const filtersed_elements_view = props.members.filter((member) => { return (member.membership_type === "partner_entity") }
+        // )
+        const filtersed_elements_view = props.members
 
 
         const elements_view = filtersed_elements_view.map((member, index) => {
@@ -90,7 +91,7 @@ function MemebersCarouselComponent(props) {
 
         })
 
-        console.log(`elements_view`, elements_view)
+        // console.log(`elements_view`, elements_view)
         return (elements_view)
     }
 
@@ -150,9 +151,9 @@ function MemebersCarouselComponent(props) {
                 </div>
                 <div>
 
-                    <Slider {...settings2}>
+                    {/* <Slider {...settings2}>
                         {generate_sub_carousel_elements_view()}
-                    </Slider>
+                    </Slider> */}
                 </div>
             </div>
         </div>

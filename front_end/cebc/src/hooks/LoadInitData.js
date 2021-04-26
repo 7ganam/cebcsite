@@ -56,12 +56,27 @@ function useInitLoadedData() {
 
                 const responseData = await sendNewsRequest(`${process.env.REACT_APP_BACKEND_URL}/news?_limit=4&_sort=date:DESC`);
                 setLoadedNews(responseData);
-                console.log({ responseData })
+                // console.log({ responseData })
             } catch (err) {
                 console.log({ err })
             }
         },
         [sendNewsRequest],
+    );
+
+    const { isLoading: EventsIsLoading, error: EventsError, sendRequest: sendEventsRequest, clearError: clearEventsError } = useHttpClient();
+    const [LoadedEvents, setLoadedEvents] = useState([]);
+    const fetch_Events = useCallback(
+        async () => {
+            try {
+                const responseData = await sendEventsRequest(`${process.env.REACT_APP_BACKEND_URL}/events?_limit=4&_sort=Event_date:DESC`);
+                setLoadedEvents(responseData);
+                // console.log('LoadedEvents', { responseData })
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendEventsRequest],
     );
 
 
@@ -110,7 +125,7 @@ function useInitLoadedData() {
         async () => {
             try {
                 const responseData = await sendPodcastsRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/podcasts`
+                    `${process.env.REACT_APP_BACKEND_URL}/podcasts?_sort=created_at:DESC`
                 );
                 setLoadedPodcasts(responseData);
                 // console.log('Podcasts', responseData)
@@ -287,13 +302,14 @@ function useInitLoadedData() {
         fetch_Staff_members();
         fetch_Jobs();
         fetch_Courses();
+        fetch_Events();
 
     }, []);
 
 
 
 
-    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses };
+    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents };
 }
 
 export default useInitLoadedData

@@ -9,6 +9,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^25.0.0",
     "@ckeditor/ckeditor5-react": "^3.0.1",
+    "@popperjs/core": "^2.9.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",

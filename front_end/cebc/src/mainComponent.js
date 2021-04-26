@@ -83,14 +83,14 @@ import SignInModalComponenet from "./components/shared/SignInModalComponenet/Sig
 import { LoginContext } from "./contexts/LoginContext"
 
 
-
+import StickersComponent from './components/shared/StickersComponent/StickersComponent'
 
 
 
 export default function MainComponent() {
 
 
-    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses } = useInitLoadedData();
+    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents } = useInitLoadedData();
 
 
     const { login, IsLoggedIn, Token, ToggleLoginModal, IsLogInModalShown, IsSignUpModalShown, ToggleSignUpModal } = useContext(LoginContext);
@@ -121,13 +121,19 @@ export default function MainComponent() {
                 {/* <LoginModalComponenet /> */}
                 <SignUpModalComponenet />
                 <SignInModalComponenet />
-
+                <StickersComponent />
                 <Router >
                     <ScrollToTopComponent />
                     <NavbarComponent /> {/* the navbar has to be inside the router since it uses LINK component which runs only inside router component */}
                     <Switch id="react_router_switch">
                         <Route exact path="/">
-                            <HomePageComponent className="home" programmes_state={{ LoadedProgrammes }} members={LoadedEntity_s} latest_news={LoadedNews} />
+                            <HomePageComponent className="home"
+                                programmes_state={{ LoadedProgrammes }}
+                                members={LoadedEntity_s}
+                                latest_news={LoadedNews}
+                                LoadedPodcasts={LoadedPodcasts}
+                                latest_events={LoadedEvents}
+                            />
                         </Route>
 
 
