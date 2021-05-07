@@ -124,12 +124,15 @@ function NewsEventSubPagesComponent(props) {
 
     useEffect(() => {
         fetch_upcomming_Events();
-        fetch_past_Events();
+        fetch_past_Events(events_per_page, 1);
+
     }, [fetch_upcomming_Events, fetch_past_Events, fetch_News]);
 
     useEffect(() => {
         fetch_News(news_per_page, 1)
-        fetch_past_Events(events_per_page, 1);
+
+        // fetch_past_Events(events_per_page, 1);
+
     }, []);
 
     const render_upcomming_events = (upcomming_events) => {
@@ -207,7 +210,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                                 }
                                 <CardBody>
-                                    <CardTitle tag="h5"> {event.Title}</CardTitle>
+                                    <CardTitle className='card_title_' tag="h5"> {event.Title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted"> <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                                         <span class="mec-event-d"><span class="mec-start-date-label" itemprop="startDate">{event.Event_date}</span></span>
                                     </CardSubtitle>
@@ -230,14 +233,14 @@ function NewsEventSubPagesComponent(props) {
 
         let render_event = []
 
-        render_event.push(
-            <div class="section_header" style={{ marginTop: "100px" }}>
-                <span class="section_header_inner">
-                    Past events
-            </span>
-                <div className="section_header_under"></div>
-            </div>
-        )
+        // render_event.push(
+        //     <div class="section_header" style={{ marginTop: "100px" }}>
+        //         <span class="section_header_inner">
+        //             Past events
+        //         </span>
+        //         <div className="section_header_under"></div>
+        //     </div>
+        // )
 
         const ordered_years = Object.keys(events_object).sort().reverse(
             (obj, key) => {
@@ -303,7 +306,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                                 }
                                 <CardBody>
-                                    <CardTitle tag="h5"> {news.title}</CardTitle>
+                                    <CardTitle className='card_title_' tag="h5"> {news.title}</CardTitle>
                                     <CardSubtitle tag="h6" className="mb-2 text-muted"> <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                                         <span class="mec-news-d"><span class="mec-start-date-label" itemprop="startDate">{news.date}</span></span>
                                     </CardSubtitle>
@@ -369,10 +372,16 @@ function NewsEventSubPagesComponent(props) {
         if (sub_par === "All") {
             return (
                 <>
-                    <div id="header_event">
-                        <h1>CEBC EVETNS.</h1>
-                        <p>CEBC members and strategic partners events.</p>
-                    </div>
+                    <Container style={{ marginTop: "200px" }}>
+                        <Row className=" justify-content-center">
+                            <div class="section_header" style={{ marginTop: "30px" }}>
+                                <span class="section_header_inner">
+                                    CEBC EVETNS
+                                </span>
+                                <div className="section_header_under"></div>
+                            </div>
+                        </Row>
+                    </Container>
                     {
                         (upcomming.length > 0 || past.length > 0) ?
                             <>
@@ -406,10 +415,16 @@ function NewsEventSubPagesComponent(props) {
         else if (sub_par === "Past") {
             return (
                 <>
-                    <div id="header_event">
-                        <h1>Past events.</h1>
-                        <p>CEBC members and strategic partners events.</p>
-                    </div>
+                    <Container style={{ marginTop: "200px" }}>
+                        <Row className=" justify-content-center">
+                            <div class="section_header" style={{ marginTop: "30px" }}>
+                                <span class="section_header_inner">
+                                    Past events
+                                </span>
+                                <div className="section_header_under"></div>
+                            </div>
+                        </Row>
+                    </Container>
                     { !PastEventsIsLoading ?
                         <>
                             <div style={{ backgroundColor: "" }}>
@@ -433,10 +448,16 @@ function NewsEventSubPagesComponent(props) {
         else if (sub_par === "Upcoming") {
             return (
                 <>
-                    <div id="header_event">
-                        <h1>Upcomming events.</h1>
-                        <p>CEBC members and strategic partners events.</p>
-                    </div>
+                    <Container style={{ marginTop: "200px" }}>
+                        <Row className=" justify-content-center">
+                            <div class="section_header" style={{ marginTop: "30px" }}>
+                                <span class="section_header_inner">
+                                    Upcomming events
+                                </span>
+                                <div className="section_header_under"></div>
+                            </div>
+                        </Row>
+                    </Container>
                     { upcomming.length > 0 ?
                         <>
 
@@ -481,6 +502,7 @@ function NewsEventSubPagesComponent(props) {
     }
     return (
         <div style={{ marginBottom: "20px" }}>
+
             { generate_page_view(props.match.params.sub_parameter, LoadedUpcommingEvents, LoadedPastEvents)}
         </div>
     )

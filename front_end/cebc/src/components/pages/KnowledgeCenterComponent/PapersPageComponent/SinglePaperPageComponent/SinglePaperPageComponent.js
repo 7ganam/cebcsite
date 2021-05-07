@@ -109,7 +109,7 @@ function SinglePaperPageComponent(props) {
                                                 <a target="_blank" href={the_paper.file.url} >
                                                     <div class="action-button shadow animate blue">
 
-                                                        <div> open paper</div>
+                                                        <div> download paper</div>
 
                                                         <i class="fas fa-external-link-alt"></i>
 

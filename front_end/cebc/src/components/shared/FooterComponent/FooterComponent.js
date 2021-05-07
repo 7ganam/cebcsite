@@ -41,7 +41,7 @@ function FooterComponent() {
                                         </p>
                                         <p>
                                             <i className="fas fa-envelope"></i>
-                                            <span className="footer-contact"><a style={{ color: ' #babfc5' }} href="mailto:webmaster@cebcmena.com">webmaster@cebcmena.com</a></span>
+                                            <span className="footer-contact"><a style={{ color: ' #babfc5' }} href="mailto: info@cebcmena.com"> info@cebcmena.com</a></span>
                                         </p>
 
                                         <p>
@@ -109,8 +109,8 @@ function FooterComponent() {
                 </footer>
                 <div className="copyright">
                     <div className="container">
-                        Copyright 2017 Clean Energy Business Council MENA. Contact the
-                        <a href="">webmaster</a>
+                        Copyright 20 17 Clean Energy Business Council MENA. Contact the
+                        <a href=""> info@cebcmena.com</a>
                         for more details.
                     </div>
                 </div>

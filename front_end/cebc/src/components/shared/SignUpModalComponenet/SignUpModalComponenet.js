@@ -216,7 +216,7 @@ function SignUpModalComponenet() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='entity'>Entity you belong to:</label>
+                                                        <label className='formik-label' htmlFor='entity'>Company name:</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field

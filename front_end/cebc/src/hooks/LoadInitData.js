@@ -1,6 +1,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { useHttpClient } from "./http-hook"
+import moment from 'moment';
 
 
 function useInitLoadedData() {
@@ -78,6 +79,8 @@ function useInitLoadedData() {
         },
         [sendEventsRequest],
     );
+
+
 
 
 
@@ -286,12 +289,30 @@ function useInitLoadedData() {
         [sendCoursesRequest],
     );
 
+    const { isLoading: NewslettersIsLoading, error: NewslettersError, sendRequest: sendNewslettersRequest, clearError: clearNewslettersError } = useHttpClient();
+    const [LoadedNewsletters, setLoadedNewsletters] = useState([]);
+    const fetch_Newsletters = useCallback(
+        async () => {
+            try {
+                const responseData = await sendNewslettersRequest(`${process.env.REACT_APP_BACKEND_URL}/newsletters`);
+                setLoadedNewsletters(responseData);
+                // console.log('fetched_Newsletters ', responseData)
+            } catch (err) {
+                console.log({ err })
+            }
+        },
+        [sendNewslettersRequest],
+    );
+
+
+
 
     useEffect(() => {
+        fetch_Events();
+        fetch_News();
         fetch_Podcasts();
         fetch_Programmes();
         fetch_Entity_s();
-        fetch_News();
         fetch_Projects();
         fetch_Reports();
         fetch_Case_studies();
@@ -302,14 +323,15 @@ function useInitLoadedData() {
         fetch_Staff_members();
         fetch_Jobs();
         fetch_Courses();
-        fetch_Events();
+        fetch_Newsletters();
+        // fetch_upcomming_Events();
 
     }, []);
 
 
 
 
-    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents };
+    return { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNewsCount, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents, LoadedNewsletters, };
 }
 
 export default useInitLoadedData

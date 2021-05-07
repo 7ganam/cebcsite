@@ -3,7 +3,7 @@ import './JoinPageComponent.css'
 
 
 import { useState, useRef } from 'react'
-import { Col, Modal, ModalBody, Row } from 'reactstrap';
+import { Col, Container, Modal, ModalBody, Row } from 'reactstrap';
 import ReactLoading from 'react-loading';
 
 
@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
         .email('Invalid email format')
         .required('Required'),
     entity: Yup.string().required('Required'),
-    message: Yup.string().required('Required'),
+    message: Yup.string()
 
 })
 
@@ -146,16 +146,32 @@ function JoinPageComponent() {
 
     return (
         <>
-            <div id="join_form" style={{ marginTop: "200px" }} >
+            <div style={{ zIndex: '-1', width: "100%", height: "800px", position: "absolute", top: "0", right: "", overflow: "hidden" }} >
+                <img src="/assets/images/hero.png" alt="" style={{ width: "100%", height: "auto", position: "", }} />
+            </div>
+            <Container style={{ marginTop: "200px" }}>
+                <Row className=" justify-content-center">
+                    <Col >
+                        <div class="section_header">
+                            <span class="section_header_inner">
+                                Join CEBC
+                                </span>
+                            <div className="section_header_under"></div>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+            <div id="join_form" style={{ zIndex: '33333', marginTop: "100px" }} >
                 <div
-                    size="lg" style={{ marginTop: '11vh', maxWidth: '1000px', width: '80%', marginRight: "auto", marginLeft: "auto", backgroundColor: 'transparent' }}
+
+                    size="lg" style={{ marginTop: '11vh', maxWidth: '1000px', width: '80%', marginRight: "auto", marginLeft: "auto", backgroundColor: 'transparent', boxShadow: '1px 1px 5px 1px grey', marginBottom: '100px' }}
                 >
                     <div style={{}} ></div>
                     <div style={{ padding: "0px", }} >
                         <div className='modal_header'  >
                             Apply for CEBC membership
                         </div>
-                        <Row style={{ padding: "10px 10px 10px 0px ", }} >
+                        <Row style={{ zIndex: '3', padding: "10px 10px 10px 0px ", }} >
                             <Col md={4} >
                                 <div className='su_left_col' style={{}}>
                                     <div style={{ width: '100%', display: "flex", justifyContent: 'left', alignItems: 'center' }}>
@@ -184,7 +200,7 @@ function JoinPageComponent() {
                                             <Form className="signUP_form">
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='name'>Your name</label>
+                                                        <label className='formik-label' htmlFor='name'>Your Name</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field type='text' id='name' name='name' />
@@ -210,7 +226,7 @@ function JoinPageComponent() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='entity'>Entity you belong to</label>
+                                                        <label className='formik-label' htmlFor='entity'>Company Name</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field
@@ -228,7 +244,7 @@ function JoinPageComponent() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='message'>message:</label>
+                                                        <label className='formik-label' htmlFor='message'>Message:</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field

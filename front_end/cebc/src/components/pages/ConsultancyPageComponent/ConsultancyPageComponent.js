@@ -38,7 +38,6 @@ function ConsultancyPageComponent() {
                 </Row>
                 <div className='consultancy_services_div'>
                     <img src="/wecover.png" alt="" style={{ width: "100%", height: "auto" }} />
-
                 </div>
             </Container>
 

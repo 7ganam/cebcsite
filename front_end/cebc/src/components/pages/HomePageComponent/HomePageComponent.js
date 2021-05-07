@@ -13,7 +13,7 @@ export default function HomePageComponent(props) {
 
 
 
-    console.log(`latest_events`, props.LoadedPodcasts)
+    // console.log(`latest_events`, props.LoadedPodcasts)
 
 
     return (

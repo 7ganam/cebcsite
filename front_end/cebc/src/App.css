@@ -1,3 +1,8 @@
+.row{
+  margin-top: auto;
+    margin-bottom: auto;
+}
+
 .App {
   text-align: center;
 }
@@ -40,10 +45,13 @@
 
 .section_header{
 
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+
   font-size: 40px;
+
   /* background-color: red; */
-  font-weight: 200;
+  font-weight: 300;
     text-transform: uppercase;
 display: flex;
 flex-direction: column;
@@ -54,9 +62,9 @@ align-items: center;
 @media (min-width: 576px) { 
 
   .section_header{
-    font-weight: lighter;
+    /* font-weight: lighter; */
 
-    font-size: 60px;
+    font-size: 40px;
 
   }
  }

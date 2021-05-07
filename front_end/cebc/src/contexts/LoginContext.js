@@ -32,12 +32,19 @@ export const LoginContextProvider = ({ children }) => {
         );
 
         setIsLoggedIn(true)
+        const togler = document.getElementById("members_only_link");
+        togler.classList.toggle("shaker");
+
+
+
     }
 
     const logout = () => {
         setIsLoggedIn(false)
         setToken(null)
         localStorage.removeItem('userData');
+        const togler = document.getElementById("members_only_link");
+        togler.classList.toggle("shaker");
     };
 
 

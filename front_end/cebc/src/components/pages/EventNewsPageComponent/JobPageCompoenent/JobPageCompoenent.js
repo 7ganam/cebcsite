@@ -54,7 +54,7 @@ function JobPageCompoenent(props) {
             return (condition)
         });
 
-        console.log(`filtered_jobs`, filtered_jobs)
+        // console.log(`filtered_jobs`, filtered_jobs)
         return (filtered_jobs)
     }
 
@@ -79,7 +79,7 @@ function JobPageCompoenent(props) {
         }}>
             { props.jobs && props.jobs.length > 0 ?
                 <div>
-                    <div class="section_header"><span class="section_header_inner">Jobs</span><div class="section_header_under"></div></div>
+                    <div class="section_header"><span class="section_header_inner">Careers</span><div class="section_header_under"></div></div>
                     <Container>
 
                         <div className='filter_box'>

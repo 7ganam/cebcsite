@@ -46,11 +46,13 @@ function WorkingGroupsComponent(props) {
                     }
                 </Row>
                 <Row className=" justify-content-center">
-                    <div className="end_div">
-                        <h4 className="end_text">
-                            BECOME A MEMBER
+                    <Link to="/MEMBERSHIP/JOIN" style={{ textDecoration: 'none' }}>
+                        <div className="end_div">
+                            <h4 className="end_text">
+                                BECOME A MEMBER
                         </h4>
-                    </div>
+                        </div>
+                    </Link>
                 </Row>
 
 

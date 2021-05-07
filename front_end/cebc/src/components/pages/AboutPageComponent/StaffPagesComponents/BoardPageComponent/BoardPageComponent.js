@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 function BoardPageComponent(props) {
-    // console.log(`props.staff`, props.staff)
+    console.log(`props.staff`, props.staff)
 
     function create_staff_view(staff, position) {
         const staff_view_array = staff.map((member, index) => {
@@ -20,22 +20,22 @@ function BoardPageComponent(props) {
                     <Col className="board_col my-2" md={4} lg={3} style={{ marginBottom: '20px' }}>
                         <div className="board_div mb-2 d-flex justify-content-stretch" style={{ borderStyle: 'none', backgroundColor: '', height: '100%' }}>
 
-                            <Card style={{ height: '100%', width: '100%', boxShadow: '1px 3px 6px 1px #80808042' }}>
+                            <Card style={{ height: '100%', width: '90%', boxShadow: '1px 3px 6px 1px #80808042' }}>
                                 <Link to={`/ABOUTUS/STAFF/${member.id}`} style={{ color: "black" }}>
                                     <div className="card_title_container" style={{ padding: '10px', fontWeight: 'bold', height: '60px', justifyContent: 'center', alignItems: "center", display: 'flex' }} tag="h5">{member.username}</div>
                                 </Link>
-                                <div className="card_image_container" style={{ height: '250px', width: '100%' }}>
+                                <div className="card_image_container" style={{ height: '200px', }}>
 
                                     <img src={member.image.url} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
 
                                 </div>
-                                <CardBody style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <CardBody style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
                                     <CardText>{member.title}</CardText>
                                 </CardBody>
 
-                                <CardFooter>
-                                    <div className="linkedin" style={{ fontSize: "30px" }}>
-                                        <a href={member.linkedin_url}>
+                                <CardFooter style={{ padding: '5px' }}>
+                                    <div className="linkedin" style={{ fontSize: "18px" }}>
+                                        <a href={member.Linkedin_url}>
                                             <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
                                         </a>
                                     </div>
@@ -79,12 +79,17 @@ function BoardPageComponent(props) {
 
 
                 <Container id="board_content" >
-                    <div class="section_header" style={{ margin: "140px 0 30px 0px", zIndex: "333" }}>
-                        <span class="section_header_inner" style={{ zIndex: "333" }}>
-                            Board
+
+                    <Row className=" justify-content-center" style={{ margin: "170px 0 30px 0px", zIndex: "333" }}>
+                        <Col >
+                            <div class="section_header">
+                                <span class="section_header_inner">
+                                    Board of Directors
                             </span>
-                        <div className="section_header_under" style={{ width: "100%", marginTop: "10px" }}></div>
-                    </div>
+                                <div className="section_header_under"></div>
+                            </div>
+                        </Col>
+                    </Row>
                     <Row className=" justify-content-center align-items-stretch">
                         {create_staff_view(props.staff, "board_member")}
                     </Row>

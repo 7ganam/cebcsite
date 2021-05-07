@@ -125,72 +125,64 @@ function LevelsPageComponent() {
                         If you have any questions on membership, or would like to know more, please email ahmed@cebcmena.com.
                     </Col>
                 </Row>
-
-
-
-
-
-
-
             </Container>
-
-
 
             <Container style={{ margin: 'auto', paddingTop: "40px", paddingBottom: '40px', fontFamily: "'Raleway', sans-serif", }}>
 
-                <Row style={{ backgroundColor: '#eaeaea', minHeight: '50px', padding: '8px' }}>
-                    <Col md={3} className=" " style={{ display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
+                <div style={{ backgroundColor: '#eaeaea', minHeight: '50px', padding: '8px' }}>
+                    <Row style={{ marginTop: 'auto', marginBottom: 'auto' }} className='pt-2' >
+                        <Col md={3} className=" " style={{ padding: '10px', display: "flex", justifyContent: 'center', flexDirection: 'column' }}>
 
-                    </Col>
-                    <Col md={3} className=" " style={{}}>
-                        <div style={{ width: '90%', minHeight: "130px", backgroundColor: "gray", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
-                            <div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    PARTNER MEMBER
-                                </div>
+                        </Col>
+                        <Col md={3} className=" " style={{ padding: '10px', }}>
+                            <div style={{ width: '90%', minHeight: "130px", backgroundColor: "gray", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
+                                <div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        PARTNER MEMBER
+                                    </div>
 
-                                <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
-
-                                    $5,000 USD
-                                </div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    per annum
+                                    <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
+                                        $5,000 USD
+                                    </div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        per annum
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
-                    <Col md={3} className=" " style={{}}>
-                        <div style={{ width: '90%', minHeight: "130px", backgroundColor: "#FFB600", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
-                            <div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    CORPORATE MEMBER
-                                </div>
-                                <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
-                                    $2,500 USD
-                                </div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    per annum
-                                </div>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col md={3} className=" " style={{}}>
-                        <div style={{ width: '90%', minHeight: "130px", backgroundColor: "gray", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
-                            <div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    ASSOCIATE MEMBER
-                                </div>
-                                <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
-                                    $500 USD
-                                </div>
-                                <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
-                                    per annum
+                        </Col>
+                        <Col md={3} className=" " style={{ padding: '10px', }}>
+                            <div style={{ width: '90%', minHeight: "130px", backgroundColor: "#FFB600", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
+                                <div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        CORPORATE MEMBER
+                                    </div>
+                                    <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
+                                        $2,500 USD
+                                    </div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        per annum
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Col>
+                        </Col>
+                        <Col md={3} className=" " style={{ padding: '10px', }}>
+                            <div style={{ width: '90%', minHeight: "130px", backgroundColor: "gray", display: "flex", justifyContent: 'center', flexDirection: 'column', borderRadius: '10px' }}>
+                                <div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        ASSOCIATE MEMBER
+                                    </div>
+                                    <div style={{ fontSize: "30px", fontWeight: "bolder", color: "white" }}>
+                                        $500 USD
+                                    </div>
+                                    <div style={{ fontSize: "", fontWeight: "", color: "white" }}>
+                                        per annum
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
 
-                </Row>
+                    </Row>
+                </div>
                 {generate_table_view(data)}
             </Container>
 

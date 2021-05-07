@@ -115,7 +115,7 @@ function SingleProjectPageComponent(props) {
                                                 <a target="_blank" href={the_report.file.url} style={{ textDecoration: 'none' }}>
                                                     <div class="report_button action-button shadow animate blue">
 
-                                                        <div>open </div>
+                                                        <div>download </div>
 
                                                         <i class="fas fa-external-link-alt mt-3"></i>
 

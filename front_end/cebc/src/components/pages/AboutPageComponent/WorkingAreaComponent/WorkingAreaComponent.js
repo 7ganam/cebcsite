@@ -10,6 +10,7 @@ import wice from "../images//WomeninCleanEnergy.jpg"
 import Member from "../images//Member.jpg"
 import NEVC from "../images/NEVC.jpg"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Link } from 'react-router-dom';
 
 function WorkingAreaComponent(props) {
 
@@ -27,50 +28,58 @@ function WorkingAreaComponent(props) {
 
 
     return (
-        <div style={{ paddingBottom: '30px' }}>
-            <div className="section_header working_areas_header" >
-                <span className="section_header_inner ">
-                    Our Working Areas
-                            </span>
-                <div className="section_header_under"></div>
-            </div>
+        <div style={{ padding: '0 0 80px 0', }}>
 
-            <Container id="main_working_container" fluid>
+            <Container id="main_working_container" fluid >
                 <Container id="sub_working_container" >
                     <Row>
-                        <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2" style={{ marginBottom: '30px' }}>
-                                <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
-                                    <img src={Member} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                                </div>
+                        <Col md={4} className="d-flex justify-content-center align-items-center flex-column align-items-start justify-content-start">
+                            <Link to='/groups_programs' style={{ textDecoration: 'none' }}>
+                                <div className="working_card2" style={{ marginBottom: '30px' }}>
+                                    <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
+                                        <img src={Member} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                    </div>
 
-                                <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                                    <div >  working groups</div>
+                                    <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                                        <div >  Working groups</div>
+                                    </div>
                                 </div>
+                            </Link>
+                            <div>
+                                We drive innovation, collaboration and policy change through our Working Groups, focused on three key areas: new energy vehicles, climate finance and green policy.
                             </div>
                         </Col>
-                        <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2" style={{ marginBottom: '30px' }}>
-                                <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
-                                    <img src={wice} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                                </div>
+                        <Col md={4} className="d-flex justify-content-center align-items-center flex-column align-items-start justify-content-start">
+                            <Link to='/groups_programs' style={{ textDecoration: 'none' }}>
+                                <div className="working_card2" style={{ marginBottom: '30px' }}>
+                                    <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
+                                        <img src={wice} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                    </div>
 
 
-                                <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                                    <div >  Programmes</div>
+                                    <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                                        <div >  Programmes</div>
+                                    </div>
                                 </div>
+                            </Link>
+                            <div>
+                                We are very proud of our Women in Clean Energy and CEBC Schools Programmes, which engage thousands of people across the U.A.E., and the wider MENA region.
                             </div>
-
                         </Col>
-                        <Col md={4} className="d-flex justify-content-center align-items-center">
-                            <div className="working_card2" style={{ marginBottom: '30px' }}>
-                                <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
-                                    <img src={NEVC} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                                </div>
+                        <Col md={4} className="d-flex justify-content-start align-items-start flex-column align-items-start justify-content-start">
+                            <Link to='/EVENTS_NEWS/All' style={{ textDecoration: 'none' }}>
+                                <div className="working_card2" style={{ marginBottom: '30px' }}>
+                                    <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
+                                        <img src={NEVC} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                    </div>
 
-                                <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
-                                    <div > Events</div>
+                                    <div style={{ background: "white", width: "100%", height: "60px", color: "black", fontSize: "20px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
+                                        <div > Events</div>
+                                    </div>
                                 </div>
+                            </Link>
+                            <div>
+                                We host a number of exciting, engaging events each year, as well as contributing to a number of key events and summits throughout the region.
                             </div>
 
                         </Col>

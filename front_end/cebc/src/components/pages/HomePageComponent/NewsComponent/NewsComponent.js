@@ -1,15 +1,67 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import main_image from "./Afra2.jpg"
 import "./NewsComponent.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
 import { Link } from "react-router-dom";
+import moment from 'moment';
 
 function NewsComponent(props) {
 
     // console.log(`props.latest_news`, props.latest_news)
+    const [SortedEvents, setSortedEvents] = useState([])
 
+    function sort_events(events) {
+
+        var localTime = moment().format('YYYY-MM-DD'); // store localTime
+        var current_date = localTime + "T00:00:00.000Z";
+        // var current_date = localTime;
+        const upcocmming_events2 = events.filter((event, index) => {
+            if (event.Event_date > current_date) {
+                return event
+            }
+        })
+        function compare(a, b) {
+            if (moment(a.Event_date) < moment(b.Event_date)) { return -1; }
+            if (moment(a.Event_date) > moment(b.Event_date)) { return 1; }
+            return 0;
+        }
+        const sorted_upcomming_events = upcocmming_events2.sort(compare)
+        console.log(`events`, events)
+        console.log(`upcomming_events2`, upcocmming_events2)
+        let sorted_events = []
+        if (upcocmming_events2.length === 0) {
+            sorted_events = events
+        }
+        else if (upcocmming_events2.length < events.length) {
+            let past_events = events.filter((event, index) => (event.Event_date < current_date));
+            sorted_events = sorted_upcomming_events.concat(past_events)
+            console.log(`past_events`, past_events)
+
+
+
+
+        }
+        else {
+            sorted_events = sorted_upcomming_events;
+
+        }
+
+        console.log(`events`, events)
+        console.log(`sorted_events`, sorted_events)
+
+        setSortedEvents(sorted_events)
+
+
+
+    }
+
+    useEffect(() => {
+        if (props.latest_events) {
+            sort_events(props.latest_events)
+        }
+    }, [props.latest_events])
     return (
         <div style={{ marginTop: '40px' }}>
             <Container className='news_container'>
@@ -24,7 +76,8 @@ function NewsComponent(props) {
                     </Col>
                 </Row>
 
-                {(props.latest_news.length > 0 && props.latest_events.length > 2) ?
+                {(props.latest_news.length > 0 && SortedEvents.length > 2) ?
+
 
                     <>
                         <Row style={{ marginTop: "60px" }}>
@@ -49,11 +102,11 @@ function NewsComponent(props) {
                             </Col>
                             <Col id="sec_news_col " xs="12" md="6" style={{ paddingTop: "0" }}>
                                 <div className="" >
-                                    <Link className="" to={`/EVENTS_NEWS/PAST/${props.latest_events[0].id}`} >
+                                    <Link className="" to={`/EVENTS_NEWS/PAST/${SortedEvents[0].id}`} >
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={props.latest_events[0].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[0].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
 
@@ -61,17 +114,17 @@ function NewsComponent(props) {
                                                         <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
-                                                        {props.latest_events[0].Title}
+                                                        {SortedEvents[0].Title}
                                                     </div>
                                                     <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
-                                                        {props.latest_events[0].thumb_nail_text}
+                                                        {SortedEvents[0].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
                                                         <span className="sec_news_title_div text-left ml-1">
                                                             DATE:
                                                         </span>
                                                         <span className="sec_news_title_div text-left ml-1" style={{ color: 'grey' }}>
-                                                            {props.latest_events[0].Event_date}
+                                                            {SortedEvents[0].Event_date}
                                                         </span>
                                                     </div >
                                                 </Col>
@@ -79,56 +132,56 @@ function NewsComponent(props) {
                                             </Row>
                                         </div>
                                     </Link>
-                                    <Link className="" to={`/EVENTS_NEWS/PAST/${props.latest_events[1].id}`} >
+                                    <Link className="" to={`/EVENTS_NEWS/PAST/${SortedEvents[1].id}`} >
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={props.latest_events[1].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[1].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div  text-left">
                                                         <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
-                                                        {props.latest_events[1].Title}
+                                                        {SortedEvents[1].Title}
                                                     </div>
                                                     <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
-                                                        {props.latest_events[1].thumb_nail_text}
+                                                        {SortedEvents[1].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
                                                         <span className="sec_news_title_div text-left ml-1">
                                                             DATE:
                                                         </span>
                                                         <span className="sec_news_title_div text-left ml-1" style={{ color: 'grey' }}>
-                                                            {props.latest_events[1].Event_date}
+                                                            {SortedEvents[1].Event_date}
                                                         </span>
                                                     </div >
                                                 </Col>
                                             </Row>
                                         </div>
                                     </Link>
-                                    <Link className="" to={`/EVENTS_NEWS/PAST/${props.latest_events[2].id}`} >
+                                    <Link className="" to={`/EVENTS_NEWS/PAST/${SortedEvents[2].id}`} >
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={props.latest_events[2].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[2].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div  text-left">
                                                         <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
-                                                        {props.latest_events[2].Title}
+                                                        {SortedEvents[2].Title}
                                                     </div>
                                                     <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
-                                                        {props.latest_events[2].thumb_nail_text}
+                                                        {SortedEvents[2].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
                                                         <span className="sec_news_title_div text-left ml-1">
                                                             DATE:
                                                         </span>
                                                         <span className="sec_news_title_div text-left ml-1" style={{ color: 'grey' }}>
-                                                            {props.latest_events[2].Event_date}
+                                                            {SortedEvents[2].Event_date}
                                                         </span>
                                                     </div >
                                                 </Col>

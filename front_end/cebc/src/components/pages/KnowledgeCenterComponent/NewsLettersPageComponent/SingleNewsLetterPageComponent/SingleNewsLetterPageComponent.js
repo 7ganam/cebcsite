@@ -1,9 +1,9 @@
-import React, { useCallbackz, useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
 
 import renderHTML from 'react-render-html';
-import "./SingleCaseStudyPageComponent.css"
+import "./SingleNewsLetterPageComponent.css"
 import Editor from './Editor/Editor'
 import { Col, Container, Row } from 'reactstrap';
 
@@ -16,20 +16,20 @@ import { Link } from 'react-router-dom';
 
 
 
-function SingleCaseStudyPageComponent(props) {
+function SingleNewsLetterPageComponent(props) {
 
     // console.log(props.match.params.Event_id)
-    // console.log(`singeprops.case_studies`, props.case_studies)
-    const case_study_id = props.match.params.case_study_id;
+    console.log(`singeprops.NewsLetters`, props.NewsLetters)
+    const NewsLetter_id = props.match.params.NewsLetter_id;
 
-    const the_case_study = props.case_studies.filter((case_study) => case_study.id == case_study_id)[0] //leave this as two ==
+    const the_NewsLetter = props.NewsLetters.filter((NewsLetter) => NewsLetter.id == NewsLetter_id)[0] //leave this as two ==
 
-    console.log(`the_case_study`, the_case_study)
+    // console.log(`the_NewsLetter`, the_NewsLetter)
 
     function generate_entity_views(type) {
 
-        console.log(`props.members`, props.members)
-        const members_views = the_case_study.entities.map((member, index) => {
+        // console.log(`props.members`, props.members)
+        const members_views = the_NewsLetter.entities.map((member, index) => {
             if (member.membership_type) {
                 return (
 
@@ -44,7 +44,9 @@ function SingleCaseStudyPageComponent(props) {
             }
         })
         return members_views
+
     }
+
 
 
     function generate_groups_cards(groups_list) {
@@ -78,16 +80,16 @@ function SingleCaseStudyPageComponent(props) {
 
             <div className="back_ground_div">    </div>
 
-            <div id="case_study_background">
+            <div id="NewsLetter_background">
 
 
                 <Container style={{ maxWidth: '90%', marginTop: '200px', display: '' }}>
                     <Row className='justify-content-start align-items-stretch'>
                         <Col className='p-0' md={4} style={{ background: '', }}>
-                            {!!props.case_studies.length > 0 &&
-                                <div className="case_study_image_box">
-                                    {the_case_study.image ?
-                                        <img src={`${the_case_study.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                            {!!props.NewsLetters.length > 0 &&
+                                <div className="NewsLetter_image_box">
+                                    {the_NewsLetter.image ?
+                                        <img src={`${the_NewsLetter.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                         :
                                         <img src={"/logo_black.png"} style={{ width: "100%", height: "auto", }} alt="" />
                                     }
@@ -96,38 +98,38 @@ function SingleCaseStudyPageComponent(props) {
 
                         </Col>
                         <Col className='p-0' md={7}>
-                            <div className="case_study_box">
-                                {!!props.case_studies.length > 0 ?
+                            <div className="NewsLetter_box">
+                                {!!props.NewsLetters.length > 0 ?
                                     <div>
-                                        <div id="case_study_header" >
+                                        <Row id="NewsLetter_header" >
 
-                                            <div id="header_text"
+                                            <Col id="header_text"
                                                 style={{ backgroundColor: "", flexGrow: "1", marginLeft: "20px", display: "flex", flexDirection: "column", minHeight: "210px", justifyContent: "center" }}
                                             >
-                                                <div id="case_study_box_title" style={{ textAlign: "start", fontSize: '50px' }}>
-                                                    <h1> {the_case_study.title}</h1>
+                                                <div id="NewsLetter_box_title" style={{ textAlign: "start", }}>
+                                                    <div> {the_NewsLetter.title}</div>
                                                 </div>
 
-                                            </div>
-                                            <div class="open_case_study_button">
-                                                <a target="_blank" href={the_case_study.file.url} >
-                                                    <div class="report_button action-button shadow animate blue">
+                                            </Col>
+                                            <Col xs={12} md={6} class="open_NewsLetter_button">
+                                                <a target="_blank" href={the_NewsLetter.file.url} style={{ textDecoration: 'none' }}>
+                                                    <div class="NewsLetter_button action-button shadow animate blue">
 
-                                                        <div>download case</div>
+                                                        <div>download </div>
 
-                                                        <i class="fas fa-external-link-alt"></i>
+                                                        <i class="fas fa-external-link-alt mt-3"></i>
 
                                                     </div>
                                                 </a>
-                                            </div>
+                                            </Col>
+
+                                        </Row>
+                                        <div id="NewsLetter_header_2">
 
                                         </div>
-                                        <div id="case_study_header_2">
-
-                                        </div>
-                                        <div id="case_study_body">
+                                        <div id="NewsLetter_body">
                                             <div style={{}}>
-                                                <div style={{ width: '100%', margin: "auto" }}><Editor value={the_case_study.description} onChange={(input) => { }} /></div>
+                                                <div style={{ width: '100%', margin: "auto" }}><Editor value={the_NewsLetter.description} onChange={(input) => { }} /></div>
                                             </div>
                                         </div>
 
@@ -144,19 +146,19 @@ function SingleCaseStudyPageComponent(props) {
 
                             </div>
 
-                            {!!the_case_study &&
+                            {!!props.NewsLetters.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
-                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>case study details </span>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>NewsLetter details </span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
                                     </div>
-                                    <div className="case_study_details_box">
+                                    <div className="NewsLetter_details_box">
                                         <Row style={{ minHeight: "30px" }}>
                                             <Col className="details_title" md={3} >
                                                 Category :
                                             </Col>
                                             <Col md={8} className="details_value">
-                                                {the_case_study.type}
+                                                {'newsletter'}
                                             </Col>
                                         </Row>
 
@@ -165,7 +167,7 @@ function SingleCaseStudyPageComponent(props) {
                                                 date :
                                             </Col>
                                             <Col md={8} className="details_value">
-                                                {the_case_study.date}
+                                                {the_NewsLetter.date}
                                             </Col>
                                         </Row>
 
@@ -174,7 +176,7 @@ function SingleCaseStudyPageComponent(props) {
                                 </div>
                             }
 
-                            {!!the_case_study && the_case_study.entities.length > 0 &&
+                            {!!props.NewsLetters.length > 0 && the_NewsLetter && the_NewsLetter.entities.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Member</span>
@@ -187,7 +189,7 @@ function SingleCaseStudyPageComponent(props) {
                                     </Row>
                                 </div>
                             }
-                            {!!the_case_study && the_case_study.programmes_and_groups.length > 0 &&
+                            {!!the_NewsLetter && the_NewsLetter.programmes_and_groups.length > 0 &&
                                 <>
 
                                     <div id="groups_projects_box" style={{ backgroundColor: 'transparent', border: '0' }}>
@@ -198,7 +200,7 @@ function SingleCaseStudyPageComponent(props) {
 
                                     </div>
                                     <Row style={{ marginBottom: '20px', }}>
-                                        {generate_groups_cards(the_case_study.programmes_and_groups)}
+                                        {generate_groups_cards(the_NewsLetter.programmes_and_groups)}
                                     </Row>
 
                                 </>
@@ -217,4 +219,4 @@ function SingleCaseStudyPageComponent(props) {
     )
 }
 
-export default SingleCaseStudyPageComponent
+export default SingleNewsLetterPageComponent

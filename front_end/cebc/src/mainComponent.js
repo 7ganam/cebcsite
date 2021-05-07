@@ -86,11 +86,13 @@ import { LoginContext } from "./contexts/LoginContext"
 import StickersComponent from './components/shared/StickersComponent/StickersComponent'
 
 
+import NewsLettersPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/NewsLettersPageComponent'
+import SingleNewsLetterPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/SingleNewsLetterPageComponent/SingleNewsLetterPageComponent'
 
 export default function MainComponent() {
 
 
-    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents } = useInitLoadedData();
+    const { LoadedEntity_s, LoadedPapers, LoadedLinks, LoadedBlogs, LoadedWebinars, LoadedPodcasts, LoadedCase_studies, LoadedNews, LoadedProjects, LoadedProgrammes, LoadedReports, LoadedStaff_members, LoadedJobs, LoadedCourses, LoadedEvents, LoadedNewsletters, } = useInitLoadedData();
 
 
     const { login, IsLoggedIn, Token, ToggleLoginModal, IsLogInModalShown, IsSignUpModalShown, ToggleSignUpModal } = useContext(LoginContext);
@@ -136,38 +138,39 @@ export default function MainComponent() {
                             />
                         </Route>
 
-
-
-
-
-
-
                         <Route exact path="/ACADEMY/:course_id"
                             component={(props) => <   CoursePageComponent {...props} courses={LoadedCourses} />}
                         />
+
                         <Route exact path="/ACADEMY">
                             <AcademyPageComponent className="academyPage" courses={LoadedCourses} />
                         </Route>
-
 
                         <Route exact path="/CONSULTANCY">
                             <ConsultancyPageComponent className="academyPage" />
                         </Route>
 
+                        <Route path="/ABOUTUS/JOBS">
+                            {(props) => <JobPageCompoenent {...props} jobs={LoadedJobs} />}
+                        </Route>
 
 
                         <Route exact path="/ABOUTUS/WHATWEDO">
                             <WhatWeDoPageComponent />
                         </Route>
+
                         <Route exact path="/ABOUTUS/STAFF">
                             <BoardPageComponent staff={LoadedStaff_members} />
                         </Route>
+
                         <Route exact path="/ABOUTUS/STAFF/Board">
                             <BoardPageComponent staff={LoadedStaff_members} />
                         </Route>
+
                         <Route exact path="/ABOUTUS/STAFF/ADVISORY">
                             <AdvisoryBoardPageComponent staff={LoadedStaff_members} />
                         </Route>
+
                         <Route exact path="/ABOUTUS/STAFF/TEAM">
                             <TeamPageComponent staff={LoadedStaff_members} />
                         </Route>
@@ -183,6 +186,16 @@ export default function MainComponent() {
                         <Route exact path="/ABOUTUS">
                             <AboutPageComponent />
                         </Route>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,9 +286,36 @@ export default function MainComponent() {
                         </Route>
 
 
+                        <Route exact path="/KNOWLEDGECENTER/PRESENTATIONS">
+                            <PresintationsPageComponent />
+                        </Route>
+
+                        <Route exact path="/KNOWLEDGECENTER/NEWSLETTER">
+                            <NewsLettersPageComponent NewsLetters={LoadedNewsletters} />
+                        </Route>
+
+
+                        <Route exact path="/KNOWLEDGECENTER/NEWSLETTER/:NewsLetter_id"
+                            component={(props) => <SingleNewsLetterPageComponent {...props} NewsLetters={LoadedNewsletters} />}
+                        />
+
+
                         <Route exact path="/KNOWLEDGECENTER">
                             <KnowledgeCenterComponent />
                         </Route>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         <Route path="/MEMBERSHIP/MEMBERS/:member_id"
                             component={
@@ -337,9 +377,7 @@ export default function MainComponent() {
                         </Route>
 
 
-                        <Route path="/EVENTS_NEWS/JOBS">
-                            {(props) => <JobPageCompoenent {...props} jobs={LoadedJobs} />}
-                        </Route>
+
 
 
                         <Route path="/EVENTS_NEWS/News/:News_id"

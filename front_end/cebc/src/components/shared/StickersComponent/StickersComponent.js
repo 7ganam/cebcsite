@@ -241,7 +241,7 @@ function StickersComponent() {
 
                     </div>
                     <div id="tooltip" role="tooltip">
-                        subscripe to our mailing list
+                        subscribe to our mailing list
                          <div id="arrow" data-popper-arrow></div>
                     </div>
                 </div>
@@ -250,7 +250,7 @@ function StickersComponent() {
 
                 <div className={`subscipe_toaster ${ToasterIsOpen ? '' : 'closed'}`} style={{}}>
                     <div className='toaster_header'>
-                        Subscripe to our newsletters
+                        subscribe to our newsletter
                                  <div onClick={close_Toaster} class=" ml-auto mr-2">
                             <i class="fas fa-times " ></i>
                         </div>

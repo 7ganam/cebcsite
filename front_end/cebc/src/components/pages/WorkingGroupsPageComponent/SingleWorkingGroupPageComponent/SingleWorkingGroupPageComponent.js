@@ -171,7 +171,7 @@ function SingleWorkingGroupPageComponent(props) {
                             {the_group.users.length > 0 &&
                                 <div>
                                     <div class="section_header" style={{ marginTop: "20px", alignItems: 'start', textAlign: 'left', width: '85vw', maxWidth: '1000px', margin: 'auto' }}>
-                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Members</span>
+                                        <span class="section_header_inner" style={{ fontSize: '34px', }}>Board champions </span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
                                     </div>
                                     <Row className=" justify-content-center ml-5">

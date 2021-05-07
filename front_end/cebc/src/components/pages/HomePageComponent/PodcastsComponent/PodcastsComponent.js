@@ -7,7 +7,7 @@ import ReactLoading from 'react-loading';
 
 function PodcastsComponent(props) {
 
-    console.log(`props.podcasts`, props.podcasts)
+    // console.log(`props.podcasts`, props.podcasts)
     function generate_podcasts_cards() {
         const podcasts = props.podcasts.map((podcast, index) => {
             return (
@@ -16,7 +16,7 @@ function PodcastsComponent(props) {
                         <CardImg top width="100%" src={!!podcast.image && podcast.image.url} alt="Card image cap" />
                         <CardBody>
                             <CardTitle tag="h5" style={{ marginTop: '5px' }}>{podcast.season_episode}:</CardTitle>
-                            <CardSubtitle>
+                            <CardSubtitle className='card_title_'>
                                 {podcast.title}
                             </CardSubtitle>
                             <Link className="nav_link" to={`/KNOWLEDGECENTER/PODCASTS/${podcast.id}`}>
@@ -43,7 +43,7 @@ function PodcastsComponent(props) {
         <div style={{ marginTop: '', marginBottom: '' }}>
             <div id="title_header" style={{ marginTop: "50px ", marginBottom: "0px " }} >
                 <div class="section_header" style={{ marginTop: "50px" }}>
-                    <span class="section_header_inner"> podcasts </span>
+                    <span class="section_header_inner"> podcast </span>
                     <div className="section_header_under"></div>
                 </div>
 

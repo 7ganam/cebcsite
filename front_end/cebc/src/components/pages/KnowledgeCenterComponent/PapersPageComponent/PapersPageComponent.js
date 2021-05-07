@@ -23,7 +23,7 @@ function PapersPageComponent(props) {
                             <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                         }
                         <CardBody>
-                            <CardTitle tag="h5"> {paper.title}</CardTitle>
+                            <CardTitle className='card_title_' tag="h5"> {paper.title}</CardTitle>
                             <CardSubtitle tag="h6" className="mb-2 text-muted">
                                 {/* <i class="fa fa-calendar mr-2" aria-hidden="true"></i> */}
                                 {/* <span class="mec-paper-d"><span class="mec-start-date-label" itemprop="startDate">{paper.date}</span></span> */}
@@ -46,7 +46,7 @@ function PapersPageComponent(props) {
     return (
         <div style={{ marginTop: '200px', marginBottom: '50px' }}>
             <div class="section_header" style={{ marginTop: "100px", marginBottom: "100px" }}>
-                <span class="section_header_inner">  NEWSLETTERS    </span>
+                <span class="section_header_inner">  NEWSLETTER   </span>
                 <div className="section_header_under"></div>
             </div>
             {props.papers.length > 0 &&

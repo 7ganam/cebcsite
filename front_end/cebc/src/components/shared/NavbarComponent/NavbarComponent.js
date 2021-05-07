@@ -71,9 +71,16 @@ const NavbarComponent = (props) => {
             <div className="d-flex justify-content-end ml-0 mr-0" style={{ height: "26px" }}>
                 <div id="top_bar" className="header_font" >
 
+
+                    <Link id='members_only_link' className="pulsating-circle" to="/MEMBERSHIP/MEMBERSONLY">
+                        <div style={{ paddingRight: "16px", color: "black" }} >
+                            Members only content
+                        </div>
+                    </Link>
+
                     <Link className="" to="/groups_programs">
                         <div style={{ paddingRight: "16px", color: "black" }} >
-                            working groups
+                            Working groups
                         </div>
                     </Link>
 
@@ -84,12 +91,12 @@ const NavbarComponent = (props) => {
                                 Login
                             </div>
                             <div onClick={ToggleSignUpModal} style={{ paddingRight: "6px", cursor: 'pointer' }}>
-                                < >  signup </>
+                                < >  Signup </>
                             </div>
                         </>
                         :
                         <div onClick={logout} style={{ paddingRight: "6px", cursor: 'pointer' }}>
-                            < >  logout </>
+                            < >  Logout </>
                         </div>
 
                     }
@@ -138,19 +145,20 @@ const NavbarComponent = (props) => {
                                 <ExtendedNavItemComponent2
                                     location={props.location} main_nav={{ base_path: "/ABOUTUS", path: "/ABOUTUS/WHATWEDO", text: "ABOUT" }}
                                     sub_navs={[
-                                        { path: "/ABOUTUS/WHATWEDO", text: "what we do" },
-                                        { path: "/ABOUTUS/STAFF/BOARD", text: "board" },
-                                        { path: "/ABOUTUS/STAFF/ADVISORY", text: "board advisory comittee" },
+                                        { path: "/ABOUTUS/WHATWEDO", text: "about" },
+                                        { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
+                                        { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
                                         { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
-
-                                        { path: "/ABOUTUS/FAQ", text: "FAQ" }]}
+                                        { path: "/ABOUTUS/JOBS", text: "careers" },
+                                        // { path: "/ABOUTUS/FAQ", text: "FAQ" }
+                                    ]}
                                 />
 
                                 <ExtendedNavItemComponent2
                                     location={props.location} main_nav={{ base_path: "/MEMBERSHIP", path: "/MEMBERSHIP/BENIFITS", text: "MEMBERSHIP" }}
                                     sub_navs={[
-                                        { path: "/MEMBERSHIP/BENIFITS", text: "benifits" },
-                                        { path: "/MEMBERSHIP/LEVELS", text: "levels" },
+                                        { path: "/MEMBERSHIP/BENIFITS", text: "benifits & levels" },
+                                        // { path: "/MEMBERSHIP/LEVELS", text: "levels" },
                                         { path: "/MEMBERSHIP/MEMBERS", text: "members" },
                                         { path: "/MEMBERSHIP/PARTNERS", text: "partners" },
                                         { path: "/MEMBERSHIP/JOIN", text: "join the cebc" },
@@ -164,7 +172,7 @@ const NavbarComponent = (props) => {
                                     location={props.location} main_nav={{ path: "/EVENTS_NEWS", text: "EVENTS & NEWS" }}
                                     sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" },
                                     { path: "/News", text: "News" },
-                                    { path: "/JOBS", text: "jobs" }
+
                                     ]}
                                 />
                                 <NavItem className={`${props.location.pathname !== "/ACADEMY" ? '' : 'nav-link-selected'} `}>
@@ -187,12 +195,13 @@ const NavbarComponent = (props) => {
                                     sub_navs={[
                                         { path: "/REPORTS", text: "publications" },
                                         { path: "/WEBINARS", text: "webinars" },
-                                        { path: "/PODCASTS", text: "podcasts" },
+                                        { path: "/PODCASTS", text: "podcast" },
                                         { path: "/PRESENTATIONS", text: "presentations" },
                                         { path: "/PROJECTS", text: "projects" },
                                         { path: "/CASE_STUDIES", text: "case studies" },
                                         { path: "/BLOGS", text: "blogs" },
-                                        { path: "/PAPERS", text: "NEWSLETTERs" },
+                                        // { path: "/PAPERS", text: "NEWSLETTER" },
+                                        { path: "/NEWSLETTER", text: "NEWSLETTER" },
                                         { path: "/LINKS", text: "useful links" }
                                     ]}
                                 />

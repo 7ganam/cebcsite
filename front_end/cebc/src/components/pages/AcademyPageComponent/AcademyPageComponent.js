@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row } from 'reactstrap'
+import { Col, Container, Row } from 'reactstrap'
 import './AcademyPageComponent.css'
 
 import {
@@ -55,6 +55,11 @@ function AcademyPageComponent(props) {
                             </span>
                         <div className="section_header_under"></div>
                     </div>
+                </Row>
+                <Row>
+                    <Col style={{ fontFamily: "'Raleway', sans-serif", textAlign: 'left', marginBottom: '30px' }}>
+                        CEBC provides courses to help empower Clean energy industries in the MENA region.
+                        </Col>
                 </Row>
                 <div className='courses_div'>
                     {props.courses && props.courses.length > 0 ?

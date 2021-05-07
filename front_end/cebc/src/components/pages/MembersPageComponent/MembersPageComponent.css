@@ -16,6 +16,17 @@
     background-color: white;
     
 }
+.member_card_sub_div2{
+    width: 195px;
+    height: 100px;
+    /* border: red 1px solid; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: -2px 2px 3px 0px #00000030;
+    background-color: white;
+    
+}
 
 
 .member_card img {
