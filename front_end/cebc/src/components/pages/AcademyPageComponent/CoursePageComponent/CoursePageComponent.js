@@ -32,6 +32,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 
 
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
+
 
 
 const validationSchema = Yup.object({
@@ -193,6 +195,11 @@ function CoursePageComponent(props) {
     const the_course = props.courses.filter((course) => { return course.id == course_id })[0]
     console.log(`the_course`, the_course)
 
+
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
 
     return (
         <>
