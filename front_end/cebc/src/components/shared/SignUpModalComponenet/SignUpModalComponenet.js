@@ -190,7 +190,7 @@ function SignUpModalComponenet() {
                                             <Form className="signUP_form">
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='name'>Your name</label>
+                                                        <label className='formik-label' htmlFor='name'>Your Name</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field type='text' id='name' name='name' />

@@ -74,7 +74,7 @@
 .dr-saidi{
     position: absolute;
     right:0;
-    z-index: 33;
+    z-index: 1;
     width: 25%;
      height: 100%;
       margin-left: 'auto';
@@ -129,7 +129,7 @@
         position: absolute;
         right:0;
         bottom: -30px;
-        z-index: 33;
+        z-index: 1;
         width: 40%;
          height: 100%;
           margin-left: 'auto';

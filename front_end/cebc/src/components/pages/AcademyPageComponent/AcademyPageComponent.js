@@ -49,7 +49,7 @@ function AcademyPageComponent(props) {
             <Container>
 
                 <Row className=" justify-content-center">
-                    <div class="section_header" style={{ marginTop: "50px", marginBottom: "80px", zIndex: '3333' }}>
+                    <div class="section_header" style={{ marginTop: "50px", marginBottom: "80px", zIndex: '3' }}>
                         <span class="section_header_inner">
                             CEBC courses
                             </span>

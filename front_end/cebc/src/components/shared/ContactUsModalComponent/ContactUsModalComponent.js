@@ -147,7 +147,7 @@ function ContactUsModalComponent(props) {
         <>
             <div id="sign_up_modal" >
                 <Modal
-                    size="lg" style={{ marginTop: '11vh', maxWidth: '1000px', width: '80%', marginRight: "auto", marginLeft: "auto", backgroundColor: 'transparent' }}
+                    size="lg" style={{ marginTop: '11vh', maxWidth: '1000px', width: '80%', marginRight: "auto", marginLeft: "auto", backgroundColor: 'transparent', zIndex: '113333333333333333' }}
                     isOpen={props.ModalIsOpen} toggle={props.toggle}>
                     <div style={{}} ></div>
                     <ModalBody style={{ padding: "0px", }} >

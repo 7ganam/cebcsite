@@ -7,3 +7,7 @@
     align-items: center;
     flex-direction: column;
 }
+.consultancy_form{
+    box-shadow: grey 1px 1px 5px 1px;
+
+}

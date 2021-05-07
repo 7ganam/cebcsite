@@ -63,7 +63,7 @@ function NewsLettersPageComponent(props) {
         render_NewsLetter.push(
             <div class="section_header" style={{ marginTop: "100px" }}>
                 <span class="section_header_inner">
-                    PUBLICATIONS
+                    NEWSLETTER
             </span>
                 <div className="section_header_under"></div>
             </div>

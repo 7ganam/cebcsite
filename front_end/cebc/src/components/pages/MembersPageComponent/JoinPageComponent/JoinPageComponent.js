@@ -22,6 +22,7 @@ const validationSchema = Yup.object({
         .email('Invalid email format')
         .required('Required'),
     entity: Yup.string().required('Required'),
+    level: Yup.string(),
     message: Yup.string()
 
 })
@@ -30,6 +31,7 @@ const initialValues = {
     name: '',
     email: '',
     entity: '',
+    level: '',
     Message: '',
 }
 
@@ -51,6 +53,7 @@ function JoinPageComponent() {
             "sender_name": values.name,
             "entity_name": values.entity,
             "email": values.email,
+            "level": values.level,
             "message": values.message,
 
         }
@@ -241,6 +244,41 @@ function JoinPageComponent() {
                                                         </ErrorMessage>
                                                     </Col>
                                                 </Row>
+
+
+
+
+
+                                                <Row className='formik-control'>
+                                                    <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
+                                                        <label className='formik-label' htmlFor='levle'>Membership Level</label>
+                                                    </Col>
+                                                    <Col style={{ padding: '0px' }}>
+                                                        <Field
+                                                            className="select_field"
+                                                            component="select"
+                                                            as="select"
+                                                            type='text'
+                                                            id='level'
+                                                            name='level'
+
+                                                        >
+                                                            <option value="no_selection">Select level</option>
+                                                            <option value="PARTNER">PARTNER - 5000$</option>
+                                                            <option value="CORPORATE">CORPORATE - 2500$</option>
+                                                            <option value="blASSOCIATEue">ASSOCIATE  - 500$</option>
+                                                        </Field>
+                                                    </Col>
+                                                    <Col xs={12} style={{ padding: '0px' }}>
+                                                        <ErrorMessage className='err_msg' name='level'>
+                                                            {error => <div className='formikerror'>{error}</div>}
+                                                        </ErrorMessage>
+                                                    </Col>
+                                                </Row>
+
+
+
+
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>

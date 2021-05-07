@@ -5,7 +5,8 @@ import moment from 'moment';
 
 
 import React, { useCallback, useState, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'; import ReactLoading from 'react-loading';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactLoading from 'react-loading';
 import { useHttpClient } from "../../../../hooks/http-hook"
 
 import renderHTML from 'react-render-html';
@@ -260,7 +261,6 @@ function CoursePageComponent(props) {
 
                                 </div>
 
-
                                 <div className='course_body_section_title'>
                                     Structure:
 
@@ -272,6 +272,7 @@ function CoursePageComponent(props) {
                         </div>
 
                         :
+
                         <div id="loading_spinner" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "150px" }} >
                             <div style={{ marginTop: "100px" }}>
                                 <ReactLoading type={"spin"} color={"#00D2F9"} width={"20vw"} />
@@ -327,8 +328,6 @@ function CoursePageComponent(props) {
 
                             {the_course &&
                                 <div>
-
-
                                     <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "0px", marginBottom: "40px" }}>
 
                                         <Row style={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
@@ -374,7 +373,7 @@ function CoursePageComponent(props) {
                                                                         <Form className="signUP_form">
                                                                             <Row className='formik-control'>
                                                                                 <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                                    <label className='formik-label' htmlFor='name'>Your name</label>
+                                                                                    <label className='formik-label' htmlFor='name'>Your Name</label>
                                                                                 </Col>
                                                                                 <Col style={{ padding: '0px' }}>
                                                                                     <Field type='text' id='name' name='name' />

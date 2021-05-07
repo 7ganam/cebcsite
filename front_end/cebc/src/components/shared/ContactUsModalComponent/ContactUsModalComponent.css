@@ -29,6 +29,7 @@
 }
 .sign_up_modal{
     margin-top: 200px;
+    z-index: 77777777777777777777;
 }
 .formik-label{
     font-size: 20px;
