@@ -82,8 +82,6 @@ function useInitLoadedData() {
 
 
 
-
-
     const { isLoading: ReportsIsLoading, error: ReportsError, sendRequest: sendReportsRequest, clearError: clearReportsError } = useHttpClient();
     const [LoadedReports, setLoadedReports] = useState([]);
     const fetch_Reports = useCallback(
