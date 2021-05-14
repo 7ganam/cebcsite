@@ -327,7 +327,7 @@ function BenifitsPageComponent() {
                         {generate_table_view(data)}
                     </Container>
     
-                    <div style={{ marginLeft: "auto", marginRight: "auto", marginBottom: "100px", marginTop: "40px", width: "600px" }}>
+                    <div style={{ marginLeft: "auto", marginRight: "auto", marginBottom: "100px", marginTop: "40px", width: "400px" }}>
     
                         <CallToAction />
     

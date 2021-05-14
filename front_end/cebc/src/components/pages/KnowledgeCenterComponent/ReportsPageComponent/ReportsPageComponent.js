@@ -38,7 +38,7 @@ function ReportsPageComponent(props) {
                             <Card className="past_report_card">
                                 {report.image ?
 
-                                    <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${report.image.url}`} alt="Card image cap" />
+                                    <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={`${report.image && report.image.url}`} alt="Card image cap" />
                                     :
                                     <CardImg top width="100%" style={{ height: '100px', objectFit: "contain" }} src={"/logo_black.png"} alt="Card image cap" />
                                 }

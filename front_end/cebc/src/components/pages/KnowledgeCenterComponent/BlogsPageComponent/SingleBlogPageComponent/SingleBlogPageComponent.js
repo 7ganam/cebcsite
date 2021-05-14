@@ -36,7 +36,7 @@ function SingleBlogPageComponent(props) {
                         <Col className='p-0' md={4} style={{ background: '', }}>
                             {!!props.blogs.length > 0 &&
                                 <div className="blog_image_box">
-                                    <img src={`${the_blog.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                    <img src={`${the_blog.image && the_blog.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                 </div>
                             }
 

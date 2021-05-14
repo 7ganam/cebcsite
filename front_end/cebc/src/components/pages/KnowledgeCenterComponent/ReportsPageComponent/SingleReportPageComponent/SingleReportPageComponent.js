@@ -36,7 +36,7 @@ function SingleProjectPageComponent(props) {
                     <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.entity_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image && member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -56,7 +56,7 @@ function SingleProjectPageComponent(props) {
                     <Link to={`/groups_programs/${groups.id}`}>
                         <div className="project_card">
                             <div style={{ width: "100%", height: "250px", borderRadius: "", overflow: "hidden", borderBottom: '1px solid #80808045' }}>
-                                <img src={groups.Thumb_nail_image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                <img src={groups.Thumb_nail_image && groups.Thumb_nail_image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             </div>
 
                             <div style={{ background: "white", width: "100%", minHeight: "60px", color: "black", fontSize: "16px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
@@ -89,7 +89,7 @@ function SingleProjectPageComponent(props) {
                             {!!props.reports.length > 0 &&
                                 <div className="report_image_box">
                                     {the_report.image ?
-                                        <img src={`${the_report.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                        <img src={`${the_report.image && the_report.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                         :
                                         <img src={"/logo_black.png"} style={{ width: "100%", height: "auto", }} alt="" />
                                     }

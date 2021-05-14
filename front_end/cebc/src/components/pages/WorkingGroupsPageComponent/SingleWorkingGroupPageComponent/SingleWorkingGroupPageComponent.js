@@ -37,7 +37,7 @@ function SingleWorkingGroupPageComponent(props) {
 
                     <Link to={`/ABOUTUS/STAFF/${member.id}`} style={{ textDecoration: 'none' }} >
                         <div className='entity_image_container' style={{ width: '100%', height: '170px' }}>
-                            <img className='entity_image' src={member.image.url} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
+                            <img className='entity_image' src={member.image && member.image.url} style={{ width: '100%', height: '100%', objectFit: "cover" }} />
                         </div>
                         <div className='member_text'>
                             <div className="member_name"> {member.username}</div>

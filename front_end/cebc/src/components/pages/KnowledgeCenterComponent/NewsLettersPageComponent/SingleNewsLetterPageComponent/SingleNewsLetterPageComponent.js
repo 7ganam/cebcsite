@@ -36,7 +36,7 @@ function SingleNewsLetterPageComponent(props) {
                     <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.entity_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image && member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -89,7 +89,7 @@ function SingleNewsLetterPageComponent(props) {
                             {!!props.NewsLetters.length > 0 &&
                                 <div className="NewsLetter_image_box">
                                     {the_NewsLetter.image ?
-                                        <img src={`${the_NewsLetter.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                        <img src={`${the_NewsLetter.image && the_NewsLetter.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                         :
                                         <img src={"/logo_black.png"} style={{ width: "100%", height: "auto", }} alt="" />
                                     }

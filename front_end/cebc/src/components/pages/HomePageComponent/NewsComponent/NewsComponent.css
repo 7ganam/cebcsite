@@ -190,6 +190,13 @@
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     
+    .main_news_col{
+        height: 640px;
+    }
+    #main_news_div{
+        height: 100%;
+    }
+
     #main_news_img_div{
         height:100%;
         width: 50%;
@@ -206,8 +213,17 @@
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
-   #main_news_col{
+   .sec_news_div{
+       height: 200px;
    }
+   .sec_news_div .col-5{
+    padding-top: 0px;
+    height: 100%;
+}
+.sec_news_div .col-7{
+    padding-top: 3px;
+    height: 100%;
+}
 
    #main_news_img_div{
        height: 300px;

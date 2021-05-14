@@ -40,7 +40,7 @@ export default function HomePageComponent(props) {
             </div>
 
 
-            <PodcastsComponent podcasts={props.LoadedPodcasts.length > 3 ? props.LoadedPodcasts.slice(0, 3) : props.LoadedPodcasts} />
+            <PodcastsComponent podcasts={props.LoadedPodcasts} />
 
             <div class="section_header" style={{ marginTop: "60px" }}>
                 <span class="section_header_inner">

@@ -89,6 +89,10 @@ import StickersComponent from './components/shared/StickersComponent/StickersCom
 import NewsLettersPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/NewsLettersPageComponent'
 import SingleNewsLetterPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/SingleNewsLetterPageComponent/SingleNewsLetterPageComponent'
 
+import SubscribeModalComponent from './components/shared/SubscribeModalComponent/SubscribeModalComponent'
+
+
+
 export default function MainComponent() {
 
 
@@ -120,7 +124,6 @@ export default function MainComponent() {
     return (
         <div id="main_component" style={{ backgroundColor: "white", overflow: "" }}>
             <div id="content_wrap">
-                {/* <LoginModalComponenet /> */}
                 <SignUpModalComponenet />
                 <SignInModalComponenet />
                 <StickersComponent />

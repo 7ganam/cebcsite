@@ -17,7 +17,7 @@ function AcademyPageComponent(props) {
 
             <div className='course_card'>
                 <Card style={{ height: "100%", }}>
-                    <CardImg top width="100%" height='170px' style={{}} src={course.image.url} alt="Card image cap" />
+                    <CardImg top width="100%" height='170px' style={{}} src={course.image && course.image.url} alt="Card image cap" />
                     <CardBody style={{ display: 'flex', flexDirection: "column", paddingTop: '3px' }}>
                         <div style={{ flexGrow: '1' }}></div>
                         <CardTitle tag="h5"

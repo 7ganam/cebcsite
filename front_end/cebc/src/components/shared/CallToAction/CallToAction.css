@@ -17,6 +17,9 @@
     
     .cto-button
     {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         padding: 10px 40px;
       margin: 0px 10px 10px 0px;

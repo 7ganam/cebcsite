@@ -25,7 +25,7 @@ function TeamPageComponent(props) {
                                 </Link>
                                 <div className="card_image_container" style={{ height: '200px', }}>
 
-                                    <img src={member.image.url} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
+                                    <img src={member.image && member.image.url} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="" />
 
                                 </div>
                                 <CardBody style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>

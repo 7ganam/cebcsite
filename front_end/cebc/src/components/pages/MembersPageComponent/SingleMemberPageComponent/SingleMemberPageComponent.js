@@ -27,7 +27,7 @@ function SingleMemberPageComponent(props) {
                     <Link to={`/KNOWLEDGECENTER/PROJECTS/${project.id}`}>
                         <div className="project_card">
                             <div style={{ width: "100%", height: "250px", borderRadius: "", overflow: "hidden", borderBottom: '1px solid #80808045' }}>
-                                <img src={project.image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                <img src={project.image && project.image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             </div>
 
                             <div style={{ background: "white", width: "100%", minHeight: "60px", color: "black", fontSize: "16px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
@@ -60,7 +60,7 @@ function SingleMemberPageComponent(props) {
 
                                     {member.entity_image ?
                                         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%", overflow: "hidden" }}>
-                                            <img src={`${member.entity_image.url}`}
+                                            <img src={`${member.entity_image && member.entity_image.url}`}
                                                 style={{ width: "300px", height: "auto", }} alt="" />
                                         </div>
                                         :

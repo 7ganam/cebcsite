@@ -34,3 +34,7 @@
         max-height: 80px;       /* fallback */
     
 }
+
+.slick-list{
+    padding: 15px;
+}

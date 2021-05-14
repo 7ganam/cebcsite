@@ -33,7 +33,7 @@ function MembersOnlyPageComponent(props) {
     const render_events = (events) => {
         let events_views = events.map((event) =>
             <Card style={{ marginTop: '15px', boxShadow: '-2px 2px 3px 0px #00000030' }}>
-                <CardImg top width="100%" src={event.Event_thumbnail_image.url} alt="Card image cap" />
+                <CardImg top width="100%" src={event.Event_thumbnail_image && event.Event_thumbnail_image.url} alt="Card image cap" />
                 <CardBody>
                     <CardTitle tag="h5">{event.Title}</CardTitle>
                     <CardSubtitle tag="h6" className="mb-2 text-muted"> {event.date}</CardSubtitle>
@@ -55,7 +55,7 @@ function MembersOnlyPageComponent(props) {
         let news_views = news.map((news_post) => {
             return (
                 <Card style={{ marginTop: '15px', boxShadow: '-2px 2px 3px 0px #00000030' }}>
-                    <CardImg top width="100%" src={news_post.thumbnail_image.url} alt="Card image cap" />
+                    <CardImg top width="100%" src={news_post.thumbnail_image && news_post.thumbnail_image.url} alt="Card image cap" />
                     <CardBody>
                         <CardTitle tag="h5">{news_post.title}</CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted"> {news_post.date}</CardSubtitle>
@@ -132,7 +132,7 @@ function MembersOnlyPageComponent(props) {
                                 <Col className='news_col' md={3}>
                                     <div className='id_card'>
                                         <div className='user_image_wrapper'>
-                                            <img className='user_image' src={User.image.url} alt='user'></img>
+                                            <img className='user_image' src={User.image && User.image.url} alt='user'></img>
                                         </div>
                                         <div className='user_name' style={{ fontWeight: '700' }}>
                                             {User.username}

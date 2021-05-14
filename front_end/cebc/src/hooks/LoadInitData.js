@@ -14,7 +14,7 @@ function useInitLoadedData() {
             try {
 
                 const responseData = await sendProgrammesRequest(
-                    `${process.env.REACT_APP_BACKEND_URL}/programmes-and-groups`
+                    `${process.env.REACT_APP_BACKEND_URL}/programmes-and-groups?_sort=updated_at`
                 );
 
                 setLoadedProgrammes(responseData);

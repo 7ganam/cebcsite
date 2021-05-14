@@ -11,10 +11,11 @@ import { Link } from "react-router-dom";
 function WorkingGroupsComponent(props) {
 
 
-    // console.log('WorkingGroupsComponent', props)
+    console.log('WorkingGroupsComponent', props)
 
     const render_groups = (groups) => {
-        const groups_view = groups.map((group, index) => {
+        let filter_groups = groups.filter((group) => group.Type !== "programm")
+        const groups_view = filter_groups.map((group, index) => {
             return (
                 <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                     <Link className="" to={`/groups_programs/${group.id}`}>

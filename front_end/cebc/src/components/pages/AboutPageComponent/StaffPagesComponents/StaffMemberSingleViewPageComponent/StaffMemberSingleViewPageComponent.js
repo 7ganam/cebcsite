@@ -30,7 +30,7 @@ function StaffMemberSingleViewPageComponent(props) {
                     <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.entity_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image ? member.entity_image.url : "logo_black.png"} />
                             </div>
                         </div>
                     </Link>
@@ -51,7 +51,7 @@ function StaffMemberSingleViewPageComponent(props) {
                     <Link to={`/groups_programs/${groups.id}`}>
                         <div className="member_card">
                             <div style={{ width: "100%", height: "250px", borderRadius: "", overflow: "hidden", borderBottom: '1px solid #80808045' }}>
-                                <img src={groups.Thumb_nail_image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                                <img src={groups.Thumb_nail_image && groups.Thumb_nail_image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                             </div>
 
                             <div style={{ background: "white", width: "100%", minHeight: "60px", color: "black", fontSize: "16px", display: 'flex', alignItems: "center", justifyContent: "center" }}>
@@ -83,7 +83,7 @@ function StaffMemberSingleViewPageComponent(props) {
                         <Col className='p-0' md={4} style={{ background: '', }}>
                             {!!the_member &&
                                 <div className="member_image_box">
-                                    <img src={`${the_member.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                    <img src={`${the_member.image && the_member.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                 </div>
                             }
 

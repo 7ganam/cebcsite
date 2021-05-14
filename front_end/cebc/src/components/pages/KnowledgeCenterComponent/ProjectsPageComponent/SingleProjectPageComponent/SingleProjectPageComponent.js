@@ -30,7 +30,7 @@ function SingleProjectPageComponent(props) {
                     <Link className="" to={`/MEMBERSHIP/MEMBERS/${member.id}`}>
                         <div class="member_card">
                             <div class="member_card_sub_div">
-                                <img class="mem_carousel_img" src={member.entity_image.url} />
+                                <img class="mem_carousel_img" src={member.entity_image && member.entity_image.url} />
                             </div>
                         </div>
                     </Link>
@@ -83,7 +83,7 @@ function SingleProjectPageComponent(props) {
                         <Col className='p-0' md={4} style={{ background: '', }}>
                             {!!props.projects.length > 0 &&
                                 <div className="project_image_box">
-                                    <img src={`${the_project.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
+                                    <img src={`${the_project.image && the_project.image.url}`} style={{ width: "100%", height: "auto", }} alt="" />
                                 </div>
                             }
 

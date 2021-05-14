@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import main_image from "./Afra2.jpg"
 import "./NewsComponent.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactLoading from 'react-loading';
@@ -81,12 +80,13 @@ function NewsComponent(props) {
 
                     <>
                         <Row style={{ marginTop: "60px" }}>
-                            <Col id="main_news_col" className="news_col" xs="12" md="6" style={{}}>
+                            <Col id="main_news_col" className="news_col main_news_col" xs="12" md="6" style={{}}>
                                 <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[0].id}`} >
 
                                     <div id="main_news_div" className="p-2">
                                         <div id="main_news_img_div" style={{ width: "100%" }}>
-                                            <img id="main_news_img" src={props.latest_news[0].thumbnail_image.url} alt="oval" />
+                                            <img id="main_news_img" src={
+                                                props.latest_news[0].thumbnail_image && props.latest_news[0].thumbnail_image.url} alt="oval" />
                                         </div>
                                         <div id="main_news_title_div">
                                             {props.latest_news[0].title}
@@ -106,17 +106,17 @@ function NewsComponent(props) {
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={SortedEvents[0].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[0].Event_thumbnail_image && SortedEvents[0].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
 
                                                     <div className="sec_news_title_div  text-left">
-                                                        <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
+                                                        <span className="text-left mr-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
                                                         {SortedEvents[0].Title}
                                                     </div>
-                                                    <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
+                                                    <div className="sec_news_body_div mx-1 mt-2   text-left">
                                                         {SortedEvents[0].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
@@ -136,16 +136,16 @@ function NewsComponent(props) {
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={SortedEvents[1].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[1].Event_thumbnail_image && SortedEvents[1].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div  text-left">
-                                                        <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
+                                                        <span className="text-left mr-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
                                                         {SortedEvents[1].Title}
                                                     </div>
-                                                    <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
+                                                    <div className="sec_news_body_div mx-1 mt-2   text-left">
                                                         {SortedEvents[1].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
@@ -164,16 +164,16 @@ function NewsComponent(props) {
                                         <div className="sec_news_div mb-3">
                                             <Row style={{ height: "100%" }} className="p-2">
                                                 <Col xs="5" md="5" style={{ height: "" }} >
-                                                    <img className="sec_news_img" src={SortedEvents[2].Event_thumbnail_image.url} alt="oval" />
+                                                    <img className="sec_news_img" src={SortedEvents[2].Event_thumbnail_image && SortedEvents[2].Event_thumbnail_image.url} alt="oval" />
                                                 </Col>
                                                 <Col xs="7" md="7" style={{ height: "", overflow: "hidden" }} className="pl-0">
                                                     <div className="sec_news_title_div  text-left">
-                                                        <span className="text-left mx-2" style={{ backgroundColor: '#FCC744' }}>
+                                                        <span className="text-left mr-2" style={{ backgroundColor: '#FCC744' }}>
                                                             EVENT:
                                                         </span>
                                                         {SortedEvents[2].Title}
                                                     </div>
-                                                    <div className="sec_news_body_div mx-1 mt-2 mb-5  text-left">
+                                                    <div className="sec_news_body_div mx-1 mt-2   text-left">
                                                         {SortedEvents[2].thumb_nail_text}
                                                     </div>
                                                     <div style={{ display: 'flex' }}>
