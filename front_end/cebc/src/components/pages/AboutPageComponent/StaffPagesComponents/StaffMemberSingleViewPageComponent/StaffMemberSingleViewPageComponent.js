@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 function StaffMemberSingleViewPageComponent(props) {
 
     // console.log(props.match.params.Event_id)
-    console.log(`singeprops.staff`, props.staff)
+    // console.log(`singeprops.staff`, props.staff)
     const member_id = props.match.params.member_id;
 
     const the_member = props.staff.filter((member) => member.id == member_id)[0] //leave this as two ==
@@ -48,7 +48,7 @@ function StaffMemberSingleViewPageComponent(props) {
         const groups = groups_list.map((groups, index) => {
             return (
                 <Col md={4} className="d-flex justify-content-center align-items-center">
-                    <Link to={`/groups_programs/${groups.id}`}>
+                    <Link to={`/ABOUTUS/working_groups/${groups.id}`}>
                         <div className="member_card">
                             <div style={{ width: "100%", height: "250px", borderRadius: "", overflow: "hidden", borderBottom: '1px solid #80808045' }}>
                                 <img src={groups.Thumb_nail_image && groups.Thumb_nail_image.url} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />

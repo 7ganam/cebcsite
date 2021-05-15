@@ -34,7 +34,7 @@ function WorkingAreaComponent(props) {
                 <Container id="sub_working_container" >
                     <Row>
                         <Col md={4} className="d-flex justify-content-center align-items-center flex-column align-items-start justify-content-start">
-                            <Link to='/groups_programs' style={{ textDecoration: 'none' }}>
+                            <Link to='/ABOUTUS/working_groups' style={{ textDecoration: 'none' }}>
                                 <div className="working_card2" style={{ marginBottom: '30px' }}>
                                     <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                         <img src={Member} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -50,7 +50,7 @@ function WorkingAreaComponent(props) {
                             </div>
                         </Col>
                         <Col md={4} className="d-flex justify-content-center align-items-center flex-column align-items-start justify-content-start">
-                            <Link to='/groups_programs' style={{ textDecoration: 'none' }}>
+                            <Link to='/ABOUTUS/working_groups' style={{ textDecoration: 'none' }}>
                                 <div className="working_card2" style={{ marginBottom: '30px' }}>
                                     <div style={{ width: "100%", height: "250px", marginTop: "", borderRadius: "", overflow: "hidden", }}>
                                         <img src={wice} alt="wice" style={{ width: "100%", height: "100%", objectFit: "cover" }} />

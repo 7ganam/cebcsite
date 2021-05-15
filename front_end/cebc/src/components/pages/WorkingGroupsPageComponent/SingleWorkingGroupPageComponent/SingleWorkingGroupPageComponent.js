@@ -24,10 +24,10 @@ function SingleWorkingGroupPageComponent(props) {
 
     const group_program_id = props.match.params.group_id;
     const the_group = props.programmes_state.LoadedProgrammes.filter((group) => { return group.id == group_program_id })[0]
-    console.log(`the_group`, the_group)
+    // console.log(`the_group`, the_group)
 
     function generate_members_view() {
-        console.log(`the_group.users`, the_group.users)
+        // console.log(`the_group.users`, the_group.users)
         const members = the_group.users.map((member) => {
             return (
 

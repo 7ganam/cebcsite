@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 function BoardPageComponent(props) {
-    console.log(`props.staff`, props.staff)
+    // console.log(`props.staff`, props.staff)
 
     function create_staff_view(staff, position) {
         const staff_view_array = staff.map((member, index) => {

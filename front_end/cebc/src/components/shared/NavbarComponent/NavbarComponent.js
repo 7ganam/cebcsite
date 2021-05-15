@@ -12,7 +12,7 @@ import "./NavbarComponent.css"
 import logo_white from './logo_white.png'
 import logo_black from './logo_black.png'
 import ExtendedNavItemComponent, { ExtendedNavItemComponent2 } from "./ExtendedNavItemComponent/ExtendedNavItemComponent"
-
+import { DoubleExtendedNavItemComponent2 } from './DoubleExtendedNavItemComponent/DoubleExtendedNavItemComponent'
 
 import "./NavbarComponent.css"
 import "hover.css";
@@ -78,12 +78,6 @@ const NavbarComponent = (props) => {
                         </div>
                     </Link>
 
-                    <Link className="" to="/groups_programs">
-                        <div style={{ paddingRight: "16px", color: "black" }} >
-                            Working groups
-                        </div>
-                    </Link>
-
 
                     {!IsLoggedIn ?
                         <>
@@ -91,7 +85,7 @@ const NavbarComponent = (props) => {
                                 Login
                             </div>
                             <div onClick={ToggleSignUpModal} style={{ paddingRight: "6px", cursor: 'pointer' }}>
-                                < >  Signup </>
+                                <>  Signup </>
                             </div>
                         </>
                         :
@@ -135,20 +129,40 @@ const NavbarComponent = (props) => {
                                     </Link>
                                 </NavItem>
 
-                                {/* <NavItem className={`${props.location.pathname !== "/ABOUTUS" ? '' : 'nav-link-selected'} `}>
 
-                                    <Link className="nav_link" to="/ABOUTUS">
-                                        about
-                                    </Link>
-                                </NavItem> */}
-
-                                <ExtendedNavItemComponent2
+                                <DoubleExtendedNavItemComponent2
                                     location={props.location} main_nav={{ base_path: "/ABOUTUS", path: "/ABOUTUS/WHATWEDO", text: "ABOUT" }}
                                     sub_navs={[
-                                        { path: "/ABOUTUS/WHATWEDO", text: "about" },
-                                        { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
-                                        { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
-                                        { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
+                                        {
+                                            path: "/ABOUTUS/WHATWEDO", text: "about",
+                                        },
+                                        {
+                                            path: "/ABOUTUS/STAFF/BOARD", text: "people",
+                                            sub_subs: [
+                                                { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
+                                                { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
+                                                { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
+                                            ]
+                                        },
+                                        {
+                                            path: "/ABOUTUS/working_groups", text: "working groups",
+                                            sub_subs: [
+                                                { path: "/ABOUTUS/working_groups/7", text: "Future mobility club" },
+                                                { path: "/ABOUTUS/working_groups/12", text: "Climate Finance Working Group" },
+                                                { path: "/ABOUTUS/working_groups/13", text: "Energy Efficiency Working Group" },
+                                                { path: "/ABOUTUS/working_groups/10", text: "Hydrogen and Energy Storage Working Group" },
+                                                { path: "/ABOUTUS/working_groups/11", text: "women in clean energy" },
+                                            ]
+                                        }, {
+                                            path: "/ABOUTUS/programms", text: "programmes",
+                                            sub_subs: [
+                                                { path: "/ABOUTUS/working_groups/1", text: "CEBC Schools" },
+                                            ]
+                                        },
+
+                                        // { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
+                                        // { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
+                                        // { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
                                         { path: "/ABOUTUS/JOBS", text: "careers" },
                                         // { path: "/ABOUTUS/FAQ", text: "FAQ" }
                                     ]}

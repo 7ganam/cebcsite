@@ -9,7 +9,7 @@ function WorkingGroupsPageComponent(props) {
     return (
 
         <div style={{ marginTop: "150px" }}>
-            <WorkingGroupsComponent programmes_state={props.programmes_state} />
+            <WorkingGroupsComponent programmes_state={props.programmes_state} type={props.type} />
         </div>
     )
 }

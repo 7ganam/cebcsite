@@ -158,6 +158,28 @@ export default function MainComponent() {
                         </Route>
 
 
+
+
+
+
+
+                        <Route path="/ABOUTUS/working_groups/:group_id"
+                            component={(props) => <SingleWorkingGroupPageComponent {...props} programmes_state={{ LoadedProgrammes }} />
+                            }
+                        />
+
+                        <Route exact path="/ABOUTUS/working_groups">
+                            <WorkingGroupsPageComponent type="working_group" programmes_state={{ LoadedProgrammes }} />
+                        </Route>
+
+
+
+                        <Route exact path="/ABOUTUS/programms">
+                            <WorkingGroupsPageComponent type="programm" programmes_state={{ LoadedProgrammes }} />
+                        </Route>
+
+
+
                         <Route exact path="/ABOUTUS/WHATWEDO">
                             <WhatWeDoPageComponent />
                         </Route>
@@ -370,14 +392,7 @@ export default function MainComponent() {
 
 
 
-                        <Route path="/groups_programs/:group_id"
-                            component={(props) => <SingleWorkingGroupPageComponent  {...props} programmes_state={{ LoadedProgrammes }} />
-                            }
-                        />
 
-                        <Route exact path="/groups_programs">
-                            <WorkingGroupsPageComponent programmes_state={{ LoadedProgrammes }} />
-                        </Route>
 
 
 

@@ -10,15 +10,15 @@ import { Link } from "react-router-dom";
 
 function WorkingGroupsComponent(props) {
 
-
+    console.log(`props.type`, props.type)
     console.log('WorkingGroupsComponent', props)
 
     const render_groups = (groups) => {
-        let filter_groups = groups.filter((group) => group.Type !== "programm")
+        let filter_groups = groups.filter((group) => group.Type === props.type)
         const groups_view = filter_groups.map((group, index) => {
             return (
                 <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
-                    <Link className="" to={`/groups_programs/${group.id}`}>
+                    <Link className="" to={`/ABOUTUS/working_groups/${group.id}`}>
                         <div className="working_group_col_div">
                             <WorkingGroupCardComponent image={group.Thumb_nail_image} title={group.Name} />
                         </div>
@@ -35,10 +35,17 @@ function WorkingGroupsComponent(props) {
             <Container>
                 <Row className=" justify-content-center">
                     <div class="section_header" style={{ marginTop: "30px" }}>
-                        <span class="section_header_inner">
-                            Working groups
+                        {(props.type === "programm") ?
+                            <span class="section_header_inner">
+                                programmes
+                             </span>
+                            :
+                            <span class="section_header_inner">
+                                Working groups
                             </span>
+                        }
                         <div className="section_header_under"></div>
+
                     </div>
                 </Row>
                 <Row className=" justify-content-center" style={{ marginTop: "40px" }}>
