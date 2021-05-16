@@ -13,7 +13,8 @@ import { Alert } from 'reactstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const validationSchema = Yup.object({
-    name: Yup.string(),
+    first_name: Yup.string(),
+    last_name: Yup.string(),
     email: Yup.string()
         .email('Invalid email format')
         .required('Required'),
@@ -21,7 +22,8 @@ const validationSchema = Yup.object({
 })
 
 const initialValues = {
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
     company: '',
     title: '',
@@ -155,21 +157,21 @@ function SubscribeModalComponent(props) {
 
     return (
         <>
-            <div id="sign_up_modal" >
-                <Modal
+            <div id="subscribe_modal_wrapper" >
+                <Modal className='subscribe_modal'
                     size="lg" style={{
-                        boxShadow: '#ffffff8c 0px 0px 8px 0px',
-                        marginTop: '11vh', maxWidth: '1000px', width: '80%', marginRight: "auto", marginLeft: "auto", backgroundColor: 'transparent', zIndex: '113333333333333333'
+
+
                     }}
                     isOpen={props.ModalIsOpen} toggle={props.toggle}>
                     <div style={{}} ></div>
                     <ModalBody style={{ padding: "0px", }} >
-                        <div className='modal_header' style={{ position: 'relative' }} >
+                        <div className='subscribe_modal_header'  >
                             <i class="fas fa-times-circle" onClick={() => { props.toggle() }} style={{ position: 'absolute', top: '15px', right: "15px", fontSize: "20px", cursor: "pointer" }}></i>
                             Subscribe to our newsletter
                         </div>
                         <Row style={{ padding: "0px 20px", }} >
-                            <Col md={4} style={{ padding: "0px 20px", }}>
+                            <Col className='subscribe_modal_left_col' md={4} style={{ padding: "0px 20px", }}>
                                 <div className='su_left_col' style={{}}>
                                     <div style={{ width: '100%', display: "flex", justifyContent: 'left', alignItems: 'center' }}>
                                         <img id="" style={{ height: "auto", width: "90%" }} src={logo_black} alt="oval" />
@@ -191,36 +193,29 @@ function SubscribeModalComponent(props) {
                                 >
                                     {formik => {
                                         return (
-                                            <Form className="signUP_form">
+                                            <Form className="modal_form">
                                                 <Row className='formik-control'>
-                                                    <Col md={6} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='name'>First Name:</label>
+                                                    <Col xs={{ size: 6, order: 1 }} style={{ padding: '0px', }}>
+                                                        <label className='formik-label' htmlFor='first_name'>First Name:</label>
                                                     </Col>
-                                                    <Col md={6} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='name'>Last Name:</label>
+                                                    <Col xs={{ size: 6, order: 3 }} style={{ padding: '0px' }} className='pr-2'>
+                                                        <Field type='text' id='first_name' name='first_name' />
                                                     </Col>
-                                                    <Col style={{ padding: '0px', marginRight: '11px' }}>
-                                                        <Field type='text' id='name' name='name' />
+
+
+                                                    <Col xs={{ size: 6, order: 2 }} style={{ padding: '0px', }}>
+                                                        <label className='formik-label' htmlFor='last_name'>Last Name:</label>
                                                     </Col>
-                                                    <Col md={6} style={{ padding: '0px' }}>
-                                                        <Field type='text' id='name' name='name' />
+                                                    <Col xs={{ size: 6, order: 4 }} style={{ padding: '0px' }}>
+                                                        <Field type='text' id='last_name' name='last_name' />
                                                     </Col>
-                                                    <Col md={6} xs={12} style={{ padding: '0px' }}>
-                                                        <ErrorMessage className='err_msg' name='name'>
-                                                            {error => <div className='formikerror'>{error}</div>}
-                                                        </ErrorMessage>
-                                                    </Col>
-                                                    <Col md={6} xs={12} style={{ padding: '0px' }}>
-                                                        <ErrorMessage className='err_msg' name='name'>
-                                                            {error => <div className='formikerror'>{error}</div>}
-                                                        </ErrorMessage>
-                                                    </Col>
+
 
                                                 </Row>
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='email'>Email:</label></Col>
+                                                        <label className='formik-label' htmlFor='email'><span>*</span>Email:</label></Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field type='email' id='email' name='email' /></Col>
                                                     <Col xs={12} style={{ padding: '0px' }}>
@@ -231,22 +226,20 @@ function SubscribeModalComponent(props) {
                                                 </Row>
 
                                                 <Row className='formik-control'>
-                                                    <Col md={6} style={{ padding: '0px 10px 0px 0px ' }}>
+                                                    <Col xs={{ size: 6, order: 1 }} style={{ padding: '0px', }}>
                                                         <label className='formik-label' htmlFor='company'>Company:</label>
                                                     </Col>
-                                                    <Col md={6} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='title'>Title:</label>
-                                                    </Col>
-
-
-                                                    <Col md={6} style={{ padding: '0px', marginRight: '11px' }}>
+                                                    <Col xs={{ size: 6, order: 3 }} style={{ padding: '0px', }} className='pr-2'>
                                                         <Field
                                                             type='text'
                                                             id='company'
                                                             name='company'
                                                         />
                                                     </Col>
-                                                    <Col style={{ padding: '0px' }}>
+                                                    <Col xs={{ size: 6, order: 2 }} style={{ padding: '0px', }}>
+                                                        <label className='formik-label' htmlFor='title'>Title:</label>
+                                                    </Col>
+                                                    <Col xs={{ size: 6, order: 4 }} style={{ padding: '0px' }}>
                                                         <Field
                                                             type='text'
                                                             id='title'
@@ -254,16 +247,7 @@ function SubscribeModalComponent(props) {
                                                         />
                                                     </Col>
 
-                                                    <Col xs={6} style={{ padding: '0px' }}>
-                                                        <ErrorMessage className='err_msg' name='company'>
-                                                            {error => <div className='formikerror'>{error}</div>}
-                                                        </ErrorMessage>
-                                                    </Col>
-                                                    <Col xs={12} style={{ padding: '0px' }}>
-                                                        <ErrorMessage className='err_msg' name='title'>
-                                                            {error => <div className='formikerror'>{error}</div>}
-                                                        </ErrorMessage>
-                                                    </Col>
+
 
                                                 </Row>
 
