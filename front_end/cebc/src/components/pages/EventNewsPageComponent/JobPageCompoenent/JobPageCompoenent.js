@@ -100,7 +100,7 @@ function JobPageCompoenent(props) {
                                 </div>
                                 <div className='filter_entry'>
                                     <span className='filter_entry_text'>
-                                        PartTime
+                                        Part Time
                                     </span>
                                     <span>
                                         <input class="ios_toggle" type="checkbox" name="PartTime"
@@ -124,7 +124,7 @@ function JobPageCompoenent(props) {
                                 </div>
                                 <div className='filter_entry'>
                                     <span className='filter_entry_text'>
-                                        FullTime
+                                        Full Time
                                     </span>
                                     <span>
                                         <input class="ios_toggle" type="checkbox" name="FullTime"

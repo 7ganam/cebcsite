@@ -54,8 +54,8 @@ export default function HomePageComponent(props) {
                 <TwitterTimelineEmbed
                     sourceType="profile"
                     screenName="CEBC2"
-                    options={{ height: 600, width: 500 }}
-                    style={{ height: "600px", width: "400px" }}
+                    options={{ height: 500, width: 500 }}
+                    style={{ height: "500px", width: "400px" }}
                 />
             </div>
 

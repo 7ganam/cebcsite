@@ -176,7 +176,7 @@ export default function MainComponent() {
 
 
                         <Route exact path="/ABOUTUS/WHATWEDO">
-                            <WhatWeDoPageComponent />
+                            <WhatWeDoPageComponent programmes_state={{ LoadedProgrammes }} />
                         </Route>
 
                         <Route exact path="/ABOUTUS/STAFF">

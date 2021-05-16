@@ -16,10 +16,10 @@ function VideoComponent() {
                 <Row>
                     <Col md="8" className="justify-content-start text-left mx-5">
                         <div id="video_title">
-                            Linking science, innovation, and policy to transform the world's energy systems.
+                            A platform to drive policy and further dialogue between the public and private sectors across the MENA region.
                         </div>
                         <div className="ml-2 ml-md-0">
-                            Established with a purpose on creating dialogue between public and private sectors in the UAE and MENA Region to support much needed regulation and policy to support the development of clean energy transition
+                            Registered as a Not-for-Profit Company in Abu Dhabi Global Market (ADGM), the CEBC is the pre-eminent organisation representing the private sector involved in the clean energy sector across the MENA region.
                         </div>
 
                     </Col>

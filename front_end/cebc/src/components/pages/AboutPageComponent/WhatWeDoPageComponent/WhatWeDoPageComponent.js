@@ -16,9 +16,10 @@ import black_img from './Saidi-trans.png';
 import world from './world_2.png';
 
 import quote_marks from './quote3.png';
+import WorkingGroupsComponent from './WorkingGroupsComponent/WorkingGroupsComponent'
 
 import CallToAction from '../../../shared/CallToAction/CallToAction';
-function WhatWeDoPageComponent() {
+function WhatWeDoPageComponent(props) {
     const { sendRequest: sendcontentRequest } = useHttpClient();
     const [Loadedcontent, setLoadedcontent] = useState([]);
     const fetch_content = useCallback(async () => {
@@ -124,37 +125,84 @@ function WhatWeDoPageComponent() {
                     </div>
                 </Row>
 
-                <Row>
-                    <Col
-                        style={{
-                            fontFamily: "'Raleway', sans-serif",
-                            textAlign: 'left',
-                            marginBottom: '50px',
-                            fontSize: '18px',
-                        }}
-                    >
-                        <div className="mt-3">
-                            {' '}
-              Registered as a Not for Profit Company in Abu Dhabi Global Market
-              (ADGM), the Clean Energy Business Council is the pre-eminent
-              organisation representing the private sector involved in the clean
-              energy sector across the MENA region.
-            </div>
-                        <div className="mt-3">
-                            Our goal is to establish a dialogue between the public and private
-                            sectors to drive the development of appropriate and much needed
-                            regulation and policy to support the development of this vital
-                            sector.
-            </div>
-                        <div className="mt-3">
-                            {' '}
-              If your goal is to be a leader in the clean energy sector anywhere
-              in the MENA region, then becoming a member of the CEBC is likely
-              to be for you.
-            </div>
-                    </Col>
-                </Row>
+            </Container>
 
+
+            <div
+                style={{
+                    marginTop: '  120px',
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#f7f7f7',
+                    height: '',
+                    paddingTop: '1px',
+                }}
+            >
+                <Container>
+                    <Row className="title_row">
+                        <div
+                            class="section_header"
+                            style={{
+                                marginLeft: '15px',
+                                marginTop: '60px',
+                                alignItems: 'start',
+                                textAlign: 'left',
+                                paddingLeft: ' 0',
+                                fontWeight: '400',
+                            }}
+                        >
+                            <span
+                                class="section_header_inner"
+                                style={{ fontSize: '34px', fontWeight: '300' }}
+                            >
+                                What We Do
+                            </span>
+                            <div
+                                className="section_header_under"
+                                style={{
+                                    fontSize: '34px',
+                                    marginBottom: '20px',
+                                    width: '250px',
+                                }}
+                            ></div>
+                        </div>
+                    </Row>
+                    <Row>
+                        <Col
+                            style={{
+                                fontFamily: "'Raleway', sans-serif",
+                                textAlign: 'left',
+                                fontSize: '20px',
+                                marginBottom: '40px',
+                                fontSize: '18px',
+                            }}
+                        >
+                            <div className="mt-3">
+                                {' '}
+                                The Clean Energy Business Council (CEBC) is a non-profit, non governmental association that brings together leading local and international organizations in the MENA clean energy sector from both the private and public spheres. It is the only clean energy industry group to cover the MENA region.
+                            </div>
+                            <div className="mt-3">
+                                CEBC is a leading forum for local, international corporations and government entities focused on the development and deployment of clean energy in the MENA region. We promote constructive dialogue and collective action by all stakeholders, in order to guide public policy and private investment in the region’s nascent clean energy sector.
+                            </div>
+                            <div className="mt-3">
+                                CEBC constantly strives to provide its members with updates on the latest developments in clean energy policy, research, and technology and opportunities to grow their organizations and network with high-level industry players. CEBC is an accredited observer at the Green Climate Fund and partner of the UNDP, IRENA Coalition for Action and the Research Council of Oman and Masdar.
+                            </div>
+
+                            <div className="mt-3">
+                                {' '}
+                                We are active throughout the MENA region with our Working Groups and Programmes, a range of events and networking opportunities, and by promoting connections between private and public sector organisations.
+                           </div>
+
+                        </Col>
+                    </Row>
+
+
+                </Container>
+            </div>
+
+            <Container>
                 <Row className="title_row">
                     <div
                         class="section_header"
@@ -172,7 +220,7 @@ function WhatWeDoPageComponent() {
                             style={{ fontSize: '34px', fontWeight: '300' }}
                         >
                             Vision and Mission
-            </span>
+                        </span>
                         <div
                             className="section_header_under"
                             style={{ fontSize: '34px', marginBottom: '20px', width: '250px' }}
@@ -304,115 +352,22 @@ function WhatWeDoPageComponent() {
                         </div>
                     </Col>
                 </Row>
+
+
+
+
             </Container>
-            <div
-                style={{
-                    marginTop: '  120px',
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: '#f7f7f7',
-                    height: '',
-                    paddingTop: '1px',
-                }}
-            >
-                <Container>
-                    <Row className="title_row">
-                        <div
-                            class="section_header"
-                            style={{
-                                marginLeft: '15px',
-                                marginTop: '60px',
-                                alignItems: 'start',
-                                textAlign: 'left',
-                                paddingLeft: ' 0',
-                                fontWeight: '400',
-                            }}
-                        >
-                            <span
-                                class="section_header_inner"
-                                style={{ fontSize: '34px', fontWeight: '300' }}
-                            >
-                                What We Do
-              </span>
-                            <div
-                                className="section_header_under"
-                                style={{
-                                    fontSize: '34px',
-                                    marginBottom: '20px',
-                                    width: '250px',
-                                }}
-                            ></div>
-                        </div>
-                    </Row>
-                    <Row>
-                        <Col
-                            style={{
-                                fontFamily: "'Raleway', sans-serif",
-                                textAlign: 'left',
-                                fontSize: '20px',
-                                marginBottom: '40px',
-                                fontSize: '18px',
-                            }}
-                        >
-                            <div className="mt-3">
-                                {' '}
-                The Clean Energy Business Council (CEBC) is a non-profit, non
-                governmental association that brings together leading local and
-                international organizations in the MENA clean energy sector from
-                both the private and public spheres. It is the only clean energy
-                industry group to cover the MENA region.
-              </div>
-                            <div className="mt-3">
-                                CEBC is a leading forum for local, international corporations
-                                and government entities focused on the development and
-                                deployment of clean energy in the MENA region. We promote
-                                constructive dialogue and collective action by all stakeholders,
-                                in order to guide public policy and private investment in the
-                                region’s nascent clean energy sector.
-              </div>
-                            <div className="mt-3">
-                                CEBC constantly strives to provide its members with updates on
-                                the latest developments in clean energy policy, research, and
-                                technology and opportunities to grow their organizations and
-                                network with high-level industry players.
-              </div>
 
-                            <div className="mt-3">
-                                {' '}
-                CEBC is an accredited observer at the Green Climate Fund and
-                partner of the UNDP, IRENA Coalition for Action and the Research
-                Council of Oman and Masdar.
-              </div>
+            <div id="working_groups_section" style={{ marginTop: "100px", backgroundColor: "#f7f7f7", paddingBottom: "100px " }}>
+                <WorkingGroupsComponent programmes_state={props.programmes_state} type="working_group" />
 
-                            <div className="mt-3">
-                                {' '}
-                We are active throughout the MENA region with our Working Groups
-                and Programmes, a range of events and networking opportunities,
-                and by promoting connections between private and public sector
-                organisations. To read more about our activities, please use the
-                links on the left..
-              </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <WorkingAreaComponent gallery={Loadedcontent.gallery} />
-                    </Row>
-                    <Row>
-                        <div style={{ margin: ' 0px auto 50px auto' }}>
-                            <CallToAction />
-                        </div>
-                    </Row>
-                </Container>
-            </div>
-            {/* <div >
-                <SDGComponenet />
+                <Row>
+                    <div style={{ margin: ' 70px auto 50px auto' }}>
+                        <CallToAction />
+                    </div>
+                </Row>
             </div>
 
-            <div style={{ marginTop: "", backgroundColor: "#f7f7f7", paddingTop: "1px" }}>
-                <WorkingAreaComponent gallery={Loadedcontent.gallery} />
-            </div> */}
         </div>
     );
 }

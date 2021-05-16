@@ -203,7 +203,7 @@ function JoinPageComponent() {
                                             <Form className="signUP_form">
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='name'>Your Name</label>
+                                                        <label className='formik-label' htmlFor='name'>Name</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field type='text' id='name' name='name' />
@@ -217,7 +217,7 @@ function JoinPageComponent() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='email'>Your Email</label></Col>
+                                                        <label className='formik-label' htmlFor='email'>Email</label></Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field type='email' id='email' name='email' /></Col>
                                                     <Col xs={12} style={{ padding: '0px' }}>
@@ -229,7 +229,7 @@ function JoinPageComponent() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='entity'>Company Name</label>
+                                                        <label className='formik-label' htmlFor='entity'>Company</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field
@@ -264,9 +264,9 @@ function JoinPageComponent() {
 
                                                         >
                                                             <option value="no_selection">Select level</option>
-                                                            <option value="PARTNER">PARTNER - 5000$</option>
-                                                            <option value="CORPORATE">CORPORATE - 2500$</option>
-                                                            <option value="blASSOCIATEue">ASSOCIATE  - 500$</option>
+                                                            <option value="PARTNER">PARTNER - $5000</option>
+                                                            <option value="CORPORATE">CORPORATE - $2500</option>
+                                                            <option value="blASSOCIATEue">ASSOCIATE  - $500</option>
                                                         </Field>
                                                     </Col>
                                                     <Col xs={12} style={{ padding: '0px' }}>
@@ -282,7 +282,7 @@ function JoinPageComponent() {
 
                                                 <Row className='formik-control'>
                                                     <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                        <label className='formik-label' htmlFor='message'>Message:</label>
+                                                        <label className='formik-label' htmlFor='message'>Message</label>
                                                     </Col>
                                                     <Col style={{ padding: '0px' }}>
                                                         <Field

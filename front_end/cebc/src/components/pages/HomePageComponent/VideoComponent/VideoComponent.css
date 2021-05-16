@@ -44,8 +44,17 @@ margin-top: 5px;
     letter-spacing: 1px;
     font-family: 'Raleway', sans-serif;
 margin-bottom: 20px;
-
 }
+
+@media (max-width: 576px) { 
+    #video_title{
+        font-size: 30px;
+        line-height: 30px;
+        
+    }
+}
+
+
 
 #video_top_shadow{
     background: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0) 100%);

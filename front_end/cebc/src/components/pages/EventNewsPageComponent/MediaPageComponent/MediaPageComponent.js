@@ -162,7 +162,7 @@ function MediaPageComponent(props) {
     }
 
     function generate_page_view(sub_par, past_events) {
-        let past = past_events.filter((event) => event.member_event === true)
+        let past = past_events.filter((event) => event.show_in_media === true)
         console.log(`past`, past)
         return (
             <>
