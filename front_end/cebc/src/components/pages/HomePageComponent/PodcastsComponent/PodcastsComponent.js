@@ -42,7 +42,7 @@ function PodcastsComponent(props) {
         const podcasts = props.podcasts.map((podcast, index) => {
             return (
                 <div md={4} style={{ maxWidth: "200px", marginTop: "20px", marginRight: "20px" }} >
-                    <Card style={{ maxWidth: "300px", boxShadow: "rgb(0 0 0 / 10%) 0px 0px 9px 5px", padding: "8px", margin: 'auto' }} >
+                    <Card style={{ maxWidth: "280px", boxShadow: "rgb(0 0 0 / 10%) 0px 0px 9px 5px", padding: "8px", margin: 'auto' }} >
                         <CardImg top width="100%" src={!!podcast.image && podcast.image.url} alt="Card image cap" />
                         <CardBody>
                             <CardTitle tag="h5" style={{ marginTop: '5px' }}>{podcast.season_episode}:</CardTitle>
@@ -84,7 +84,7 @@ function PodcastsComponent(props) {
                     {/* <Row style={{ display: "flex", justifyContent: "center" }} > */}
 
                     {/* {generate_podcasts_cards()} */}
-                    <div id="Carousel_section">
+                    <div id="Carousel_section" style={{ width: "90%", margin: 'auto' }}>
                         <div style={{ width: "100%", maxWidth: "1200px", margin: 'auto' }}>
                             {/* <h2> CEBC members</h2> */}
                             <div>

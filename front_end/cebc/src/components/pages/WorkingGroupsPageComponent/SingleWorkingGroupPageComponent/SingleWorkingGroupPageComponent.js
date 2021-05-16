@@ -189,13 +189,15 @@ function SingleWorkingGroupPageComponent(props) {
                                         <span class="section_header_inner" style={{ fontSize: '34px', }}>Reports & Publications</span>
                                         <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
                                     </div>
-                                    <Row className=" justify-content-center ml-5">
-                                        <div style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "20px", marginBottom: "40px", flexDirection: 'column' }}>
-                                            {generate_reports_views()}
+                                    <Container>
+                                        <Row className=" justify-content-center">
+                                            <div style={{ padding: '0', margin: '20px auto 40px auto', maxWidth: '85vw', width: '100%', display: "flex", flexWrap: "wrap", justifyContent: "start", flexDirection: 'column' }}>
+                                                {generate_reports_views()}
 
 
-                                        </div>
-                                    </Row>
+                                            </div>
+                                        </Row>
+                                    </Container>
                                 </div>
                             }
                         </>
