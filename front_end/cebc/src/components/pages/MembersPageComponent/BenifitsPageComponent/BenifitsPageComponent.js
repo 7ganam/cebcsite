@@ -131,7 +131,7 @@ function BenifitsPageComponent() {
                     </Row>
                     <Row className="title_row">
                         <div class="section_header" style={{
-                            marginLeft: '15px', marginTop: "80px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400'
+                            marginLeft: '15px', marginTop: "80px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400',zIndex:'1'
                         }}>
     
     
