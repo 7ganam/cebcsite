@@ -168,7 +168,7 @@ function Consultancyform() {
                                         </div>
 
 
-                                        <div style={{ marginTop: "20px", width: '100%', display: "flex", justifyContent: 'left', alignItems: 'center' }}>
+                                        <div className='justify-content-md-left justify-content-center' style={{ marginTop: "20px", width: '100%', display: "flex", alignItems: 'center' }}>
                                             <img id="" style={{ height: "auto", width: "90%" }} src={logo_black} alt="oval" />
                                         </div>
                                         <div style={{ color: 'grey', textAlign: "left", width: '100%', display: "flex", justifyContent: 'center', marginTop: '20px', padding: '10px' }}>

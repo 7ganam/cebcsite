@@ -108,14 +108,15 @@ function EventViewPageComponent(props) {
                         </div>
                         <div id="event_body">
 
+                            {LoadedEvent.Event_gallery && LoadedEvent.Event_gallery.length > 0 &&
+                                <div className="carousel_wrapper">
+                                    <Carousel autoPlay infiniteLoop >
 
-                            <div className="carousel_wrapper">
-                                <Carousel autoPlay infiniteLoop >
-                                    {LoadedEvent.Event_gallery && LoadedEvent.Event_gallery.length > 0 &&
-                                        generate_carousel_images(LoadedEvent.Event_gallery)
-                                    }
-                                </Carousel>
-                            </div>
+                                        {generate_carousel_images(LoadedEvent.Event_gallery)}
+
+                                    </Carousel>
+                                </div>
+                            }
 
 
                             <div style={{}}>

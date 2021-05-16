@@ -177,7 +177,7 @@ function JoinPageComponent() {
                         <Row style={{ zIndex: '3', padding: "10px 10px 10px 0px ", }} >
                             <Col md={4} >
                                 <div className='su_left_col' style={{}}>
-                                    <div style={{ width: '100%', display: "flex", justifyContent: 'left', alignItems: 'center' }}>
+                                    <div className='justify-content-md-left justify-content-center' style={{ width: '100%', display: "flex", alignItems: 'center' }}>
                                         <img id="" style={{ height: "auto", width: "90%" }} src={logo_black} alt="oval" />
                                     </div>
                                     <div style={{ color: 'grey', textAlign: "left", width: '100%', display: "flex", justifyContent: 'center', marginTop: '20px', padding: '10px' }}>
@@ -188,7 +188,7 @@ function JoinPageComponent() {
                                 </div>
                             </Col>
 
-                            <Col md={8}>
+                            <Col md={8} className='px-5'>
 
                                 <Formik
                                     initialValues={formValues || initialValues}
