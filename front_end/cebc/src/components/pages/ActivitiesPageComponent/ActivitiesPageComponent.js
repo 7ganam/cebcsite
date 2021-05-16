@@ -11,7 +11,7 @@ import ReactLoading from 'react-loading';
 
 const activiites = [
     {
-        image: '/static/media/news.f474b82f.jpg',
+        image: 'https://cebc.s3.eu-central-1.amazonaws.com/Policy_Working_Group_Photo_6_a2b1fc7c60.jpg',
         title: 'EVENTS',
         path: '/ACTIVITIES/EVENTS/All'
     },
