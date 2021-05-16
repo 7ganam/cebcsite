@@ -8,6 +8,8 @@ import ReactLoading from 'react-loading';
 
 import * as Yup from 'yup'
 
+import Consultancyform from './Consultancyform/Consultancyform'
+import Consultantform from './Consultantform/Consultantform'
 
 const validationSchema = Yup.object({
     name: Yup.string().required('Required'),
@@ -184,156 +186,22 @@ function ConsultancyPageComponent() {
                 </div>
                 <div>
 
-
                     <Row className="title_row">
                         <div class="section_header" style={{ marginLeft: '15px', marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
                             <span class="section_header_inner" style={{ fontSize: '34px', }}>apply for consultancy:</span>
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                         </div>
                     </Row>
+                    <Consultancyform />
 
 
-                    <div className='consultancy_form_wrapper' style={{ maxWidth: '1000px', margin: 'auto', width: '85vw', display: "flex", flexWrap: "wrap", justifyContent: "start", marginTop: "0px", marginBottom: "40px" }}>
-
-                        <Row style={{ height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-
-
-                            <Col md={12} style={{ height: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
-                                <div className='consultancy_form application_form_box p-3 p-md-0'>
-                                    <Row style={{ padding: "10px 10px 10px 0px ", }} >
-                                        <Col md={4} >
-                                            <div className='su_left_col' style={{}}>
-
-
-                                                <div class="section_header" style={{ textAlign: 'left', marginTop: "30px", alignItems: 'start', width: '100%', maxWidth: '100%', margin: 'auto', }}>
-                                                    <span class="section_header_inner" style={{ marginTop: "20px", fontSize: '30px', fontWeight: 'bold' }}>APPLY FOR CONSULTANCY</span>
-                                                    <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '0px' }}></div>
-                                                </div>
-
-
-                                                <div style={{ marginTop: "20px", width: '100%', display: "flex", justifyContent: 'left', alignItems: 'center' }}>
-                                                    <img id="" style={{ height: "auto", width: "90%" }} src={logo_black} alt="oval" />
-                                                </div>
-                                                <div style={{ color: 'grey', textAlign: "left", width: '100%', display: "flex", justifyContent: 'center', marginTop: '20px', padding: '10px' }}>
-                                                    Send us a message  and we will contact you back soon
-                                                </div>
-                                                <div style={{ color: "grey", textAlign: "left", width: '100%', display: "flex", justifyContent: 'center', marginTop: '5px', padding: '10px' }}>
-                                                </div>
-                                            </div>
-                                        </Col>
-
-                                        <Col md={8}>
-
-                                            <Formik
-                                                initialValues={formValues || initialValues}
-                                                validationSchema={validationSchema}
-                                                onSubmit={onSubmit}
-                                                enableReinitialize
-                                                innerRef={formRef}
-                                            >
-                                                {formik => {
-                                                    // console.log('Formik props', formik)
-                                                    return (
-                                                        <Form className="signUP_form">
-                                                            <Row className='formik-control'>
-                                                                <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                    <label className='formik-label' htmlFor='name'>Your Name</label>
-                                                                </Col>
-                                                                <Col style={{ padding: '0px' }}>
-                                                                    <Field type='text' id='name' name='name' />
-                                                                </Col>
-                                                                <Col xs={12} style={{ padding: '0px' }}>
-                                                                    <ErrorMessage className='err_msg' name='name'>
-                                                                        {error => <div className='formikerror'>{error}</div>}
-                                                                    </ErrorMessage>
-                                                                </Col>
-                                                            </Row>
-
-                                                            <Row className='formik-control'>
-                                                                <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                    <label className='formik-label' htmlFor='email'>Your Email</label></Col>
-                                                                <Col style={{ padding: '0px' }}>
-                                                                    <Field type='email' id='email' name='email' /></Col>
-                                                                <Col xs={12} style={{ padding: '0px' }}>
-                                                                    <ErrorMessage className='err_msg' name='email'>
-                                                                        {error => <div className='formikerror'>{error}</div>}
-                                                                    </ErrorMessage>
-                                                                </Col>
-                                                            </Row>
-
-                                                            <Row className='formik-control'>
-                                                                <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                    <label className='formik-label' htmlFor='entity'>Your Company Name</label>
-                                                                </Col>
-                                                                <Col style={{ padding: '0px' }}>
-                                                                    <Field
-                                                                        type='text'
-                                                                        id='entity'
-                                                                        name='entity'
-                                                                    />
-                                                                </Col>
-                                                                <Col xs={12} style={{ padding: '0px' }}>
-                                                                    <ErrorMessage className='err_msg' name='entity'>
-                                                                        {error => <div className='formikerror'>{error}</div>}
-                                                                    </ErrorMessage>
-                                                                </Col>
-                                                            </Row>
-
-
-
-                                                            <Row className='formik-control'>
-                                                                <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                    <label className='formik-label' htmlFor='consultancy_type'>Consultancy Type</label>
-                                                                </Col>
-                                                                <Col style={{ padding: '0px' }}>
-                                                                    <Field
-                                                                        type='text'
-                                                                        id='consultancy_type'
-                                                                        name='consultancy_type'
-                                                                    />
-                                                                </Col>
-                                                                <Col xs={12} style={{ padding: '0px' }}>
-                                                                    <ErrorMessage className='err_msg' name='consultancy_type'>
-                                                                        {error => <div className='formikerror'>{error}</div>}
-                                                                    </ErrorMessage>
-                                                                </Col>
-                                                            </Row>
-
-
-
-                                                            <Row className='formik-control'>
-                                                                <Col md={12} style={{ padding: '0px 10px 0px 0px ' }}>
-                                                                    <label className='formik-label' htmlFor='message'>Message</label>
-                                                                </Col>
-                                                                <Col style={{ padding: '0px' }}>
-                                                                    <Field
-                                                                        as='textarea'
-                                                                        type='textarea'
-                                                                        id='message'
-                                                                        name='message'
-                                                                        placeholder='message '
-                                                                    />
-                                                                </Col>
-                                                                <Col xs={12} style={{ padding: '0px' }}>
-                                                                    <ErrorMessage className='err_msg' name='message'>
-                                                                        {error => <div className='formikerror'>{error}</div>}
-                                                                    </ErrorMessage>
-                                                                </Col>
-                                                            </Row>
-
-                                                            {render_submit_button()}
-
-                                                        </Form>
-                                                    )
-                                                }}
-                                            </Formik>
-                                        </Col>
-                                    </Row>
-                                </div>
-                            </Col>
-
-                        </Row>
-                    </div>
+                    <Row className="title_row">
+                        <div class="section_header" style={{ marginLeft: '15px', marginTop: "50px", alignItems: 'start', textAlign: 'left', paddingLeft: ' 0', fontWeight: '400' }}>
+                            <span class="section_header_inner" style={{ fontSize: '34px', }}>Apply to be a consultant :</span>
+                            <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
+                        </div>
+                    </Row>
+                    <Consultantform />
                 </div>
             </Container>
 
