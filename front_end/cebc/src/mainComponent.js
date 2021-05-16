@@ -53,7 +53,7 @@ import EventNewsPageComponent from './components/pages/EventNewsPageComponent/Ev
 import NewsEventSubPagesComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsEventSubPagesComponent'
 import EventViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/EventViewPageComponent/EventViewPageComponent'
 import NewsViewPageComponent from './components/pages/EventNewsPageComponent/NewsEventSubPagesComponent/NewsViewPageComponent/NewsViewPageComponent'
-
+import MediaPageComponent from './components/pages/EventNewsPageComponent/MediaPageComponent/MediaPageComponent'
 import JobPageCompoenent from './components/pages/EventNewsPageComponent/JobPageCompoenent/JobPageCompoenent'
 
 
@@ -89,8 +89,8 @@ import StickersComponent from './components/shared/StickersComponent/StickersCom
 import NewsLettersPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/NewsLettersPageComponent'
 import SingleNewsLetterPageComponent from './components/pages/KnowledgeCenterComponent/NewsLettersPageComponent/SingleNewsLetterPageComponent/SingleNewsLetterPageComponent'
 
-import SubscribeModalComponent from './components/shared/SubscribeModalComponent/SubscribeModalComponent'
 
+import ActivitiesPageComponent from './components/pages/ActivitiesPageComponent/ActivitiesPageComponent'
 
 
 export default function MainComponent() {
@@ -141,13 +141,8 @@ export default function MainComponent() {
                             />
                         </Route>
 
-                        <Route exact path="/ACADEMY/:course_id"
-                            component={(props) => <   CoursePageComponent {...props} courses={LoadedCourses} />}
-                        />
 
-                        <Route exact path="/ACADEMY">
-                            <AcademyPageComponent className="academyPage" courses={LoadedCourses} />
-                        </Route>
+
 
                         <Route exact path="/CONSULTANCY">
                             <ConsultancyPageComponent className="academyPage" />
@@ -211,6 +206,68 @@ export default function MainComponent() {
                         <Route exact path="/ABOUTUS">
                             <AboutPageComponent />
                         </Route>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <Route exact path="/ACTIVITIES/CONSULTANCY">
+                            <ConsultancyPageComponent className="academyPage" />
+                        </Route>
+
+
+
+                        <Route exact path="/ACTIVITIES/ACADEMY/:course_id"
+                            component={(props) => <   CoursePageComponent {...props} courses={LoadedCourses} />}
+                        />
+
+                        <Route exact path="/ACTIVITIES/ACADEMY">
+                            <AcademyPageComponent className="academyPage" courses={LoadedCourses} />
+                        </Route>
+
+
+
+
+
+
+                        <Route path="/ACTIVITIES/EVENTS/:sub_parameter/:Event_id"
+                            component={(props) =>
+                                <   EventViewPageComponent {...props} />
+                            }
+                        />
+                        <Route path="/ACTIVITIES/EVENTS/:sub_parameter">
+                            {(props) =>
+                                <   NewsEventSubPagesComponent {...props} />
+                            }
+                        </Route>
+
+
+
+
+
+                        <Route exact path="/ACTIVITIES/PODCASTS/:podcast_id"
+                            component={(props) => <   SinglePodcastsPageComponent {...props} podcasts={LoadedPodcasts} />}
+                        />
+
+
+                        <Route exact path="/ACTIVITIES/PODCASTS">
+                            <PodcastsPageComponent podcasts={LoadedPodcasts} />
+                        </Route>
+
+
+                        <Route exact path="/ACTIVITIES">
+                            <ActivitiesPageComponent />
+                        </Route>
+
 
 
 
@@ -393,7 +450,11 @@ export default function MainComponent() {
 
 
 
-
+                        <Route path="/EVENTS_NEWS/MEDIA"
+                            component={(props) =>
+                                <   MediaPageComponent {...props} />
+                            }
+                        />
 
 
 

@@ -36,7 +36,7 @@ export default function HomePageComponent(props) {
 
 
             <div id="working_groups_section" style={{ marginTop: "100px", backgroundColor: "#f7f7f7", paddingBottom: "100px " }}>
-                <WorkingGroupsComponent programmes_state={props.programmes_state} />
+                <WorkingGroupsComponent programmes_state={props.programmes_state} type="working_group" />
             </div>
 
 

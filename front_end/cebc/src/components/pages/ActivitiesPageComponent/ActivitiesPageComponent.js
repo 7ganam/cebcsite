@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import './EventNewsPageComponent.css'
+import './ActivitiesPageComponent.css'
 
 import {
     Card, CardImg, CardText, CardBody,
@@ -11,19 +11,33 @@ import ReactLoading from 'react-loading';
 
 const activiites = [
     {
-        image: '/Business-News.jpg',
-        title: 'NEWS',
-        path: '/EVENTS_NEWS/News/'
+        image: '/static/media/news.f474b82f.jpg',
+        title: 'EVENTS',
+        path: '/ACTIVITIES/EVENTS/All'
     },
+    // {
+    //     image: '/static/media/Member.6070c580.jpg',
+    //     title: 'WORKING GROUPS',
+    //     path: '#'
+    // },
     {
         image: '/Academy.jpg',
-        title: 'MEDIA',
-        path: '/EVENTS_NEWS/media/'
+        title: 'ACADEMY',
+        path: '/ACTIVITIES/ACADEMY'
     },
-
+    {
+        image: '/consul.jpg',
+        title: 'CONSULTANCY',
+        path: '/ACTIVITIES/CONSULTANCY'
+    },
+    {
+        image: 'https://cebc.s3.eu-central-1.amazonaws.com/podcasting_pic_e077e0a2ce.jpg',
+        title: 'PODCAST',
+        path: '/ACTIVITIES/PODCASTS'
+    },
 ]
 
-function EventNewsPageComponent(props) {
+function ActivitiesPageComponent(props) {
 
     function render_activities(activiites) {
         const activities_view = activiites.map((activity, index) => (
@@ -66,12 +80,16 @@ function EventNewsPageComponent(props) {
                 <Row className=" justify-content-center">
                     <div class="section_header" style={{ marginTop: "50px", marginBottom: "80px", zIndex: '3' }}>
                         <span class="section_header_inner">
-                            NEWS & MEDIA
+                            CEBC activities
                             </span>
                         <div className="section_header_under"></div>
                     </div>
                 </Row>
-
+                {/* <Row>
+                    <Col style={{ fontFamily: "'Raleway', sans-serif", textAlign: 'left', marginBottom: '30px' }}>
+                        CEBC provides activities to help empower Clean energy industries in the MENA region.
+                    </Col>
+                </Row> */}
                 <div className='activities_div'>
                     {
                         render_activities(activiites)
@@ -84,4 +102,4 @@ function EventNewsPageComponent(props) {
     )
 }
 
-export default EventNewsPageComponent
+export default ActivitiesPageComponent

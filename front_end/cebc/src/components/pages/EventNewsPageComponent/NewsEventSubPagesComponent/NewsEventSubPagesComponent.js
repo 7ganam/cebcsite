@@ -22,6 +22,7 @@ import {
 function NewsEventSubPagesComponent(props) {
 
 
+    console.log(`props.match.params.sub_parameter`, props.match.params.sub_parameter)
     const events_per_page = 30;
     const news_per_page = 30;
 
@@ -93,6 +94,7 @@ function NewsEventSubPagesComponent(props) {
                     `${process.env.REACT_APP_BACKEND_URL}/events?Event_date_lt=${current_date}&_limit=${EntryPerPage}&_start=${EntryPerPage * (page_number - 1)}`
                 );
 
+                console.log(`past_events`, responseData)
                 setLoadedPastEvents(responseData);
 
 
@@ -217,7 +219,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardText></CardText>
                                 </CardBody>
                                 <CardFooter className="text-muted">
-                                    <Link to={`/EVENTS_NEWS/PAST/${event.id}`}>
+                                    <Link to={`/ACTIVITIES/EVENTS/PAST/${event.id}`}>
                                         <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                                             <div style={{}}>know more</div>
                                         </div>
@@ -313,7 +315,7 @@ function NewsEventSubPagesComponent(props) {
                                     <CardText></CardText>
                                 </CardBody>
                                 <CardFooter className="text-muted">
-                                    <Link to={`/EVENTS_NEWS/News/${news.id}`}>
+                                    <Link to={`/ACTIVITIES/EVENTS/News/${news.id}`}>
                                         <div style={{ padding: '10px', borderStyle: "solid", borderWidth: "1px", background: "white", color: "black" }}>
                                             <div style={{}}>know more</div>
                                         </div>

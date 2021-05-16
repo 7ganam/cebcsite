@@ -10,8 +10,7 @@ import { Link } from "react-router-dom";
 
 function WorkingGroupsComponent(props) {
 
-    console.log(`props.type`, props.type)
-    console.log('WorkingGroupsComponent', props)
+    console.log('props.programmes_state.LoadedProgrammes.length', props.programmes_state.LoadedProgrammes.length)
 
     const render_groups = (groups) => {
         let filter_groups = groups.filter((group) => group.Type === props.type)

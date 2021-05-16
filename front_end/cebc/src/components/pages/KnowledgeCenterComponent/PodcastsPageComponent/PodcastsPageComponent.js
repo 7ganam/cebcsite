@@ -19,7 +19,7 @@ function PodcastsPageComponent(props) {
                             <CardSubtitle className='card_title_'>
                                 {podcast.title}
                             </CardSubtitle>
-                            <Link className="nav_link" to={`/KNOWLEDGECENTER/PODCASTS/${podcast.id}`}>
+                            <Link className="nav_link" to={`/ACTIVITIES/PODCASTS/${podcast.id}`}>
                                 <button type="button" class="mt-2 btn btn-warning">
                                     Visit podcast
                             <i class="ml-2 fas fa-headphones"></i>

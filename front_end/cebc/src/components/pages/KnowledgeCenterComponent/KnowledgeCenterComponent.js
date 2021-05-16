@@ -41,23 +41,23 @@ function KnowledgeCenterComponent() {
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/CASE_STUDIES">
                             <div className="working_group_col_div">
-                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/case_effb64a5fd.jpg" title="RESEARCH PAPER & CASE STUDY" />
+                                <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/case_effb64a5fd.jpg" title=" CASE STUDIES" />
                             </div>
                         </Link>
                     </Col>
-
+                    {/* 
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/BLOGS">
                             <div className="working_group_col_div" >
                                 <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/blog_567132f143.jpg" title="BLOG" />
                             </div>
                         </Link>
-                    </Col>
+                    </Col> */}
 
 
 
 
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+                    {/* <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
 
                         <Link to="/KNOWLEDGECENTER/PODCASTS">
                             <div className="working_group_col_div">
@@ -65,7 +65,7 @@ function KnowledgeCenterComponent() {
                             </div>
                         </Link>
 
-                    </Col>
+                    </Col> */}
 
 
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
@@ -89,13 +89,13 @@ function KnowledgeCenterComponent() {
                         </Link>
                     </Col>
 
-                    <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
+                    {/* <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/LINKS">
                             <div className="working_group_col_div">
                                 <KnowledgeCardComponent image="https://cebc.s3.eu-central-1.amazonaws.com/arrow_url_5374a51063.png" title="USEFUL LINKS" />
                             </div>
                         </Link>
-                    </Col>
+                    </Col> */}
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/PAPERS">
                             <div className="working_group_col_div" >

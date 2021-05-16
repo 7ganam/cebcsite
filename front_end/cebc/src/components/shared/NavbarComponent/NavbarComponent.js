@@ -159,12 +159,7 @@ const NavbarComponent = (props) => {
                                                 { path: "/ABOUTUS/working_groups/1", text: "CEBC Schools" },
                                             ]
                                         },
-
-                                        // { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
-                                        // { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
-                                        // { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
                                         { path: "/ABOUTUS/JOBS", text: "careers" },
-                                        // { path: "/ABOUTUS/FAQ", text: "FAQ" }
                                     ]}
                                 />
 
@@ -180,26 +175,28 @@ const NavbarComponent = (props) => {
                                     ]}
                                 />
 
-
-
-                                <ExtendedNavItemComponent
-                                    location={props.location} main_nav={{ path: "/EVENTS_NEWS", text: "EVENTS & NEWS" }}
-                                    sub_navs={[{ path: "/All", text: "All events" }, { path: "/Upcoming", text: "Upcoming Events" }, { path: "/Past", text: "Past events" },
-                                    { path: "/News", text: "News" },
+                                <ExtendedNavItemComponent2
+                                    location={props.location} main_nav={{ base_path: "/ACTIVITIES/", path: "/ACTIVITIES", text: "Activities" }}
+                                    sub_navs={[
+                                        { path: "/ACTIVITIES/EVENTS/All", text: "EVENTS" },
+                                        { path: "/ACTIVITIES/ACADEMY", text: "ACADEMY" },
+                                        { path: "/ACTIVITIES/CONSULTANCY", text: "CONSULTANCY" },
+                                        { path: "/ACTIVITIES/PODCASTS", text: "PODCAST" },
 
                                     ]}
                                 />
-                                <NavItem className={`${props.location.pathname !== "/ACADEMY" ? '' : 'nav-link-selected'} `}>
-                                    <Link className="nav_link" to="/ACADEMY">
-                                        ACADEMY
-                                    </Link>
-                                </NavItem>
 
-                                <NavItem className={`${props.location.pathname !== "/CONSULTANCY" ? '' : 'nav-link-selected'} `}>
-                                    <Link className="nav_link" to="/CONSULTANCY">
-                                        CONSULTANCY
-                                    </Link>
-                                </NavItem>
+                                <ExtendedNavItemComponent2
+                                    location={props.location} main_nav={{ base_path: "/EVENTS_NEWS", path: "/EVENTS_NEWS", text: "NEWS & MEDIA" }}
+                                    sub_navs={[
+                                        { path: "/EVENTS_NEWS/News/", text: "NEWS" },
+                                        { path: "/EVENTS_NEWS/MEDIA/", text: "MEDIA" },
+
+
+                                    ]}
+                                />
+
+
 
 
 
@@ -209,14 +206,14 @@ const NavbarComponent = (props) => {
                                     sub_navs={[
                                         { path: "/REPORTS", text: "publications" },
                                         { path: "/WEBINARS", text: "webinars" },
-                                        { path: "/PODCASTS", text: "podcast" },
+                                        // { path: "/PODCASTS", text: "podcast" },
                                         { path: "/PRESENTATIONS", text: "presentations" },
                                         { path: "/PROJECTS", text: "projects" },
                                         { path: "/CASE_STUDIES", text: "case studies" },
-                                        { path: "/BLOGS", text: "blogs" },
+                                        // { path: "/BLOGS", text: "blogs" },
                                         // { path: "/PAPERS", text: "NEWSLETTER" },
                                         { path: "/NEWSLETTER", text: "NEWSLETTER" },
-                                        { path: "/LINKS", text: "useful links" }
+                                        // { path: "/LINKS", text: "useful links" }
                                     ]}
                                 />
 
