@@ -237,7 +237,7 @@ function WhatWeDoPageComponent(props) {
                     </div>
                 </Col>
                 <Row style={{ position: 'relative', top: '', overflow: 'visible' }}>
-                    <div
+                    <div class='mena_image'
                         style={{
                             width: '125%',
                             height: '500px',

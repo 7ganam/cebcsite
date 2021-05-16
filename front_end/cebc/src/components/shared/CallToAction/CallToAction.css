@@ -17,6 +17,9 @@
     
     .cto-button
     {
+        max-width: 90vw;
+    margin: auto;
+
         display: flex;
         justify-content: center;
         align-items: center;
