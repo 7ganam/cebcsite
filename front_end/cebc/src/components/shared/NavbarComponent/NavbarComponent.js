@@ -32,8 +32,11 @@ const NavbarComponent = (props) => {
         () => { //add scrolled class to elements that should behave diffrently when window is scrolled
             var $navitem = $(".nav-item"); // add the scrolled class with jquery to all the nave links when scrolled
             var $navlink = $(".nav_link"); // add the scrolled class with jquery to all the nave links when scrolled
+            var $nav_link_dropper = $(".nav_link_dropper"); // add the scrolled class with jquery to all the nave links when scrolled
             $navlink.toggleClass('scrolled', $(document).scrollTop() > $navlink.height());
+            $nav_link_dropper.toggleClass('scrolled', $(document).scrollTop() > $navlink.height());
             $navitem.toggleClass('not_scrolled', $(document).scrollTop() < $navlink.height());
+
             $(function () {
                 $(document).scroll(function () {
                     var $nav = $("#my_nav"); // change the Scrolled state when we scroll more than the navbar height
@@ -44,10 +47,11 @@ const NavbarComponent = (props) => {
                         if (Scrolled) { setScrolled(false) }
                     }
                     $navlink.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
+                    $nav_link_dropper.toggleClass('scrolled', $(this).scrollTop() > $navlink.height());
                     $navitem.toggleClass('not_scrolled', $(this).scrollTop() < $navlink.height());
+
                 });
             });
-
 
             // Close Navbar when clicked outside
             $(window).on('click', function (event) {
@@ -60,8 +64,6 @@ const NavbarComponent = (props) => {
                     $('.navbar-toggler').click();
                 }
             });
-
-
         })
 
 
@@ -70,8 +72,6 @@ const NavbarComponent = (props) => {
         <React.Fragment>
             <div className="d-flex justify-content-end ml-0 mr-0" style={{ height: "26px" }}>
                 <div id="top_bar" className="header_font" >
-
-
                     <Link id='members_only_link' className="pulsating-circle" to="/MEMBERSHIP/MEMBERSONLY">
                         <div style={{ paddingRight: "16px", color: "black" }} >
                             Members only content
@@ -176,7 +176,7 @@ const NavbarComponent = (props) => {
                                 />
 
                                 <ExtendedNavItemComponent2
-                                    location={props.location} main_nav={{ base_path: "/ACTIVITIES/", path: "/ACTIVITIES", text: "Activities" }}
+                                    location={props.location} main_nav={{ base_path: "/ACTIVITIES", path: "/ACTIVITIES", text: "Activities" }}
                                     sub_navs={[
                                         { path: "/ACTIVITIES/EVENTS/All", text: "EVENTS" },
                                         { path: "/ACTIVITIES/ACADEMY", text: "ACADEMY" },

@@ -1,3 +1,22 @@
+#top_bar{
+    background-color: rgb(255, 255, 255);
+    color : black;
+    position: fixed; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end ;
+    z-index: 9999;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    box-shadow: inset 0px -1px 1px 0px #8080801f;
+    height: 24px;
+    line-height: 24px;
+    
+}
+
+
 
 
 @media (max-width: 768px) {
@@ -12,33 +31,12 @@
 }
 
 
-#top_bar{
-    background-color: rgb(255, 255, 255);
-    color : black;
-     position: fixed; 
-     width: 100%;
-     display: flex;
-     justify-content: flex-end ;
-     z-index: 9999;
 
-     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-    box-shadow: inset 0px -1px 1px 0px #8080801f;
-    height: 24px;
-    line-height: 24px;
-    
-
-}
 
 .navbar-toggler{
-    /* max-height: 50px; */
     margin-top: 15px;
     width: 55px  !important;
 }
-
-
 
 
 
@@ -62,13 +60,13 @@ margin: 15px 0 5px 0px;
         height: 80px;
         transition: height .5s;
         margin: 5px;
-        }
-
+    }
 
     .fixed-top.scrolled #nav_brand {
         height: 50px;
         padding: 10px;
     }
+
     .fixed-top {
         background-color: transparent !important;
         top: 18px !important;
@@ -83,9 +81,7 @@ margin: 15px 0 5px 0px;
 
 
 
-@media (min-width: 768px) {
-
-    
+@media (min-width: 768px) {  
     .dark_bg{
         background-color: black !important;
     }
@@ -130,6 +126,23 @@ margin: 15px 0 5px 0px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav_link{
     min-width: 100px;
     color: rgba(0,0,0,.5);
@@ -139,56 +152,45 @@ margin: 15px 0 5px 0px;
     color: #000;
 }
 @media (min-width: 768px) {
-    .nav_link {
+    .nav_link , .nav_link_dropper{
         color: white !important;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
         margin: 0 10px;
         padding: 0 10px;
+
         justify-content: center;
-         display: flex;
-         align-items: center;
-         vertical-align: middle;
-         -webkit-transform: perspective(1px) translateZ(0);
-         transform: perspective(1px) translateZ(0);
-         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-         position: relative;
-         -webkit-transition-property: color;
-         transition-property: color;
-         -webkit-transition-duration: 0.3s;
-         transition-duration: 0.3s;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        position: relative;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
     }
+
     .nav_link.scrolled { 
         /* change the color of links when scrolled */
         color: rgb(30, 30, 34) !important;
     }
-
-    .nav_link:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        /* background: grey; */
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transform-origin: 50%;
-        transform-origin: 50%;
-        -webkit-transition-property: transform;
-        transition-property: transform;
-        -webkit-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-        -webkit-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
+    .nav_link_dropper.scrolled { 
+        /* change the color of links when scrolled */
+        color: rgb(30, 30, 34) !important;
     }
+
+
     .nav_link:hover, .nav_link:focus, .nav_link:active {
         color: white !important;;
     }
-    .nav_link:hover:before, .nav_link:focus:before, .nav_link:active:before {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
+    .nav_link_dropper:hover, .nav_link_dropper:focus, .nav_link_dropper:active {
+        color: white !important;;
     }
+
     
     .nav-item:hover{
         background: grey;
@@ -205,6 +207,13 @@ margin: 15px 0 5px 0px;
 
 
 }
+
+
+
+
+
+
+
 
 
 
