@@ -3,6 +3,7 @@ import { NavItem } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 import "./DoubleExtendedNavItemComponent.css"
+const $ = require("jquery");
 
 function DoubleExtendedNavItemComponent2(props) {
 
@@ -20,12 +21,11 @@ function DoubleExtendedNavItemComponent2(props) {
 
 
             const sub_subs = sub_item.sub_subs.map((sub_sub_item, index) => {
-                // console.log(`props.location.pathname`, props.location.pathname)
-                // console.log(`sub_sub_item.bath`, sub_sub_item)
+
                 return (
 
                     <li>
-                        <Link to={sub_sub_item.path}>
+                        <Link onClick={close_nav_bar} to={sub_sub_item.path}>
                             <div className={'sub_subs_entry ' + (props.location.pathname === sub_sub_item.path ? 'sub_subs_entry_selected' : '')}>
                                 {sub_sub_item.text}
                             </div>
@@ -43,11 +43,7 @@ function DoubleExtendedNavItemComponent2(props) {
 
         const sub_items = sub_navs.map((sub_item, index) => {
 
-            // console.log(`sub_item.path`, sub_item)
-            // console.log(`main_nav.path`, main_nav.path)
-            // console.log(`props.location.pathnam`, props.location.pathname)
-            // console.log(`-----------------------------`)
-            // console.log(`props.location.pathnam`, props.location.pathname)
+
 
             let paths = [sub_item.path]
             if (sub_item.sub_subs) {
@@ -57,13 +53,12 @@ function DoubleExtendedNavItemComponent2(props) {
                 }
             }
 
-            // console.log(`paths`, paths)
 
             return (
                 <div className={!paths.includes(props.location.pathname) ? 'sub-nav-item' : 'sub-nav-item-selected'}
                     style={{ height: "auto", display: 'flex', flexDirection: 'column', textAlign: "left", justifyContent: 'start', alignItems: "start", marginLeft: "0", }}
                 >
-                    <Link className={!paths.includes(props.location.pathname) ? 'sub_nav_link' : 'sub-nav-link-selected'} to={`${sub_item.path}`}
+                    <Link onClick={close_nav_bar} className={!paths.includes(props.location.pathname) ? 'sub_nav_link' : 'sub-nav-link-selected'} to={`${sub_item.path}`}
                         style={{ textAlign: "left", justifyContent: 'start', alignItems: "start", marginLeft: "0", paddingLeft: '0' }}>
                         {sub_item.text}
                     </Link>
@@ -90,6 +85,21 @@ function DoubleExtendedNavItemComponent2(props) {
         y = win.innerHeight || docElem.clientHeight || body.clientHeight;
 
     const sub_nav_ref = React.createRef();
+
+    function close_nav_bar(event) {
+        if (x < 768) {
+
+            var clickOver = $(event.target)
+
+
+            // console.log(`clickOver`, $('.navbar .navbar-toggler').attr('aria-expanded'))
+            if ($('.navbar-collapse').hasClass("show")) {
+                console.log(`clickOver`, clickOver)
+                // Click on navbar toggler button
+                $('.navbar-toggler').click();
+            }
+        }
+    }
     const show_sub_nav = () => {
         if (x < 768) {
             sub_nav_ref.current.classList.toggle("drop")
