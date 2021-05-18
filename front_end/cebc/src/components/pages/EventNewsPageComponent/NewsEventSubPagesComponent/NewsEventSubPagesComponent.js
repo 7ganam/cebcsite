@@ -378,7 +378,7 @@ function NewsEventSubPagesComponent(props) {
                         <Row className=" justify-content-center">
                             <div class="section_header" style={{ marginTop: "30px" }}>
                                 <span class="section_header_inner">
-                                    CEBC EVETNS
+                                    CEBC EVENTS
                                 </span>
                                 <div className="section_header_under"></div>
                             </div>
