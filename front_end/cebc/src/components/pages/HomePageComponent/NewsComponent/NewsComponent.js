@@ -62,10 +62,10 @@ function NewsComponent(props) {
         }
     }, [props.latest_events])
     return (
-        <div style={{ marginTop: '40px' }}>
+        <div style={{ marginTop: '10px' }}>
             <Container className='news_container'>
                 <Row className=" justify-content-center">
-                    <Col >
+                    <Col className='pt-0'>
                         <div class="section_header">
                             <span class="section_header_inner">
                                 News & Events
@@ -79,7 +79,7 @@ function NewsComponent(props) {
 
 
                     <>
-                        <Row style={{ marginTop: "60px" }}>
+                        <Row style={{ marginTop: "40px" }}>
                             <Col id="main_news_col" className="news_col main_news_col" xs="12" md="6" style={{}}>
                                 <Link className="" to={`/EVENTS_NEWS/News/${props.latest_news[0].id}`} >
 

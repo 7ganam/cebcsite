@@ -128,3 +128,31 @@
 @media (min-width: 1200px) {
 
   }
+
+
+  .pod_card_text{
+      margin:auto;
+      font-family: 'Roboto', sans-serif;
+      text-transform: uppercase;
+      color : black;
+      font-weight: bold;
+      width: 80%;
+      border-left: 1px grey solid;
+  }
+
+  .pod_button{
+    height: 60px;
+     min-width: 250px;
+      width: 300px;
+       max-width:90vw ;
+       border: 1px solid #8080803d;
+    border-radius: 20px;
+    box-shadow: 0px 3px 0 0 #0000002b;
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    margin:20px;
+    overflow: hidden;
+    /* flex-wrap: wrap;  */
+  }

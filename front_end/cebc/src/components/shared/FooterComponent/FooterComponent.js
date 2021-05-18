@@ -1,6 +1,14 @@
 import React from 'react'
 import "./FooterComponent.css"
+const $ = require("jquery");
+
 function FooterComponent() {
+    function open_contact_form(event) {
+        event.preventDefault()
+        $('#popcorn2').click();
+    }
+
+
     return (
         <div>
             <div className="bottom-wrapper">
@@ -48,7 +56,7 @@ function FooterComponent() {
                                             <i className="fas fa-angle-double-right"></i>
 
                                             <span className="footer-contact">
-                                                <a href="http://www.cebcmena.com/contactus/" style={{ color: ' #babfc5' }}>You may also contact us using this form</a>
+                                                <a onClick={open_contact_form} href="http://www.cebcmena.com/contactus/" style={{ color: ' #babfc5' }}>You may also contact us using this form</a>
                                             </span>
                                         </p></div>
                                 </aside>
@@ -64,35 +72,35 @@ function FooterComponent() {
                                             <ul id="services">
                                                 <li>
                                                     <div className="facebook">
-                                                        <a href="https://facebook.com/">
+                                                        <a href="#">
                                                             <i className="fab fa-facebook  i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="twitter">
-                                                        <a href="https://twitter.com/">
+                                                        <a href="https://twitter.com/CEBC2 ">
                                                             <i className="fab fa-twitter i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="youtube">
-                                                        <a href="https://www.youtube.com/">
+                                                        <a href="https://www.youtube.com/channel/UCqI6y1W2l5S1-nMZQk3z23w">
                                                             <i className="fab fa-youtube i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="linkedin">
-                                                        <a href="https://www.linkedin.com/">
+                                                        <a href="https://www.linkedin.com/company/cebcmena/ ">
                                                             <i className="fab fa-linkedin i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div className="instagram">
-                                                        <a href="https://www.linkedin.com/">
+                                                        <a href="https://www.instagram.com/accounts/login/?next=/cleanenergybusinesscouncil/%3Fhl%3Den ">
                                                             <i className="fab fa-instagram i_link" aria-hidden="true"></i>
                                                         </a>
                                                     </div>

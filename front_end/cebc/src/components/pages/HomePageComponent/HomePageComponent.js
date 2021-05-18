@@ -22,14 +22,14 @@ export default function HomePageComponent(props) {
             <VideoComponent />
 
             {props.members.length > 0 &&
-                <div style={{ marginTop: "60px" }}>
+                <div style={{ marginTop: "50px" }}>
 
                     <MemebersCarouselComponent members={props.members} />
 
                 </div>
             }
 
-            <div id="news_section" style={{ marginTop: "40px" }}>
+            <div id="news_section" style={{ marginTop: "0px" }}>
                 <NewsComponent latest_news={props.latest_news} latest_events={props.latest_events} />
             </div>
 

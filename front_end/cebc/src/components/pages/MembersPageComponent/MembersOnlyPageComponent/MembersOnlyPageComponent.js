@@ -162,7 +162,7 @@ function MembersOnlyPageComponent(props) {
                                     }
                                 </Col>
 
-                                <Col className='events_col d-flex align-items-center flex-column' md={3}>
+                                <Col className='events_col d-flex align-items-center flex-column pt-0 mt-1' md={3}>
                                     {LoadedUpcommingEvents.length > 0 ?
 
                                         render_events(LoadedUpcommingEvents)

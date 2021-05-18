@@ -87,3 +87,14 @@
 @media (min-width: 1200px) {
 
   }
+
+
+#event_body .legend{
+    display: none;
+}
+
+@media (max-width: 580px) {
+    .control-arrow.control-prev{
+        display: none;
+    }
+}

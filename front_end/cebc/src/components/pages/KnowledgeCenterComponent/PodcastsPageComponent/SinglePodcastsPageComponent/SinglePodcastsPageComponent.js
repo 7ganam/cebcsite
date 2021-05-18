@@ -55,7 +55,7 @@ function SinglePodcastsPageComponent(props) {
 
 { !! the_podcast.google_podcasts_link &&
                 <a href={the_podcast.google_podcasts_link}>
-                    <div style={{
+                    <div className='pod_button' style={{
                         height: '60px', minWidth: '250px', width: '300px' , maxWidth:'90%', border: "1px solid #8080803d",
                         borderRadius: "20px",
                         boxShadow: "0px 3px 0 0 #0000002b",
@@ -79,17 +79,7 @@ function SinglePodcastsPageComponent(props) {
 {!! the_podcast.apple_podcasts_link &&
                 <a href={the_podcast.apple_podcasts_link}>
                     
-                        <div style={{
-                            height: '60px', minWidth: '250px', width: '300px' , maxWidth:'90%', border: "1px solid #8080803d",
-                            borderRadius: "20px",
-                            boxShadow: "0px 3px 0 0 #0000002b",
-                            display: 'flex',
-                            justifyContent: 'left',
-                            alignContent: 'center',
-                            alignItems: 'center',
-                            margin:'20px'
-
-                        }}>
+                        <div  className="pod_button" style={{}}>
                             <img src={apple_image} alt="apple" style={{ height: '50px', width: 'auto', margin: '10px' }} />
                             <div className="pod_card_text">
                                 apple podcasts

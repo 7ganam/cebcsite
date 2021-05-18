@@ -71,6 +71,15 @@
             top:10px;
     }
 
+    .nav-item:hover .my-sub-nav_d,
+    .nav-item:hover .my-sub-nav_d:hover,
+    .nav-item:hover .my-sub-nav_d:focus,
+    .nav-item:hover .my-sub-nav_d:active
+    {
+        padding-bottom: 20px;
+
+    }
+
 
     .sub-nav-item-selected .sub_subs{
             background-color: white;

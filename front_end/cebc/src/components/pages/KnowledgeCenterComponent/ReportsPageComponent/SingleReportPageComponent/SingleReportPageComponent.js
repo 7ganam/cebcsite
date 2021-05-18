@@ -111,11 +111,11 @@ function SingleProjectPageComponent(props) {
                                                 </div>
 
                                             </Col>
-                                            <Col xs={4} class="open_report_button">
+                                            <Col xs={12} lg={4} class="open_report_button">
                                                 <a target="_blank" href={the_report.file.url} style={{ textDecoration: 'none' }}>
                                                     <div class="report_button action-button shadow animate blue">
 
-                                                        <div>download </div>
+                                                        <div>Download </div>
 
                                                         <i class="fas fa-external-link-alt mt-3"></i>
 
@@ -154,19 +154,19 @@ function SingleProjectPageComponent(props) {
                                     </div>
                                     <div className="report_details_box">
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col className="details_title" md={3} >
+                                            <Col className="details_title " xs={6} md={3} >
                                                 Category :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col xs={6} md={8} className="details_value">
                                                 {the_report.type}
                                             </Col>
                                         </Row>
 
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col md={3} className="details_title">
+                                            <Col md={3} xs={6} className="details_title">
                                                 date :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col md={8} xs={6} className="details_value">
                                                 {the_report.date}
                                             </Col>
                                         </Row>

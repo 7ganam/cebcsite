@@ -244,6 +244,15 @@ export default function MainComponent() {
                                 <   EventViewPageComponent {...props} />
                             }
                         />
+
+
+
+                        <Route path="/ACTIVITIES/News/:News_id"
+                            component={(props) =>
+                                <   NewsViewPageComponent {...props} />
+                            }
+                        />
+
                         <Route path="/ACTIVITIES/EVENTS/:sub_parameter">
                             {(props) =>
                                 <   NewsEventSubPagesComponent {...props} />

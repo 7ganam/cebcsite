@@ -115,7 +115,7 @@ function SingleNewsLetterPageComponent(props) {
                                                 <a target="_blank" href={the_NewsLetter.file.url} style={{ textDecoration: 'none' }}>
                                                     <div class="NewsLetter_button action-button shadow animate blue">
 
-                                                        <div>download </div>
+                                                        <div>Download </div>
 
                                                         <i class="fas fa-external-link-alt mt-3"></i>
 
@@ -154,19 +154,19 @@ function SingleNewsLetterPageComponent(props) {
                                     </div>
                                     <div className="NewsLetter_details_box">
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col className="details_title" md={3} >
+                                            <Col className="details_title" xs={6} md={3} >
                                                 Category :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col xs={6} md={8} className="details_value">
                                                 {'newsletter'}
                                             </Col>
                                         </Row>
 
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col md={3} className="details_title">
+                                            <Col xs={6} md={3} className="details_title">
                                                 date :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col xs={6} md={8} className="details_value">
                                                 {the_NewsLetter.date}
                                             </Col>
                                         </Row>

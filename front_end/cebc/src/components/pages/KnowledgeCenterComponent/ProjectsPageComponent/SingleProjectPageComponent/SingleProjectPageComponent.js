@@ -134,26 +134,26 @@ function SingleProjectPageComponent(props) {
                                     </div>
                                     <div className="project_details_box">
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col className="details_title" md={3} >
+                                            <Col className="details_title" xs={6} md={3} >
                                                 Category :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col md={8} xs={6} className="details_value">
                                                 {the_project.category}
                                             </Col>
                                         </Row>
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col md={3} className="details_title">
+                                            <Col md={3} xs={6} className="details_title">
                                                 Location :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col md={8} xs={6} className="details_value">
                                                 {the_project.location}
                                             </Col>
                                         </Row>
                                         <Row style={{ minHeight: "30px" }}>
-                                            <Col md={3} className="details_title">
+                                            <Col md={3} xs={6} className="details_title">
                                                 Completed :
                                             </Col>
-                                            <Col md={8} className="details_value">
+                                            <Col md={8} xs={6} className="details_value">
                                                 {the_project.completed}
                                             </Col>
                                         </Row>

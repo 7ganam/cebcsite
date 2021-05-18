@@ -27,6 +27,7 @@
         }
     .navbar-toggler{
         height: 60px;
+        min-width: 70px;
     }
 }
 

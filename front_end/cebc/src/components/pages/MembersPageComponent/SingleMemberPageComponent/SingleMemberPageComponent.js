@@ -117,17 +117,17 @@ function SingleMemberPageComponent(props) {
                 </div>
 
 
-                {!!member && !!member.projects &&
+                {!!member && !!member.projects && !!member.projects.length > 0 &&
                     <div id="member_projects_box" style={{ backgroundColor: 'transparent', border: '0' }}>
                         <div class="section_header" style={{ marginTop: "10px", alignItems: 'start', textAlign: 'left' }}>
                             <span class="section_header_inner" style={{ fontSize: '34px', }}>Projects</span>
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px' }}></div>
                         </div>
-                        <div style={{ display: 'flex' }}>
+                        <Row>
 
                             {generate_projects_cards(member.projects)}
 
-                        </div>
+                        </Row>
                     </div>
                 }
             </div>
