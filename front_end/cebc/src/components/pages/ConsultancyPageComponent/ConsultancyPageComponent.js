@@ -1,33 +1,12 @@
-import { Alert, Col, Container, Row } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 import './ConsultancyPageComponent.css'
-import logo_black from './logo_black.png'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import React, { useCallback, useState, useEffect, useRef } from 'react'
-import ReactLoading from 'react-loading';
+import React, { useState } from 'react'
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
-
-import * as Yup from 'yup'
 
 import Consultancyform from './Consultancyform/Consultancyform'
 import Consultantform from './Consultantform/Consultantform'
 
-const validationSchema = Yup.object({
-    name: Yup.string().required('Required'),
-    email: Yup.string()
-        .email('Invalid email format')
-        .required('Required'),
-    entity: Yup.string(),
-    consultancy_type: Yup.string().required('Required'),
-    message: Yup.string().required('Required'),
-
-})
-const initialValues = {
-    name: '',
-    email: '',
-    entity: '',
-    consultancy_type: '',
-    Message: '',
-}
 
 
 
@@ -35,117 +14,11 @@ const initialValues = {
 
 function ConsultancyPageComponent() {
 
+    const [ConsultancyformisOpen, setConsultancyformIsOpen] = useState(false);
+    const toggleConsultancyform = () => setConsultancyformIsOpen(!ConsultancyformisOpen);
 
-    const formRef = useRef();
-    const [modal, setModal] = useState(false);
-    const [Response_json_content, setResponse_json_content] = useState({});
-    const [Fetch_success, setFetch_success] = useState(false);
-    const [Sending_data, setSending_data] = useState(false);
-    const [Fetch_error, setFetch_error] = useState(false);
-    const [Error_message, setError_message] = useState(null);
-    const [formValues, setFormValues] = useState(null)
-
-
-    const onSubmit = async (values, submitProps) => {
-        setError_message(null)
-        console.log('Form data', values)
-        console.log('submitProps', submitProps)
-        const request_data = {
-            "sender_name": values.name,
-            "entity_name": values.entity,
-            "consultancy_type": values.consultancy_type,
-            "email": values.email,
-            "message": values.message,
-        }
-        console.log('request_data', request_data)
-
-        try {
-            setSending_data(true)
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/applications-for-courses`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(request_data)
-            });
-            const response_json_content = await response.json()
-            if (!response.ok) {
-                setFetch_error(true)
-                throw new Error(response_json_content.message || "something went wrong");
-            }
-            setSending_data(false)
-            setResponse_json_content(response_json_content)
-
-            if (response_json_content.email !== "") {
-                setFetch_success(true)
-                console.log({ response_json_content })
-            }
-
-        } catch (err) {
-            setSending_data(false)
-            setError_message(err)
-            console.log(err);
-        }
-
-    }
-
-    function render_submit_button() {
-
-        let fomik_object = formRef.current;
-        if (Sending_data) {
-            return (
-                <div style={{ marginTop: "30px" }}>
-                    <ReactLoading type={"spin"} color={"#00D2F9"} width={"30px"} />
-                </div>
-            )
-        }
-
-        else if (Fetch_success) {
-
-            return (
-                <Alert color="success" style={{ marginTop: "30px", color: '' }}>
-                    Application submitted .. we will come back to you soon
-                </Alert>
-            )
-        }
-        else if (Error_message) {
-
-            return (
-                <div>
-
-                    <button
-                        className='signub_submit_button'
-                        type='submit'
-                        disabled={!fomik_object.isValid}
-                        style={{ backgroundColor: (!fomik_object.isValid) ? "grey" : "" }}
-                    >
-                        {(!fomik_object.isValid) ? "data not valid" : "Submit"}
-                    </button>
-                    <Alert color="danger" style={{ marginTop: "30px", color: '' }}>
-
-                        something went wrong please try again later
-
-                    </Alert>
-                </div>
-            )
-        }
-        else if (formRef.current) {
-            return (
-
-                <button
-                    className='signub_submit_button'
-                    type='submit'
-                    disabled={!fomik_object.isValid || fomik_object.isSubmitting}
-                    style={{ backgroundColor: (!fomik_object.isValid || fomik_object.isSubmitting) ? "grey" : "" }}
-                >
-                    {(!fomik_object.isValid || fomik_object.isSubmitting) ? "data not valid" : "Submit"}
-                </button>
-            )
-
-        }
-
-    }
-
+    const [ConsultantformisOpen, setConsultantformIsOpen] = useState(false);
+    const toggleConsultantform = () => setConsultantformIsOpen(!ConsultantformisOpen);
 
     return (
         <div style={{
@@ -182,7 +55,7 @@ function ConsultancyPageComponent() {
                     </div>
                 </Row>
                 <div className='consultancy_services_div'>
-                    <img src="/wecover.png" alt="" style={{ width: "100%", height: "auto" }} />
+                    <img src="/wecover2.png" alt="" style={{ width: "100%", height: "auto" }} />
                 </div>
                 <div>
 
@@ -192,7 +65,17 @@ function ConsultancyPageComponent() {
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                         </div>
                     </Row>
-                    <Consultancyform />
+
+
+                    <Button color="warning" onClick={toggleConsultancyform} style={{ marginBottom: '1rem' }}>
+                        Show application form
+                        <i class="fas fa-caret-down ml-2"></i>
+                    </Button>
+                    <Collapse isOpen={ConsultancyformisOpen}>
+                        <Consultancyform />
+                    </Collapse>
+
+
 
 
                     <Row className="title_row">
@@ -201,7 +84,15 @@ function ConsultancyPageComponent() {
                             <div className="section_header_under" style={{ fontSize: '34px', marginBottom: '20px', width: "250px" }}></div>
                         </div>
                     </Row>
-                    <Consultantform />
+
+                    <Button color="warning" onClick={toggleConsultantform} style={{ marginBottom: '1rem' }}>
+                        Show application form
+                        <i class="fas fa-caret-down ml-2"></i>
+                    </Button>
+                    <Collapse isOpen={ConsultantformisOpen}>
+                        <Consultantform />
+
+                    </Collapse>
                 </div>
             </Container>
 

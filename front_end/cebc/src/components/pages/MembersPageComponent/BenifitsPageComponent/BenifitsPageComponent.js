@@ -37,7 +37,7 @@ function BenifitsPageComponent() {
             ASSOCIATE: true,
         },
         {
-            title: 'Access to the Members only section of the CEBC website for a number of services including event listings and job postings',
+            title: 'Access to the Members only content of the CEBC website for a number of services including event listings and job postings',
             PARTNER: true,
             CORPORATE: true,
             ASSOCIATE: false,
@@ -124,7 +124,7 @@ function BenifitsPageComponent() {
                         <Col >
                             <div class="section_header">
                                 <span class="section_header_inner">
-                                    Membership benifits & levels
+                                    Membership benefits & levels
                                 </span>
                                 <div className="section_header_under"></div>
                             </div>

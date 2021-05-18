@@ -126,7 +126,7 @@ function MembersOnlyPageComponent(props) {
                 IsLoggedIn
                     ?
                     <div>
-                        <div class="section_header"><span class="section_header_inner">Members only page</span><div class="section_header_under"></div></div>
+                        <div class="section_header"><span class="section_header_inner">Members only content</span><div class="section_header_under"></div></div>
                         < Container fluid style={{ padding: '50px' }}>
                             <Row>
                                 <Col className='news_col' md={3}>
@@ -180,7 +180,7 @@ function MembersOnlyPageComponent(props) {
                     </div >
                     :
                     <div>
-                        <div class="section_header"><span class="section_header_inner">Members only page</span><div class="section_header_under"></div></div>
+                        <div class="section_header"><span class="section_header_inner">Members only content</span><div class="section_header_under"></div></div>
 
                         <div>
                             you have to be a member to see this content

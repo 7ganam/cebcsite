@@ -112,7 +112,7 @@ function SingleProjectPageComponent(props) {
 
                                             </Col>
                                             <Col xs={12} lg={4} class="open_report_button">
-                                                <a target="_blank" href={the_report.file.url} style={{ textDecoration: 'none' }}>
+                                                <a target="_blank" href={the_report.file && the_report.file.url} style={{ textDecoration: 'none' }}>
                                                     <div class="report_button action-button shadow animate blue">
 
                                                         <div>Download </div>

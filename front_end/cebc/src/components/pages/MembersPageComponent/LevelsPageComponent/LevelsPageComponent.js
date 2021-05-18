@@ -38,7 +38,7 @@ function LevelsPageComponent() {
             ASSOCIATE: true,
         },
         {
-            title: 'Access to the Members only section of the CEBC website for a number of services including event listings and job postings',
+            title: 'Access to the Members only content of the CEBC website for a number of services including event listings and job postings',
             PARTNER: true,
             CORPORATE: true,
             ASSOCIATE: false,

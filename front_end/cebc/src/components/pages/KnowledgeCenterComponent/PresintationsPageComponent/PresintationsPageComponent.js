@@ -61,7 +61,7 @@ function PresintationsPageComponent() {
                 presentation_container.push(
 
                     <div className='presentation_box'   >
-                        <a className="presentation_link" target="_blank" href={presentation.file.url}>
+                        <a className="presentation_link" target="_blank" href={presentation.file && presentation.file.url}>
                             <i class="fas fa-external-link-alt mr-2 ml-1"></i>
                             {` ${presentation.title}`}
                         </a>

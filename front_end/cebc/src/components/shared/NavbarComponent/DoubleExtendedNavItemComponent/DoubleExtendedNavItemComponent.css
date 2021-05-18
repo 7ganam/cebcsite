@@ -19,7 +19,7 @@
     
     .sub_subs_entry{
         color: white;
-        text-transform: lowercase;
+        text-transform: initial;
         font-weight: 300;
         margin-bottom: 5px;
         margin-left: 5px;

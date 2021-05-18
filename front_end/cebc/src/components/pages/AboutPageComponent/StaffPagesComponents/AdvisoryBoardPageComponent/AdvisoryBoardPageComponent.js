@@ -17,10 +17,9 @@ function AdvisoryBoardPageComponent(props) {
 
             if (member.position === position) {
                 return (
-                    <Col className="board_col my-2" md={4} lg={3} style={{ marginBottom: '20px' }}>
+                    <Col className="board_col my-2 mx-lg-2" md={4} lg={3} style={{ marginBottom: '20px' }}>
                         <div className="board_div mb-2 d-flex justify-content-stretch" style={{ borderStyle: 'none', backgroundColor: '', height: '100%' }}>
-
-                            <Card style={{ height: '100%', width: '90%', boxShadow: '1px 3px 6px 1px #80808042' }}>
+                            <Card style={{ height: '100%', width: '90%', maxWidth: '250px', boxShadow: '1px 3px 6px 1px #80808042' }}>
                                 <Link to={`/ABOUTUS/STAFF/${member.id}`} style={{ color: "black" }}>
                                     <div className="card_title_container" style={{ padding: '10px', fontWeight: 'bold', height: '60px', justifyContent: 'center', alignItems: "center", display: 'flex' }} tag="h5">{member.username}</div>
                                 </Link>
@@ -40,11 +39,7 @@ function AdvisoryBoardPageComponent(props) {
                                         </a>
                                     </div>
                                 </CardFooter>
-
                             </Card>
-
-
-
                         </div>
                     </Col>
                 )

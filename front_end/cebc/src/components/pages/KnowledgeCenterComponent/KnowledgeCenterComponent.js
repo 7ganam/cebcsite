@@ -99,7 +99,7 @@ function KnowledgeCenterComponent() {
                     <Col className="working_group_col" xs="12" md="7" lg="4" style={{}}>
                         <Link to="/KNOWLEDGECENTER/PAPERS">
                             <div className="working_group_col_div" >
-                                <KnowledgeCardComponent image="Efficiency.jpg" title="NEWSLETTER" />
+                                <KnowledgeCardComponent image="/newsletter.png" title="NEWSLETTER" />
                             </div>
                         </Link>
                     </Col>

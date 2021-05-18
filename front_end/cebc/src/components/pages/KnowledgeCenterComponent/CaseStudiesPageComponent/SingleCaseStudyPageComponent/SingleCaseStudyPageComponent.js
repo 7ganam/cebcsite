@@ -110,7 +110,7 @@ function SingleCaseStudyPageComponent(props) {
 
                                             </div>
                                             <div class="open_case_study_button">
-                                                <a target="_blank" href={the_case_study.file.url} >
+                                                <a target="_blank" href={the_case_study.file && the_case_study.file.url} >
                                                     <div class="report_button action-button shadow animate blue">
 
                                                         <div>Download</div>

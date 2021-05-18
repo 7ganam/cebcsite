@@ -106,7 +106,7 @@ function SinglePaperPageComponent(props) {
 
                                             </div>
                                             <div class="open_paper_button">
-                                                <a target="_blank" href={the_paper.file.url} >
+                                                <a target="_blank" href={the_paper.file && the_paper.file.url} >
                                                     <div class="action-button shadow animate blue">
 
                                                         <div> Download</div>

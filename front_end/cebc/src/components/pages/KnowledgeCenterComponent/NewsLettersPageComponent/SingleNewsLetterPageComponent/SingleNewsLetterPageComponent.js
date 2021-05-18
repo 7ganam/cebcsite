@@ -112,7 +112,7 @@ function SingleNewsLetterPageComponent(props) {
 
                                             </Col>
                                             <Col xs={12} md={6} class="open_NewsLetter_button">
-                                                <a target="_blank" href={the_NewsLetter.file.url} style={{ textDecoration: 'none' }}>
+                                                <a target="_blank" href={the_NewsLetter.file && the_NewsLetter.file.url} style={{ textDecoration: 'none' }}>
                                                     <div class="NewsLetter_button action-button shadow animate blue">
 
                                                         <div>Download </div>

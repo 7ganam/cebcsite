@@ -139,24 +139,24 @@ const NavbarComponent = (props) => {
                                         {
                                             path: "/ABOUTUS/STAFF/BOARD", text: "people",
                                             sub_subs: [
-                                                { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
-                                                { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
-                                                { path: "/ABOUTUS/STAFF/TEAM", text: "team" },
+                                                { path: "/ABOUTUS/STAFF/BOARD", text: "Board of directors" },
+                                                { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory board" },
+                                                { path: "/ABOUTUS/STAFF/TEAM", text: "Team" },
                                             ]
                                         },
                                         {
                                             path: "/ABOUTUS/working_groups", text: "working groups",
                                             sub_subs: [
                                                 { path: "/ABOUTUS/working_groups/7", text: "Future mobility club" },
-                                                { path: "/ABOUTUS/working_groups/12", text: "Climate Finance Working Group" },
-                                                { path: "/ABOUTUS/working_groups/13", text: "Energy Efficiency Working Group" },
-                                                { path: "/ABOUTUS/working_groups/10", text: "Hydrogen and Energy Storage Working Group" },
-                                                { path: "/ABOUTUS/working_groups/11", text: "women in clean energy" },
+                                                { path: "/ABOUTUS/working_groups/12", text: "Climate finance" },
+                                                { path: "/ABOUTUS/working_groups/13", text: "Energy efficiency " },
+                                                { path: "/ABOUTUS/working_groups/10", text: "Hydrogen and energy storage" },
+                                                { path: "/ABOUTUS/working_groups/11", text: "Women in clean energy" },
                                             ]
                                         }, {
                                             path: "/ABOUTUS/programms", text: "programmes",
                                             sub_subs: [
-                                                { path: "/ABOUTUS/working_groups/1", text: "CEBC Schools" },
+                                                { path: "/ABOUTUS/working_groups/1", text: "CEBC schools" },
                                             ]
                                         },
                                         { path: "/ABOUTUS/JOBS", text: "careers" },
@@ -166,12 +166,12 @@ const NavbarComponent = (props) => {
                                 <ExtendedNavItemComponent2
                                     location={props.location} main_nav={{ base_path: "/MEMBERSHIP", path: "/MEMBERSHIP/BENIFITS", text: "MEMBERSHIP" }}
                                     sub_navs={[
-                                        { path: "/MEMBERSHIP/BENIFITS", text: "benifits & levels" },
+                                        { path: "/MEMBERSHIP/BENIFITS", text: "benefits & levels" },
                                         // { path: "/MEMBERSHIP/LEVELS", text: "levels" },
                                         { path: "/MEMBERSHIP/MEMBERS", text: "members" },
                                         { path: "/MEMBERSHIP/PARTNERS", text: "partners" },
                                         { path: "/MEMBERSHIP/JOIN", text: "join the cebc" },
-                                        { path: "/MEMBERSHIP/MEMBERSONLY", text: "Members only section" },
+                                        { path: "/MEMBERSHIP/MEMBERSONLY", text: "Members only content" },
                                     ]}
                                 />
 
