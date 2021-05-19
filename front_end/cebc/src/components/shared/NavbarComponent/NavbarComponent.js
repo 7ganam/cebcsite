@@ -139,24 +139,24 @@ const NavbarComponent = (props) => {
                                         {
                                             path: "/ABOUTUS/STAFF/BOARD", text: "people",
                                             sub_subs: [
-                                                { path: "/ABOUTUS/STAFF/BOARD", text: "Board of directors" },
-                                                { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory board" },
+                                                { path: "/ABOUTUS/STAFF/BOARD", text: "Board of Directors" },
+                                                { path: "/ABOUTUS/STAFF/ADVISORY", text: "Adivsory Board" },
                                                 { path: "/ABOUTUS/STAFF/TEAM", text: "Team" },
                                             ]
                                         },
                                         {
                                             path: "/ABOUTUS/working_groups", text: "working groups",
                                             sub_subs: [
-                                                { path: "/ABOUTUS/working_groups/7", text: "Future mobility club" },
-                                                { path: "/ABOUTUS/working_groups/12", text: "Climate finance" },
-                                                { path: "/ABOUTUS/working_groups/13", text: "Energy efficiency " },
-                                                { path: "/ABOUTUS/working_groups/10", text: "Hydrogen and energy storage" },
-                                                { path: "/ABOUTUS/working_groups/11", text: "Women in clean energy" },
+                                                { path: "/ABOUTUS/working_groups/7", text: "Future Mobility Club" },
+                                                { path: "/ABOUTUS/working_groups/12", text: "Climate Finance" },
+                                                { path: "/ABOUTUS/working_groups/13", text: "Energy Efficiency " },
+                                                { path: "/ABOUTUS/working_groups/10", text: "Hydrogen and Energy Storage" },
+                                                { path: "/ABOUTUS/working_groups/11", text: "Women in Clean Energy" },
                                             ]
                                         }, {
                                             path: "/ABOUTUS/programms", text: "programmes",
                                             sub_subs: [
-                                                { path: "/ABOUTUS/working_groups/1", text: "CEBC schools" },
+                                                { path: "/ABOUTUS/working_groups/1", text: "CEBC Schools" },
                                             ]
                                         },
                                         { path: "/ABOUTUS/JOBS", text: "careers" },
