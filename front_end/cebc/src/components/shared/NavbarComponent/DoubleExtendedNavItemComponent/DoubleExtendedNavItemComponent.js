@@ -27,7 +27,8 @@ function DoubleExtendedNavItemComponent2(props) {
                     <li>
                         <Link onClick={close_nav_bar} to={sub_sub_item.path}>
                             <div className={'sub_subs_entry ' + (props.location.pathname === sub_sub_item.path ? 'sub_subs_entry_selected' : '')}>
-                                {sub_sub_item.text}
+                                <i class="fas fa-angle-double-right mr-2"></i>
+                                <div>{sub_sub_item.text}</div>
                             </div>
                         </Link>
                     </li>
