@@ -117,7 +117,8 @@
 .sec_news_img{
     height:100%;
     width:100%;
- object-fit: cover;
+    object-fit: contain;
+    background: #d3d3d361;
 }
 
 
